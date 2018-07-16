@@ -1,0 +1,18 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jun 13, 2018, 2:39:52 PM
+    Author     : aman2
+*/
+
+#nav-bar{
+    display: none;
+}
+#donate_form form{
+    min-width: 60%;
+    max-width: 80%;
+    width: auto;
+}

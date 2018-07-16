@@ -1,0 +1,28 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jul 5, 2018, 3:58:19 PM
+    Author     : aman2
+*/
+
+.cell{
+    min-width: 250px;
+    float: none;
+    margin: 0px auto;
+    margin-bottom: 50px;
+    background-image: linear-gradient(to right bottom, #48ce6f, #00c6ad, #00b7db, #00a1ea, #6f86d6);
+    border-radius: 10px;
+}
+.sticky + section{
+    padding-top: 20px;
+}
+.way_title h1{
+    text-align: center;
+}
+
+.w2d{
+    margin: auto;
+}
