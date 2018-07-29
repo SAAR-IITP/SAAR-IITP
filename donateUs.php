@@ -4,7 +4,7 @@
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <title>SAAR | Donate Page</title>
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
-        <link rel='stylesheet' type='text/css' href='http://oss.maxcdn.com/semantic-ui/2.1.8/semantic.min.css' />
+        <link rel='stylesheet' type='text/css' href='//oss.maxcdn.com/semantic-ui/2.1.8/semantic.min.css' />
         <link href="stylesheet/donateUs/donate.less" type="text/less" rel="stylesheet">
         <link href="stylesheet/donateUs/1030.css" rel="stylesheet" type="text/css" media="only screen and (max-width:1030px)"/>
         <link href="stylesheet/donateUs/947.css" rel="stylesheet" type="text/css" media="only screen and (max-width:947px)"/>
@@ -107,24 +107,56 @@
                     <label for="batch">Batch</label>
                     <input tye="text" id="batch" name="batch" >
                     </div>
-                    <div class=" field">
+<!--                    <div class=" field">
                         <label id="branch">Department</label>
                     <div class="sel">       
-                     
                      <select id="branch" name="dept" class="">
-                            <option value=""></option>
+                        <option value=""></option>
                         <option value="CSE">Computer Science and Engineering</option>
                         <option value="EE">Electrical Engineering</option>
                         <option value="ME">Mechanical Engineering</option>
-                        <option value="CE">Chemical Engineering</option>
+                        <option value="CE">Civil Engineering</option>
                         <option value="CBE">Chemical and Biochemical Engineering</option>
-                        </select>
+                     </select>
                     </div>
-                    </div>
+                    </div>  -->
+                   <div class="field">
+                        <label for="donate_to">Department </label>
+                        <div class="ui selection search dropdown fluid "  id="donate_to" >
+                        <input type="hidden" name="club">
+                        <i class="dropdown icon"></i>
+                        <div class="default text">branch</div>
+                        <div class="menu">
+                          <div class="item" data-value="cse">Computer Science and Engineering</div>
+                          <div class="item" data-value="ee">Electrical Engineering</div>
+                          <div class="item" data-value="me">Mechanical Engineering</div>
+                          <div class="item" data-value="ce">Civil Engineering</div>
+                          <div class="item" data-value="ch">Chemical and Biochemical Engineering</div>
+                        </div>
+                      </div>
+                    </div> 
+                   
                     <div class="field">
                         <label for="donate_to">Donate </label>
-                        <input type="text" name="donate_to" id="donate_to">
+                        <div class="ui selection search dropdown fluid multiple"  id="donate_to" >
+                        <input type="hidden" name="club">
+                        <i class="dropdown icon"></i>
+                        <div class="default text">Club</div>
+                        <div class="menu">
+                          <div class="item" data-value="anwesha">Anwesha</div>
+                          <div class="item" data-value="hosca">HOSCA</div>
+                          <div class="item" data-value="eclub">E-club</div>
+                          <div class="item" data-value="celesta">Celesta</div>
+                          <div class="item" data-value="ace">ACE</div>
+                          <div class="item" data-value="sparkonics">Sparkonics</div>
+                          <div class="item" data-value="njack">NJACK</div>
+                          <div class="item" data-value="threshold">Threshold</div>
+                          <div class="item" data-value="robocon">Robocon</div>
+                          <div class="item" data-value="supra-baha">Supra-baha</div>
+                        </div>
+                      </div>
                     </div>
+                    
                             <div class="field">
                                 <label id="donate_amount">Amount</label>
                                 
@@ -140,7 +172,7 @@
             </form>
         </section>
         <script src='https://code.jquery.com/jquery-2.2.0.min.js'></script>
-        <script src='http://oss.maxcdn.com/semantic-ui/2.1.8/semantic.min.js'></script>
+        <script src='//oss.maxcdn.com/semantic-ui/2.1.8/semantic.min.js'></script>
         
         
          <script>
@@ -187,6 +219,11 @@ $(document).ready(function(){
     for(i=3;i<list.length;i++){
         list.item(i).style.display ="none";
     }
+    
+    $('.ui.dropdown')
+  .dropdown()
+;
+    
 });
 
 window.onload = function(){
