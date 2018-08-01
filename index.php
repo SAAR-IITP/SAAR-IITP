@@ -6,13 +6,13 @@ session_start();
         <title>Saar! Homepage</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
         <link href="style.css" rel="stylesheet" type="text/css"/>
-        <link href="stylesheet/index/974.less" rel="stylesheet" type="text/less" media="only screen and (max-width:974px)"/>
-        <link href="stylesheet/index/912.css" rel="stylesheet" type="text/css" media="only screen and (max-width:912px)"/>
-        <link href="stylesheet/index/900.less" rel="stylesheet" type="text/less" media="only screen and (max-width:900px)"/>
-        <link href="stylesheet/index/768.less" rel="stylesheet" type="text/less" media="only screen and (max-width:768px)"/>
-        <link href="stylesheet/index/600.less" rel="stylesheet" type="text/less" media="only screen and (max-width:600px)"/>
-        <link href="stylesheet/index/577.less" rel="stylesheet" type="text/less" media="only screen and (max-width:577px)"/>
-        <link href="stylesheet/index/458.less" rel="stylesheet" type="text/less" media="only screen and (max-width:458px)"/>
+        <link href="stylesheet/974.less" rel="stylesheet" type="text/less" media="only screen and (max-width:974px)"/>
+        <link href="stylesheet/912.css" rel="stylesheet" type="text/css" media="only screen and (max-width:912px)"/>
+        <link href="stylesheet/900.less" rel="stylesheet" type="text/less" media="only screen and (max-width:900px)"/>
+        <link href="stylesheet/768.less" rel="stylesheet" type="text/less" media="only screen and (max-width:768px)"/>
+        <link href="stylesheet/600.less" rel="stylesheet" type="text/less" media="only screen and (max-width:600px)"/>
+        <link href="stylesheet/577.less" rel="stylesheet" type="text/less" media="only screen and (max-width:577px)"/>
+        <link href="stylesheet/458.less" rel="stylesheet" type="text/less" media="only screen and (max-width:458px)"/>
         <script src="asset/less js/less.min.js" type="text/javascript"></script>
 
     </head>
@@ -32,13 +32,13 @@ session_start();
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="aboutUs/">About</a>
+              <a class="nav-link" href="about.html">About</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="donateUs/">Give Back</a>
+                <a class="nav-link" href="donateUs.php">Give Back</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="gallery/">Gallery</a>
+              <a class="nav-link" href="#gallery">Gallery</a>
             </li>            
           </ul>
             
@@ -83,12 +83,12 @@ session_start();
                     <div class="row pad-3">
                         <div class="col-6 img">
                             <center><img src="asset/img/gallery-icon.png" alt="gallery">
-                            <a href="gallery/">GALLERY</a></center>
+                            <a href="gallery.html">GALLERY</a></center>
                         </div>
                         <div class="col-6 img">
                             <center><img src="asset/img/banner_icon_contact.png">
                             
-                            <a href="contactUs/">CONTACT US</a></center>
+                            <a href="">CONTACT US</a></center>
                         </div>
 
                     </div>
@@ -96,18 +96,18 @@ session_start();
                         
                         <div class="col-6 img">
                             <center><img src="asset/img/makefg.png">
-                                <a href="donateUS/">DONATE</a> </center>
+                            <a href="">DONATE</a> </center>
                         </div>
                         <div class="col-6 img">
                             <center><img src="asset/img/help us grow.png">
-                            <a href="need-help/">NEED HELP</a> </center>
+                            <a href="">NEED HELP</a> </center>
                         </div>
 
                     </div>
                     <div class="row">
-                        <div class="col-6  offset-3 img-1">
+                        <div class="col-6 offset-2 img-1">
                             <img src="asset/img/saar5 copy.png"  alt="saar-logo">
-                            </div>
+                        </div>
                     </div>
                     </div></div>
                 
@@ -124,7 +124,7 @@ session_start();
                             <button class="submit" type="submit" name="submit">Submit</button>
                             </form>
                         </div>
-                        <div class="div-right"><h1>SignUp Here</h1><br><h4>If you don't have an account.<br><button class="submit pad-2"><a href='signup.php' id='sign-up'>SignUp</a></button></h4></div>
+                        <div class="div-right"><h1>SignUp Here</h1><br><h4>If you don't have an account.<br><button class="submit pad-2"><a href='signup.php?type=normal' id='sign-up'>SignUp</a></button></h4></div>
                     </div>
                 </div>
             </div>
@@ -143,7 +143,7 @@ session_start();
                 
                 <div class="div-content pop-content-1">
                     <div class="div-left pop-left">
-                       <form action="contactInfo.php" method="post">
+                        <form action="contactInfo.php" method="post">
                             <h1>Help Us Growing</h1>
                             <p>Provide us contact information of other alumini so that we can reach them.</p>
                             <input type="text" name="name" placeholder="Name" class="email mar-top-2" required>
@@ -165,7 +165,7 @@ session_start();
                         <center><span><img src="https://www.biography.com/.image/t_share/MTE5NTU2MzE2MTg0NzQxMzg3/winston-churchill-9248164-1-402.jpg" alt="jay asher"></span></center>
                         <center><span>Winston Churchill</span></center>
                     </div>
-                    <div class="donate-btn"><div class="donate-btn-c" ><a href="donateUs/">Donate Now</a></div></div>
+                    <div class="donate-btn"><div class="donate-btn-c" ><a href="donateUs.php">Donate Now</a></div></div>
                 </div>
             </div>
                 </div>
@@ -173,12 +173,6 @@ session_start();
                     <div class="news-headlines">
                     <center><div class="nav_link_news ">NEWS AND HEADLINES<br></div></center>
                     <center>
-                        <div class="nh-1">
-                            <div class="date">1 Aug 2018</div>
-                            <div class="heading">
-                                <a><p>DIRECTOR MESSAGE</p></a>
-                            </div>
-                        </div>
                         <div class="nh-1">
                             <div class="date">1 Aug 2018</div>
                             <div class="heading">
@@ -200,15 +194,15 @@ session_start();
                     <div id="gallery">
                         <div class="header">
                             <div class="main-header"><p>GALLERY</p></div>
-                            <div class="ref"><p><a href="gallery/">GO TO GALLERY</a></p></div>
+                            <div class="ref"><p><a href="gallery.php">GO TO GALLERY</a></p></div>
                         </div>
                         <hr>
                         <div class="ga-content">
-                            <div class="big-img"><a href="gallery/"><img src="asset/img/anw4.jpg" alt="anwesha-image"></a></div>
+                            <div class="big-img"><a href="gallery.html"><img src="asset/img/anw4.jpg" alt="anwesha-image"></a></div>
                             <div class="small-img">
-                              <a href="gallery/"><img src="asset/img/anw1.jpg" alt="anwesha-image"></a>
-                              <a href="gallery/"><img src="asset/img/anw3.jpg" alt="anwesha-image"></a>
-                              <a href="gallery/"><img src="asset/img/anw5.jpg" alt="anwesha-image"></a>
+                              <a href="gallery.php"><img src="asset/img/anw1.jpg" alt="anwesha-image"></a>
+                              <a href="gallery.php"><img src="asset/img/anw3.jpg" alt="anwesha-image"></a>
+                              <a href="gallery.php"><img src="asset/img/anw5.jpg" alt="anwesha-image"></a>
                             </div>
                         </div>
                         
@@ -321,7 +315,6 @@ session_start();
                                         <div class="icon-text">get response from alumni</div>
                                     </div>
                                 </div>
-                                <br>
                                 <div class="post-need"><button>POST A NEED</button></div>
                             </center>
                         </div>
@@ -342,7 +335,7 @@ session_start();
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
         <script>
-             window.onload = function(){
+            window.onload = function(){
                 $('.carousel').carousel();
                          
 btn = document.getElementById('btn');

@@ -7,6 +7,8 @@
 	$passwd=$_POST['password'];
 	$contact_no=$_POST['contact'];
 	$DOB=$_POST['DOB'];
+	$fbId=$_POST['fbId'];
+	$linkden=$_POST['linkden'];
 	$passingyear=$_POST['passingyear'];
 	$degree=$_POST['degree'];
 	$dept=$_POST['dept'];
@@ -29,7 +31,7 @@
               $count1 = mysqli_num_rows($result1);
               // If result matched $myusername and $mypassword, table row must be 1 row
               if($count+$count1	 == 0) {
-                 mysqli_query($dbc,"INSERT INTO user(college_id,first_name,last_name,contact_no,email,DOB,password,graduation_year,department,employment_type,present_employer,designation,address,city,state,country,achievement,date_of_registration) VALUES('$college_id','$fname','$lname','$contact_no','$email','$DOB','$passwd','$passingyear','$dept','$etype','$presentEmployer','$designation','$address','$city','$state','$country','$achievements',NOW())");
+                 mysqli_query($dbc,"INSERT INTO user(college_id,first_name,last_name,contact_no,email,fb_id,linkden,DOB,password,graduation_year,degree,department,employment_type,present_employer,designation,address,city,state,country,achievement,date_of_registration) VALUES('$college_id','$fname','$lname','$contact_no','$email','$fbId','$linkden','$DOB','$passwd','$passingyear','$degree','$dept','$etype','$presentEmployer','$designation','$address','$city','$state','$country','$achievements',NOW())");
 				$registered=mysqli_affected_rows($dbc);
 				//echo $registered." row is affected, everything worked fine!";
 				if($registered==1)
@@ -66,6 +68,6 @@
                 {
                 	$_SESSION['rolldup'] = true;	
                 }
-                header("location: signup.php");
+                header("location: signup.php?type=null");
               }
 ?>

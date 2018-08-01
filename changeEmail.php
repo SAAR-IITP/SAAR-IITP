@@ -9,11 +9,8 @@ session_start();
       function alertPass(){
         alert("Existing Incorrect Password.");
       }
-      function alertNoMatch(){
-        alert("The New passwords don't match.");
-      }
       function alertSuccess(){
-        alert("Password Changed Successfully.")
+        alert("Email Changed Successfully.")
       }
       window.onload = function(){
         <?php
@@ -25,10 +22,6 @@ session_start();
         {
           echo 'setTimeout("alertSuccess()", 300); ';
         }
-        else if($_GET['status']=="nomatch")
-        {
-          echo 'setTimeout("alertNoMatch()", 300); ';
-        }
         else if($_GET['status']=="wrongpass")
         {
           echo 'setTimeout("alertPass()", 300);';
@@ -38,24 +31,20 @@ session_start();
     </script>
      </head>
     <body>
-    <h1>Change Password</h1>
-   <form method="POST" action="passchange.php">
+    <h1>Change Email</h1>
+   <form method="POST" action="emailchange.php">
     <table>
     <input name="email" hidden value=<?php$_SESSION['email']?>>
     <tr>
-    <td>Enter your existing password:</td>
+    <td>Enter your password:</td>
     <td><input type="password" size="50" name="password" required></td>
     </tr>
   <tr>
-    <td>Enter your new password:</td>
-    <td><input type="password" size="50" name="newpassword" required></td>
-    </tr>
-    <tr>
-   <td>Re-enter your new password:</td>
-   <td><input type="password" size="50" name="confirmnewpassword" required></td>
+    <td>Enter your new email:</td>
+    <td><input type="emial" size="50" name="newEmail" required></td>
     </tr>
     </table>
-    <p><input type="submit" value="Update Password">
+    <p><input type="submit">
     </form>
    <p><a href="portal.php">Home</a>
    <p><a href="logout.php">Logout</a>
