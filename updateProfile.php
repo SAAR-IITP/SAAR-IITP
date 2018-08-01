@@ -1,20 +1,11 @@
 <?php
     session_start();
-    if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']==false)
-    {
-      header("noaccess.php");
-    }
-    $emial=$SESSION['email'];
+    $email=$_SESSION['email'];
+   // $status=$_GET['status'];
     include('connection.php');
-     $sql = "SELECT first_name,last_name,contact_no,fb_id,linkden,DOB,graduation_year,degree,department,employment_type,present_employer,designation,address,city,state,country,achievement FROM user WHERE email='$email'";
+     $sql = "SELECT * FROM user WHERE email='$email'";
      $result = mysqli_query($dbc,$sql);
      $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-     if($_SERVER["REQUEST_METHOD"] == "POST") {
-        $sql=mysqli_query($dbc,"UPDATE user SET first_name=$_POST['fname'],last_name=$_POST['lname'],contact_no=$_POST['contact'],fb_id=$_POST['fbId'],linkden=$_POST['linkden'],DOB=$_POST['DOB'],graduation_year=$_POST['passingyear'],degree=$_POST['degree'],department=$_POST['dept'],employment_type=$_POST['etype'],present_employer=$_POST['presentEmployer'],designation=$_POST['designation'],address=$_POST['address'],city=$_POST['city'],state=$_POST['state'],country=$_POST['country'],achievement=$_POST['achievements'] WHERE email='$email'");
-        if($sql)
-        {
-        header("location: updateProfile.php?status=success");
-     }
     ?>
 <html>
     <head>
@@ -57,9 +48,13 @@ function colorChange(){
 function alertSuc()
 {
     console.log("done");
-    alert("Profile Updated.")
+    alert("Profile Updated.");
 }
-
+function alertErr()
+{
+    console.log("done");
+    alert("Error, Please try again later.");
+}
 window.onload = function(){
    $('.dropdown').dropdown();
    colorChange();
@@ -117,10 +112,17 @@ window.addEventListener('scroll',function(){
                 };
    AOS.init();
    <?php
-        //echo 'console.log('.$_GET["type"].');';
-        if($_GET['status']=="success")
+        if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']==false)
         {
-            echo 'setTimeout("alertSuc()", 300);'  
+          echo 'window.location = "noaccess.php";';
+        }
+         if($_GET['status']=="success")
+        {
+            echo 'setTimeout("alertSuc()", 300);'; 
+        }
+        if($_GET['status']=="error")
+        {
+            echo 'setTimeout("alertErr()", 300);';
         }
     ?>
     }
@@ -282,33 +284,33 @@ window.addEventListener('scroll',function(){
 -->
             <div class="column" id="column2">
         
-<form action="" method="post">
+<form action="profileUpdate.php" method="post">
     <div class="ui form">
      <h1>Update Profile</h1>
     <div class="field">
     <label for="fName">First Name:</label>
-    <input type="text" id="fName" name="fname" value=<?php $row['first_name']?> required>
+    <input type="text" id="fName" name="fname" value=<?php echo $row['first_name'];?> required>
     </div>
     <div class="field">
     <label for="lName">Last Name:</label>
-    <input type="text" id="lName" name="lname" value=<?php $row['last_name']?> required>
+    <input type="text" id="lName" name="lname" value=<?php echo $row['last_name'];?> required>
     </div>
     <div class="field">
         <label for="contact">Contact No.:</label>
-    <input type="tel" name="contact" required value=<?php $row['contact_no']?> id="contact">
+    <input type="tel" name="contact" required value=<?php echo $row['contact_no'];?> id="contact">
     </div>
     <div class="field">
-        <label for="fbId">Facebook profile link (optional but recommended).:</label>
-    <input type="text" name="fbId" value=<?php $row['fb_id']?> id="fbId">
+        <label for="fbId">Facebook profile link (optional but recommended) :</label>
+    <input type="text" name="fbId" id="fbId" value=<?php echo $row['fb_id'];?> >
     </div>
     <div class="field">
         <label for="linkden">Linkden Profile link (optional):</label>
-    <input type="text" name="linkden" id="linkden" value=<?php $row['linkden']?>>
+    <input type="text" name="linkden" id="linkden" value=<?php echo $row['linkden'];?>>
     </div>
     <div class="field">
         <label for="dob">Date Of Birth:</label>
         <div class="ui icon input">
-            <input type="date" id="dob" name="DOB" value=<?php $row['DOB']?>>
+            <input type="date" id="dob" name="DOB" value=<?php echo $row['DOB'];?>>
             <i class="ui calendar icon"></i>
         </div>
     
@@ -316,13 +318,13 @@ window.addEventListener('scroll',function(){
     <div class="field">
         
         <select id="passYear" name="passingyear" class="ui search selection  dropdown">
-              <option value=<?php $row['DOB']?> selected disabled ><?php $row['DOB']?></option>
+             <option value=<?php echo $row['graduation_year'];?> selected><?php echo $row['graduation_year'];?></option>
         </select>
     </div>
     <div class="field">
         
     <select id="degree" name="degree" class="ui search selection  dropdown">
-        <option value=<?php $row['degree']?> selected disabled ><?php $row['degree']?></option>
+        <option value=<?php echo $row['degree'];?> selected ><?php echo $row['degree'];?></option>
         <option value="B.Tech">B.Tech/B.E</option>
         <option value="M.Tech">M.Tech/M.E</option>
         <option value="M.Sc">M.Sc</option>
@@ -332,7 +334,7 @@ window.addEventListener('scroll',function(){
     
     <div class=" field">
     <select id="branch" name="dept" class="ui search selection   dropdown">
-        <option value=<?php $row['department']?> selected disabled ><?php $row['department']?></option>
+        <option value=<?php echo $row['department'];?> selected ><?php echo $row['department']?></option>
         <option value="CSE">Computer Science and Engineering</option>
         <option value="EE">Electrical Engineering</option>
         <option value="ME">Mechanical Engineering</option>
@@ -342,7 +344,7 @@ window.addEventListener('scroll',function(){
     </div>
     <div class="field">
     <select id="etype" name="etype" class="ui dropdown">
-        <option value=<?php $row['employment_type']?> selected disabled ><?php $row['employment_type']?></option>
+        <option value=<?php echo $row['employment_type'];?> selected ><?php echo $row['employment_type'];?></option>
         <option value="job">Salaried</option>
         <option value="Entrepreneur">Entrepreneur</option>
         <option value="higher stuies">Higher Studies</option>
@@ -351,32 +353,32 @@ window.addEventListener('scroll',function(){
     </div>
     <div class="field">
         <label for="presentEmp">Present Employer/Educational Institution:</label>
-    <input type="text" id="presentEmp" name="presentEmployer" value=<?php $row['present_employer']?> required>
+    <input type="text" id="presentEmp" name="presentEmployer" value=<?php echo $row['present_employer'];?> required>
     </div>
     <div class="field">
         <label for="designation">Designation:</label>
-    <input type="text" id="Designation" name="designation" value=<?php $row['designation'] ?>required>
+    <input type="text" id="Designation" name="designation" value=<?php echo $row['designation'];?>required>
     </div>
     <div class="field">
         <label for="address">Address:</label>
-    <textarea id="address" name="address" value=<?php $row['address'] ?> required></textarea>
+    <textarea id="address" name="address" required><?php echo $row['address']; ?></textarea>
     </div>
      <div class="field">
         <label for="country">Country:</label>
-    <input type="text" id="country" name="country" value=<?php $row['country'] ?> required>
+    <input type="text" id="country" name="country" value=<?php echo $row['country']; ?> required>
     </div>
     
     <div class="field">
         <label for="state">State:</label>
-    <input type="text" id="state" name="state" value=<?php $row['state'] ?> required>
+    <input type="text" id="state" name="state" value=<?php echo $row['state']; ?> required>
     </div>
     <div class="field">
         <label for="city">City:</label>
-    <input type="text" id="city" name="city" value=<?php $row['city'] ?> required>
+    <input type="text" id="city" name="city" value=<?php echo $row['city']; ?> required>
     </div>
     <div class="field">
         <label for="achievements">Achievements after graduation:</label>
-    <textarea id="achievements" name="achievements" value=<?php $row['achievement'] ?> required></textarea>
+    <textarea id="achievements" name="achievements" required><?php echo $row['achievement']; ?></textarea>
     </div>
      <button class="ui animated large button">
          <div class="visible content">Submit</div>
@@ -387,7 +389,6 @@ window.addEventListener('scroll',function(){
 </div>
 </form></div><div class="column" id="column1"><p></p></div>
 </div>
-   <!--     <div id="msg-confirm"><?php if($_SESSION['msg']!= NULL){ echo $_SESSION['msg'];} else{}?></div> -->
         
 </body>
 </html>
