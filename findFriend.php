@@ -27,11 +27,37 @@
 <html>
 <head>
   <title>Send Birthday Wishes</title>
+  <script>
+  window.onload=function(){
+     var min = 2012;
+            var d = new Date();
+            max = d.getFullYear();
+            for (var i = min; i<=max; i++){
+               var opt = document.createElement('option');
+               opt.value = i;
+               opt.innerHTML = i;
+                console.log(document.getElementById('passYear'));
+               document.getElementById('passYear').appendChild(opt);
+                };
+  }
+</script>
 </head>
 <body>
     <form method="post" action="">  
-    <input type="text " name="year" required>
-    <input type="text " name="branch" required>
+    year of pass out:-
+    <select id="passYear" name="year" >
+            <option value="" selected disabled hidden>Graduation Year</option>
+        </select>
+     branch:-
+      <select id="branch" name="branch" >
+        <option value="" selected disabled >Department</option>
+        <option value="All">All</option>
+        <option value="CSE">Computer Science and Engineering</option>
+        <option value="EE">Electrical Engineering</option>
+        <option value="ME">Mechanical Engineering</option>
+        <option value="CE">Civil Engineering</option>
+        <option value="CBE">Chemical and Biochemical Engineering</option>
+    </select>
     <input type="submit">
     </form>
     <?php 
