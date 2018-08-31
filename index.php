@@ -5,6 +5,7 @@ session_start();
     <head>
         <title>Saar! Homepage</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">        
         <link href="style.css" rel="stylesheet" type="text/css"/>
         <link href="stylesheet/974.less" rel="stylesheet" type="text/less" media="only screen and (max-width:974px)"/>
         <link href="stylesheet/912.css" rel="stylesheet" type="text/css" media="only screen and (max-width:912px)"/>
@@ -17,16 +18,34 @@ session_start();
 
     </head>
     <body>
-        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-color fixed-top pad-5">
+    
+    <nav class="navbar navbar-expand-sm navbar-dark bg-color fixed-top pad-5" style="opacity:0.88">
       <div class="container">
-        <a class="navbar-brand" href="index.php">
-            <img src="asset/img/logo-iitp.png" width="50" height="auto" alt=""> Student Asssociation for Alumni Relations
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto navbar-left">
+          <div class="col-1">
+                <a class="navbar-brand" href="index.php">
+                    <img src="asset/img/logo-iitp.png" width="50" height="auto" alt=""> 
+                </a>
+          </div>
+          <div class="col-5" style="font-size: 19px; color:white">
+               Student Asssociation for Alumni Relations
+          </div>
+                        
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        <div class="col-6 collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto mr-auto pad-1">
+                        <li class="nav-item active"><a class="nav-link" href="./index.html"><span class="fa fa-home fa-lg"></span> Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./aboutus.html"><span class="fa fa-info fa-lg"></span> About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./donateUs.php"><span class="fas fa-hand-holding-usd fa-lg"></span> Give Back</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#gallery"><span class="fas fa-images fa-lg"></span> Gallery</a></li>
+                       
+                    </ul>
+                    <span class="navbar-text btn" >
+                            <a data-toggle="modal" data-target="#loginModal">
+                            <span class="fa fa-sign-in-alt fa-lg"></span> Login</a>
+                    </span>
+          <!--<ul class="navbar-nav ml-auto navbar-left">
               <li class="nav-item">
               <a class="nav-link" href="#">Home</a>
             </li>
@@ -40,8 +59,7 @@ session_start();
             <li class="nav-item">
               <a class="nav-link" href="#gallery">Gallery</a>
             </li>            
-          </ul>
-            
+          </ul>-->            
         </div>
       </div>
     </nav>
