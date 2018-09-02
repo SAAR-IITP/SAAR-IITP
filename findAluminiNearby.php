@@ -27,6 +27,19 @@
 <html>
 <head>
   <title>Send Birthday Wishes</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">        
+        <link href="style.css" rel="stylesheet" type="text/css"/>
+        <link href="stylesheet/974.less" rel="stylesheet" type="text/less" media="only screen and (max-width:974px)"/>
+        <link href="stylesheet/912.css" rel="stylesheet" type="text/css" media="only screen and (max-width:912px)"/>
+        <link href="stylesheet/900.less" rel="stylesheet" type="text/less" media="only screen and (max-width:900px)"/>
+        <link href="stylesheet/768.less" rel="stylesheet" type="text/less" media="only screen and (max-width:768px)"/>
+        <link href="stylesheet/600.less" rel="stylesheet" type="text/less" media="only screen and (max-width:600px)"/>
+        <link href="stylesheet/577.less" rel="stylesheet" type="text/less" media="only screen and (max-width:577px)"/>
+        <link href="stylesheet/458.less" rel="stylesheet" type="text/less" media="only screen and (max-width:458px)"/>
+        <script src="asset/less js/less.min.js" type="text/javascript"></script>
+  
   <script>
   window.onload=function(){
      var min = 2012;
