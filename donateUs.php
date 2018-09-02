@@ -4,7 +4,7 @@
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <title>SAAR | Donate Page</title>
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
-        <link rel='stylesheet' type='text/css' href='//oss.maxcdn.com/semantic-ui/2.1.8/semantic.min.css' />
+        <link rel='stylesheet' type='text/css' href='http://oss.maxcdn.com/semantic-ui/2.1.8/semantic.min.css' />
         <link href="stylesheet/donateUs/donate.less" type="text/less" rel="stylesheet">
         <link href="stylesheet/donateUs/1030.css" rel="stylesheet" type="text/css" media="only screen and (max-width:1030px)"/>
         <link href="stylesheet/donateUs/947.css" rel="stylesheet" type="text/css" media="only screen and (max-width:947px)"/>
@@ -31,7 +31,7 @@
         </section>
         <div id="nav-bar" class="box-shadow" onclick="stickyNavbar()">
             <div class="nav ">
-                <a href="#">HOME</a>
+                <a href="index.php">HOME</a>
                 <a href="#way">WAYS TO DONATE</a>
                 <a href="#donate_for">DONATE FOR</a>
                 <a href="#nav_link">NAVIGATION LINKS</a>
@@ -69,27 +69,29 @@
             </div>
             
         </section>
+        <!--
         <section id="donate_for">
                     <div class="donate_for_container">
                         <div class="donate_for_title">
                             <h1>Donate To Our Leaders</h1>
                         </div>
                         <div class="donate_content">
-                            <div class="list" ><div id="anwesha"><span><a href="#">Donate Now</a></span></div></div>
-                            <div class="list" ><div id="HOSCA"><span><a href="#">Donate Now</a></span></div></div>
-                            <div class="list" ><div id="E-club"><span><a href="#">Donate Now</a></span></div></div>
-                            <div class="list" ><div id="Celesta"><span><a href="#">Donate Now</a></span></div></div>
-                            <div class="list" ><div id="ACE"><span><a href="#">Donate Now</a></span></div></div>
-                            <div class="list" ><div id="Sparkonics"><span><a href="#">Donate Now</a></span></div></div>
-                            <div class="list" ><div id="NJACK"><span><a href="#">Donate Now</a></span></div></div>
-                            <div class="list" ><div id="Threshold"><span><a href="#">Donate Now</a></span></div></div>
-                            <div class="list" ><div id="Robocon"><span><a href="#">Donate Now</a></span></div></div>
-                            <div class="list" ><div id="Supra-Baha"><span><a href="#">Donate Now</a></span></div></div>
+                            <div class="list" ><div id="anwesha"><span><a href="#donate_form">Donate Now</a></span></div></div>
+                            <div class="list" ><div id="HOSCA"><span><a href="#donate_form">Donate Now</a></span></div></div>
+                            <div class="list" ><div id="E-club"><span><a href="#donate_form">Donate Now</a></span></div></div>
+                            <div class="list" ><div id="Celesta"><span><a href="#donate_form">Donate Now</a></span></div></div>
+                            <div class="list" ><div id="ACE"><span><a href="#donate_form">Donate Now</a></span></div></div>
+                            <div class="list" ><div id="Sparkonics"><span><a href="#donate_form">Donate Now</a></span></div></div>
+                            <div class="list" ><div id="NJACK"><span><a href="#donate_form">Donate Now</a></span></div></div>
+                            <div class="list" ><div id="Threshold"><span><a href="#donate_form">Donate Now</a></span></div></div>
+                            <div class="list" ><div id="Robocon"><span><a href="#donate_form">Donate Now</a></span></div></div>
+                            <div class="list" ><div id="Supra-Baha"><span><a href="#donate_form">Donate Now</a></span></div></div>
                             <div class="btn"><span id="button" onclick="show_list()">more</span></div>
                         </div>
                         
                     </div>
         </section>
+        -->
         <section id="donate_form">
             
             <form action="" method="post">
@@ -138,15 +140,19 @@
                    
                     <div class="field">
                         <label for="donate_to">Donate </label>
-                        <div class="ui selection search dropdown fluid multiple"  id="donate_to" >
+                    <div class="ui selection search dropdown fluid multiple"  id="donate_to" >
                         <input type="hidden" name="club">
                         <i class="dropdown icon"></i>
                         <div class="default text">Club</div>
                         <div class="menu">
+                            <div class="header">Fest</div>
+                            <div class="ui divider"></div>
                           <div class="item" data-value="anwesha">Anwesha</div>
+                          <div class="item" data-value="celesta">Celesta</div>
+                          <div class="ui divider"></div>
+                          <div class="header">Clubs</div>
                           <div class="item" data-value="hosca">HOSCA</div>
                           <div class="item" data-value="eclub">E-club</div>
-                          <div class="item" data-value="celesta">Celesta</div>
                           <div class="item" data-value="ace">ACE</div>
                           <div class="item" data-value="sparkonics">Sparkonics</div>
                           <div class="item" data-value="njack">NJACK</div>
@@ -154,7 +160,7 @@
                           <div class="item" data-value="robocon">Robocon</div>
                           <div class="item" data-value="supra-baha">Supra-baha</div>
                         </div>
-                      </div>
+                    </div>
                     </div>
                     
                             <div class="field">
@@ -172,7 +178,7 @@
             </form>
         </section>
         <script src='https://code.jquery.com/jquery-2.2.0.min.js'></script>
-        <script src='//oss.maxcdn.com/semantic-ui/2.1.8/semantic.min.js'></script>
+        <script src='http://oss.maxcdn.com/semantic-ui/2.1.8/semantic.min.js'></script>
         
         
          <script>
@@ -253,10 +259,5 @@ else{
 
 
 
-<?php
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 

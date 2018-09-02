@@ -17,10 +17,7 @@ body{
 .navbar-dark .navbar-nav .nav-link{
     color:#fff;
 }
-.ml-auto, .mx-auto{
-    margin-left: 0px !important;
-    margin-right: auto !important;
-}
+
 .pad-1{
     padding: 10px;
     padding-top: 0px;
@@ -51,6 +48,8 @@ body{
 .row .img-1 img{
     width: 160px !important;
     height: 160px !important;
+    display: block;
+    margin: auto;
 }
 .pad-3{
     padding-top: 6px;
@@ -68,6 +67,9 @@ body{
 }
 .row .col-6 center a:hover{
     text-decoration: underline;
+}
+.active1{
+    background-color: rgba(0,0,0,0.9);
 }
 
 .signup_login button{
@@ -96,9 +98,12 @@ body{
     height: 100%;
     background-color: rgba(0,0,0,0.8);
     padding-top: 60px;
-    z-index: 2;
+    z-index: 1040;
 }
-.modal-content{
+#myModal * ,#myModal *::before,#myModal::after{
+    box-sizing: content-box;
+}
+.mymodal-content{
     border: 5px solid #888;
     width: 80%;
     margin: auto;
@@ -106,13 +111,13 @@ body{
     padding: 16px 32px;
     height: 80%;
     border-radius: 10px;
-    
+    box-sizing: content-box !important;
     padding-left: 55px;
 }
 .div-left{
     
     position: relative;
-    z-index: 1043;
+    z-index: 3;
    text-align: center;
    border-right: 7px;
    -o-transform-origin:0% 0%;
@@ -121,7 +126,7 @@ body{
    transform-origin: 0% 0%;
     float: left;
     width: 46%;
-    height: 80%;
+    height: auto;
     padding: 8px 12px;
     -o-transform:rotate(-2deg);
     -ms-transform: rotate(-2deg);
@@ -170,17 +175,15 @@ body{
 .div-content{
     width: 100%;
     height: 90%;
-    padding-top: 20px;
 }
 .div-content::before,.div-content::after{
     content: "";
     display: table;
     clear: both;
 }
-.modal-header{
+.mymodal-header{
     height: 10%;
     width: 100%;
-    border-bottom: none !important;
 }
 .email ,.password{
     width: 250px;
@@ -221,6 +224,7 @@ outline: 0;
     transform: scale(1.05);
 }
 form h1{
+    font-size: 2em !important;
     margin-top: 60px;
     color: #008f68;
     font-weight: 400;
@@ -241,15 +245,34 @@ form h1{
    
 }
 button a{
-    text-decoration: none;
-    color:#4AAE9B;
+    text-decoration: none !important;
+    color:#4AAE9B !important;
     
 }
-
+.pad-2{
+    width: auto;
+    margin-top: 20px;
+}
+.modal-body img{
+    max-width: 100%;
+    width: 25%;
+    display: block;
+    min-width: 150px;
+    float: left;
+    box-sizing: border-box;
+    padding-right: 10px;
+}
+.modal-body p{
+    text-align: justify;
+    width: 75%;
+    float: right;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
 /* popup */
 #popup{
-    width: 5%;
-    z-index: 1040;
+    
+    z-index: 2;
     bottom: 0;
     right: 0;
    position: fixed;
@@ -278,7 +301,7 @@ button a{
     height: 100%;
     background-color: transparent;
     background-color: rgba(0,0,0,0.8);
-    z-index: 2;
+    z-index: 1040;
 }
 .pop-content{
     top: 50%;
@@ -295,8 +318,6 @@ button a{
 }
 #close-pop{
     padding: 0px;
-    padding-top: 30px;
-    padding-right: 20px;
     font-size: 30px;
 }
 #close-pop:hover{
@@ -412,6 +433,7 @@ div#donate{
 .nav_link{
     padding: 8px 10px;
     position: relative;
+    padding-top: 45px;
 }
 .nav_link::after{
     content: "";
@@ -421,6 +443,9 @@ div#donate{
     left: 25%;
     height: 2px;
     background-color: rgba(255,255,255,0.8);
+}
+.navigation center{
+    padding-top: 10px;
 }
 .bg-color-2{
     background-color: #fff;
@@ -448,8 +473,9 @@ div#donate{
 }
 .news-headlines{
     width: 100%;
-    padding-bottom: 50px;
+    padding-bottom: 21px;
     background-color: #fff;
+    box-sizing: border-box;
 }
 .date{
     color: #CF6F3F;
@@ -487,6 +513,7 @@ div#donate{
     padding: 5px;
     position: relative;
     padding: 20px;
+    box-sizing: border-box;
 }
 
 .main-header{
@@ -524,6 +551,7 @@ div#donate{
     padding-bottom: 10px;
     padding-left: 20px;
     padding-right: 20px;
+    box-sizing: border-box;
 }
 .big-img a img{
     width: 100%;
@@ -536,9 +564,10 @@ div#donate{
     width: 100%;
     padding-left: 20px;
     padding-right: 15px;
-    
+    box-sizing: border-box;
 }
 .small-img a img{
+    box-sizing: border-box;
     padding-right: 5px;
     width: 33.333333%;
     height: auto;
@@ -562,6 +591,7 @@ hr{
     width: 100%;
     padding: 20px;
     background-color: #fff;
+    box-sizing: border-box;
 }
 .alumni-needs-container{
     width: 100%;
@@ -582,6 +612,7 @@ hr{
     display: table;
 }
 .icon-div{
+    box-sizing: border-box;
     width: 33.333333%;
     float: left;
     padding-right: 5px;
@@ -616,6 +647,7 @@ hr{
 }
 /* alumni Speaks */
 .alumni-speaks{
+    box-sizing: border-box;
     width: 100%;
     padding: 20px;
     background-color: #fff;
@@ -631,6 +663,9 @@ hr{
     width: 100%;
     color: rgba(0,0,0,0.8);
 }
+.alumni-speaks-content center p{
+    text-align: justify;
+}
 .alumni-speaks-content button{
     background-color: #CF6F3F;
     color: #fff;
@@ -644,6 +679,7 @@ hr{
 }
 .alumni-speaks-heading center p{
     color:#CF6F3F;
+    
 }
 /* modal bootstrap */
 .modal-dialog{
@@ -667,14 +703,17 @@ footer a:hover{
 }
 @media screen and (min-width:1200px){
     .alumni-speaks{
-        margin-top: -127px;
+        
     }
     .navigation{
-        padding-bottom: 87px;
+        
     }
 }
 @media screen and (max-width:1200px){
     .border button{
         width: 30%;
+    }
+    .col-xl-3.col-lg-12.col-md-12.col-sm-12.pad-1.bg-color-1.color-1{
+        margin-top: 10px;
     }
 }

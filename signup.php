@@ -16,7 +16,7 @@
         <script src="asset/AOS/aos.js" type="text/javascript"></script>
         <script>
             
-window.onscroll =colorChange;
+//window.onscroll =colorChange;
 
 
 
@@ -27,18 +27,18 @@ function fun_dropdown(){
 
  
 
-function colorChange(){
-     if( window.pageYOffset >50){
-    document.getElementById('nav-bar').className="nav-scroll";
-    document.getElementById('dropdown').classList.add("nav-scroll");
-    }
-    else{
-        document.querySelector('#nav-bar').classList.remove("nav-scroll");
-        document.getElementById('dropdown').classList.remove("nav-scroll");
-        document.getElementById('dropdown').style.backgroundColor="#333";
-        document.getElementById('nav-bar').style.backgroundColor="#333";
-    }
-}
+//function colorChange(){
+//     if( window.pageYOffset >50){
+//    document.getElementById('nav-bar').className="nav-scroll";
+//    document.getElementById('dropdown').classList.add("nav-scroll");
+ //   }
+//    else{
+//        document.querySelector('#nav-bar').classList.remove("nav-scroll");
+//        document.getElementById('dropdown').classList.remove("nav-scroll");
+//        document.getElementById('dropdown').style.backgroundColor="#333";
+//        document.getElementById('nav-bar').style.backgroundColor="#333";
+//    }
+//}
 function alertemail()
 {
     console.log("done");
@@ -56,7 +56,7 @@ function alertboth()
 }
 window.onload = function(){
    $('.dropdown').dropdown();
-   colorChange();
+//   colorChange();
    
    // scrolling vertically
     window.requestAnimationFrame = window.requestAnimationFrame
@@ -177,7 +177,6 @@ window.addEventListener('scroll',function(){
                 
             }
             .form h1{
-                 
                 text-align: center;
             }
             @media only screen and (max-width:1153px){
@@ -285,7 +284,7 @@ window.addEventListener('scroll',function(){
                     </style>
     </head>
     <body class="ui container">
-    <div id="nav-bar"  >
+        <div id="nav-bar"  style="background-color:#000 !important;">
             <div class="nav-left" >
                 <div class="nav-logo"><a href="index.php"><img src="asset/img/saar_logo.jpg" alt="saar-logo" class="nav-logo"></a></div>
                 <div class="nav-title"><a href="index.php">STUDENT ASSOCIATION FOR ALUMNI RELATIONS</a></div>
@@ -295,7 +294,7 @@ window.addEventListener('scroll',function(){
                 <a href="index.php">LOG IN </a>
                 <div class="nav-navigation">
                     <a  class="dropdown_menu" onclick="fun_dropdown()">OTHER LINKS<i class="dropdown icon"></i></a>
-                    <div class="dropdown1" id="dropdown">
+                    <div class="dropdown1" id="dropdown" style="background-color:#000 !important;">
                             <div class="dropdown-list"><a href="index.php">SAAR HOMEPAGE</a></div>
                             <div class="dropdown-list"><a href="#">ALUMNI MEET</a></div>
                             <div class="dropdown-list"><a href="#">DONATE NOW</a></div>

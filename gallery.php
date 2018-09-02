@@ -8,34 +8,37 @@ and open the template in the editor.
     <head>
         <title>Gallery | SAAR</title>
         <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+        <link href="asset/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
     </head>
-    <body>
+    <body style="font-family: 'Open Sans', sans-serif">
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-color fixed-top pad-5">
       <div class="container">
-        <a class="navbar-brand" href="index.html">
+          <a class="navbar-brand" href="index.php">
             <img src="asset/img/logo-iitp.png" width="50" height="auto" alt=""> Student Asssociation for Alumni Relations
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto navbar-left">
-              <li class="nav-item">
-              <a class="nav-link" href="#">Home</a>
+          <ul class="navbar-nav ml-auto navbar-right">
+            <li class="nav-item">
+                <a class="nav-link" href="index.php">Home</a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="about.html">About</a>
+                <a class="nav-link" href="aboutUs.php">About</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="donateUs.php">Give Back</a>
+                <a class="nav-link" href="donateUS.php">Give Back</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#gallery">Gallery</a>
-            </li>            
+                <a class="nav-link active active1" href="gallery.php">Gallery</a>
+            </li>
+                      
           </ul>
             
         </div>
@@ -50,7 +53,7 @@ and open the template in the editor.
   <div class="w3-hide-large" style="margin-top:83px"></div>
   
   <!-- Photo grid -->
-  <div class="w3-row">
+  <div class="w3-row flex-layout">
     <div class="w3-third">
         <img src="asset/img/anw1.jpg" style="width:100%" onclick="onClick(this)" alt="A boy surrounded by beautiful nature">
         <img src="asset/img/anw2.jpg" style="width:100%" onclick="onClick(this)" alt="What a beautiful scenery this sunset">
@@ -113,17 +116,38 @@ body{
 .bg-color{
     background-color:#363636;
 }
-.ml-auto, .mx-auto{
-    margin-left: 0px !important;
-    margin-right: auto !important;
-}
 .w3-modal{
     z-index: 2000 !important;
 }
+img{
+    padding: 10px;
+}
+.w3-main{
+    background-color: #fff;
+}
+.active1{
+    background-color: rgba(0,0,0,0.9);
+}
+.flex-layout{
+  display:flex;
+  flex-wrap:wrap;
+
+}
+.w3-third{
+  width:auto !important;
+  float:none;
+  flex:1 0 300px;
+  display:flex;
+  flex-direction:column;
+}
+.w3-third img{
+  flex: 1 0 auto;
+}
+
         </style>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="asset/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
         <script>
 // Script to open and close sidebar
 function w3_open() {
@@ -138,6 +162,7 @@ function w3_close() {
 
 // Modal Image Gallery
 function onClick(element) {
+    
   document.getElementById("img01").src = element.src;
   document.getElementById("modal01").style.display = "block";
   var captionText = document.getElementById("caption");
