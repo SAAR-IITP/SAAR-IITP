@@ -31,7 +31,7 @@
         </section>
         <div id="nav-bar" class="box-shadow" onclick="stickyNavbar()">
             <div class="nav ">
-                <a href="#">HOME</a>
+                <a href="index.php">HOME</a>
                 <a href="#way">WAYS TO DONATE</a>
                 <a href="#donate_for">DONATE FOR</a>
                 <a href="#nav_link">NAVIGATION LINKS</a>
@@ -69,27 +69,29 @@
             </div>
             
         </section>
+        <!--
         <section id="donate_for">
                     <div class="donate_for_container">
                         <div class="donate_for_title">
                             <h1>Donate To Our Leaders</h1>
                         </div>
                         <div class="donate_content">
-                            <div class="list" ><div id="anwesha"><span><a href="#">Donate Now</a></span></div></div>
-                            <div class="list" ><div id="HOSCA"><span><a href="#">Donate Now</a></span></div></div>
-                            <div class="list" ><div id="E-club"><span><a href="#">Donate Now</a></span></div></div>
-                            <div class="list" ><div id="Celesta"><span><a href="#">Donate Now</a></span></div></div>
-                            <div class="list" ><div id="ACE"><span><a href="#">Donate Now</a></span></div></div>
-                            <div class="list" ><div id="Sparkonics"><span><a href="#">Donate Now</a></span></div></div>
-                            <div class="list" ><div id="NJACK"><span><a href="#">Donate Now</a></span></div></div>
-                            <div class="list" ><div id="Threshold"><span><a href="#">Donate Now</a></span></div></div>
-                            <div class="list" ><div id="Robocon"><span><a href="#">Donate Now</a></span></div></div>
-                            <div class="list" ><div id="Supra-Baha"><span><a href="#">Donate Now</a></span></div></div>
+                            <div class="list" ><div id="anwesha"><span><a href="#donate_form">Donate Now</a></span></div></div>
+                            <div class="list" ><div id="HOSCA"><span><a href="#donate_form">Donate Now</a></span></div></div>
+                            <div class="list" ><div id="E-club"><span><a href="#donate_form">Donate Now</a></span></div></div>
+                            <div class="list" ><div id="Celesta"><span><a href="#donate_form">Donate Now</a></span></div></div>
+                            <div class="list" ><div id="ACE"><span><a href="#donate_form">Donate Now</a></span></div></div>
+                            <div class="list" ><div id="Sparkonics"><span><a href="#donate_form">Donate Now</a></span></div></div>
+                            <div class="list" ><div id="NJACK"><span><a href="#donate_form">Donate Now</a></span></div></div>
+                            <div class="list" ><div id="Threshold"><span><a href="#donate_form">Donate Now</a></span></div></div>
+                            <div class="list" ><div id="Robocon"><span><a href="#donate_form">Donate Now</a></span></div></div>
+                            <div class="list" ><div id="Supra-Baha"><span><a href="#donate_form">Donate Now</a></span></div></div>
                             <div class="btn"><span id="button" onclick="show_list()">more</span></div>
                         </div>
                         
                     </div>
         </section>
+        -->
         <section id="donate_form">
             
             <form action="" method="post">
@@ -107,24 +109,60 @@
                     <label for="batch">Batch</label>
                     <input tye="text" id="batch" name="batch" >
                     </div>
-                    <div class=" field">
+<!--                    <div class=" field">
                         <label id="branch">Department</label>
                     <div class="sel">       
-                     
                      <select id="branch" name="dept" class="">
-                            <option value=""></option>
+                        <option value=""></option>
                         <option value="CSE">Computer Science and Engineering</option>
                         <option value="EE">Electrical Engineering</option>
                         <option value="ME">Mechanical Engineering</option>
-                        <option value="CE">Chemical Engineering</option>
+                        <option value="CE">Civil Engineering</option>
                         <option value="CBE">Chemical and Biochemical Engineering</option>
-                        </select>
+                     </select>
                     </div>
-                    </div>
+                    </div>  -->
+                   <div class="field">
+                        <label for="donate_to">Department </label>
+                        <div class="ui selection search dropdown fluid "  id="donate_to" >
+                        <input type="hidden" name="club">
+                        <i class="dropdown icon"></i>
+                        <div class="default text">branch</div>
+                        <div class="menu">
+                          <div class="item" data-value="cse">Computer Science and Engineering</div>
+                          <div class="item" data-value="ee">Electrical Engineering</div>
+                          <div class="item" data-value="me">Mechanical Engineering</div>
+                          <div class="item" data-value="ce">Civil Engineering</div>
+                          <div class="item" data-value="ch">Chemical and Biochemical Engineering</div>
+                        </div>
+                      </div>
+                    </div> 
+                   
                     <div class="field">
                         <label for="donate_to">Donate </label>
-                        <input type="text" name="donate_to" id="donate_to">
+                    <div class="ui selection search dropdown fluid multiple"  id="donate_to" >
+                        <input type="hidden" name="club">
+                        <i class="dropdown icon"></i>
+                        <div class="default text">Club</div>
+                        <div class="menu">
+                            <div class="header">Fest</div>
+                            <div class="ui divider"></div>
+                          <div class="item" data-value="anwesha">Anwesha</div>
+                          <div class="item" data-value="celesta">Celesta</div>
+                          <div class="ui divider"></div>
+                          <div class="header">Clubs</div>
+                          <div class="item" data-value="hosca">HOSCA</div>
+                          <div class="item" data-value="eclub">E-club</div>
+                          <div class="item" data-value="ace">ACE</div>
+                          <div class="item" data-value="sparkonics">Sparkonics</div>
+                          <div class="item" data-value="njack">NJACK</div>
+                          <div class="item" data-value="threshold">Threshold</div>
+                          <div class="item" data-value="robocon">Robocon</div>
+                          <div class="item" data-value="supra-baha">Supra-baha</div>
+                        </div>
                     </div>
+                    </div>
+                    
                             <div class="field">
                                 <label id="donate_amount">Amount</label>
                                 
@@ -187,6 +225,11 @@ $(document).ready(function(){
     for(i=3;i<list.length;i++){
         list.item(i).style.display ="none";
     }
+    
+    $('.ui.dropdown')
+  .dropdown()
+;
+    
 });
 
 window.onload = function(){
@@ -216,10 +259,5 @@ else{
 
 
 
-<?php
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 

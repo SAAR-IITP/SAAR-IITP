@@ -1,0 +1,154 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jul 28, 2018, 11:27:48 AM
+    Author     : aman2
+*/
+
+body{
+    background-color: #fff;
+}
+.bg-color{
+    background-color:#363636;
+}
+.navbar-dark .navbar-nav .nav-link{
+    color:#fff;
+}
+.ml-auto, .mx-auto{
+    margin-left: 0px !important;
+    margin-right: auto !important;
+}
+.pad-5{
+    padding: 0px !important;
+}
+.mar-top{
+    margin-top: 65px;
+    
+}
+.active1{
+    background-color: rgba(0,0,0,0.9);
+}
+
+/* profie container */
+.profile-container{
+    width: 100%;
+    padding: 10px;
+}
+.profile-pic{
+    width: 200px;
+    height:200px;
+    background-size: cover;
+    background-image: url('../../asset/img/avatar.jpg');
+    background-color: #fff;
+    margin: 0 auto;
+    background-position: center;
+}
+.profile-pic img{
+    width: 100%;
+    height: 100%;
+}
+.profile-container label{
+    display: inline-block;
+    padding: 5px 17px;
+    margin-top: 10px;
+    background-color: #1BA94C;
+    cursor: pointer;
+    color: #fff;
+    margin-bottom: 0px;
+}
+.links{
+    text-align: center;
+}
+/* main content */
+.main-content{
+    width: 100%;
+    padding: 8px 10px;
+    box-sizing: border-box;
+    
+}
+.main-content h6{
+    display: inline-block;
+    background-color: rgba(255,255,255,0.4);
+    margin: 5px;
+    padding: 10px;
+    
+    box-sizing: border-box;
+    margin-bottom: 30px;
+}
+.options{
+    color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    width:100%;
+    padding: 10px;
+    padding-left: 0px;
+    box-sizing: border-box;
+}
+.options-list{
+    height: 300px;
+    flex: 1 0 250px;
+    padding: 13px;
+    
+}
+.list{
+    height: 100%;
+   border-radius: 5px;
+    width: 100%;
+    color:#39424e;
+    background-color: #fff;
+    box-shadow: 0 14px 28px 0 rgba(115,143,147,.5);
+    transition: all 0.5s ease-in-out;
+}
+.list:hover{
+    box-shadow: none;
+    cursor: pointer;
+    
+}
+.description{
+    padding: 10px;
+    width: 100%;
+    height: 50%;
+    
+}
+.description h4{
+    font-size: 1.1rem;
+}
+.description h6{
+    margin: 0px;
+    padding: 0px;
+    color: rgba(0,0,0,0.5);
+    padding-left: 0px;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+.description p {
+    margin-bottom: 0px;
+    color: rgba(0,0,0,0.5);
+}
+button[type="submit"]{
+    background-color: #3f83f8;
+    border-width: 0px;
+    padding: 5px 10px;
+    margin-top: 10px;
+    margin-left: 0px;
+    color: #fff;
+    cursor: pointer;
+}
+button[type="submit"]:hover{
+    text-decoration: underline;
+}
+#email-change  {
+    padding-right: 49px;
+    
+}
+.card-pic{
+    width: 100%;
+    height: 50%;
+}
+.card-pic img{
+    width: 100%;
+    height: 100%;
+}

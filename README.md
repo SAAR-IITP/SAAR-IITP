@@ -45,5 +45,5 @@
 * Project Coordnator and Developer :- Vatsal Singhal (Sub-Coordinator Web and App team SAAR)
 * FrontEnd Developer :- Aman Kumar (Sub-Coordinator Web and App team SAAR)
 * FrontEnd Developer :- Shivansh Shukla
-* FrontEnd Developer :- Adarsh Chaudhary
+* FrontEnd Developer :- Adarsh Kumar Chaudary
 

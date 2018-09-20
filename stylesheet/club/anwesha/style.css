@@ -1,0 +1,187 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Aug 14, 2018, 6:57:33 PM
+    Author     : aman2
+*/
+    body{
+    background-color: #CCCCCC;
+}
+.bg-color{
+    background-color:#363636;
+}
+.navbar-dark .navbar-nav .nav-link{
+    color:#fff;
+}
+.ml-auto, .mx-auto{
+    margin-left: 0px !important;
+    margin-right: auto !important;
+}
+.pad-5{
+    padding: 0px !important;
+}
+.mar-top{
+    margin-top: 65px;
+    
+}
+.active1{
+    background-color: rgba(0,0,0,0.9);
+}
+.pad-4{
+    padding-top : 30px !imortant;
+    padding-bottom: 30px !important;
+}
+.text-white a{
+    color: inherit;
+}
+footer{
+    margin-top: 10px;
+}
+
+.mar-top img{
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;
+}
+.main-img{
+    width: 80%;
+    margin: 0px auto;
+}
+.main-img img{
+    max-width: 100%;
+}
+#club{
+    
+    
+    box-sizing: border-box;
+}
+section{
+    margin: 0px auto;
+    margin-top: 10px;
+    margin-bottom: 60px;
+    
+    
+    width: 80%;
+    background-color: #fff;
+}
+section  h4{
+    padding-left: 40px;
+    margin-bottom: 0px;
+    position: relative;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+section h4::after{
+    position: absolute;
+    content: "";
+    top: 100%;
+    right: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #1B83BE;
+}
+section .about-club{
+    
+}
+.co-ordinator{
+    
+    padding-left: 40px;
+    color: #fff;
+    flex: 1 0 200px;
+    padding: 20px;
+    padding-top: 30px;
+}
+.co-ordinator ul {
+    padding-left: 0px !important;
+    list-style-type: none;
+}
+.co-ordinator ul li{
+    padding: 0px;
+    color: #000;
+}
+.co-ordinator ul li img{
+    padding: 0px !important;
+    width: 80%;
+    max-width: 100%;
+}.co-ordinator ul li p{
+    margin-bottom: 0px;
+}
+.co-ordinator ul li span{
+    font-size: 13px;
+    color: #452FFF;
+}
+.co-ordinator h5{
+    display: inline-block;
+    background-color: #1B1464;
+    padding: 8px 20px;;
+}
+.description{
+    padding-left: 40px;
+    flex: 50 1 500px;
+    border-right: 1px solid rgba(0,0,0,0.1);
+    box-sizing: border-box;
+    display: flex;
+    padding-right: 30px;
+    text-align: justify;
+    padding-bottom: 10px;
+    padding-top: 30px;
+    flex-direction: column;
+}
+.club-container{
+    display: flex;
+    flex-wrap: wrap;
+        
+}
+.img{
+    max-width: 300px;
+}
+.news{
+    padding-left: 40px;
+    padding-top: 30px;
+    padding-right: 30px;
+   
+}
+.first-parent{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.second-parent{
+    display: flex;
+    flex-wrap: wrap;
+}
+.second-parent .news{
+    flex: 1 0 250px;
+}
+@media screen and (max-width:993px){
+    .co-ordinator{
+        padding-left: 40px;
+    }
+    .img img{
+    width: 50% !important;
+}
+}
+@media screen and (max-width:767.98px){
+    section{
+        width: 100%;
+    }
+    .main-img{
+        padding: 0px 15px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .main-img img{
+        padding-left: 0px;
+        padding-right:0px; 
+    }
+    
+}
+@media screen and (max-width:512px){
+    .mar-top{
+        margin-top: 104px !important;
+    }
+}
