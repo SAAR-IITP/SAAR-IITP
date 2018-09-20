@@ -4,7 +4,7 @@
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <title>SAAR | Donate Page</title>
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
-        <link rel='stylesheet' type='text/css' href='http://oss.maxcdn.com/semantic-ui/2.1.8/semantic.min.css' />
+        <link rel='stylesheet' type='text/css' href='//oss.maxcdn.com/semantic-ui/2.1.8/semantic.min.css' />
         <link href="stylesheet/donateUs/donate.less" type="text/less" rel="stylesheet">
         <link href="stylesheet/donateUs/1030.css" rel="stylesheet" type="text/css" media="only screen and (max-width:1030px)"/>
         <link href="stylesheet/donateUs/947.css" rel="stylesheet" type="text/css" media="only screen and (max-width:947px)"/>
@@ -177,8 +177,8 @@
                 </div>
             </form>
         </section>
-        <script src='https://code.jquery.com/jquery-2.2.0.min.js'></script>
-        <script src='http://oss.maxcdn.com/semantic-ui/2.1.8/semantic.min.js'></script>
+        <script src='//code.jquery.com/jquery-2.2.0.min.js'></script>
+        <script src='//oss.maxcdn.com/semantic-ui/2.1.8/semantic.min.js'></script>
         
         
          <script>
