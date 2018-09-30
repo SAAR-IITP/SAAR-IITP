@@ -4,7 +4,7 @@
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <title>SAAR | Donate Page</title>
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
-        <link rel='stylesheet' type='text/css' href='http://oss.maxcdn.com/semantic-ui/2.1.8/semantic.min.css' />
+        <link rel='stylesheet' type='text/css' href='//oss.maxcdn.com/semantic-ui/2.1.8/semantic.min.css' />
         <link href="stylesheet/donateUs/donate.less" type="text/less" rel="stylesheet">
         <link href="stylesheet/donateUs/1030.css" rel="stylesheet" type="text/css" media="only screen and (max-width:1030px)"/>
         <link href="stylesheet/donateUs/947.css" rel="stylesheet" type="text/css" media="only screen and (max-width:947px)"/>
@@ -33,7 +33,7 @@
             <div class="nav ">
                 <a href="index.php">HOME</a>
                 <a href="#way">WAYS TO DONATE</a>
-                <a href="#donate_for" onclick="coming_soon()">DONATE FOR</a>
+                <a href="#donate_for">DONATE FOR</a>
                 <a href="#nav_link">NAVIGATION LINKS</a>
             </div>
         </div>
@@ -57,13 +57,13 @@
                         <h3>Credit card/Debit card</h3>
                         <p>Labore provident optio quis commodi quod quaerat quo similique perspiciatis libero facere.
                             Suscipit odit quas nemo, enim laudantium. </p>
-                   <!--     <button type="submit" id="PTP" class="w2d"><a href="#donate_for">Continue</a></button>-->
+                        <button type="submit" id="PTP" class="w2d"><a href="#donate_for">Continue</a></button>
                     </div>
                     <div class="cell">
                         <h3>Net Banking</h3>
                         <p>Labore provident optio quis commodi quod quaerat quo similique perspiciatis libero facere.
                             Suscipit odit quas nemo, enim laudantium. </p>
-                    <!--    <button type="submit" id="PTP" class="w2d"><a href="#donate_for">Continue</a></button>-->
+                        <button type="submit" id="PTP" class="w2d"><a href="#donate_for">Continue</a></button>
                     </div>
                 </div>
             </div>
@@ -177,70 +177,8 @@
                 </div>
             </form>
         </section>
-        <div class="coming_soon" id="coming_soon" style="display:none;">
-            <div class="img_container">
-                <img src="asset/img/coming soon.png">
-            </div>
-        </div>
-        <iframe src="comingsoon.php"   id="iframe-modal">
-            
-        </iframe>
-        <style>
-            iframe{
-                display: none;
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-            }
-            .coming_soon{
-                top: 0;
-                left: 0;
-                z-index: 10000;
-                position: fixed;
-                background-color: rgba(0,0,0,0.9);
-                width: 100%;
-                height: 100%;
-                padding-top: 100px;
-            }
-            
-            .img_container img{
-                
-                max-width: 100%;
-                
-            }
-            .img_container{
-                background-color: #fff;
-                margin: 0px auto;
-            }
-            @media screen and (min-width:200px){
-                .img_container{
-                    width: 100%;
-                }
-            }
-            @media  screen and (min-width:600px){
-                .img_container{
-                    width: 80%;
-                }
-            }
-            @media screen and (min-width:900px){
-                .img_container{
-                    width: 40%;
-                }
-            }
-            @media  screen and (min-width:1500px){
-                .img_container{
-                    width: 600px;
-                }
-                .coming_soon{
-                    width: 1500px;
-                    height: 100%;
-                }
-            }
-        </style>
-        <script src='https://code.jquery.com/jquery-2.2.0.min.js'></script>
-        <script src='http://oss.maxcdn.com/semantic-ui/2.1.8/semantic.min.js'></script>
+        <script src='//code.jquery.com/jquery-2.2.0.min.js'></script>
+        <script src='//oss.maxcdn.com/semantic-ui/2.1.8/semantic.min.js'></script>
         
         
          <script>
@@ -254,16 +192,7 @@
         a=3;
     }
     }
-    cs_modal= document.getElementById('coming_soon');
-    function coming_soon(){
-       // cs_modal.style.display="block";
-       window.location = "under-construction.php";
-    }
-    window.onclick = function(event){
-        if(event.target == cs_modal){
-             cs_modal.style.display="none";
-        }
-    }
+    
 function show_list(){
 var i=0;
 var j=a+3;
