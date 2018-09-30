@@ -13,7 +13,8 @@ and open the template in the editor.
     float: none;
     margin: 0px auto;
     margin-bottom: 50px;
-    background-image: linear-gradient(to right bottom, #48ce6f, #00c6ad, #00b7db, #00a1ea, #6f86d6);
+ /*   background-image: linear-gradient(to right bottom, #48ce6f, #00c6ad, #00b7db, #00a1ea, #6f86d6);*/
+ background-color: rgba(255,255,255,0.5);
     border-radius: 10px;
 }
 .sticky + section{

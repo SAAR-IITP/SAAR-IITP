@@ -9,7 +9,7 @@ and open the template in the editor.
 */
 
 body{
-    background-color: #F3F7F7;
+    background-color: #fff;
 }
 .bg-color{
     background-color:#363636;
@@ -28,6 +28,10 @@ body{
     margin-top: 65px;
     
 }
+.active1{
+    background-color: rgba(0,0,0,0.9);
+}
+
 /* profie container */
 .profile-container{
     width: 100%;
