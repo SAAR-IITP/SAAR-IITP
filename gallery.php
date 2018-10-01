@@ -9,10 +9,11 @@ and open the template in the editor.
         <title>Gallery | SAAR</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <link href="asset/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        
     </head>
     <body style="font-family: 'Open Sans', sans-serif">
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-color fixed-top pad-5">
@@ -55,21 +56,21 @@ and open the template in the editor.
   <!-- Photo grid -->
   <div class="w3-row flex-layout">
     <div class="w3-third">
-        <img src="asset/img/anw1.jpg" style="width:100%" onclick="onClick(this)" alt="A boy surrounded by beautiful nature">
-        <img src="asset/img/anw2.jpg" style="width:100%" onclick="onClick(this)" alt="What a beautiful scenery this sunset">
-        <img src="asset/img/anw3.jpg" style="width:100%" onclick="onClick(this)" alt="The Beach. Me. Alone. Beautiful">
+        <img src="asset/img/anw1.jpg" style="width:100%" onclick="onClick(this)" >
+        <img src="asset/img/anw2.jpg" style="width:100%" onclick="onClick(this)" >
+        <img src="asset/img/anw3.jpg" style="width:100%" onclick="onClick(this)" >
     </div>
 
     <div class="w3-third">
-        <img src="asset/img/anw4.jpg" style="width:100%" onclick="onClick(this)" alt="Quiet day at the beach. Cold, but beautiful">
-        <img src="asset/img/anw5.jpg" style="width:100%" onclick="onClick(this)" alt="Waiting for the bus in the desert">
-        <img src="asset/img/btech14-18.jpg" style="width:100%" onclick="onClick(this)" alt="Nature again.. At its finest!">
+        <img src="asset/img/anw5.jpg" style="width:100%" onclick="onClick(this)" >
+        <img src="asset/img/CS.jpg" style="width:100%" onclick="onClick(this)" >
+        <img src="asset/img/cee.jpg" style="width:100%" onclick="onClick(this)" >
     </div>
     
     <div class="w3-third">
-        <img src="asset/img/btech14-18ce.jpg" style="width:100%" onclick="onClick(this)" alt="Canoeing again">
-        <img src="asset/img/btech14-18ch.jpg" style="width:100%" onclick="onClick(this)" alt="A girl, and a train passing">
-        <img src="asset/img/btech14-18ee.jpg" style="width:100%" onclick="onClick(this)" alt="What a beautiful day!">
+        <img src="asset/img/chem.jpg" style="width:100%" onclick="onClick(this)" >
+        <img src="asset/img/mech.jpg" style="width:100%" onclick="onClick(this)" >
+        <img src="asset/img/ece.jpg" style="width:100%" onclick="onClick(this)" >
     </div>
   </div>
 

@@ -28,6 +28,7 @@
 <head>
   <title>Find Alumni Near You</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
   <script>
   window.onload=function(){
      var min = 2012;
@@ -42,7 +43,6 @@
                 };
   }
 </script>
-
 <style>
     body{
     background-color: #fff;
@@ -122,7 +122,14 @@
             </div>
         </div>
     </div>
- 
+    <!--
+    <form method="post" action="">  
+    <input type="text" name="city" required>
+    <select id="passYear" name="year" >
+            <option value="" selected disabled hidden>Graduation Year</option>
+        </select>
+    <input type="submit">
+    </form>-->
     <?php 
     if($count!=0)
     {
@@ -137,9 +144,7 @@
     	echo '</table>';
     }
     ?>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript"></script>
     <script src="asset/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-
 </body>
 </html>
