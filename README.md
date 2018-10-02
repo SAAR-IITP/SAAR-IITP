@@ -1,5 +1,5 @@
 # SAAR-IITP
-A website for SAAR. IIT Patna
+A website for Students' Association for Alumni Relations SAAR, IIT Patna 
 
 ## Aim:-
  .       To bring together all the old students and the faculty of IIT Patna to share their experiences with each other.
