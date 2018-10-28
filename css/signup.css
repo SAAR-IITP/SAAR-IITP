@@ -102,7 +102,6 @@ img {
 
 /*-- end reset --*/
 body {
-  background: #76b852;
   /* fallback for old browsers */
   background: -webkit-linear-gradient(to top, #c1cbf2, #a5b4ef);
   background: -moz-linear-gradient(to top, #c1cbf2, #a5b4ef);
@@ -131,7 +130,7 @@ h1 {
 .main-agileinfo {
   width: 35%;
   margin: 3em auto;
-  background: rgba(0, 0, 0, 0.18);
+  background: rgba(228,249,255, 0.8);
   background-size: cover;
 }
 
