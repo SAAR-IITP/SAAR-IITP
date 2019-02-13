@@ -60,7 +60,7 @@
 				 } else {
 				    //echo "Message has been sent";
 				 }
-				 header("location: welecome.php");
+				 header("location: signin.php");
               }else {
               	if($count==1)
               	{

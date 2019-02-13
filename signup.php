@@ -22,15 +22,41 @@
 <link type="text/css"  rel="stylesheet" href="css/signup.css">
 <link rel="stylesheet" href="css/templatemo-style.css">
 <script type="text/javascript" src="//connect.facebook.net/en_US/all.js#xfbml=1&appId=224254148413683" id="facebook-jssdk"></script><script src='https://code.jquery.com/jquery-2.2.0.min.js'></script>
+<style>
+    .section-heading h1{
+        display: block !important;
+        margin-right: 0px;
+    }
+    .section-heading h1 span{
+            font-size: 50px; 
+            background: #E4F9FF; 
+            text-align: center;
+            padding: 8px 12px;
+        }
+    @media screen and (max-width:695px){
+        .section-heading h1 span{
+            font-size: 32px;
+        }
+    }
+    @media screen and (max-width:477px){
+        .section-heading h1 span{
+            font-size: 24px;
+        }
+    }
+    
+    body {
+            background: #EEFBFF;
+            background: url('img/bggg.png');
+            background-size: cover;
+            font-family: 'Montserrat' Semibold ;
+        }
+</style>
 </head>
 <body>
 	<!-- main -->
     
 	<div class="main-w3layouts wrapper">
-                <div class="section-heading">
-                    <h1><span style="font-size: 50px; background: #E4F9FF; text-align: center;">SAAR <em>Registration Form</em></span></h1>
-                </div>
-            
+            <h1><span style="font-size: 50px; align: center; "><em>SAAR Registration Form</em></span></h1>
         <div class="main-agileinfo">
 			<div class="agileits-top">
 				<form action="register.php" method="post">
@@ -44,9 +70,9 @@
 					
                     <input class="text" type="tel" name="contact" placeholder="Contact no." required>
                     
-                    <input class="text" type="text" name="fbId" placeholder="Fb Profile Link(optional)" required="">
+                    <input class="text" type="text" name="fbId" placeholder="Fb Profile Link(optional)" >
                     
-                    <input class="text" type="text" name="linkden" placeholder="Linkden Link(optional)" required="">
+                    <input class="text" type="text" name="linkden" placeholder="Linkden Link(optional)" >
                     
                     <input class="text" type="password" name="password" placeholder="Password" required>
 					
@@ -94,7 +120,7 @@
     
                     <input type="text" placeholder="City" name="city" required="">
     
-                    <textarea type="text" name="achievements" required="" placeholder="Achievements After Graduation"></textarea>
+                    <textarea type="text" name="achievements" placeholder="Achievements After Graduation"></textarea>
                     
                     <div class="wthree-text">
 						<label class="anim">
