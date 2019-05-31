@@ -1,817 +1,325 @@
+<?php
+    session_start();
+    if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"]==false)
+    {
+        header("location: signin.php");
+    }
+?>
+<!DOCTYPE html>
 <html>
     <head>
-        <title>Your profile</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-        <link href="stylesheet/portal/style.css" rel="stylesheet" type="text/css"/>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>SAAR Profile</title>
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/fontAwesome.css">
+        <link rel="stylesheet" href="css/light-box.css">
+        <link rel="stylesheet" href="css/owl-carousel.css">
+        <link rel="stylesheet" href="css/profile.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+		<link rel="stylesheet" href="css/cards.css" >
+        <link rel="stylesheet" href="css/main.css" />
+        <noscript><link rel="stylesheet" href="css/noscript.css" /></noscript>
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     </head>
-    <style>
-            cake {
-            position: absolute;
-            width: 250px;
-            height: 200px;
-            top: 50%;
-            left: 50%;
-            margin-top: 220px;
-            
-            }
+    <body style="background: #fff">
 
-            .plate {
-            width: 270px;
-            height: 110px;
-            position: absolute;
-            bottom: 0px;
-            left: 110px;
-            top:550px;
-            background-color: #ccc;
-            border-radius: 50%;
-            box-shadow: 0 2px 0 #b3b3b3, 0 4px 0 #b3b3b3, 0 5px 40px rgba(0, 0, 0, 0.5);
-            }
-
-            .cake > * {
-            position: absolute;
-            }
-
-            .layer {
-            position: absolute;
-            display: block;
-            width: 250px;
-            left: 120px;
-            height: 100px;
-            border-radius: 50%;
-            background-color: #553c13;
-            box-shadow: 0 2px 0px #6a4b18, 0 4px 0px #33240b, 0 6px 0px #32230b, 0 8px 0px #31230b, 0 10px 0px #30220b, 0 12px 0px #2f220b, 0 14px 0px #2f210a, 0 16px 0px #2e200a, 0 18px 0px #2d200a, 0 20px 0px #2c1f0a, 0 22px 0px #2b1f0a, 0 24px 0px #2a1e09, 0 26px 0px #2a1d09, 0 28px 0px #291d09, 0 30px 0px #281c09;
-            }
-
-            .layer-top {
-            top: 450px;
-            }
-
-            .layer-middle {
-            top: 483px;
-            }
-
-            .layer-bottom {
-            top: 516px;
-            }
-
-            .icing {
-            top: 451px;
-            left: 121px;
-            background-color: #f0e4d0;
-            width: 247px;
-            height: 96px;
-            border-radius: 50%;
-            }
-            .icing:before {
-            content: "";
-            position: absolute;
-            top: 4px;
-            right: 5px;
-            bottom: 6px;
-            left: 5px;
-            background-color: #f4ebdc;
-            box-shadow: 0 0 4px #f6efe3, 0 0 4px #f6efe3, 0 0 4px #f6efe3;
-            border-radius: 50%;
-            z-index: 1;
-            }
-
-            .drip {
-            display: block;
-            
-            width: 50px;
-            height: 60px;
-            border-bottom-left-radius: 25px;
-            border-bottom-right-radius: 25px;
-            background-color: #f0e4d0;
-            }
-
-            .drip1 {
-            top: 523px;
-            left: 134px;
-            transform: skewY(15deg);
-            height: 48px;
-            width: 40px;
-            }
-
-            .drip2 {
-            top: 530px;
-            left: 301px;
-            transform: skewY(-15deg);
-            }
-
-            .drip3 {
-            top: 520px;
-            left: 210px;
-            width: 80px;
-            border-bottom-left-radius: 40px;
-            border-bottom-right-radius: 40px;
-            }
-
-            .candle {
-            background-color: #7B020B;
-            width: 16px;
-            height: 50px;
-            border-radius: 8px / 4px;
-            top: 448px;
-            left: 50%;
-            margin-left: -8px;
-            z-index: 10;
-            }
-            .candle:before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 16px;
-            height: 8px;
-            border-radius: 50%;
-            background-color: #ad030f;
-            }
-
-            .flame {
-            position: absolute;
-            background-color: orange;
-            width: 15px;
-            height: 35px;
-            border-radius: 10px 10px 10px 10px / 25px 25px 10px 10px;
-            top: -34px;
-            left: 50%;
-            margin-left: -7.5px;
-            z-index: 10;
-            box-shadow: 0 0 10px rgba(255, 165, 0, 0.5), 0 0 20px rgba(255, 165, 0, 0.5), 0 0 60px rgba(255, 165, 0, 0.5), 0 0 80px rgba(255, 165, 0, 0.5);
-            transform-origin: 50% 90%;
-            animation: flicker 1s ease-in-out alternate infinite;
-            }
-
-            @keyframes flicker {
-            0% {
-                transform: skewX(5deg);
-                box-shadow: 0 0 10px rgba(255, 165, 0, 0.2), 0 0 20px rgba(255, 165, 0, 0.2), 0 0 60px rgba(255, 165, 0, 0.2), 0 0 80px rgba(255, 165, 0, 0.2);
-            }
-            25% {
-                transform: skewX(-5deg);
-                box-shadow: 0 0 10px rgba(255, 165, 0, 0.5), 0 0 20px rgba(255, 165, 0, 0.5), 0 0 60px rgba(255, 165, 0, 0.5), 0 0 80px rgba(255, 165, 0, 0.5);
-            }
-            50% {
-                transform: skewX(10deg);
-                box-shadow: 0 0 10px rgba(255, 165, 0, 0.3), 0 0 20px rgba(255, 165, 0, 0.3), 0 0 60px rgba(255, 165, 0, 0.3), 0 0 80px rgba(255, 165, 0, 0.3);
-            }
-            75% {
-                transform: skewX(-10deg);
-                box-shadow: 0 0 10px rgba(255, 165, 0, 0.4), 0 0 20px rgba(255, 165, 0, 0.4), 0 0 60px rgba(255, 165, 0, 0.4), 0 0 80px rgba(255, 165, 0, 0.4);
-            }
-            100% {
-                transform: skewX(5deg);
-                box-shadow: 0 0 10px rgba(255, 165, 0, 0.5), 0 0 20px rgba(255, 165, 0, 0.5), 0 0 60px rgba(255, 165, 0, 0.5), 0 0 80px rgba(255, 165, 0, 0.5);
-            }
-            }
-                        
-                        .balloon {
-                            width: 738px;
-                            left:-100px;
-                            margin: auto;
-                            padding-top: 30px;
-                            position: relative;
-                        }
-                        .balloon > div {
-                            width: 104px;
-                            height: 140px;
-                            background: rgba(182, 15, 97, 0.9);
-                            border-radius: 0;
-                            border-radius: 80% 80% 80% 80%;
-                            margin: 0 auto;
-                            position: absolute;
-                            padding: 10px;
-                            box-shadow: inset 17px 7px 10px rgba(182, 15, 97, 0.9);
-                            -webkit-transform-origin: bottom center;
-                        }
-                        .balloon > div:nth-child(1) {
-                            background: rgba(182, 15, 97, 0.9);
-                            left: 0;
-                            box-shadow: inset 10px 10px 10px rgba(135, 11, 72, 0.9);
-                            -webkit-animation: balloon1 6s ease-in-out infinite;
-                            -moz-animation: balloon1 6s ease-in-out infinite;
-                            -o-animation: balloon1 6s ease-in-out infinite;
-                            animation: balloon1 6s ease-in-out infinite;
-                        }
-                        .balloon > div:nth-child(1):before {
-                            color: rgba(182, 15, 97, 0.9);
-                        }
-                        .balloon > div:nth-child(2) {
-                            background: rgba(242, 112, 45, 0.9);
-                            left: 120px;
-                            box-shadow: inset 10px 10px 10px rgba(222, 85, 14, 0.9);
-                            -webkit-animation: balloon2 6s ease-in-out infinite;
-                            -moz-animation: balloon2 6s ease-in-out infinite;
-                            -o-animation: balloon2 6s ease-in-out infinite;
-                            animation: balloon2 6s ease-in-out infinite;
-                        }
-                        .balloon > div:nth-child(2):before {
-                            color: rgba(242, 112, 45, 0.9);
-                        }
-                        .balloon > div:nth-child(3) {
-                            background: rgba(45, 181, 167, 0.9);
-                            left: 240px;
-                            box-shadow: inset 10px 10px 10px rgba(35, 140, 129, 0.9);
-                            -webkit-animation: balloon4 6s ease-in-out infinite;
-                            -moz-animation: balloon4 6s ease-in-out infinite;
-                            -o-animation: balloon4 6s ease-in-out infinite;
-                            animation: balloon4 6s ease-in-out infinite;
-                        }
-                        .balloon > div:nth-child(3):before {
-                            color: rgba(45, 181, 167, 0.9);
-                        }
-                        .balloon > div:nth-child(4) {
-                            background: rgba(190, 61, 244, 0.9);
-                            left: 360px;
-                            box-shadow: inset 10px 10px 10px rgba(173, 14, 240, 0.9);
-                            -webkit-animation: balloon1 5s ease-in-out infinite;
-                            -moz-animation: balloon1 5s ease-in-out infinite;
-                            -o-animation: balloon1 5s ease-in-out infinite;
-                            animation: balloon1 5s ease-in-out infinite;
-                        }
-                        .balloon > div:nth-child(4):before {
-                            color: rgba(190, 61, 244, 0.9);
-                        }
-                        .balloon > div:nth-child(5) {
-                            background: rgba(180, 224, 67, 0.9);
-                            left: 480px;
-                            box-shadow: inset 10px 10px 10px rgba(158, 206, 34, 0.9);
-                            -webkit-animation: balloon3 5s ease-in-out infinite;
-                            -moz-animation: balloon3 5s ease-in-out infinite;
-                            -o-animation: balloon3 5s ease-in-out infinite;
-                            animation: balloon3 5s ease-in-out infinite;
-                        }
-                        .balloon > div:nth-child(5):before {
-                            color: rgba(180, 224, 67, 0.9);
-                        }
-                        .balloon > div:nth-child(6) {
-                            background: rgba(242, 194, 58, 0.9);
-                            left: 600px;
-                            box-shadow: inset 10px 10px 10px rgba(234, 177, 15, 0.9);
-                            -webkit-animation: balloon2 3s ease-in-out infinite;
-                            -moz-animation: balloon2 3s ease-in-out infinite;
-                            -o-animation: balloon2 3s ease-in-out infinite;
-                            animation: balloon2 3s ease-in-out infinite;
-                        }
-                        .balloon > div:nth-child(6):before {
-                            color: rgba(242, 194, 58, 0.9);
-                        }
-                        .balloon > div:before {
-                            color: rgba(182, 15, 97, 0.9);
-                            position: absolute;
-                            bottom: -11px;
-                            left: 52px;
-                            content:"▲";
-                            font-size: 1em;
-                        }
-                       
-                        /*BALLOON 1 4*/
-                        @-webkit-keyframes balloon1 {
-                            0%, 100% {
-                                -webkit-transform: translateY(0) rotate(-6deg);
-                            }
-                            50% {
-                                -webkit-transform: translateY(-20px) rotate(8deg);
-                            }
-                        }
-                        @-moz-keyframes balloon1 {
-                            0%, 100% {
-                                -moz-transform: translateY(0) rotate(-6deg);
-                            }
-                            50% {
-                                -moz-transform: translateY(-20px) rotate(8deg);
-                            }
-                        }
-                        @-o-keyframes balloon1 {
-                            0%, 100% {
-                                -o-transform: translateY(0) rotate(-6deg);
-                            }
-                            50% {
-                                -o-transform: translateY(-20px) rotate(8deg);
-                            }
-                        }
-                        @keyframes balloon1 {
-                            0%, 100% {
-                                transform: translateY(0) rotate(-6deg);
-                            }
-                            50% {
-                                transform: translateY(-20px) rotate(8deg);
-                            }
-                        }
-                        /* BAllOON 2 5*/
-                        @-webkit-keyframes balloon2 {
-                            0%, 100% {
-                                -webkit-transform: translateY(0) rotate(6eg);
-                            }
-                            50% {
-                                -webkit-transform: translateY(-30px) rotate(-8deg);
-                            }
-                        }
-                        @-moz-keyframes balloon2 {
-                            0%, 100% {
-                                -moz-transform: translateY(0) rotate(6deg);
-                            }
-                            50% {
-                                -moz-transform: translateY(-30px) rotate(-8deg);
-                            }
-                        }
-                        @-o-keyframes balloon2 {
-                            0%, 100% {
-                                -o-transform: translateY(0) rotate(6deg);
-                            }
-                            50% {
-                                -o-transform: translateY(-30px) rotate(-8deg);
-                            }
-                        }
-                        @keyframes balloon2 {
-                            0%, 100% {
-                                transform: translateY(0) rotate(6deg);
-                            }
-                            50% {
-                                transform: translateY(-30px) rotate(-8deg);
-                            }
-                        }
-                        /* BAllOON 0*/
-                        @-webkit-keyframes balloon3 {
-                            0%, 100% {
-                                -webkit-transform: translate(0, -10px) rotate(6eg);
-                            }
-                            50% {
-                                -webkit-transform: translate(-20px, 30px) rotate(-8deg);
-                            }
-                        }
-                        @-moz-keyframes balloon3 {
-                            0%, 100% {
-                                -moz-transform: translate(0, -10px) rotate(6eg);
-                            }
-                            50% {
-                                -moz-transform: translate(-20px, 30px) rotate(-8deg);
-                            }
-                        }
-                        @-o-keyframes balloon3 {
-                            0%, 100% {
-                                -o-transform: translate(0, -10px) rotate(6eg);
-                            }
-                            50% {
-                                -o-transform: translate(-20px, 30px) rotate(-8deg);
-                            }
-                        }
-                        @keyframes balloon3 {
-                            0%, 100% {
-                                transform: translate(0, -10px) rotate(6eg);
-                            }
-                            50% {
-                                transform: translate(-20px, 30px) rotate(-8deg);
-                            }
-                        }
-                        /* BAllOON 3*/
-                        @-webkit-keyframes balloon4 {
-                            0%, 100% {
-                                -webkit-transform: translate(10px, -10px) rotate(-8eg);
-                            }
-                            50% {
-                                -webkit-transform: translate(-15px, 20px) rotate(10deg);
-                            }
-                        }
-                        @-moz-keyframes balloon4 {
-                            0%, 100% {
-                                -moz-transform: translate(10px, -10px) rotate(-8eg);
-                            }
-                            50% {
-                                -moz-transform: translate(-15px, 10px) rotate(10deg);
-                            }
-                        }
-                        @-o-keyframes balloon4 {
-                            0%, 100% {
-                                -o-transform: translate(10px, -10px) rotate(-8eg);
-                            }
-                            50% {
-                                -o-transform: translate(-15px, 10px) rotate(10deg);
-                            }
-                        }
-                        @keyframes balloon4 {
-                            0%, 100% {
-                                transform: translate(10px, -10px) rotate(-8eg);
-                            }
-                            50% {
-                                transform: translate(-15px, 10px) rotate(10deg);
-                            }
-                        }
-                        .modal-content{
-                            background:transparent !important ; 
-                        }
-    </style>
-
-
-    <body>
-            <nav class="navbar navbar-expand-sm navbar-dark bg-color fixed-top pad-5" style="opacity:0.88">
-       
-                <div class="container">
-                        <div class="col-1">
-                              <a class="navbar-brand" href="index.php">
-                                  <img src="asset/img/logo-iitp.png" width="50" height="auto" alt=""> 
-                              </a>
-                        </div>
-                        <div class="col-5" style="font-size: 19px; color:white">
-                             Student Asssociation for Alumni Relations
-                        </div>
-                                      
-                          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                              <span class="navbar-toggler-icon"></span>
-                          </button>
-                      <div class="col-6 collapse navbar-collapse" id="navbarResponsive">
-                              <ul class="navbar-nav ml-auto mr-auto pad-1">
-                                  <li class="nav-item active"><a class="nav-link" href="index.php"><span class="fa fa-home fa-lg"></span> Home</a></li>
-                                      <li class="nav-item"><a class="nav-link" href="aboutus.php"><span class="fa fa-info fa-lg"></span> About</a></li>
-                                      <li class="nav-item"><a class="nav-link" href="donateUs.php"><span class="fas fa-hand-holding-usd fa-lg"></span> Give Back</a></li>
-                                      <li class="nav-item"><a class="nav-link" href="gallery.php"><span class="fas fa-images fa-lg"></span> Gallery</a></li>
-                                     
-                                  </ul>
-                                  <span class="navbar-text btn" >
-                                          <a data-toggle="modal" data-target="#loginModal">
-                                          <span class="fa fa-sign-in-alt fa-lg"></span> Logout</a>
-                                  </span>
-                        <!--<ul class="navbar-nav ml-auto navbar-left">
-                            <li class="nav-item">
-                            <a class="nav-link" href="#">Home</a>
-                          </li>
-              
-                          <li class="nav-item">
-                            <a class="nav-link" href="about.html">About</a>
-                          </li>
-                          <li class="nav-item">
-                              <a class="nav-link" href="donateUs.php">Give Back</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link" href="#gallery">Gallery</a>
-                          </li>            
-                        </ul>-->            
-                      </div>
-                    </div>
-                  </nav>
-
-        <div class="container mar-top">
-            <div class="row">
-
-                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" style="display:none;">Open Modal</button>
-
-                    <!-- Modal -->
-                    <div id="myModal" class="modal fade" style="background: transparent;height: 800px" role="dialog">
-                      <div class="modal-dialog">
-                    
-                        <!-- Modal content-->
-                        <div class="modal-content">
-                          <!--<div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                          </div>-->
-                          <div >
-                                    
-                                     <link href="https://fonts.googleapis.com/css?family=Wendy+One" rel="stylesheet" type="text/css">
-                                            <div class="container">
-                                                    <div class="cake">
-                                                            <div class="plate"></div>
-                                                            <div class="layer layer-bottom"></div>
-                                                            <div class="layer layer-middle"></div>
-                                                            <div class="layer layer-top"></div>
-                                                            <div class="icing"></div>
-                                                            <div class="drip drip1"></div>
-                                                            <div class="drip drip2"></div>
-                                                            <div class="drip drip3"></div>
-                                                            <div class="candle">
-                                                                <div class="flame"></div>
-                                                            </div>
-                                                        </div>
-                                                <div class="balloon">
-                                                    <div>
-                                                        <span style="font-size: 4.8em;color: white;position: relative;top: 26px;">☺</span>
-                                                    </div>
-                                                    <div>
-                                                        <span style="font-size: 4.8em;color: white;position: relative;top: 26px;left: 15px;">B</span>
-                                                    </div>
-                                                    <div>
-                                                        <span style="font-size: 4.8em;color: white;position: relative;top: 26px;left: 15px;">D</span>
-                                                    </div>
-                                                    <div>
-                                                        <span style="font-size: 4.8em;color: white;position: relative;top: 26px;left: 15px;">A</span>
-                                                    </div>
-                                                    <div>
-                                                        <span style="font-size: 4.8em;color: white;position: relative;top: 26px;left: 15px;">Y</span>
-                                                    </div>
-                                                    <div>
-                                                        <span style="font-size: 4.8em;color: white;position: relative;top: 26px;left: 20px;">!</span>
-                                                    </div>
-                                                </div>
-                                                
-                                                 <h1 style="position: relative;
-                                                 top: 230px;
-                                                 text-align: center;
-                                                 color:whitesmoke;
-                                                 font-size: 3.5em;"><strong>Alumni Name</strong></h1>
-                                    
-                                            </div>
-                                            
-                                      <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
-                                    
-                          </div>
-                          <!--<div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                          </div>-->
-                        </div>
-                    
-                      </div>
-                    </div>
-
+        <header class="nav-down responsive-nav hidden-lg hidden-md">
+            <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!--/.navbar-header--> 
+            <div id="main-nav" class="collapse navbar-collapse">
+                <nav>
+                    <ul class="nav navbar-nav">
+                        <li><a href="#video">Profile</a></li>
+                        <li><a href="#extra">Settings</a></li>
+                        <li><a href="#blog">Utilities</a></li>
+                        <li><a href="#projects">Gallery</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li>
+                           <form action="logout.php" method="post" id="log">
+                            <button class="button" style="vertical-align:middle" onclick="location.href = 'logout.php';"><span>Logout </span></button> 
+                        </form>
+                        </li>
+                    </ul>
+                </nav>
             </div>
-            <div class="row">
-                <div class="col-xl-3 col-lg-12">
-                    <div class="profile-container">
-                        <div class="profile-pic">
-                            
-                        </div>
-                    <div class="links">
-                        <label style="display: block;width:auto" for="upload">Upload Your Avatar</label><input type="file" id="upload" name="file" required="" accept=".jpg,.jpeg,.png" style="display:none;" onclick=" return file_onclick()">
-                        <a href="changePassword.php"><label style="display: block;width:auto;background-color: #006dcc" type="submit" >Change Password</label></a>
-                        <a href="changeEmail.php"><label style="display: block;width:auto;background-color: #006dcc" type="submit">Change Email</label></a>
-                        <a href="updateProfile.php"><label style="display: block;width:auto;background-color: #006dcc" type="submit">Update Profile</label></a>
-                        <a href="alumni_achievement.php"><label style="display: block;width:auto;background-color: #006dcc" type="submit">Add Achievement</label></a>
-                    </div>
-                    
-                    </div>
-                </div>
+        </header>
 
-                <div class="col-xl-9 col-lg-12 ">
-                    <div class="main-content">
-                        <!--<h6>Lets be a part of our family.</h6>-->
-                        <div class="options">
-                            
-                                    <div class="options-list" id="anusmriti">
-                                        <div class="list" onclick="anusmriti()">
-                                            <div class="card-pic">
-                                                <img src="asset/img/laughing.png" alt="laughing">
-                                            </div>
-                                            <div class="description">
-                                                <h4>Download Anusmriti</h4>
-                                                <h6>Secondary Text</h6>
-                                                <p>Take a look at Our first anusmriti.</p>
-                                            </div>
-                                            
-                                        </div>
-                                    </div>
-                            <div class="options-list">
-                                
-                                <div class="list" onclick="connect_with_friends()">
-                                            <div class="card-pic">
-                                                <img src="asset/img/network1.jpg" alt="laughing">
-                                            </div>
-                                            <div class="description">
-                                                <h4>Connect with Friends</h4>
-                                                <h6>Secondary Text</h6>
-                                                <p>We will help you to connect with your friends.</p>
-                                            </div>
-                                            
-                                        </div>
-                                
-                            </div>
-                            <div class="options-list">
-                                
-                                <div class="list" onclick="find_your_friend()">
-                                            <div class="card-pic">
-                                                <img src="asset/img/find.png" alt="laughing">
-                                            </div>
-                                            <div class="description">
-                                                <h4>Find Your Friends</h4>
-                                                <h6>Secondary Text</h6>
-                                                <p>Let's together find your friends.</p>
-                                            </div>
-                                            
-                                        </div>
-                                      
-                                    </div>
-                            <div class="options-list">
-                                <div class="list" onclick="find_alumni_near_you()">
-                                            <div class="card-pic">
-                                                <img src="asset/img/alumni.jpg" alt="laughing">
-                                            </div>
-                                            <div class="description">
-                                                <h4>Find Alumni Near You</h4>
-                                                <h6>Secondary Text</h6>
-                                                <p>Find your alumni near you.</p>
-                                            </div>
-                                            
-                                        </div>
-                            </div>
-                            <div class="options-list">
-                                <div class="list" onclick="needHelp()">
-                                            <div class="card-pic">
-                                                <img src="asset/img/need-help.jpg" alt="laughing">
-                                            </div>
-                                            <div class="description">
-                                                <h4>Need Help</h4>
-                                                <h6>Secondary Text</h6>
-                                                <p>We also listen for people seeking help.</p>
-                                            </div>
-                                            
-                                        </div>
-                            </div>
-                            <div class="options-list">
-                                <div class="list" onclick="contactUs()">
-                                            <div class="card-pic">
-                                                <img src="asset/img/contact us.jpg" alt="laughing">
-                                            </div>
-                                            <div class="description">
-                                                <h4>Contact Us</h4>
-                                                <h6>Secondary Text</h6>
-                                                <p>We will be grateful to help you.</p>
-                                            </div>
-                                            
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div class="sidebar-navigation hidde-sm hidden-xs">
+            <div class="logo">
+                <img src="img/logo1.png" class="static">
             </div>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#video">
+                            <span class="rect"></span>
+                            <span class="circle"></span>
+                            Profile
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#extra">
+                            <span class="rect"></span>
+                            <span class="circle"></span>
+                            Settings
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#blog">
+                            <span class="rect"></span>
+                            <span class="circle"></span>
+                            Utilities
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#projects">
+                            <span class="rect"></span>
+                            <span class="circle"></span>
+                            Newsfeed
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#contact">
+                            <span class="rect"></span>
+                            <span class="circle"></span>
+                            Contact Us
+                        </a>
+                    </li>
+                    <li>
+                        <form action="logout.php" method="post" id="log">
+                            <button class="button" style="vertical-align:middle" onclick="location.href = 'logout.php';"><span>Logout </span></button> 
+                        </form>
+                    </li>
+                </ul>
+            </nav>
+            <ul class="social-icons">
+                <li><a href="https://www.facebook.com/saar.iitp" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"  target="_blank"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+            </ul>
         </div>
-        <iframe src="comingSoon.php"  id="iframe-modal"  height="768" width="1388" style="display:none">
-            
-        </iframe>
-        <div class=" contact-form" id="contact_form" style="display:none;">
-            <div class="myclose" id="close" onclick="close_modal2()">&times;</div>
-            <div class="row">
-                <div class="col-lg-6 offset-lg-3">
-                    <div class="jumbotron">
-                        <h5>STUDENT ASSOCIATION FOR ALUMNI RELATIONS IIT PATNA</h5>
-                        <hr>
-                        <h6>Contact Details:<br></h6>
-                        <p>Email Id: saar@iitp.ac.in<br>
-                            Phone No:77797997979<br>
-                            Address: IIT Patna Campus<br>
-                            District: Patna<br>
-                            Pin code:801110<br>
-                            State:Bihar, INDIA
-                        </p>
-                    </div>
+        
+        <div class="page-content">        
+            <section id="header">
+				<div class="inner">
+					<span class="icon major fa-cloud"></span>
+					<h1>Welcome To <strong>SAAR</strong><br>
+					<span class="go">Students' Association for Alumni Relations</span></h1>
+                    <p style="font-size: 20px; color: #fff;">Actions speak Better than words.</p>
+					<ul class="actions special">
+                        <button class="button" style="vertical-align:middle; background: #003C4D; padding: 10px;" onclick="window.location.href='donate.html'" ><span>Donate Now </span></button>
+					</ul>
+				</div>
+			</section>
+
+            <section id="video" class="content-section">    
+                <div class="section-heading" style="text-align: center;">
+                    <br><br>
+                    <h1><?php echo "".$_SESSION["fname"];?><em> <?php echo " ".$_SESSION["lname"];?></em></h1>
                 </div>
-            </div>
-        </div>
-        <div class=" contact-form" id="need_help_form" style="display:none;">
-            <div class="myclose" id="close" onclick="close_modal1()">&times;</div>
-            <div class="row">
-                <div class="col-lg-6 offset-lg-3">
-                    <form method="POST" action="" 
-                        <div class="jumbotron">
-                            <center><h3 style="margin-bottom:50px;"><b>What Help Do you Need</b></h3></center>
-                            <div class="form-group">
-                                <textarea  name="needhelp" required="" placeholder="" class="form-control"></textarea>
-                            </div>
-                            <center><button type="submit" class="btn btn-primary " name="needHelpSubmit" >Submit</button></center>
+                <section id="one" class="main style1">
+				    <div class="container" >
+					   <div class="row gtr-150" style="background: #fff">
+						<div class="col-6 col-12-medium">
+							<p>College Id : <?php echo $_SESSION["cid"];?> </p>
+                            <p>DOB : <?php echo $_SESSION["dob"]; ?></p>
+                            <p>Email id : <?php echo $_SESSION["email"];?> </p>
+                            <p>Contact no. : <?php echo $_SESSION["contact"];?> </p>
+                            <p>Graduation year : <?php echo $_SESSION["graduation"];?> </p>
+                            <p>Degree : <?php echo $_SESSION["degree"];?> </p>
+                            <p>Department : <?php echo $_SESSION["dept"];?> </p>
                         </div>
+						<div class="col-6 col-12-medium imp-medium">
+							<span class="image fit"><img src="img/prof.jpeg" alt="" /></span>
+						</div>
+					</div>
+				</div>
+			</section>    
+            </section>
+            
+            <section id="extra" class="content-section">
+                    <button class="button" style="vertical-align:middle; background: #003C4D; padding: 10px; margin-left: 15px;" onclick="location.href = 'changePassword.php';"><span>Change Password</span></button>
                     </form>
+                    <button class="button" style="vertical-align:middle; background: #003C4D; padding: 10px; margin-left: 15px;" onclick="location.href = 'updateProfile.php';"><span>Update Profile</span></button>
+                    </form>
+                    <button class="button" style="vertical-align:middle; background: #003C4D; padding: 10px; margin-left: 15px;" onclick="location.href = 'changeEmail.php';"><span>Change E-mail</span></button>
+			</section>
+
+    <section id="blog" class="content-section">
+        <section class="details-card">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card-content">
+                    <div class="card-img">
+                        <img src="img/ff.jpeg" alt="">
+                    </div>
+                    <div class="card-desc">
+                        <h3>Alumni</h3>
+                        <h4>Near You</h4>   
+                    </div>
+                    <form action="#" method="post">
+                            <button class="btn-card" style="margin: 0.56em;" formaction="findAluminiNearby.php">Click Here</button>
+                        </form>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card-content">
+                    <div class="card-img">
+                        <img src="img/frndz.jpg" alt="">
+                    </div>
+                    <div class="card-desc">
+                        <h3>Find</h3>
+                        <h4>Friends</h4>   
+                    </div>
+                    <form action="#" method="post">
+                            <button class="btn-card" style="margin: 0.56em;" formaction="findFriends.php">Click Here</button>
+                        </form>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card-content">
+                    <div class="card-img">
+                        <img src="img/anusm.jpeg" alt="">
+                    </div>
+                    <div class="card-desc">
+                        <h3>Download</h3>
+                        <h4>Anusmriti</h4>   
+                    </div>
+                    <form action="#" method="post">
+                            <button class="btn-card" style="margin: 0.56em;" formaction="#">Click Here</button>
+                        </form>
                 </div>
             </div>
         </div>
-        <div class="coming_soon" id="coming_soon" style="display:none;">
-            <div class="main_container">
-                <iframe src="comingSoon.php"  id="iframe-modal"  >
+</section>
+    </section>
             
-                </iframe>
-        
-            </div>
-        </div>
-        <style>
-            .myclose{
-                font-size: 30px;
-                position: absolute;
-                color: rgba(255,255,255,0.8);
-                top: 0;
-                right: 0;
-                padding: 5px 10px;
-            }
-            .myclose:hover{
-                cursor: pointer;
-                color: rgba(255,255,255,0.9);
-            }
-            iframe{
-                border: none;
-                position: fixed;
-                top: 100;
-                left: 0;
-                z-index: 0;
-            }
-            .contact-form{
-               background-color: rgba(0,0,0,0.9);
-               position: fixed;
-               top: 0;
-               left: 0;
-               z-index: 10000;
-               padding-top: 100px;
-               width: 100%;
-               height: 100%;
-            }
-            .coming_soon{
-                top: 0;
-                left: 0;
-                z-index: 10000;
-                position: fixed;
-                background-color: rgba(0,0,0,0.9);
-                width: 100%;
-                height: 100%;
-                padding-top: 100px;
-            }
             
-            .main_container img{
-                
-                max-width: 100%;
-                
-            }
-            .main_container{
-                background-color: #fff;
-                margin: 0px auto;
-            }
-            @media screen and (min-width:200px){
-                .main_container{
-                    width: 100%;
-                }
-            }
-            @media  screen and (min-width:600px){
-                .main_container{
-                    width: 80%;
-                }
-            }
-            @media screen and (min-width:900px){
-                .main_container{
-                    width: 40%;
-                }
-            }
-            @media  screen and (min-width:1500px){
-                .main_container{
-                    width: 600px;
-                }
-                .coming_soon{
-                    width: 1500px;
-                    height: 100%;
-                }
-            }
-        </style>
-        <script>
-            
-            contactUsDom = document.getElementById('contact_form');
-            needhelp = document.getElementById('need_help_form');
-            cs_modal= document.getElementById('coming_soon');
-            document.getElementById('iframe-modal').contentDocument.addEventListener('click',function(){
-                this.height="1000";
-                this.width="1000";
-            },false);
-            function file_onclick(){
-                 window.location="under-construction.php";
-               // cs_modal.style.display="block";
-            
-                return false;
-            }
-                window.onclick = function(event){
-                    if(event.target == cs_modal){
-                        cs_modal.style.display = "none";
-                    };
-                    if(event.target == needhelp){
-                        needhelp.style.display="none";
-                    };
-                    if(event.target ==contactUsDom){
-                        contactUsDom.style.display="none";
-                    };
-                }
-                function needHelp(){
-                    needhelp.style.display="block";
-                }
-                function close_modal1(){
-                    needhelp.style.display="none";
-                }
-                function contactUs(){
-                    contactUsDom.style.display="block";
-                    
-                }
-                function close_modal2(){
+            <section id="header">
+				<div class="inner">
+					<span class="icon major fa-handshake-o"></span>
+					<h1>Need<strong>Help</strong><br>
+					</h1>
+					<ul class="actions special">
+                        <button class="button" style="vertical-align:middle; background: #003C4D;  padding: 10px;" formaction="needhelp.php"><span>Priviledge Us </span></button>
+					</ul>
+				</div>
+			</section>
 
-                    contactUsDom.style.display="none";
-                }
-                function find_your_friend(){
-                    window.location="findFriend.php";
-                }
-                function find_alumni_near_you(){
-                    window.location= "findAluminiNearby.php";
-                }
-                function anusmriti(){
-                    window.location ="anusmriti/Anusmriti-18.pdf";
-                }
-                function connect_with_friends(){
-                    windwow.location = "under-construction.php";
-                }
-        </script>
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+            <section  id="contact" class="content-section">
+                <div id="con">    
+                    <div class="col-md-6">  
+                        <div id="map">
+                
+                	<!-- How to change your own map point
+                           1. Go to Google Maps
+                           2. Click on your location point
+                           3. Click "Share" and choose "Embed map" tab
+                           4. Copy only URL and paste it within the src="" field below
+                    -->
+                    
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14399.37835508978!2d84.8434447170254!3d25.54355318850096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398d567a193702ff%3A0xc9c527c7faec3056!2sIIT+Patna+Administration+Block!5e0!3m2!1sen!2sin!4v1539177184721" width="100%" height="400px" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>
+                    </div>
+                    <div class="col-md-6">  
+                        <div class="teext">
+                            <h1>Contact <span> US</span></h1><br>
+                        <p> <i class="fa fa-envelope" aria-hidden="true" style="font-size: 28px; color: #26C1ED; margin-right: 14px;"></i>saar@iitp.ac.in<br><br><br>
+                            <i class="fa fa-phone" aria-hidden="true" style="font-size: 32px; color: #26C1ED; margin-right: 14px;"></i>8827275145<br><br><br>
+                            <i class="fa fa-map-marker" aria-hidden="true" style="font-size: 32px; color: #26C1ED; margin-right: 14px;"></i> IIT Patna Campus, Patna, 801110</p>            
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="footer">
+                <p>|| Copyright || &copy; IIT Patna SAAR Team ||</p>
+            </section>  
+        </div>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+
+    <script src="js/vendor/bootstrap.min.js"></script>
+    
+    		<script src="js/jquery.min.js"></script>
+			<script src="js/jquery.scrolly.min.js"></script>
+			<script src="js/browser.min.js"></script>
+			<script src="js/breakpoints.min.js"></script>
+			<script src="js/util.js"></script>
+			<script src="js/main2.js"></script>
+
         
-    </body>
+        
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Hide Header on on scroll down
+        var didScroll;
+        var lastScrollTop = 0;
+        var delta = 5;
+        var navbarHeight = $('header').outerHeight();
+
+        $(window).scroll(function(event){
+            didScroll = true;
+        });
+
+        setInterval(function() {
+            if (didScroll) {
+                hasScrolled();
+                didScroll = false;
+            }
+        }, 250);
+
+        function hasScrolled() {
+            var st = $(this).scrollTop();
+            
+            // Make sure they scroll more than delta
+            if(Math.abs(lastScrollTop - st) <= delta)
+                return;
+            
+            // If they scrolled down and are past the navbar, add class .nav-up.
+            // This is necessary so you never see what is "behind" the navbar.
+            if (st > lastScrollTop && st > navbarHeight){
+                // Scroll Down
+                $('header').removeClass('nav-down').addClass('nav-up');
+            } else {
+                // Scroll Up
+                if(st + $(window).height() < $(document).height()) {
+                    $('header').removeClass('nav-up').addClass('nav-down');
+                }
+            }
+            
+            lastScrollTop = st;
+        }
+    </script>
+
+    <script>
+        function on() {
+            document.getElementById("myModal").style.display = "block";
+        }
+
+        function off() {
+            document.getElementById("myModal").style.display = "none";
+        }
+    </script>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+
+</body>
 </html>

@@ -20,6 +20,7 @@
 	$city=$_POST['city'];
 	$country=$_POST['country'];
 	$achievements=$_POST['achievements'];
+	$passwd=sha1($passwd);
 	include('connection.php');
 			  $query = "SELECT college_id FROM user WHERE email = '$email'";
 			  $query1 = "SELECT email FROM user WHERE college_id = '$college_id'";
@@ -51,14 +52,15 @@
 				$mail->Password = "mkaqaumuchffjcmh";
 				$mail->SetFrom("SAAR-IITP@gmail.com");
 				$mail->Subject = "Welecome to SAAR";
-				$mail->Body = "Hi ".$fname." ".$lname.",<br>It is my pleasure to welcome you to our website, where you can feel right at home. In this website, you can be active and engaged members of the community, reconnect with your classmates and keep up to date about alumni events.<br><br>We would look forward to your continued interaction and association to help improve the quality of our Academic programme, industry collaborations and various facets of our operations to ensure continuous improvements and exemplary standards of services to our present and past student community. Our alumni have played an important role in building the credibility of our College and have contributed immensely to the growth of the college. The alumni continue to bring laurels to our college. The SAAR team on its part is keen to strengthen the bonds with its alumni. Our new website has features that will ensure that alumni can register themselves and keep appraised of various activities. Your active participation, and support in the activities of the SAAR and the website will help us work together to take IIT Patna forward in the years to come. We also look forward to feedback and suggestions from alumni on the website to carry forward this initiative. It is just a small step to bringing the alumni closer to their past. Please pass the word around to your friends and batch mates to go to our website and register in order to enjoy the benefits of keeping in touch. The SAAR organizes meetings and get together and publish on-line newsletters with the support of the college, thus strengthening and re-kindling the sense of community and companionship.<br><br>Regards,<br>Team SAAR<br>IIT Patna";
+				$mail->Body = "Hi ".$fname." ".$lname.",<br><br>It is my pleasure to welcome you to our website, where you can feel right at home. In this website, you can be active and engaged members of the community, reconnect with your classmates and keep up to date about alumni events.<br><br>We would look forward to your continued interaction and association to help improve the quality of our Academic programme, industry collaborations and various facets of our operations to ensure continuous improvements and exemplary standards of services to our present and past student community. Our alumni have played an important role in building the credibility of our College and have contributed immensely to the growth of the college. The alumni continue to bring laurels to our college. The SAAR team on its part is keen to strengthen the bonds with its alumni. Our new website has features that will ensure that alumni can register themselves and keep appraised of various activities. Your active participation, and support in the activities of the SAAR and the website will help us work together to take IIT Patna forward in the years to come. We also look forward to feedback and suggestions from alumni on the website to carry forward this initiative. It is just a small step to bringing the alumni closer to their past. Please pass the word around to your friends and batch mates to go to our website and register in order to enjoy the benefits of keeping in touch. The SAAR organizes meetings and get together and publish on-line newsletters with the support of the college, thus strengthening and re-kindling the sense of community and companionship.<br><br>Regards,<br>Team SAAR<br>IIT Patna";
 				$mail->AddAddress($email);
-				header("location: welecome.php");		
+						
 				 if(!$mail->Send()) {
 				    //echo "Mailer Error: " . $mail->ErrorInfo;
 				 } else {
 				    //echo "Message has been sent";
 				 }
+				 header("location: signin.php");
               }else {
               	if($count==1)
               	{

@@ -1,5 +1,4 @@
-# SAAR-IITP
-A website for SAAR. IIT Patna
+# SAAR-IITP Website
 
 ## Aim:-
  .       To bring together all the old students and the faculty of IIT Patna to share their experiences with each other
@@ -19,3 +18,31 @@ A website for SAAR. IIT Patna
 .        To publish periodical magazines or bulletins with valuable information useful to the members and students. 
 
 ·        To involve the members in the overall development of the college and the Society  
+
+
+
+## Technologies Used:-
+* HTML
+* CSS
+* Javascript
+* Bootstrap
+* Semantic-UI
+* Angular.js
+* Php
+* MySql
+
+## Highlights:-
+* A Perfectlogin and signup system.
+* Well maintained alumni database.
+* usage of Corn-jobs for tasks like sending birthday wishes,etc.
+* Alumnin networking section.
+* Easier sign-up using facebook login.
+* A dedicated profile system like a social netwoking system
+* A working Payment gateway to Collect donations.
+
+## Team:-
+* General Advisor :- Abhinav Gyan (General Secratary SAAR)
+* Project Coordnator and Developer :- Vatsal Singhal (Sub-Coordinator Web and App team SAAR)
+* FrontEnd Developer :- Shivansh Shukla
+* FrontEnd Developer :- Adarsh Kumar Chaudary
+

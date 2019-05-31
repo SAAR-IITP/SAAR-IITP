@@ -4,9 +4,9 @@ session_start();
     {
         include('connection.php');
         $email = $_SESSION['email'];
-        $password = $_POST['password'];
-        $newpassword = $_POST['newpassword'];
-        $confirmnewpassword = $_POST['confirmnewpassword'];
+        $password = sha1($_POST['password']);
+        $newpassword = sha1($_POST['newpassword']);
+        $confirmnewpassword = sha1($_POST['confirmnewpassword']);
         $result = mysqli_query($dbc,"SELECT password FROM user WHERE 
         email='$email' AND password='$password'");
         if($row=mysqli_fetch_array($result,MYSQLI_ASSOC))

@@ -3,7 +3,7 @@ session_start();
 if($_SERVER["REQUEST_METHOD"] == "POST") {
 include('connection.php');
         $email = $_SESSION['email'];
-        $password = $_POST['password'];
+        $password = sha1($_POST['password']);
         $newEmail = $_POST['newEmail'];
         $result = mysqli_query($dbc,"SELECT password FROM user WHERE 
         email='$email' AND password='$password'");
