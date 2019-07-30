@@ -162,7 +162,7 @@
          <td>Links to Fb Profile</td>
        </tr>
        </div>
-      <?php  while($count!=0 && $row = mysqli_fetch_array($result,MYSQLI_ASSOC)){?>
+      <?php  while($count!=-1 && $count!=0 && $row = mysqli_fetch_array($result,MYSQLI_ASSOC)){?>
        <tr>
          <td><img src="img/male.jpeg" alt="" /></td>
          <td><?php echo $row["first_name"]." ".$row["last_name"]; ?></td>

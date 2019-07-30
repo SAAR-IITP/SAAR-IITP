@@ -22,5 +22,5 @@
 	         $count=1;
 	     }
 	     $_SESSION["helpsent"]=true;
-	     header("location: profile.php"); 
+	     header("location: portal.php"); 
  ?>

@@ -12,13 +12,35 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!-- Custom Theme files -->
-<!-- <link href="css/style.css" rel="stylesheet" type="text/css" media="all" /> -->
-<!-- //Custom Theme files -->
-<!-- web font -->
-<link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/team.css">
+    <link rel="stylesheet" type="text/css" href="css/templatemo-style.css">
+    
+    <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://rawgit.com/LeshikJanz/libraries/master/Bootstrap/baguetteBox.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+
+    <link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
 <!-- //web font -->
     
+        
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/fontAwesome.css">
+        <link rel="stylesheet" href="css/light-box.css">
+        <link rel="stylesheet" href="css/timeline.css">
+        <link rel="stylesheet" href="css/owl-carousel.css">
+        <link rel="stylesheet" href="css/templatemo-style.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+        
+
 <link type="text/css"  rel="stylesheet" href="css/signup.css">
 <link rel="stylesheet" href="css/templatemo-style.css">
 <script type="text/javascript" src="//connect.facebook.net/en_US/all.js#xfbml=1&appId=224254148413683" id="facebook-jssdk"></script><script src='https://code.jquery.com/jquery-2.2.0.min.js'></script>
@@ -70,9 +92,9 @@
 					
                     <input class="text" type="tel" name="contact" placeholder="Contact no." required>
                     
-                    <input class="text" type="text" name="fbId" placeholder="Fb Profile Link(optional)" >
+                    <input class="text" type="text" name="fbId" placeholder="Fb Profile Link(optional)">
                     
-                    <input class="text" type="text" name="linkden" placeholder="Linkden Link(optional)" >
+                    <input class="text" type="text" name="linkden" placeholder="Linkedin Link(optional)">
                     
                     <input class="text" type="password" name="password" placeholder="Password" required>
 					
@@ -131,18 +153,52 @@
 					</div>
 					<input type="submit" value="SIGNUP">
 				</form>
-				<p>Already have an Account? <a href="login.html"> Login Now!</a></p>
+				<p>Already have an Account? <a href="signin.php"> Login Now!</a></p>
 			</div>
 		</div>
 		
-        <!-- copyright -->
-        <section id="footer">
-		<div class="colorlibcopy-agile">
-			<p>|| © SAAR Club || All rights reserved ||</p>
-		</div>
-        </section>
-		<!-- //copyright -->
-		
+        <section  id="contact" class="content-section">
+                <div id="con">
+                    <div class="col-md-4">  
+                        <div class="teext" style=" display: inline-block;">
+                        <h1 style="font-size:24px;">Quick <span>Links</span></h1><br>
+                        <p> <a style="text-decoration:none; color:#fff" href="https://www.iitp.ac.in/">IIT Patna</a><br>
+                        <a style="text-decoration:none; color:#fff" href="https://www.iitp.ac.in/alumni/">ITPAA</a><br>
+                        <a style="text-decoration:none; color:#fff" href="#">Reach Us</a><br>
+                        <a style="text-decoration:none; color:#fff" href="#">Terms of Use</a><br>
+                        <a style="text-decoration:none; color:#fff" href="#">Privacy Policy</a>
+                        </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">  
+                        <div class="teext" style=" display: inline-block;">
+                            <h1  style="font-size:24px;">Social <span> Media</span></h1><br>
+                        <p> <a style="text-decoration:none; color:#fff" href="https://www.facebook.com/saar.iitp/"><i class="fab fa-facebook-square" aria-hidden="true" style="font-size: 18px; color: #26C1ED; margin-right: 14px;"></i>Facebook</a><br>
+                        <a style="text-decoration:none; color:#fff" href="https://www.instagram.com/saar.iitp"><i class="fab fa-instagram" aria-hidden="true" style="font-size: 20px; color: #26C1ED; margin-right: 14px;"></i>Instagram</a><br>
+                        <a style="text-decoration:none; color:#fff" href="https://www.linkedin.com/company/saar-iitp"><i class="fab fa-linkedin" aria-hidden="true" style="font-size: 20px; color: #26C1ED; margin-right: 14px;"></i>LinkedIn</a><br>
+                        <a style="text-decoration:none; color:#fff" href="https://www.twitter.com/saar_iitp"><i class="fab fa-twitter" aria-hidden="true" style="font-size: 20px; color: #26C1ED; margin-right: 14px;"></i>Twitter</a><br>
+                        <a style="text-decoration:none; color:#fff" href="https://www.youtube.com/channel/UCoAb1YggffbfgVxQyXaZB-g"><i class="fab fa-youtube" aria-hidden="true" style="font-size: 20px; color: #26C1ED; margin-right: 14px;"></i>Youtube</a></p>            
+                        </div>
+                    </div>
+                    <div class="col-md-4">  
+                        <div class="teext" style=" display: inline-block;">
+                            <h1 style="font-size:24px;">Contact <span> Us</span></h1><br>
+                            <p> Office of A Dean Resource<br>
+                            Administrative Building, IIT Patna<br><br>
+                            Prof. In-charge:<br>
+                            Dr. Anirban Chowdhary<br>
+                            Email - pic_alumni@iitp.ac.in<br><br>
+                            General Secretary:<br>
+                            <a href="https://theabhinavgyan.github.io/" style="color: #fff">Abhinav Gyan</a><br>
+                            Email - agyan.ce16@iitp.ac.in</p>            
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+    <section class="footer" style="background: #232323;">
+        <p>|| Copyright || &copy; IIT Patna SAAR Team ||</p>
+    </section>
         <ul class="colorlib-bubbles">
 			<li></li>
 			<li></li>

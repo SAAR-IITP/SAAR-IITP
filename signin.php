@@ -10,6 +10,9 @@
 <head>
     
     <title>Login V2</title>
+
+
+
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
@@ -79,7 +82,7 @@
         <h1>Sign Up</h1>
         <p>Signup now to register to SAAR membership</p>
         <br><br><br>
-        <button class="buton" onclick="window.location.href='/signup.php?type=none'">Sign Up</button><br><br>
+        <button class="buton" onclick="window.location.href='signup.php'">Sign Up</button><br><br>
         
         <table><tr>
             <td style="border-bottom: 1px solid #003C4D; width: 49%">&nbsp;</td>

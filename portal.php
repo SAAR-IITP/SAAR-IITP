@@ -5,6 +5,7 @@
         header("location: signin.php");
     }
 ?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -25,11 +26,75 @@
         <link rel="stylesheet" href="css/light-box.css">
         <link rel="stylesheet" href="css/owl-carousel.css">
         <link rel="stylesheet" href="css/profile.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
 		<link rel="stylesheet" href="css/cards.css" >
         <link rel="stylesheet" href="css/main.css" />
         <noscript><link rel="stylesheet" href="css/noscript.css" /></noscript>
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+        <style>
+            @media screen and (max-width:991px){
+                .row .col-md-3{
+                    padding: unset;
+                }
+                .row .col-md-4{
+                    padding: 0;
+                }
+            }
+            @media screen and (max-width:980px){
+                .image.fit img{
+                    width: 300px;
+                    margin: 0px auto;
+                }
+            }
+            @media screen and (max-width:767px){
+                .row.gtr-150{
+                    margin-left: unset;
+                }
+                .row .col-md-4{
+                    padding: 0;
+                    width: 100%;
+                }
+            }
+            @media screen and (max-width:444px){
+                #extra{
+                    padding-left: 20px !important;
+                }
+                .image.fit img{
+                    width: 100%;
+                }
+                .inner h1{
+                    font-size: 35px;
+                }
+            }
+            .imp-medium .fa s{
+            padding: 20px;
+            font-size: 30px;
+            width: 50px;
+            text-align: center;
+            text-decoration: none;
+                        }
+                        .imp-medium .fa-facebook {
+            background: #3B5998;
+            color: white;
+            }
+
+            .imp-medium .fa-linkedin {
+            background: #55ACEE;
+            color: white;
+            }
+
+            .imp-medium .fa-cog {
+            background: #dd4b39;
+            color: white;
+            }
+            @media(max-width:614px){
+                #contact{
+                    padding-left: 0;
+                }
+            }
+        </style>
+        
     </head>
     <body style="background: #fff">
 
@@ -47,7 +112,7 @@
                         <li><a href="#video">Profile</a></li>
                         <li><a href="#extra">Settings</a></li>
                         <li><a href="#blog">Utilities</a></li>
-                        <li><a href="#projects">Gallery</a></li>
+                        <li><a href="#projects">Newsfeed</a></li>
                         <li><a href="#contact">Contact Us</a></li>
                         <li>
                            <form action="logout.php" method="post" id="log">
@@ -115,27 +180,24 @@
         </div>
         
         <div class="page-content">        
-            <section id="header">
-				<div class="inner">
-					<span class="icon major fa-cloud"></span>
-					<h1>Welcome To <strong>SAAR</strong><br>
-					<span class="go">Students' Association for Alumni Relations</span></h1>
-                    <p style="font-size: 20px; color: #fff;">Actions speak Better than words.</p>
-					<ul class="actions special">
-                        <button class="button" style="vertical-align:middle; background: #003C4D; padding: 10px;" onclick="window.location.href='donate.html'" ><span>Donate Now </span></button>
-					</ul>
-				</div>
-			</section>
 
             <section id="video" class="content-section">    
-                <div class="section-heading" style="text-align: center;">
-                    <br><br>
-                    <h1><?php echo "".$_SESSION["fname"];?><em> <?php echo " ".$_SESSION["lname"];?></em></h1>
-                </div>
                 <section id="one" class="main style1">
 				    <div class="container" >
 					   <div class="row gtr-150" style="background: #fff">
-						<div class="col-6 col-12-medium">
+						<div class="col-5 col-12-medium imp-medium">
+							<span class="image fit"><img src="img/avt.jpeg" alt=""/></span>
+                            <a href="#"><i class="fa fa-facebook" style="padding: 5px 5px;"></i></a>
+                            <a href="#"><i class="fa fa-linkedin" style="padding: 5px 5px;"></i></a>
+                            <a href="#"><i class="fa fa-cog" style="padding: 5px 5px;"></i></a>
+						</div>
+                        <div class="col-7 col-12-medium">
+                            <div class="section-heading" style="text-align: center;">
+                                <h1><?php echo "".$_SESSION["fname"];?><em> <?php echo " ".$_SESSION["lname"];?></em></h1>
+                                <br><ul class="actions special">
+                                    <button class="button" style="vertical-align:middle; background: #003C4D; padding: 10px;" onclick="window.location.href='don.html'" ><span>Donate Now </span></button>
+					           </ul>
+                            </div>
 							<p>College Id : <?php echo $_SESSION["cid"];?> </p>
                             <p>DOB : <?php echo $_SESSION["dob"]; ?></p>
                             <p>Email id : <?php echo $_SESSION["email"];?> </p>
@@ -144,9 +206,6 @@
                             <p>Degree : <?php echo $_SESSION["degree"];?> </p>
                             <p>Department : <?php echo $_SESSION["dept"];?> </p>
                         </div>
-						<div class="col-6 col-12-medium imp-medium">
-							<span class="image fit"><img src="img/prof.jpeg" alt="" /></span>
-						</div>
 					</div>
 				</div>
 			</section>    
@@ -163,46 +222,33 @@
     <section id="blog" class="content-section">
         <section class="details-card">
         <div class="row">
-            <div class="col-md-4">
-                <div class="card-content">
-                    <div class="card-img">
-                        <img src="img/ff.jpeg" alt="">
+            <div class="col-md-4 col-sm-12">
+                <div class="card-content" onclick="myFunction()" style="background:#fc1c0d;">
+                    <div class="card-img" align="center">
+                        <i class="fas fa-route" style="font-size:50px; padding: 20px; color:#fff;"></i>
                     </div>
-                    <div class="card-desc">
-                        <h3>Alumni</h3>
-                        <h4>Near You</h4>   
+                    <div class="card-desc" align="center">
+                        <h3 style="color:#fff;">Alumni Near You</h3>   
                     </div>
-                    <form action="#" method="post">
-                            <button class="btn-card" style="margin: 0.56em;" formaction="findAluminiNearby.php">Click Here</button>
-                        </form>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card-content">
-                    <div class="card-img">
-                        <img src="img/frndz.jpg" alt="">
+            <div class="col-md-4 col-sm-12">
+                <div class="card-content" onclick="myFunction()" style="background:#2cc2de;">
+                    <div class="card-img" align="center">
+                        <i class="fas fa-user-friends" style="font-size:50px; padding: 20px; color:#fff;"></i>
                     </div>
-                    <div class="card-desc">
-                        <h3>Find</h3>
-                        <h4>Friends</h4>   
+                    <div class="card-desc" align="center">
+                        <h3 style="color:#fff;">Find Friends</h3>   
                     </div>
-                    <form action="#" method="post">
-                            <button class="btn-card" style="margin: 0.56em;" formaction="findFriends.php">Click Here</button>
-                        </form>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card-content">
-                    <div class="card-img">
-                        <img src="img/anusm.jpeg" alt="">
+            <div class="col-md-4 col-sm-12">
+                <div class="card-content" onclick="myFunction()" style="background:#0ad80f;">
+                    <div class="card-img" align="center">
+                        <i class="fas fa-book-reader" style="font-size:50px; padding: 20px; color:#fff;"></i></div>
+                    <div class="card-desc" align="center">
+                        <h3 style="color:#fff;">Download Anusmriti</h3>  
                     </div>
-                    <div class="card-desc">
-                        <h3>Download</h3>
-                        <h4>Anusmriti</h4>   
-                    </div>
-                    <form action="#" method="post">
-                            <button class="btn-card" style="margin: 0.56em;" formaction="#">Click Here</button>
-                        </form>
                 </div>
             </div>
         </div>
@@ -210,20 +256,31 @@
     </section>
             
             
-            <section id="header">
-				<div class="inner">
-					<span class="icon major fa-handshake-o"></span>
-					<h1>Need<strong>Help</strong><br>
-					</h1>
-					<ul class="actions special">
-                        <button class="button" style="vertical-align:middle; background: #003C4D;  padding: 10px;" formaction="needhelp.php"><span>Priviledge Us </span></button>
-					</ul>
-				</div>
-			</section>
+      <div class="container">  
+            <form id="contact" action="" method="post">
+                <span align="center"><h3 style="color: #327a81">NEED HELP ?</h3></span>
+                <fieldset>
+                    <input placeholder="Name" type="text" tabindex="1" required autofocus>
+                </fieldset>
+                <fieldset>
+                    <input placeholder="Email" type="email" tabindex="2" required>
+                </fieldset>
+                <fieldset>
+                    <input placeholder="Phone Number " type="tel" tabindex="3" required>
+                </fieldset>
+                <fieldset>
+                    <textarea placeholder="Type your message here.." tabindex="4" required></textarea>
+                </fieldset>
+                <fieldset>
+                    <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+                </fieldset>
+            </form>
+        </div>
 
-            <section  id="contact" class="content-section">
+
+        <section  id="contact" class="content-section">
                 <div id="con">    
-                    <div class="col-md-6">  
+                    <div class="col-md-12" style="padding:0;">  
                         <div id="map">
                 
                 	<!-- How to change your own map point
@@ -233,15 +290,31 @@
                            4. Copy only URL and paste it within the src="" field below
                     -->
                     
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14399.37835508978!2d84.8434447170254!3d25.54355318850096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398d567a193702ff%3A0xc9c527c7faec3056!2sIIT+Patna+Administration+Block!5e0!3m2!1sen!2sin!4v1539177184721" width="100%" height="400px" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    <ifr    ame src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14399.37835508978!2d84.8434447170254!3d25.54355318850096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398d567a193702ff%3A0xc9c527c7faec3056!2sIIT+Patna+Administration+Block!5e0!3m2!1sen!2sin!4v1539177184721" width="100%" height="400px" frameborder="0" style="border:0" allowfullscreen></iframe>
                     </div>
                     </div>
-                    <div class="col-md-6">  
+                    <div class="col-md-4">  
                         <div class="teext">
-                            <h1>Contact <span> US</span></h1><br>
-                        <p> <i class="fa fa-envelope" aria-hidden="true" style="font-size: 28px; color: #26C1ED; margin-right: 14px;"></i>saar@iitp.ac.in<br><br><br>
-                            <i class="fa fa-phone" aria-hidden="true" style="font-size: 32px; color: #26C1ED; margin-right: 14px;"></i>8827275145<br><br><br>
-                            <i class="fa fa-map-marker" aria-hidden="true" style="font-size: 32px; color: #26C1ED; margin-right: 14px;"></i> IIT Patna Campus, Patna, 801110</p>            
+                            <h1 style="font-size:24px;">External <span>Links</span></h1><br>
+                        <p> <i class="fa fa-envelope" aria-hidden="true" style="font-size: 18px; color: #26C1ED; margin-right: 14px;"></i>saar@iitp.ac.in<br><br>
+                            <i class="fa fa-phone" aria-hidden="true" style="font-size: 20px; color: #26C1ED; margin-right: 14px;"></i>8827275145<br><br>
+                            <i class="fa fa-map-marker" aria-hidden="true" style="font-size: 20px; color: #26C1ED; margin-right: 14px;"></i> IIT Patna Campus, Patna, 801110</p>            
+                        </div>
+                    </div>
+                    <div class="col-md-4">  
+                        <div class="teext">
+                            <h1  style="font-size:24px;">Social <span> Media</span></h1><br>
+                        <p> <a style="text-decoration:none; color:#fff" href="https://www.facebook.com/saar.iitp/"><i class="fab fa-facebook-f" aria-hidden="true" style="font-size: 18px; color: #26C1ED; margin-right: 14px;"></i>SAAR, IIT Patna</a><br><br>
+                        <a style="text-decoration:none; color:#fff" href="https://www.instagram.com/"><i class="fab fa-instagram" aria-hidden="true" style="font-size: 20px; color: #26C1ED; margin-right: 14px;"></i>Instagram</a><br><br>
+                        <a style="text-decoration:none; color:#fff" href="https://www.linkedin.com/"><i class="fab fa-linkedin-in" aria-hidden="true" style="font-size: 20px; color: #26C1ED; margin-right: 14px;"></i>LinkedIn</a></p>            
+                        </div>
+                    </div>
+                    <div class="col-md-4">  
+                        <div class="teext">
+                            <h1 style="font-size:24px;">Contact <span> US</span></h1><br>
+                        <p> <i class="fa fa-envelope" aria-hidden="true" style="font-size: 18px; color: #26C1ED; margin-right: 14px;"></i>saar@iitp.ac.in<br><br>
+                            <i class="fa fa-phone" aria-hidden="true" style="font-size: 20px; color: #26C1ED; margin-right: 14px;"></i>8827275145<br><br>
+                            <i class="fa fa-map-marker" aria-hidden="true" style="font-size: 20px; color: #26C1ED; margin-right: 14px;"></i> IIT Patna Campus, Patna, 801110</p>            
                         </div>
                     </div>
                 </div>
@@ -249,7 +322,7 @@
 
             <section class="footer">
                 <p>|| Copyright || &copy; IIT Patna SAAR Team ||</p>
-            </section>  
+            </section>
         </div>
     
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>

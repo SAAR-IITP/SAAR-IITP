@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Donate</title>
+        <title>Send Birthday Wishes</title>
         <script>
             window.onload=function(){
             var min = 2012;
@@ -17,7 +17,7 @@
                 console.log(document.getElementById('passYear'));
                document.getElementById('passYear').appendChild(opt);
                 };
-            }
+        }
         </script>
         
         <meta name="description" content="">
@@ -37,18 +37,16 @@
         <script src="js/vendor/bootstrap.min.js"></script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
-
-	<style>
-		.hello {
-    		   background: url(img/bggg.png);
-    		   background-size: cover;
-    		   background-repeat: no-repeat;
-		}
-	</style>
-        
+        <style>
+             @media screen and (max-width:500px){
+                table tbody{
+                    display:block;
+                }
+            }
+        </style>
     </head>
 
-    <body class="hello">
+    <body style="background: #fff;">
 
         <header class="nav-down responsive-nav hidden-lg hidden-md">
             <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
@@ -96,60 +94,91 @@
                 <li><a href="#" target="_blank"><i class="fa fa-linkedin"></i></a></li>
             </ul>
         </div>
-  
+        
   <div class="page-content">
       
-      <section id="extra" style="padding: 20px;">
-          <br><br><br>
+      <section id="extra" style="background: #003C4D; padding: 20px;">  
+          <br><br><br><br>
         <div class="section-heading" style="text-align: center;margin-bottom: 10px;">
-        <div style=" background-color: #003C4D; padding-top: 30px; margin-bottom: 40px;">
-            <h1 style="color: #fff; text-decoration: underline; padding-left: 30px;">Why To Donate ?</h1><br><br>
+            <h1 style="color: #fff; text-decoration: underline; padding-left: 30px;">"Enter city name and Select Passing year"</h1>
         </div>
-        <div style="border-right-style: solid; border-right-width: 2px; border-right-color:#003C4D;">
-		  <h1 style="color: #003C4D; padding-left: 40px; font-size: 20px; text-align: justify;">Relations are all that matters in this world of cut-throat competition. And to see your Alma-Mater thrive, even after their departure, is the dream of every alumni. But bonds are never forgotten and nostalgia seems to make the Institute the world's equivalent of heaven. 
-In order to help the Institution achieve a grandeur better than ever and help the upcoming generation of our college, any generous alumnus or philanthropist is welcome to join hands with IIT Patna to promote the students as well as the Institution by creating a corpus to support various departments by aiding them in financial matters.<br><br>
-        Steps to Donate...
-        <ul><li>Click on the Donate button below</li>
-                <li>On sbi i-collect page select alumni cell iitpatna for donation</li>
-                <li>Then Proceed</li></ul>
-		</h1>
-        </div>
-        </div>
-        <form method="post" action=""><br>
-            <button class="button" style="vertical-align:middle; background: #003C4D; color: #fff; padding: 2px 0px; font-size: 20px; margin: 10px;" formaction="#"><span>Donate</span></button>
+        <form method="post" action="">
+            <input class="full" type="text" name="city" required placeholder="City" style="padding: 4px; margin: 2px;">
+            <select class="full" id="passYear" name="year" style="padding: 4px; margin: 2px;">
+                <option value="" selected disabled hidden>Graduation Year</option>
+            </select><br>
+            <button class="button" style="vertical-align:middle; background: white; color: #003C4D; padding: 0px; font-size: 20px; margin: 10px;" formaction="profile.html"><span>Submit</span></button>
         </form>
       </section>
+      
       <br><br>
-      <section  id="contact" class="content-section">
-                <div id="con">    
-                    <div class="col-md-6" style="padding:0;">  
-                        <div id="map">
-                
-                	<!-- How to change your own map point
-                           1. Go to Google Maps
-                           2. Click on your location point
-                           3. Click "Share" and choose "Embed map" tab
-                           4. Copy only URL and paste it within the src="" field below
-                    -->
-                    
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14399.37835508978!2d84.8434447170254!3d25.54355318850096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398d567a193702ff%3A0xc9c527c7faec3056!2sIIT+Patna+Administration+Block!5e0!3m2!1sen!2sin!4v1539177184721" width="100%" height="400px" frameborder="0" style="border:0" allowfullscreen></iframe>
-                    </div>
-                    </div>
-                    <div class="col-md-6">  
-                        <div class="teext">
-                            <h1>Contact <span> US</span></h1><br>
-                        <p> <i class="fa fa-envelope" aria-hidden="true" style="font-size: 28px; color: #26C1ED; margin-right: 14px;"></i>saar@iitp.ac.in<br><br><br>
-                            <i class="fa fa-phone" aria-hidden="true" style="font-size: 32px; color: #26C1ED; margin-right: 14px;"></i>8827275145<br><br><br>
-                            <i class="fa fa-map-marker" aria-hidden="true" style="font-size: 32px; color: #26C1ED; margin-right: 14px;"></i> IIT Patna Campus, Patna, 801110</p>            
-                        </div>
-                    </div>
-                </div>
-            </section>
+      <section id="extra" style="background: #003C4D; padding: 14px 0 1px 0;">  
+            <div class="section-heading" style="text-align: center;margin-bottom: 10px;">
+                <h1 style="color: #fff; text-decoration: underline; padding-left: 30px;">"NO RECORDS FOUND"</h1>
+            </div>  
+      </section>
+      
+      <section id="extra">
+          <br><br>
+  <div class="table-users">
+   <table cellspacing="0">
+      <div class="hide">
+       <tr>
+         <td>Pictures</td>
+         <td>Name</td>
+         <td>E-mail Id</td>
+         <td>Links to Fb Profile</td>
+       </tr>
+       </div>
+      <tr>
+         <td><img src="img/male.jpeg" alt="" /></td>
+         <td>Jane Doe</td>
+         <td>jane.doe@foo.com</td>
+         <td><a href="#" >Click Here</a></td>
+      </tr>
 
-            <section class="footer">
-                <p>|| Copyright || &copy; IIT Patna SAAR Team ||</p>
-            </section>
-        </div>  
+      <tr>
+         <td><img src="img/female.png" alt="" /></td>
+         <td>John Doe</td>
+         <td>john.doe@foo.com</td>
+          <td><a href="#" >Click Here</a></td>
+      </tr>
+
+      <tr>
+         <td><img src="img/male.jpeg" alt="" /></td>
+         <td>Jane Smith</td>
+         <td>jane.smith@foo.com</td>
+         <td><a href="#" >Click Here</a></td>
+       </tr>
+      
+      <tr>
+         <td><img src="img/male.jpeg" alt="" /></td>
+         <td>John Smith</td>
+         <td>john.smith@foo.com</td>
+          <td><a href="#" >Click Here</a></td>
+      </tr>
+       
+       
+      <tr>
+         <td><img src="img/female.png" alt="" /></td>
+         <td>Jane Smith</td>
+         <td>jane.smith@foo.com</td>
+          <td><a href="#" >Click Here</a></td>
+       </tr>
+      
+      <tr>
+         <td><img src="img/male.jpeg" alt="" /></td>
+         <td>John Smith</td>
+         <td>john.smith@foo.com</td>
+          <td><a href="#" >Click Here</a></td>
+      </tr>
+   </table>
+</div>
+  
+  
+      </section>
+      
+    </div>
         
     </body>
 </html>

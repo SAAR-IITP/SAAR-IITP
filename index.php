@@ -19,8 +19,10 @@
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="css/fontAwesome.css">
         <link rel="stylesheet" href="css/light-box.css">
+        <link rel="stylesheet" href="css/timeline.css">
         <link rel="stylesheet" href="css/owl-carousel.css">
         <link rel="stylesheet" href="css/templatemo-style.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
         
         <style>
@@ -31,6 +33,10 @@
                 }
             }
             
+            li i{
+                font-size:20px;
+                padding-right:8px;
+            }
         </style>
         
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
@@ -49,13 +55,29 @@
             <div id="main-nav" class="collapse navbar-collapse">
                 <nav>
                     <ul class="nav navbar-nav">
-                        <li><a href="#top">Home</a></li>
-                        <li><a href="#video">About Us</a></li>
-                        <li><a href="#projects">Gallery</a></li>
-                        <li><a href="#blog">Events</a></li>
-                        <li><a href="#contact">Contact Us</a></li>
-                        <li><form action="#" method="post" id="log">
-                            <button class="btn" formaction="signin.php">Login / Signup</button>
+                        <li><a href="#top">HOME</a></li>
+                        <li><a href="#video">ABOUT US</a></li>
+                        <li><a href="#projects">MEDIA</a></li>
+                        <li><a href="#blog">TIMELINE</a></li>
+                        <li><a href="#contact">CONATCT US</a></li>
+                        <li>
+                        <form action="#" method="post" id="log">
+                            <?php
+                                if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"]==true){
+                            ?>
+                            <button class="button" formaction="portal.php"><span>My Profile </span></button>
+                            <?php
+                                    }
+                                else{
+                            ?>
+                            <button class="button" formaction="signin.php"><span>Login/Signup </span></button>
+                            <?php
+                                }
+                            ?>
+                        </form>
+                        </li>
+                        <li><form action="#" method="post" id="log" target="_blank">
+                            <button class="btn" formaction="team.php">TEAM</button>
                         </form></li>
                     </ul>
                 </nav>
@@ -79,36 +101,41 @@
                 <ul>
                     <li>
                         <a href="#top">
-                            <span class="rect"></span>
-                            <span class="circle"></span>
+                            <!-- <span class="rect"></span>
+                            <span class="circle"></span> -->
+                            <i class="fas fa-home"></i>
                             Home
                         </a>
                     </li>
                     <li>
                         <a href="#video">
-                            <span class="rect"></span>
-                            <span class="circle"></span>
-                            About US
+                            <!-- <span class="rect"></span>
+                            <span class="circle"></span> -->
+                            <i class="fas fa-info-circle"></i>
+                            About Us
                         </a>
                     </li>
                     <li>
                         <a href="#projects">
-                            <span class="rect"></span>
-                            <span class="circle"></span>
+                            <!-- <span class="rect"></span>
+                            <span class="circle"></span> -->
+                            <i class="far fa-images"></i>
                             Gallery
                         </a>
                     </li>
                     <li>
                         <a href="#blog">
-                            <span class="rect"></span>
-                            <span class="circle"></span>
-                            Events
+                            <!-- <span class="rect"></span>
+                            <span class="circle"></span> -->
+                            <i class="fas fa-calendar-alt"></i>
+                            Timeline
                         </a>
                     </li>
                     <li>
                         <a href="#contact">
-                            <span class="rect"></span>
-                            <span class="circle"></span>
+                            <!-- <span class="rect"></span>
+                            <span class="circle"></span> -->
+                            <i class="fas fa-phone-volume"></i>
                             Contact Us
                         </a>
                     </li>
@@ -128,13 +155,11 @@
                             ?>
                         </form>
                     </li>
+                    <li><form action="#" method="post" id="log" target="_blank">
+                        <button class="btn" style="min-width: 120px;margin-left: 10px;" formaction="team.php">TEAM</button>
+                    </form></li>
                 </ul>
             </nav>
-            <ul class="social-icons">
-                <li><a href="https://www.facebook.com/saar.iitp" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="#"  target="_blank"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="#" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-            </ul>
         </div>
 
         <div class="slider">
@@ -146,8 +171,8 @@
                     <div class="info">
                         <div><br><br>
                           <h1>Actions speak louder than words!<br> Give today.</h1>
-                          <div class="white-button button">
-                                <a href="don.html">Donate Now</a>
+                          <div class="accent-button button">
+                            <a href="don.html">Donate Now</a>
                           </div>
                         </div>
                     </div>
@@ -161,8 +186,8 @@
                         <div class="info">
                             <div><br><br>
                           <h1>Actions speak louder than words!<br> Give today.</h1>
-                          <div class="white-button button">
-                                <a href="donate.html">Donate Now</a>
+                          <div class="accent-button button">
+                            <a href="don.html">Donate Now</a>
                           </div>
                         </div>
                         </div>
@@ -176,8 +201,8 @@
                         <div class="info">
                         <div><br><br>
                           <h1>Actions speak louder than words!<br> Give today.</h1>
-                          <div class="white-button button">
-                                <a href="donate.html">Donate Now</a>
+                          <div class="accent-button button">
+                            <a href="don.html">Donate Now</a>
                           </div>
                         </div>
                     </div>
@@ -191,21 +216,26 @@
     
             <section id="video" class="content-section" >
                 <div class="row">
-                    <div class="col-md-12" style="border-style: solid;border-width: thin;border-color: #000;border-radius:16px;">
+                    <h1><span>About Us</span></h1>
+                    <div class="col-md-6">
+                        <div class="image">
+                            <img src="img/abt.jpeg">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
                         <div class="section-heading" ><br>
-                            <h1>About <em>US</em></h1>
                             <p>Indian Institute of Technology Patna is an Institution of National Importance and a new addition to the hallowed IIT System that has proven its worth in last 50+ years. The alumni of IIT are internationally known for their caliber and contribution. Since its inception in 2008, IIT Patna- like its young as well as established peers- has pursued excellence with steadfast determination. IITP has 6 Engineering Disciplines: Civil and Environmental Engineering, Chemical and Biochemical Engineering, Computer Science and Engineering, Electrical Engineering, Mechanical Engineering and Material Science and Engineering; 2 Science Disciplines: Physics and Chemistry; Humanities and Social Sciences; Mathematics. Its faculty members are experts in their respective fields. The thriving PhD, M.Tech and B.Tech programs of IITP see the students and faculty publish prolifically, win competitions, come up with innovations and build societal awareness.</p>
                         </div>
-                        <div class="accent-button button">
-                            <a href="about.html">Continue Reading</a>
-                        </div>
+                    </div>
+                    <div class="accent-button button">
+                        <a href="about.php">Continue Reading</a>
                     </div>
                 </div>
             </section>
 
             <section id="projects" class="content-section">    
                 <div class="section-heading" style="text-align: center; margin-bottom: 10px;">
-                    <h1><em>Gallery</em></h1>
+                    <h1 style="padding-bottom: 10px"><span><em>Gallery</em></span></h1>
                 </div>
                 <div class="section-content">
                     <div class="masonry">
@@ -248,162 +278,144 @@
                         <div class="row" style="background-color: #fff;">
                             <div class="col-md-12">
                                 <div class="accent-button button">
-                                    <a href="gallery.html">View Full Gallery</a>
+                                    <a href="gallery.html">View Fulll Gallery</a>
                                 </div>
                             </div>
                         </div>
                     </form>
                 </div>
-            </section>
-    
-            <section id="extra" class="content-section">
+                
                 <div class="row">
-                    <div class="col-md-12">  
+                    <div class="col-md-7">  
                         <br><br>
                         <div class="section-heading" style="text-align: center;margin-bottom: 10px;">
-                            <h1>A featured <em>Video</em></h1>
+                            <h1><span>A featured <em>Video</em></span></h1>
                         </div>
                         
                         <div class="box-video">
-                            <div class="bg-video" style="background-image: url(https://unsplash.imgix.net/photo-1425036458755-dc303a604201?fit=crop&fm=jpg&q=75&w=1000);">
-                                <div class="bt-play">Play</div>
-                            </div>
                             <div class="video-container">
-                                <iframe width="100%" height="520" src="https://www.youtube.com/embed/LfoCTLyNd38" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                <!--<iframe width="100%" height="520" src="https://www.youtube.com/embed/LfoCTLyNd38" frameborder="0" allowfullscreen></iframe>    -->      
+
+                                <iframe width="100%" height="490" src="https://www.youtube.com/embed/1aW5r8-d2jQ" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>      
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
-
-            <section id="blog"  style="background:#fff;" class="content-section">
-                <div class="row"  style="background:#fff;">
-                <div class="col-md-7">  
-                <div class="section-content">
-                    <div class="tabs-content" >
-                        <div class="wrapper">
-                            <ul class="tabs clearfix" data-tabgroup="first-tab-group">
-                              <li><a href="#tab1" class="active">Event 1</a></li>
-                              <li><a href="#tab2">Event 2</a></li>
-                              <li><a href="#tab3">Event 3</a></li>
-                            </ul>
-                            <section id="first-tab-group" class="tabgroup">
-                                <div id="tab1">
-                                    <ul>
-                                        <li>
-                                            <div class="item">
-                                                <div class="text-content">
-                                                    <h4>Mr. Utsav Gautam</h4>
-                                                    <span>(B. Tech/EE/2013)</span>
-                                                    <p>Mr. Utsav Gautam (B. Tech/EE/2013) who recently bagged AIR 33 in the UPSC CSE 2017 examination, on our request has agreed to go live through this page so that he can clear the doubts of the aspiring candidates and guide them.Mr. Utsav Gautam (B. Tech/EE/2013) who recently bagged AIR 33 in the UPSC CSE 2017 examination, on our request has agreed to go live through this page so that he can clear the doubts of the aspiring candidates and guide them.</p>
-                                                    <div class="accent-button button">
-                                                        <a href="#">Continue Reading</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div id="tab2">
-                                    <ul>
-                                        <li>
-                                            <div class="item">
-                                                <div class="text-content">
-                                                    <h4>Mr. Vitthal Pandey</h4>
-                                                    <span>(B. Tech/ME/2016)</span>
-                                                    <p>
-                                                        We feel proud to reveal that our reputed alumnus Mr. Vitthal Pandey (Mechanical Engineering, Batch of 2016) bagged an astonishing AIR 5 in the UPSC Engineering Services 2018 exam. We here at SAAR and IIT Patna feel proud of his achievements and wish him best in his future endeavors.
-
-#ProudIITPian
-                                                    </p>
-                                                    
-                                                    <div class="accent-button button">
-                                                        <a href="#">Continue Reading</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div id="tab3">
-                                    <ul>
-                                        <li>
-                                            <div class="item">
-                                                <div class="text-content">
-                                                    <h4>Mr. Vijay Narayan</h4>
-                                                    <span>(B. Tech/ME/2013)</span>
-                                                    <p>It is a matter of pride to announce that one of our most reputed alumni, Mr. Vijay Narayan (Mechanical Engineering, Batch of 2013) has bagged a mind-blowing AIR 13 in this recent UPSC IES examination. 
-We all here at SAAR and IIT Patna feel proud of his achievement and wish him best in his future endeavors.
-
-#ProudIITPian</p>
-                                                    
-                                                    <div class="accent-button button">
-                                                        <a href="#">Continue Reading</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </section> 
+                    <div class="col-md-5">
+                        <br><br>
+                        <div class="section-heading" style="text-align: center;margin-bottom: 10px;">
+                            <h1><span>We on <em>Facebook</em></span></h1>
                         </div>
+                        <br>
+                        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fsaar.iitp%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=224254148413683" width="300" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
                     </div>
                 </div>
+            </section>
+            
+            <section id="blog"  style="background:#fff;" class="content-section">
+                   
+            <section class="timeline" id="timelin" style="background: #003C4D;margin-left: -40px;">
+                <div class="section-heading" style="text-align: center; margin-bottom: 10px;">
+                    <h1 class="timeline-header"><span><em style="font-size: 1.5em">Timeline</em></span></h1>
                 </div>
-                <div class="temp">
-                <div class="col-md-5">
-                    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fsaar.iitp%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=224254148413683" width="300" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
-                </div>
-                </div>
+                <br>
+                <div class="scrollable">
+                <ol>
+                    <li>
+                    <div>
+                        <time>June</time>Released the first edition of Anusmriti
+                    </div>
+                    </li>
+                    <li>
+                    <div>
+                        <time>August</time>In house session by Alumnus Mr. Utsav Gautam
+                    </div>
+                    </li>
+                    <li>
+                    <div>
+                        <time>September</time>1. Distribution of Alumni cards during convocation <br>2. Conducted Alumni Meet
+                    </div>
+                    </li>
+                    <li>
+                    <div>
+                        <time>October</time>Interactive session with Dr. S K Pathak - Faculty at University of Nevada
+                    </div>
+                    </li>
+                    <li>
+                    <div>
+                        <time>December</time>Released the second edition of Anusmriti
+                    </div>
+                    </li>
+                    <li>
+                    <div>
+                        <time>Afterwards</time>Coming Soon
+                    </div>
+                    </li>
+                </ol>
                 </div>
             </section>
+    </section>
+    
 
             <section id="extra" class="content-section">
-                <div class="row">
                     <div class="imgbox">
-                        <img class="center-fit" src='img/Group%2038.png'>
+                        <img class="center-fit" src='img/Group 38.png'>
                     </div>
                     <div class="centered">
                         <span id="remove"><h4 style="color: #003C4D;">"We make a living by what we get, we make a life by what we give"</h4>
                         <h4 style="color: #26C1ED;">~Winston Churchill</h4></span>
                         <div id="shift" class="new">
-                        <a href="donate.html">Donate Now</a>
+                        <a href="don.html">Donate Now</a>
                     </div>
                     </div>
-                </div>
             </section>
-
+    
+ 
             <section  id="contact" class="content-section">
-                <div id="con">    
-                    <div class="col-md-6" style="padding:0;">  
-                        <div id="map">
-                
-                	<!-- How to change your own map point
-                           1. Go to Google Maps
-                           2. Click on your location point
-                           3. Click "Share" and choose "Embed map" tab
-                           4. Copy only URL and paste it within the src="" field below
-                    -->
-                    
+                <div id="con">
+                    <div class="col-md-12">
+                    <div id="map">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14399.37835508978!2d84.8434447170254!3d25.54355318850096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398d567a193702ff%3A0xc9c527c7faec3056!2sIIT+Patna+Administration+Block!5e0!3m2!1sen!2sin!4v1539177184721" width="100%" height="400px" frameborder="0" style="border:0" allowfullscreen></iframe>
                     </div>
                     </div>
-                    <div class="col-md-6">  
+                    <div class="col-md-4">  
                         <div class="teext">
-                            <h1>Contact <span> US</span></h1><br>
-                        <p> <i class="fa fa-envelope" aria-hidden="true" style="font-size: 28px; color: #26C1ED; margin-right: 14px;"></i>saar@iitp.ac.in<br><br><br>
-                            <i class="fa fa-phone" aria-hidden="true" style="font-size: 32px; color: #26C1ED; margin-right: 14px;"></i>8827275145<br><br><br>
-                            <i class="fa fa-map-marker" aria-hidden="true" style="font-size: 32px; color: #26C1ED; margin-right: 14px;"></i> IIT Patna Campus, Patna, 801110</p>            
+                        <h1 style="font-size:24px;">Quick <span>Links</span></h1><br>
+                        <p> <a style="text-decoration:none; color:#fff" href="https://www.iitp.ac.in/">IIT Patna</a><br>
+                        <a style="text-decoration:none; color:#fff" href="https://www.iitp.ac.in/alumni/">ITPAA</a><br>
+                        <a style="text-decoration:none; color:#fff" href="#">Reach Us</a><br>
+                        <a style="text-decoration:none; color:#fff" href="#">Terms of Use</a><br>
+                        <a style="text-decoration:none; color:#fff" href="#">Privacy Policy</a>
+                        </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">  
+                        <div class="teext">
+                            <h1  style="font-size:24px;">Social <span> Media</span></h1><br>
+                        <p> <a style="text-decoration:none; color:#fff" href="https://www.facebook.com/saar.iitp/"><i class="fab fa-facebook-square" aria-hidden="true" style="font-size: 18px; color: #26C1ED; margin-right: 14px;"></i>Facebook</a><br>
+                        <a style="text-decoration:none; color:#fff" href="https://www.instagram.com/saar.iitp"><i class="fab fa-instagram" aria-hidden="true" style="font-size: 20px; color: #26C1ED; margin-right: 14px;"></i>Instagram</a><br>
+                        <a style="text-decoration:none; color:#fff" href="https://www.linkedin.com/company/saar-iitp"><i class="fab fa-linkedin" aria-hidden="true" style="font-size: 20px; color: #26C1ED; margin-right: 14px;"></i>LinkedIn</a><br>
+                        <a style="text-decoration:none; color:#fff" href="https://www.twitter.com/saar_iitp"><i class="fab fa-twitter" aria-hidden="true" style="font-size: 20px; color: #26C1ED; margin-right: 14px;"></i>Twitter</a><br>
+                        <a style="text-decoration:none; color:#fff" href="https://www.youtube.com/channel/UCoAb1YggffbfgVxQyXaZB-g"><i class="fab fa-youtube" aria-hidden="true" style="font-size: 20px; color: #26C1ED; margin-right: 14px;"></i>Youtube</a></p>            
+                        </div>
+                    </div>
+                    <div class="col-md-4">  
+                        <div class="teext">
+                            <h1 style="font-size:24px;">Contact <span> Us</span></h1><br>
+                            <p> Office of A Dean Resource<br>
+							Administrative Building, IIT Patna<br><br>
+                            Prof. In-charge:<br>
+                            Dr. Anirban Chowdhary<br>
+                            Email - pic_alumni@iitp.ac.in<br><br>
+                            General Secretary:<br>
+                        	<a href="https://theabhinavgyan.github.io/" style="color: #fff">Abhinav Gyan</a><br>
+                        	Email - agyan.ce16@iitp.ac.in</p>            
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section class="footer">
+            <section class="footer" style="background: #232323;">
                 <p>|| Copyright || &copy; IIT Patna SAAR Team ||</p>
             </section>  
-
         </div>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
@@ -411,6 +423,7 @@ We all here at SAAR and IIT Patna feel proud of his achievement and wish him bes
 
     <script src="js/vendor/bootstrap.min.js"></script>
     
+    <script src="js/timeline.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
     <script>
@@ -454,6 +467,28 @@ We all here at SAAR and IIT Patna feel proud of his achievement and wish him bes
         }
     </script>
 
+         <script>
+  $(document).ready(function(){
+      
+      $(window).scroll(function(){
+        var scrolltop = $(window).scrollTop();
+        if(scrolltop <50){
+            $('.sidebar-navigation .logo').css({"background-color":"#26C1ed"});
+            // $('.sidebar-navigation.hidde-sm.hidden-xs').removeClass("scroll");
+            // $('.sidebar-navigation ul').removeClass("margin-cut");
+            $('.sidebar-navigation').css({"background-color":"#003C4D"});
+            $('.sidebar-navigation nav a').css({"color":"#fff"});
+
+        }
+        else if(scrolltop >50){
+            $('.sidebar-navigation').css({"background-color":"#232323"});
+            $('.sidebar-navigation .logo').css({"background-color":"#232323"});
+            // $('.sidebar-navigation.hidde-sm.hidden-xs').addClass("scroll");
+            // $('.sidebar-navigation ul').addClass("margin-cut");
+        }
+      })
+  })
+</script>
     <script>
         function on() {
             document.getElementById("myModal").style.display = "block";
