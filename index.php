@@ -295,7 +295,7 @@
                         <div class="box-video">
                             <div class="video-container">
 
-                                <iframe width="100%" height="490" src="https://www.youtube.com/embed/1aW5r8-d2jQ" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>      
+                                <iframe width="100%" height="490" src="https://www.youtube.com/embed/WdR0v0pJ4vY" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"allowfullscreen></iframe>      
                             </div>
                         </div>
                     </div>
