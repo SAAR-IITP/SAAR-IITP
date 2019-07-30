@@ -203,13 +203,13 @@ input.email, input.tel, input.text.w3lpass {
   margin: 2em 0;
 }
 
-.text:focus, .text:valid {
+.text:focus, .text:required:valid {
   box-shadow: none;
   outline: none;
   background-position: 0 0;
 }
 
-.text:focus::-webkit-input-placeholder, .text:valid::-webkit-input-placeholder {
+.text:focus::-webkit-input-placeholder, .text:required:valid::-webkit-input-placeholder {
   color: rgba(255, 255, 255, 0.7);
   font-size: .9em;
   -webkit-transform: translateY(-30px);

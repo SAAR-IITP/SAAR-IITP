@@ -6,11 +6,22 @@
 }
 
 .card-content {
+    border-radius: 10%;
     padding-bottom: 20px;
-    min-height: 300px;
 	background: #ffffff;
 	border: 4px;
 	box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+}
+
+.card-content :hover{
+    cursor: pointer;
+	opacity: 0.7;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+}
+
+
+.card-desc :hover{
+    border: 3px solid #fff;
 }
 
 .card-img {
@@ -18,7 +29,6 @@
 	position: relative;
 	border-radius: 0;
 	z-index: 1;
-    height: 300px;
 }
 
 .card-img img {
@@ -101,10 +111,10 @@ a.btn-card {
 }
 
 .container p {
-    font-size: 20px;
-    margin-top: 20px;
+    font-size: 15px;
+    margin-top: 1px;
     color: #003C4D;
-    line-height: 35px;
+    line-height: 12px;
 }
 /* End card section */
 
@@ -913,8 +923,12 @@ header {
   width: 100%;
   margin-top: 30px;
   padding-left: 60px;
-  padding-right: 60px;
+  /* padding-right: 60px; */
   padding-bottom: 80px;
+}
+
+#blog .details-card .row{
+  padding-right: 60px;
 }
 
 #blog .tabs {
@@ -1120,6 +1134,12 @@ header {
     word-spacing: 2px;
     color: #fff;
 }
+#contact{
+  margin-bottom: 0;
+  padding-bottom: 0;
+  padding-right: 0;
+  box-shadow: none;
+}
 
 /* Footer Style */
 
@@ -1251,6 +1271,10 @@ header {
 
 }
 
+#one .container .row .col-5,#one .container .row .col-7{
+  padding: 0;
+}
+
 @media (max-width: 690px) {
 
   .section-heading p {
@@ -1372,6 +1396,9 @@ header {
         margin-left: auto;
         margin-right: auto;
     }
+    #blog .details-card .row{
+      padding-right: 20px;
+    } 
 }
 
 @media (max-width: 340px) {
