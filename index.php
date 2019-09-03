@@ -155,7 +155,7 @@
                             ?>
                         </form>
                     </li>
-                    <li><form action="#" method="post" id="log" target="_blank">
+                    <li><form action="#" method="post" id="log">
                         <button class="btn" style="min-width: 120px;margin-left: 10px;" formaction="team.php">TEAM</button>
                     </form></li>
                 </ul>
