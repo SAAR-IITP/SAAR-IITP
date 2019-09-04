@@ -91,7 +91,21 @@
                 <div class="section-content">
                     <div class="masonry">
                         <div class="row">
+                            <?php
+                                $str = file_get_contents('http://saar-server.000webhostapp.com/assets/gallery_sample.json');
+                                $json = json_decode($str, true);
+                                foreach ($json as $key) {
+                                    if($key["status"] == "active")
+                            ?>
                             <div class="item">
+                                <div class="col-md-4">
+                                    <a href='<?php echo $key["image_url"]; ?>' data-lightbox="image"><img src='<?php echo $key["image_url"]; ?>' alt="image " ></a>
+                                </div>
+                            </div>
+                            <?php
+                                }
+                            ?>
+                           <!--  <div class="item">
                                 <div class="col-md-4">
                                     <a href="img/pus.jpg" data-lightbox="image"><img src="img/pus.jpg" alt="image 1"></a>
                                 </div>
@@ -150,7 +164,7 @@
                                 <div class="col-md-4">
                                     <a href="img/uts.jpg" data-lightbox="image"><img src="img/uts.jpg" alt="image 1"></a>
                                 </div>
-                            </div>
+                            </div> -->
                             
                         </div>
                     </div>

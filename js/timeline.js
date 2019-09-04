@@ -4,14 +4,14 @@
 
   // VARIABLES
   var timeline = document.querySelector(".timeline ol"),
-      elH = document.querySelectorAll(".timeline li > div"),
-      arrows = document.querySelectorAll(".timeline .arrows .arrow"),
-      arrowPrev = document.querySelector(".timeline .arrows .arrow__prev"),
-      arrowNext = document.querySelector(".timeline .arrows .arrow__next"),
-      firstItem = document.querySelector(".timeline li:first-child"),
-      lastItem = document.querySelector(".timeline li:last-child"),
-      xScrolling = 280,
-      disabledClass = "disabled";
+    elH = document.querySelectorAll(".timeline li > div"),
+    arrows = document.querySelectorAll(".timeline .arrows .arrow"),
+    arrowPrev = document.querySelector(".timeline .arrows .arrow__prev"),
+    arrowNext = document.querySelector(".timeline .arrows .arrow__next"),
+    firstItem = document.querySelector(".timeline li:first-child"),
+    lastItem = document.querySelector(".timeline li:last-child"),
+    xScrolling = 280,
+    disabledClass = "disabled";
 
   // START
   window.addEventListener("load", init);
@@ -24,7 +24,7 @@
   }
 
   // SET EQUAL HEIGHTS
-  function setEqualHeights(el) {
+  /*function setEqualHeights(el) {
     var counter = 0;
     for (var i = 0; i < el.length; i++) {
       var singleHeight = el[i].offsetHeight;
@@ -37,7 +37,7 @@
     for (var i = 0; i < el.length; i++) {
       el[i].style.height = counter + "px";
     }
-  }
+  }*/
 
   // CHECK IF AN ELEMENT IS IN VIEWPORT
   // http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport

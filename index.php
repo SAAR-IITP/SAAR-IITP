@@ -278,7 +278,7 @@
                         <div class="row" style="background-color: #fff;">
                             <div class="col-md-12">
                                 <div class="accent-button button">
-                                    <a href="gallery.html">View Fulll Gallery</a>
+                                    <a href="gallery.php">View Full Gallery</a>
                                 </div>
                             </div>
                         </div>
@@ -319,36 +319,18 @@
                 <br>
                 <div class="scrollable">
                 <ol>
-                    <li>
-                    <div>
-                        <time>June</time>Released the first edition of Anusmriti
-                    </div>
-                    </li>
-                    <li>
-                    <div>
-                        <time>August</time>In house session by Alumnus Mr. Utsav Gautam
-                    </div>
-                    </li>
-                    <li>
-                    <div>
-                        <time>September</time>1. Distribution of Alumni cards during convocation <br>2. Conducted Alumni Meet
-                    </div>
-                    </li>
-                    <li>
-                    <div>
-                        <time>October</time>Interactive session with Dr. S K Pathak - Faculty at University of Nevada
-                    </div>
-                    </li>
-                    <li>
-                    <div>
-                        <time>December</time>Released the second edition of Anusmriti
-                    </div>
-                    </li>
-                    <li>
-                    <div>
-                        <time>Afterwards</time>Coming Soon
-                    </div>
-                    </li>
+                    <?php 
+                        $str = file_get_contents('http://saar-server.000webhostapp.com/assets/timeline_sample.json');
+                        $json = json_decode($str, true);
+                        foreach ($json as $key) {
+                    ?> 
+                        <li>
+                            <div >
+                                <time><?php echo $key["date"] ?></time>
+                                <?php echo $key["Description"]?>
+                            </div>
+                        </li>
+                    <?php  } ?>
                 </ol>
                 </div>
             </section>
