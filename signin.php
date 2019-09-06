@@ -70,6 +70,12 @@
                     <div id="forgot">
                         <a href="#">Forgot Password ?</a>
                     </div>
+                    <?php
+                if(isset($_SESSION['error'])){
+                    echo "<h5>".$_SESSION['error']."</h5>";
+                    unset($_SESSION['error']);
+                }
+             ?>
                <br><br><br>
 			 </div>
 		  </div>

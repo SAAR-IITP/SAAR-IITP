@@ -184,11 +184,19 @@
             <section id="video" class="content-section">    
                 <section id="one" class="main style1">
 				    <div class="container" >
+                    <?php if(isset($_SESSION['msg'])){ 
+                       echo $_SESSION['msg'];
+                       unset($_SESSION['msg']);
+                        } ?>
 					   <div class="row gtr-150" style="background: #fff">
 						<div class="col-5 col-12-medium imp-medium">
-							<span class="image fit"><img src="img/avt.jpeg" alt=""/></span>
-                            <a href="#"><i class="fa fa-facebook" style="padding: 5px 5px;"></i></a>
-                            <a href="#"><i class="fa fa-linkedin" style="padding: 5px 5px;"></i></a>
+							<span class="image fit"><img src="<?php echo $_SESSION['img_url']; ?>" alt=""/></span>
+                            <?php if(isset($_SESSION['fb']) && $_SESSION['fb'] != ''){ ?> 
+                            <a href="<?php echo $_SESSION['fb']; ?>"><i class="fa fa-facebook" style="padding: 5px 5px;"></i></a>
+                            <?php } ?>
+                            <?php if(isset($_SESSION['linkden']) && $_SESSION['linkden'] != ''){ ?> 
+                            <a href="<?php echo $_SESSION['linkden']; ?>"><i class="fa fa-linkedin" style="padding: 5px 5px;"></i></a>
+                            <?php } ?>
                             <a href="#"><i class="fa fa-cog" style="padding: 5px 5px;"></i></a>
 						</div>
                         <div class="col-7 col-12-medium">
@@ -205,6 +213,14 @@
                             <p>Graduation year : <?php echo $_SESSION["graduation"];?> </p>
                             <p>Degree : <?php echo $_SESSION["degree"];?> </p>
                             <p>Department : <?php echo $_SESSION["dept"];?> </p>
+                            <p>Employment Type : <?php echo $_SESSION["employment_type"];?> </p>
+                            <p>Present Employer : <?php echo $_SESSION["present_employer"];?> </p>
+                            <p>Designation : <?php echo $_SESSION["designation"];?> </p>
+                            <p>Address : <?php echo $_SESSION["address"];?> </p>
+                            <p>Country : <?php echo $_SESSION["country"];?> </p>
+                            <p>State : <?php echo $_SESSION["state"];?> </p>
+                            <p>City : <?php echo $_SESSION["city"];?> </p>
+                            <p>Achivements : <?php echo $_SESSION["achievements"];?> </p>
                         </div>
 					</div>
 				</div>
