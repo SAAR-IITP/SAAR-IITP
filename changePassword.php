@@ -126,15 +126,18 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']==false)
 
      <section id="credit" style="background: #003C4D; padding: 10px;">  
             <div style="text-align: center;margin-bottom: 10px;"><br><br><br><br>
-                <h1 id="error" style="color: #fff; text-decoration: underline; padding-left: 30px;"></h1><br>
+                <h1 id="error" style="color: #fff; text-decoration: underline; padding-left: 30px;">
+                    <?php
+                    if(isset($_SESSION['error'])){
+                      echo $_SESSION['error'];
+                      unset($_SESSION['error']);
+                    }
+                    ?>      
+                </h1><br>
             </div>  
-    </section>
-        
-      
-<!-- (ise kse arrange krna dekh liyo)
-    <input name="email" hidden value=<?php$_SESSION['email']?>>  
--->       
-         <input name="email" hidden value=<?php$_SESSION['email']?>>
+    </section> 
+     
+         
       <section id="extra" style="padding: 0; background: url('img/bggg.png');">
             <h1>Change Password</h1><br>
 		  <div class="container-login100">
