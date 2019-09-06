@@ -4,11 +4,11 @@
     {
         header("location: noaccess.php");
     }
-    $email=$_SESSION['email'];
-    include('connection.php');
-    $sql = "SELECT * FROM user WHERE email='$email'";
-    $result = mysqli_query($dbc,$sql);
-    $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+    // $email=$_SESSION['email'];
+    // include('connection.php');
+    // $sql = "SELECT * FROM user WHERE email='$email'";
+    // $result = mysqli_query($dbc,$sql);
+    // $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
 ?>
 <!DOCTYPE html>
 <html>
@@ -68,26 +68,26 @@
         <div class="main-agileinfo">
 			<div class="agileits-top">
 				<form action="profileUpdate.php" method="post">
-                    <input class="text" type="text" name="fname" placeholder="First Name" value=<?php echo $row['first_name'];?> required>
-                    <input class="text" type="text" name="lname" placeholder="Last Name" value=<?php echo $row['last_name'];?> required>
-                    <input class="text" type="tel" name="contact" placeholder="Contact no." value=<?php echo $row['contact_no'];?> required>
-                    <input class="text" type="text" name="fbId" placeholder="Facebook Profile Link(optional)" value=<?php echo $row['fb_id'];?> >
-                    <input class="text" type="text" name="linkden" placeholder="Linkden Profile Link(optional)" value=<?php echo $row['linkden'];?> >
-                    <input class="text" type="date" name="DOB" placeholder="Date of Birth" required onfocus="(this.type='date')" value=<?php echo $row['DOB'];?>>
+                    <input class="text" type="text" name="fname" placeholder="First Name" value=<?php echo $_SESSION['fname'];?> disabled>
+                    <input class="text" type="text" name="lname" placeholder="Last Name" value=<?php echo $_SESSION['lname'];?> disabled>
+                    <input class="text" type="tel" name="contact" placeholder="Contact no." value=<?php echo $_SESSION['contact'];?> required>
+                    <input class="text" type="text" name="fbId" placeholder="Facebook Profile Link(optional)" value=<?php echo $_SESSION['fb'];?> >
+                    <input class="text" type="text" name="linkden" placeholder="Linkden Profile Link(optional)" value=<?php echo $_SESSION['linkden'];?> >
+                    <input class="text" type="date" name="DOB" placeholder="Date of Birth" required onfocus="(this.type='date')" value=<?php echo $_SESSION['dob'];?> disabled>
                     <i class="ui calendar icon"></i>
                     
-                    <input class="text" type="text" name="passingyear" placeholder="Graduation Year(20XX)" value=<?php echo $row['graduation_year'];?> required>
+                    <input class="text" type="text" name="passingyear" placeholder="Graduation Year(20XX)" value=<?php echo $_SESSION['graduation'];?> disabled>
                     
-                    <select type="text" id="degree" name="degree" class="ui search selection  dropdown">
-                    <option value=<?php echo $row['degree'];?> selected ><?php echo $row['degree'];?></option>
+                    <select type="text" id="degree" name="degree" class="ui search selection  dropdown" disabled>
+                    <option value=<?php echo $_SESSION['degree'];?> selected ><?php echo $_SESSION['degree'];?></option>
                     <option value="B.Tech">B.Tech/B.E</option>
                     <option value="M.Tech">M.Tech/M.E</option>
                     <option value="M.Sc">M.Sc</option>
                     <option value="P.hd">P.hd</option>
                     </select>
     
-                    <select type="text" id="branch" name="dept" class="ui search selection   dropdown">
-                    <option value=<?php echo $row['department'];?> selected ><?php echo $row['department']?></option>
+                    <select type="text" id="branch" name="dept" class="ui search selection   dropdown" disabled>
+                    <option value=<?php echo $_SESSION['dept'];?> selected ><?php echo $_SESSION['dept']?></option>
                     <option value="CSE">Computer Science and Engineering</option>
                     <option value="EE">Electrical Engineering</option>
                     <option value="ME">Mechanical Engineering</option>
@@ -96,26 +96,26 @@
                     </select>
                     
                     <select type="text" id="etype" name="etype" class="ui dropdown">
-                     <option value=<?php echo $row['employment_type'];?> selected ><?php echo $row['employment_type'];?></option>
+                     <option value=<?php echo $_SESSION['employment_type'];?> selected ><?php echo $_SESSION['employment_type'];?></option>
                     <option value="job">Salaried</option>
                     <option value="Entrepreneur">Entrepreneur</option>
                     <option value="higher stuies">Higher Studies</option>
                     <option value="Civil Services">Civil Services</option>
                     </select>
 
-                    <input type="text" placeholder="Present Employer/Educational Inst." name="presentEmployer" value=<?php echo $row['present_employer'];?> required>
+                    <input type="text" placeholder="Present Employer/Educational Inst." name="presentEmployer" value=<?php echo $_SESSION['present_employer'];?> required>
                     
-                    <input type="text" placeholder="Designation" name="designation" value=<?php echo $row['designation'];?> required>
+                    <input type="text" placeholder="Designation" name="designation" value=<?php echo $_SESSION['designation'];?> required>
                     
-                    <textarea type="text" name="address" required="" placeholder="Address"><?php echo $row['address']; ?></textarea>
+                    <textarea type="text" name="address" required="" placeholder="Address"><?php echo $_SESSION['address']; ?></textarea>
                     
-                    <input type="text" placeholder="Country" name="country"  value=<?php echo $row['country']; ?> required>
+                    <input type="text" placeholder="Country" name="country"  value=<?php echo $_SESSION['country']; ?> required>
                     
-                    <input type="text" placeholder="State" name="state" value=<?php echo $row['state'];?> required>
+                    <input type="text" placeholder="State" name="state" value=<?php echo $_SESSION['state'];?> required>
     
-                    <input type="text" placeholder="City" name="city" value=<?php echo $row['city'];?> required>
+                    <input type="text" placeholder="City" name="city" value=<?php echo $_SESSION['city'];?> required>
     
-                    <textarea type="text" name="achievements" placeholder="Achievements After Graduation"><?php echo $row['achievement']; ?></textarea>
+                    <textarea type="text" name="achievements" placeholder="Achievements After Graduation"><?php echo $_SESSION['achievements']; ?></textarea>
                     
                     <div class="wthree-text">
 						<label class="anim">
@@ -126,7 +126,6 @@
 					</div>
 					<input type="submit" value="UPDATE">
 				</form>
-				<p>Already have an Account? <a href="login.html"> Login Now!</a></p>
 			</div>
 		</div>
 		
