@@ -1,29 +1,41 @@
 <?php
     session_start();
     $request=false;
-    $result="";
+    $result=array();
     $count=-1;
      if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"]==false)
     {
         header("location: noaccess.php");
     } 
-        include('connection.php');
         if(isset($_POST['year']) && $_SERVER["REQUEST_METHOD"] == "POST") {
-              // username and password sent from form 
-              
-              $year = $_POST['year']; 
-              $city = $_POST['city'];
-              if($year=="All")
-              {
-                $sql = "SELECT email,first_name,last_name,fb_id FROM user WHERE city = '$city'";
-                $result = mysqli_query($dbc,$sql);
-                $count = mysqli_num_rows($result);     
-              }
-              else
-              {
-                $sql = "SELECT email,first_name,last_name,fb_id FROM user WHERE graduation_year = '$year' and city = '$city'";
-                $result = mysqli_query($dbc,$sql);
-                $count = mysqli_num_rows($result);        
+            $url = 'http://localhost/saar-server/functions/aluminiNearMe.php';
+            $ch = curl_init($url);
+            $data = array(
+            'graduation_year' => $_POST["year"],
+            'city' => $_POST["city"],
+            'country' => $_POST["country"]
+            );
+            $payload = http_build_query($data);
+
+            curl_setopt($ch, CURLOPT_POST, true);
+            //attach encoded JSON string to the POST fields
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
+
+            //return response instead of outputting
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+            //execute the POST request
+            $res = curl_exec($ch);
+            //close cURL resource
+            curl_close($ch);
+            $response = json_decode($res,true);
+              if($response["status"] == 200){
+                $count = count($response["messages"]);
+                $request = true;
+                $result = $response["messages"];
+              }else if($response["status"] == 400){
+                $count = 0;
+                $request = false;
               }
            }
 ?>
@@ -123,14 +135,13 @@
       <section id="extra" style="background: #003C4D; padding: 20px;">  
           <br><br><br><br>
         <div class="section-heading" style="text-align: center;margin-bottom: 10px;">
-            <h1 style="color: #fff; text-decoration: underline; padding-left: 30px;">"Enter city name and Select Passing year"</h1>
+            <h1 style="color: #fff; text-decoration: underline; padding-left: 30px;"></h1>
         </div>
         <form method="post" action="findAluminiNearby.php">
             <input class="full" type="text" name="city" required placeholder="City" style="padding: 4px; margin: 2px;">
-            <select class="full" id="passYear" name="year" style="padding: 4px; margin: 2px;">
-                <option value="" selected disabled hidden>Graduation Year</option>
-                <option value="All">All</option>
-            </select><br>
+            <input class="full" type="text" name="country" required placeholder="Country" style="padding: 4px; margin: 2px;">
+            <input class="full" type="number" name="year" required placeholder="Graduation Year" style="padding: 4px; margin: 2px;">
+            <br>
             <button class="button" style="vertical-align:middle; background: white; color: #003C4D; padding: 0px; font-size: 20px; margin: 10px;" ><span>Submit</span></button>
         </form>
       </section>
@@ -152,15 +163,15 @@
          <td>DP</td>
          <td>Name</td>
          <td>E-mail Id</td>
-         <td>Link to Fb Profile</td>
+         <td>Address</td>
        </tr>
        </div>
-       <?php  while($count!=-1 && $count!=0 && $row = mysqli_fetch_array($result,MYSQLI_ASSOC)){?>
+       <?php foreach($result as $row){?>
       <tr>
-         <td><img src="img/male.jpeg" alt="" /></td>
+         <td><img src="<?php echo $row["img_url"]; ?>" alt="" /></td>
          <td><?php echo $row["first_name"]." ".$row["last_name"]; ?></td>
          <td><?php echo $row["email"]; ?></td>
-         <td><a href=<?php if($row["fb_id"]!="")echo '"'.$row["fb_id"].'"'; ?> >Click Here</a></td>
+         <td><?php echo $row['address']; ?></td>
       </tr>
       <?php } ?>
    </table>

@@ -26,6 +26,7 @@
         <link rel="stylesheet" href="css/light-box.css">
         <link rel="stylesheet" href="css/owl-carousel.css">
         <link rel="stylesheet" href="css/profile.css">
+        <link rel="stylesheet" href="css/award.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
 		<link rel="stylesheet" href="css/cards.css" >
@@ -74,7 +75,7 @@
             text-align: center;
             text-decoration: none;
                         }
-                        .imp-medium .fa-facebook {
+                        /* .imp-medium .fa-facebook {
             background: #3B5998;
             color: white;
             }
@@ -82,7 +83,7 @@
             .imp-medium .fa-linkedin {
             background: #55ACEE;
             color: white;
-            }
+            } */
 
             .imp-medium .fa-cog {
             background: #dd4b39;
@@ -96,7 +97,7 @@
         </style>
         
     </head>
-    <body style="background: #fff">
+    <body style="background: #fff;font-family: 'Open Sans',serif">
 
         <header class="nav-down responsive-nav hidden-lg hidden-md">
             <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
@@ -145,6 +146,13 @@
                         </a>
                     </li>
                     <li>
+                        <a href="#awards">
+                            <span class="rect"></span>
+                            <span class="circle"></span>
+                            Achivements
+                        </a>
+                    </li>
+                    <li>
                         <a href="#blog">
                             <span class="rect"></span>
                             <span class="circle"></span>
@@ -152,14 +160,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#projects">
-                            <span class="rect"></span>
-                            <span class="circle"></span>
-                            Newsfeed
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#contact">
+                        <a href="#contact-cp">
                             <span class="rect"></span>
                             <span class="circle"></span>
                             Contact Us
@@ -182,48 +183,50 @@
         <div class="page-content">        
 
             <section id="video" class="content-section">    
-                <section id="one" class="main style1">
-				    <div class="container" >
+                <section id="one" class="main style1" style="background-image: url(./img/bggg.png);">
                     <?php if(isset($_SESSION['msg'])){ 
                        echo $_SESSION['msg'];
                        unset($_SESSION['msg']);
                         } ?>
-					   <div class="row gtr-150" style="background: #fff">
-						<div class="col-5 col-12-medium imp-medium">
-							<span class="image fit"><img src="<?php echo $_SESSION['img_url']; ?>" alt=""/></span>
-                            <?php if(isset($_SESSION['fb']) && $_SESSION['fb'] != ''){ ?> 
-                            <a href="<?php echo $_SESSION['fb']; ?>"><i class="fa fa-facebook" style="padding: 5px 5px;"></i></a>
-                            <?php } ?>
-                            <?php if(isset($_SESSION['linkden']) && $_SESSION['linkden'] != ''){ ?> 
-                            <a href="<?php echo $_SESSION['linkden']; ?>"><i class="fa fa-linkedin" style="padding: 5px 5px;"></i></a>
-                            <?php } ?>
-                            <a href="#"><i class="fa fa-cog" style="padding: 5px 5px;"></i></a>
-						</div>
-                        <div class="col-7 col-12-medium">
+					   <div class="row gtr-150" style="background: transparent;">
+						<div class="col-7 col-12-medium imp-medium" style="text-align: left; padding-left: 12%;">
+                            <img src="./imggg/saar6.png" alt="SAAR" />
                             <div class="section-heading" style="text-align: center;">
                                 <h1><?php echo "".$_SESSION["fname"];?><em> <?php echo " ".$_SESSION["lname"];?></em></h1>
-                                <br><ul class="actions special">
-                                    <button class="button" style="vertical-align:middle; background: #003C4D; padding: 10px;" onclick="window.location.href='don.html'" ><span>Donate Now </span></button>
-					           </ul>
+                                <!-- <br><ul class="actions special">
+                                   
+					           </ul> -->
                             </div>
-							<p>College Id : <?php echo $_SESSION["cid"];?> </p>
+                            <p class="mb-5" style="font-size: 20px;" >I am experienced in leveraging agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.</p>
+                            <p>College Id : <?php echo $_SESSION["cid"];?> </p>
                             <p>DOB : <?php echo $_SESSION["dob"]; ?></p>
-                            <p>Email id : <?php echo $_SESSION["email"];?> </p>
-                            <p>Contact no. : <?php echo $_SESSION["contact"];?> </p>
                             <p>Graduation year : <?php echo $_SESSION["graduation"];?> </p>
                             <p>Degree : <?php echo $_SESSION["degree"];?> </p>
                             <p>Department : <?php echo $_SESSION["dept"];?> </p>
                             <p>Employment Type : <?php echo $_SESSION["employment_type"];?> </p>
                             <p>Present Employer : <?php echo $_SESSION["present_employer"];?> </p>
                             <p>Designation : <?php echo $_SESSION["designation"];?> </p>
-                            <p>Address : <?php echo $_SESSION["address"];?> </p>
-                            <p>Country : <?php echo $_SESSION["country"];?> </p>
-                            <p>State : <?php echo $_SESSION["state"];?> </p>
-                            <p>City : <?php echo $_SESSION["city"];?> </p>
-                            <p>Achivements : <?php echo $_SESSION["achievements"];?> </p>
+                            <!-- <p>Achivements : <?php// echo $_SESSION["achievements"];?> </p>  -->
+                            <ul class="list-inline social-icon-f top-data">
+                                <?php if(isset($_SESSION['fb']) && $_SESSION['fb'] != ''){ ?> 
+                                <li><a href="<?php echo $_SESSION['fb']; ?>" target="_empty"><i class="fa top-social fa-facebook" ></i></a></li>
+                                <?php } ?>
+                                <li><a href="<?php echo $_SESSION['fb']; ?>" target="_empty"><i class="fa top-social fa-twitter"></i></a></li>
+                                <?php if(isset($_SESSION['linkden']) && $_SESSION['linkden'] != ''){ ?> 
+                                <li class="list-inline-item">
+                                    <a href="<?php echo $_SESSION['linkden']; ?>" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                                </span>
+                                </a>
+                                </li>
+                                <?php } ?>
+                            </ul>
+						</div>
+                        <div class="col-5 col-12-medium" style="background-image: url('<?php //echo $_SESSION['img_url']; ?>https://i.imgur.com/50mCoOZ.jpg');background-position: center;background-size: cover;">
                         </div>
 					</div>
-				</div>
 			</section>    
             </section>
             
@@ -233,13 +236,44 @@
                     <button class="button" style="vertical-align:middle; background: #003C4D; padding: 10px; margin-left: 15px;" onclick="location.href = 'updateProfile.php';"><span>Update Profile</span></button>
                     </form>
                     <button class="button" style="vertical-align:middle; background: #003C4D; padding: 10px; margin-left: 15px;" onclick="location.href = 'changeEmail.php';"><span>Change E-mail</span></button>
+                    <button class="button" style="vertical-align:middle; background: #003C4D; padding: 10px; margin-left: 15px;" onclick="window.location.href='don.html'" ><span>Donate Now </span></button>
 			</section>
+            <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="awards">
+                <div class="row my-auto">
+                    <div class="col-12">
+                        <h2 class="  text-center">Achivements</h2>
+                        <div class="mb-5 heading-border"></div>
+                    </div> 
+                    <div class="main-award" id="award-box" style="padding-left: 12%;">
+                        <div class="award">
+                            <div class="award-icon"></div>
+                            <div class="award-content">
+                                <span class="date">Apr 2017 - Mar 2018</span>
+                                <h5 class="title">Google Analytics Certified Developer</h5>
+                                <p class="description">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mattis felis vitae risus pulvinar tincidunt. Nam ac venenatis enim. Aenean hendrerit justo sed.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="award">
+                            <div class="award-icon"></div>
+                            <div class="award-content">
+                                <span class="date">Apr 2018 - Mar 2019</span>
+                                <h5 class="title">Mobile Web Specialist - Google Certification</h5>
+                                <p class="description">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mattis felis vitae risus pulvinar tincidunt. Nam ac venenatis enim. Aenean hendrerit justo sed.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </section> 
 
     <section id="blog" class="content-section">
         <section class="details-card">
         <div class="row">
             <div class="col-md-4 col-sm-12">
-                <div class="card-content" onclick="myFunction()" style="background:#fc1c0d;">
+                <div class="card-content" onclick="location.href = 'findAluminiNearby.php';" style="background:#fc1c0d;">
                     <div class="card-img" align="center">
                         <i class="fas fa-route" style="font-size:50px; padding: 20px; color:#fff;"></i>
                     </div>
@@ -249,7 +283,7 @@
                 </div>
             </div>
             <div class="col-md-4 col-sm-12">
-                <div class="card-content" onclick="myFunction()" style="background:#2cc2de;">
+                <div class="card-content" onclick="location.href = 'findFriends.php';" style="background:#2cc2de;">
                     <div class="card-img" align="center">
                         <i class="fas fa-user-friends" style="font-size:50px; padding: 20px; color:#fff;"></i>
                     </div>
@@ -259,7 +293,7 @@
                 </div>
             </div>
             <div class="col-md-4 col-sm-12">
-                <div class="card-content" onclick="myFunction()" style="background:#0ad80f;">
+                <div class="card-content" onclick="window.open('https://drive.google.com/file/d/1zdGXm6zXB0dBWXP-Og2alxEtnF_Ubczn/view?fbclid=IwAR0RbYPn9XH0HXcfH_EkXe4WQl_abJRQsAKYS2F_E0w4lIo2ez7I3WtXdw8', '_blank');" style="background:#0ad80f;">
                     <div class="card-img" align="center">
                         <i class="fas fa-book-reader" style="font-size:50px; padding: 20px; color:#fff;"></i></div>
                     <div class="card-desc" align="center">
@@ -272,7 +306,7 @@
     </section>
             
             
-      <div class="container">  
+      <!-- <div class="container">  
             <form id="contact" action="" method="post">
                 <span align="center"><h3 style="color: #327a81">NEED HELP ?</h3></span>
                 <fieldset>
@@ -291,8 +325,56 @@
                     <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
                 </fieldset>
             </form>
-        </div>
-
+        </div> -->
+        <section class="resume-section p-3 p-lg-5 d-flex flex-column">
+          <div class="row my-auto" id="contact-cp"> 
+            <div class="col-md-8">
+              <div class="contact-cont">
+                <h3>CONTACT US</h3>
+                <div class="heading-border-light"></div>
+              </div>   
+              <div class="row con-form">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <input type="text" name="full-name" placeholder="Full Name" class="form-control">
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <input type="text" name="email" placeholder="Email Id" class="form-control">
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <input type="text" name="subject" placeholder="Subject" class="form-control">
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12"><textarea name="" id=""></textarea></div>
+                <div class="col-md-12 col-sm-12 col-xs-12 sub-but"><button class="btn btn-primary" role="button">Send</button></div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-12 mt-5">  
+              <div class="contact-cont2"> 
+                <div class="contact-add contact-box-desc">
+                  <h3><i class="fa fa-map-marker cl-atlantis fa-2x"></i> Address</h3>
+                  <p><?php echo $_SESSION["address"];?>  <br>
+                  <?php echo $_SESSION["city"];?>, <?php echo $_SESSION["state"];?>, <?php echo $_SESSION["country"];?> <br></p>
+                </div>
+                <div class="contact-phone contact-side-desc contact-box-desc">
+                  <h3><i class="fa fa-phone cl-atlantis fa-2x"></i> Phone</h3>
+                  <p><?php echo $_SESSION["contact"];?> </p>
+                </div>
+                <div class="contact-mail contact-side-desc contact-box-desc">
+                  <h3><i class="fa fa-envelope-o cl-atlantis fa-2x"></i> Email</h3>
+                <address class="address-details-f"> 
+                  Email: <a href="mailto:<?php echo $_SESSION['email']; ?>" class=""><?php echo $_SESSION['email']; ?></a>
+                </address>
+                <ul class="list-inline social-icon-f top-data">
+                  <li><a href="<?php echo $_SESSION['fb']; ?>" target="_empty"><i class="fa top-social fa-facebook" style="color: #4267b2; border-color:#4267b2;"></i></a></li>
+                  <li><a href="<?php echo $_SESSION['fb']; ?>" target="_empty"><i class="fa top-social fa-twitter" style="color: #4AB3F4; border-color:#4AB3F4;"></i></a></li>
+                  <li><a href="mailto:<?php echo $_SESSION['email']; ?>"><i class="fa top-social fa-google-plus" style="color: #e24343; border-color:#e24343;"></i></a></li> 
+                </ul>
+                </div>
+              </div>
+            </div> 
+          </div>
+      </section>
+                                    <!-- <p>Email id : <?php //echo $_SESSION["email"];?> </p> -->
+                            <!-- <p>Contact no. : <?php// echo $_SESSION["contact"];?> </p> -->
 
         <section  id="contact" class="content-section">
                 <div id="con">    
@@ -306,7 +388,7 @@
                            4. Copy only URL and paste it within the src="" field below
                     -->
                     
-                    <ifr    ame src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14399.37835508978!2d84.8434447170254!3d25.54355318850096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398d567a193702ff%3A0xc9c527c7faec3056!2sIIT+Patna+Administration+Block!5e0!3m2!1sen!2sin!4v1539177184721" width="100%" height="400px" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14399.37835508978!2d84.8434447170254!3d25.54355318850096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398d567a193702ff%3A0xc9c527c7faec3056!2sIIT+Patna+Administration+Block!5e0!3m2!1sen!2sin!4v1539177184721" width="100%" height="400px" frameborder="0" style="border:0" allowfullscreen></iframe>
                     </div>
                     </div>
                     <div class="col-md-4">  
