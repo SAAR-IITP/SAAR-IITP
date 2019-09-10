@@ -115,11 +115,11 @@
     
                     <select type="text" id="branch" name="dept" class="ui search selection   dropdown">
                     <option value="" selected disabled >Department</option>
-                    <option value="CSE">Computer Science and Engineering</option>
-                    <option value="EE">Electrical Engineering</option>
-                    <option value="ME">Mechanical Engineering</option>
-                    <option value="CE">Civil Engineering</option>
-                    <option value="CBE">Chemical and Biochemical Engineering</option>
+                    <option value="Computer Science and Engineering">Computer Science and Engineering</option>
+                    <option value="Electrical Engineering">Electrical Engineering</option>
+                    <option value="Mechanical Engineering">Mechanical Engineering</option>
+                    <option value="Civil Engineering">Civil Engineering</option>
+                    <option value="Chemical and Biochemical Engineering">Chemical and Biochemical Engineering</option>
                     </select>
                     
                     <select type="text" id="etype" name="etype" class="ui dropdown">

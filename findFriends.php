@@ -1,30 +1,50 @@
 <?php
     session_start();
     $request=false;
-    $result="";
+    $result=array();
     $count=-1;
     if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"]==false)
     {
         header("location: noaccess.php");
     } 
       
-        include('connection.php');
+        
         if(isset($_POST['year']) && $_SERVER["REQUEST_METHOD"] == "POST") {
               // username and password sent from form 
-              
-              $year = $_POST['year']; 
-              $branch = $_POST['branch'];
-              if($branch=="All")
+            $url = 'http://localhost/saar-server/functions/findFriend.php';
+            $ch = curl_init($url);
+            if(!isset($_POST["branch"])){
+                $branch = 'All';
+            }else{
+                $branch = $_POST["branch"];
+            }
+            $data = array(
+            'graduation_year' => $_POST["year"],
+            'branch' => $branch,
+            'name' => $_POST["name"]
+            );
+            $payload = http_build_query($data);
+
+            curl_setopt($ch, CURLOPT_POST, true);
+            //attach encoded JSON string to the POST fields
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
+
+            //return response instead of outputting
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+            //execute the POST request
+            $res = curl_exec($ch);
+            //close cURL resource
+            curl_close($ch);
+            $response = json_decode($res,true);
+              if($response["status"]==200)
               {
-                $sql = "SELECT email,first_name,last_name,fb_id FROM user WHERE graduation_year = '$year'";
-                $result = mysqli_query($dbc,$sql);
-                $count = mysqli_num_rows($result);     
+                $result = $response["messages"];
+                $count = count($response["messages"]);     
               }
-              else if(isset($_POST['year']))
+              else if($response["status"] == 400)
               {
-                $sql = "SELECT email,first_name,last_name,fb_id FROM user WHERE graduation_year = '$year' AND department = '$branch'";
-                $result = mysqli_query($dbc,$sql);
-                $count = mysqli_num_rows($result);        
+                $count = 0;        
               }
            }
 ?>
@@ -124,20 +144,19 @@
       <section id="extra" style="background: #003C4D; padding: 20px;">  
           <br><br><br>
         <div class="section-heading" style="text-align: center;margin-bottom: 10px;">
-            <h1 style="color: #fff; text-decoration: underline; padding-left: 30px;">"Enter year of pass out and Select Branch of Your friend"</h1>
+            <h1 style="color: #fff; text-decoration: underline; padding-left: 30px;"></h1>
         </div>
         <form method="post" action="findFriends.php"><br>
-            <select class="full" id="passYear" name="year" style="padding: 4px; margin: 2px;">
-                <option value="" selected disabled hidden>Graduation Year</option>
-            </select>
+            <input class="full" id="name" name="name" placeholder="Name" style="padding: 4px; margin: 2px;">
+            <input class="full" id="passYear" type="number" name="year" placeholder="Graduation Year" required style="padding: 4px; margin: 2px;">
             <select class="full" id="branch" name="branch" style="padding: 4px; margin: 2px;">
                 <option value="" selected disabled >Department</option>
                 <option value="All">All</option>
-                <option value="CSE">Computer Science and Engineering</option>
-                <option value="EE">Electrical Engineering</option>
-                <option value="ME">Mechanical Engineering</option>
-                <option value="CE">Civil Engineering</option>
-                <option value="CBE">Chemical and Biochemical Engineering</option>
+                <option value="Computer Science and Engineering">Computer Science and Engineering</option>
+                <option value="Electrical Engineering">Electrical Engineering</option>
+                <option value="Mechanical Engineering">Mechanical Engineering</option>
+                <option value="Civil Engineering">Civil Engineering</option>
+                <option value="Chemical and Biochemical Engineering">Chemical and Biochemical Engineering</option>
             </select><br>
             <button class="button" style="vertical-align:middle; background: white; color: #003C4D; padding: 0px; font-size: 20px; margin: 10px;"><span>Submit</span></button>
         </form>
@@ -146,7 +165,7 @@
       <?php if($count==0){ ?>
       <section id="extra" style="background: #003C4D; padding: 14px 0 1px 0;">  
             <div class="section-heading" style="text-align: center;margin-bottom: 10px;">
-                <h1 style="color: #fff; text-decoration: underline; padding-left: 30px;">"NO RECORDS FOUND"</h1>
+                <h1 style="color: #fff; text-decoration: underline; padding-left: 30px;">NO RECORDS FOUND</h1>
             </div>  
       </section>
         <?php }else{ ?>
@@ -162,18 +181,20 @@
          <td>Links to Fb Profile</td>
        </tr>
        </div>
-      <?php  while($count!=-1 && $count!=0 && $row = mysqli_fetch_array($result,MYSQLI_ASSOC)){?>
+      <?php   foreach($result as $row){?>
        <tr>
-         <td><img src="img/male.jpeg" alt="" /></td>
-         <td><?php echo $row["first_name"]." ".$row["last_name"]; ?></td>
-         <td><?php echo $row["email"]; ?></td>
-         <td><a href=<?php if($row["fb_id"]!="")echo '"'.$row["fb_id"].'"'; ?> >Click Here</a></td>
+         <td><img src="<?php echo $row["img_url"]; ?>" alt="Profile Pic" /></td>
+         <td><?php  echo $row["first_name"]." ".$row["last_name"]; ?></td>
+         <td><?php  echo $row["email"]; ?></td>
+        <td><a href='<?php echo $row['fb-link']; ?>' target="_blank">
+      <?php if($row['fb_link'] != ''){ ?>Click Here <?php }else{ ?> Not found <?php } ?>
+        </a></td>
       </tr>
-       <?php } ?>
-   </table>
-</div>
+       <?php  } ?>
+     </table>
+    </div>
       </section>
-       <?php } ?>
+      <?php  } ?>
         </div>  
         
     </body>

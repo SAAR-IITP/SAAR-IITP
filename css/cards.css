@@ -169,10 +169,10 @@ p {
 
 .section-heading h1 {
   margin-top: 0px;
-  font-size: 32px;
+  font-size: 45px;
   color: #232323;
     display: inline-block;
-  text-align: center;
+  text-align: left;
 }
 
 .section-heading em {
@@ -822,7 +822,7 @@ header {
 #video {
   text-align: center;
   background-color: #fff;
-  padding: 20px 20px 0px 60px;
+  padding: 0;
 }
 
 #video .section-heading {
