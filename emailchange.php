@@ -1,22 +1,39 @@
 <?php
 session_start();
-if($_SERVER["REQUEST_METHOD"] == "POST") {
-include('connection.php');
-        $email = $_SESSION['email'];
-        $password = sha1($_POST['password']);
-        $newEmail = $_POST['newEmail'];
-        $result = mysqli_query($dbc,"SELECT password FROM user WHERE 
-        email='$email' AND password='$password'");
-        if($row=mysqli_fetch_array($result,MYSQLI_ASSOC))
-        {
-        $sql=mysqli_query($dbc,"UPDATE user SET email='$newEmail' WHERE email='$email'");
-        if($sql)
-        {
-            $_SESSION['email']=$newEmail;
-            header("location: changeEmail.php?status=success");
-        }
-        }else{
-          header("location: changeEmail.php?status=wrongpass");
-        }
-    }
+   
+if($_SERVER["REQUEST_METHOD"] == "POST") 
+{  
+  $url = 'https://saar-server.000webhostapp.com/functions/changeEmail.php';
+  $ch = curl_init($url);
+  $data = array(
+    'old_email' => $_SESSION['email'],
+  'new_email' => $_POST["newEmail"],
+  'password' => $_POST["password"]
+  );
+  $payload = http_build_query($data);
+
+  curl_setopt($ch, CURLOPT_POST, true);
+  //attach encoded JSON string to the POST fields
+  curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
+
+  //return response instead of outputting
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+  //execute the POST request
+  $result = curl_exec($ch);
+  //close cURL resource
+  curl_close($ch);
+  $response = json_decode($result,true);
+  echo '<pre>' . print_r($result, true) . '</pre>';
+  // echo $response['messages'][0];
+
+  $row = $response['messages'];
+  if($response['status'] == 403){
+    $_SESSION['error'] = $row[0];
+    header("location:changeEmail.php");
+  }else if($response['status'] == 203){
+    $_SESSION['msg'] = $row[0];
+    header("location:enterotp.php");
+  }
+}
 ?>
