@@ -185,7 +185,7 @@
             <section id="video" class="content-section">    
                 <section id="one" class="main style1" style="background-image: url(./img/bggg.png);">
                     <?php if(isset($_SESSION['msg'])){ 
-                       echo $_SESSION['msg'];
+                       echo "<div class='alert alert-success'>".$_SESSION['msg']."</div>";
                        unset($_SESSION['msg']);
                         } ?>
 					   <div class="row gtr-150" style="background: transparent;">

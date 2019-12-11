@@ -33,10 +33,22 @@ session_start();
    $response = json_decode($result,true);
    echo $response['messages'][0];
    if($response['status'] == 205){
-      $_SESSION['msg'] = $response['messages'][0]." Login again to see the changes.";
+      $_SESSION['contact'] = $_POST["contact"];
+      $_SESSION['employment_type'] = $_POST["etype"];
+      $_SESSION['present_employer'] = $_POST["presentEmployer"];
+      $_SESSION['designation'] = $_POST["designation"];
+      $_SESSION['fb'] = $_POST["fbId"];
+      $_SESSION['linkden'] = $_POST["linkden"];
+      $_SESSION['address'] = $_POST["address"];
+      $_SESSION['country'] = $_POST["country"];
+      $_SESSION['state'] = $_POST["state"];
+      $_SESSION['city'] = $_POST["city"];
+      $_SESSION['achievements'] = $_POST["achievements"];
+      $_SESSION['msg'] = $response['messages'][0];
       header("location: portal.php");
    }else{
-      header('locatioin: updateProfile.php');
+      // set error messages
+      echo $result;
    }
  }
      ?>
