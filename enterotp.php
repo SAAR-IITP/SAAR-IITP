@@ -1,9 +1,5 @@
 <?php
 session_start();
-if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']==false)
-{
-    echo 'window.location = "noaccess.php";';
-}
 ?>
 <html>
      <head>
@@ -11,29 +7,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']==false)
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-    <title>E-mail Change</title>
-    <script type="text/javascript">
-      function alertPass(){
-        alert("Existing Incorrect Password.");
-      }
-      function alertSuccess(){
-        alert("Email Changed Successfully.")
-      }
-      window.onload = function(){
-        <?php
-        //  if($_GET['status']=="success")
-        // {
-        //   echo 'document.getElementById("error").innerHTML="Email Update Successfully" ';
-        // }
-        // else if($_GET['status']=="wrongpass")
-        // {
-        //   echo 'document.getElementById("error").innerHTML="Wrong Credentials !" ';
-        // }
-        ?>
-        
-      }
-    </script>
-    
+    <title>Enter OTP</title>    
     <style>
          body {
             background: #EEFBFF;
@@ -45,6 +19,12 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']==false)
             #credit h1{
                 font-size: 20px;
             }
+         }
+         #resend {
+          text-align: right;
+         }
+         #resend a {
+          text-decoration: none;
          }
      </style>     
          
@@ -83,9 +63,19 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']==false)
                         <li><form action="#" method="post" id="log">
                             <button class="btn" formaction="portal.php">Profile</button>
                         </form></li>
-                        <li><form action="#" method="post" id="log">
+                        <li>
+                          <?php
+                             if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']==true){
+                           ?>
+                          <form action="#" method="post" id="log">
                             <button class="btn" formaction="logout.php">Logout</button>
-                        </form></li>
+                        </form>
+                        <?php }else{ ?>
+                        <form action="#" method="post" id="log">
+                            <button class="btn" formaction="index.php">Home</button>
+                        </form>
+                        <?php }?>
+                      </li>
                     </ul>
                 </nav>
             </div>
@@ -103,9 +93,17 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']==false)
                         </form>
                     </li>
                     <li>
+                      <?php
+                        if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']==true){
+                      ?>
                         <form action="#" method="post" id="log">
                             <button class="button" style="vertical-align:middle" formaction="logout.php"><span>Log out</span></button>
                         </form>
+                      <?php }else{ ?>
+                        <form action="#" method="post" id="log">
+                            <button class="button" formaction="index.php">Home</button>
+                        </form>
+                      <?php }?>
                     </li>
                 </ul>
             </nav>
@@ -118,39 +116,50 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']==false)
   
   <div class="page-content">
      <section id="credit" style="background: #003C4D; padding: 10px;">  
-            <div style="text-align: center;margin-bottom: 10px;"><br><br><br><br>
-                <h1 id="error" style="color: #fff; text-decoration: underline; padding-left: 30px;">
-                <?php if(isset($_SESSION['error'])){
-                    echo $_SESSION['error'];
-                    unset($_SESSION['error']);
+          <div style="text-align: center;margin-bottom: 10px;"><br><br><br><br>
+              <h1 id="error" style="color: #fff; text-decoration: underline; padding-left: 30px;">
+              <?php 
+                if(isset($_SESSION['msg'])){
+                  echo $_SESSION['msg'];
+                  unset($_SESSION['msg']);
                 }
-                ?>
-                </h1><br>
-            </div>  
+              ?>
+              </h1><br>
+          </div>
+            
     </section>
         
-      
-<!-- (ise kse arrange krna dekh liyo bhai )
-    <input name="email" hidden value=<?php //$_SESSION['email']?>>  
--->       
+           
 
-      <section id="extra" style="padding: 0; background: url('./img/bggg.png');">
-            <h1>Change E-mail</h1><br>
+      <section id="extra" style="padding: 0; background: url('img/bggg.png');">
+            <h1>Enter OTP</h1><br>
       <div class="container-login100">
       <div class="wrap-login100">
-        <form class="login100-form validate-form" method="POST" action="emailchange.php">
-          <input name="email" hidden value=<?php echo $_SESSION['email']?> >
+        <form class="login100-form validate-form" method="POST" action="otpvalidationp.php">
+          <?php if(isset($_SESSION['cid'])){?>
+          <input name="rollno" hidden value=<?php $_SESSION['cid']?> >
+          <?php }else{ ?>
+          <div class="wrap-input100 validate-input" data-validate="Enter rollno">
+            <input class="input100" type="text" size="50" name="rollno" required>
+                <span class="focus-input100" data-placeholder="Enter Institute ID"></span>
+          </div>
+        <?php }?>
           <div class="wrap-input100 validate-input" data-validate="Enter password">
-            <input class="input100" type="password" size="50" name="password" required>
-            <span class="focus-input100" data-placeholder="Enter your existing password"></span>
+            <input class="input100" type="text" size="50" name="otp" required>
+            <span class="focus-input100" data-placeholder="Enter OTP"></span>
           </div>
-          <div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
-            <input class="input100" type="email" size="50" name="newEmail" required>
-            <span class="focus-input100" data-placeholder="Enter new Email"></span>
+          <div id="resend">
+            <a href="resendotpp.php">Resend OTP ?</a>
           </div>
+          <?php
+              if(isset($_SESSION['error'])){
+                echo $_SESSION['error'];
+                unset($_SESSION['error']);
+              }
+            ?>                    
        </div>
       </div>
-          <button class="buton" type="submit">Update E-mail</button>
+          <button class="buton" type="submit">Submit</button>
                </form>
       </section>
         </div>
