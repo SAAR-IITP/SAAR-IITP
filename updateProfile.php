@@ -64,6 +64,12 @@
             <div class="section-heading">
                 <h1 class="header1"><span style="font-size: 50px; background: #E4F9FF; text-align: center;">SAAR <em>Profile Update Form</em></span></h1>
             </div>
+            <?php
+                if(isset($_SESSION['error'])){
+                    echo"<div class='alert alert-danger'>".$_SESSION['error']."</div>";
+                }
+                unset($_SESSION['error']);
+            ?>
 
         <div class="main-agileinfo"> 
 			<div class="agileits-top">

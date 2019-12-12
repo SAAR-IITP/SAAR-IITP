@@ -31,7 +31,7 @@ session_start();
    //close cURL resource
    curl_close($ch);
    $response = json_decode($result,true);
-   echo $response['messages'][0];
+   // echo $result;
    if($response['status'] == 205){
       $_SESSION['contact'] = $_POST["contact"];
       $_SESSION['employment_type'] = $_POST["etype"];
@@ -48,7 +48,8 @@ session_start();
       header("location: portal.php");
    }else{
       // set error messages
-      echo $result;
+      $_SESSION['error'] = $response['messages'][0];
+      header("location:updateProfile.php");
    }
  }
      ?>
