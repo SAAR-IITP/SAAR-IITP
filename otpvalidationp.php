@@ -36,7 +36,11 @@
          unset($_SESSION['loggedin']);
       	header("location: signin.php");
       }else if($response['status']==208){
-      	//forget password redirect to set password page
+         //forget password redirect to set password page
+         $_SESSION['cid'] = $response['messages']['rollno'];
+         $_SESSION['msg'] = $response['messages']['msg'];
+         $_SESSION['forget_pass'] = true;
+         header("location: changePassword.php");
       }else{
       	$_SESSION['error'] = $response['messages'][0];
       	header("location: enterotp.php");

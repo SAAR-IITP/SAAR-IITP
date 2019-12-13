@@ -68,7 +68,7 @@
                         <span class="focus-input100" data-placeholder="Password"></span>
 					</div>
                     <div id="forgot">
-                        <a href="#">Forgot Password ?</a>
+                        <a href="./forgetpass.php">Forgot Password ?</a>
                     </div>
                     <?php
                 if(isset($_SESSION['error'])){

@@ -169,6 +169,12 @@
                     <div class="img-fill">
                     <div class="image"></div>
                     <div class="info">
+                        <?php
+                                if(isset($_SESSION['msg'])){
+                                    echo "<div class='message-beauty'>".$_SESSION['msg']."</div>";
+                                    unset($_SESSION['msg']);
+                                }
+                        ?>
                         <div><br><br>
                           <h1>Actions speak louder than words!<br> Give today.</h1>
                           <div class="accent-button button">
@@ -184,6 +190,12 @@
                     <div class="img-fill">
                         <div class="image"></div>
                         <div class="info">
+                        <?php
+                                if(isset($_SESSION['msg'])){
+                                    echo "<div class='message-beauty'>".$_SESSION['msg']."</div>";
+                                    unset($_SESSION['msg']);
+                                }
+                        ?>
                             <div><br><br>
                           <h1>Actions speak louder than words!<br> Give today.</h1>
                           <div class="accent-button button">
@@ -199,6 +211,12 @@
                     <div class="img-fill">
                         <div class="image"></div>
                         <div class="info">
+                        <?php
+                                if(isset($_SESSION['msg'])){
+                                    echo "<div class='message-beauty'>".$_SESSION['msg']."</div>";
+                                    unset($_SESSION['msg']);
+                                }
+                        ?>
                         <div><br><br>
                           <h1>Actions speak louder than words!<br> Give today.</h1>
                           <div class="accent-button button">

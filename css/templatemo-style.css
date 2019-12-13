@@ -13,9 +13,9 @@ p {
   float: right;
 }
  
-.row {
-    /* background: #E4F9FF; */
-}
+/* .row {
+     /* background: #E4F9FF;  */
+/* } */
 
 .content-section {
   position: relative;
@@ -118,9 +118,9 @@ p {
   background-color: #26C1ED;
   color: #fff;
 }
-.accent-button{
+/* .accent-button{
   
-}
+} */
 .accent-button a {
   font-size: 18px;
   font-weight: 600;
@@ -1330,4 +1330,13 @@ li i{
   background-color: #f4f4f4;
 }
 
-
+.message-beauty {
+  color: #fff;
+  font-family: monospace;
+  background-color: rgba(38,193,257,0.5);
+  padding: 12px;
+  font-size: 18px;
+  text-align: right;
+  width: auto;
+  margin-bottom: 5px;
+}

@@ -1,5 +1,9 @@
 <?php
 session_start();
+if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"]==true)
+    {
+        header("location: resendotp.php");
+    }
 ?>
 <html>
      <head>
@@ -7,7 +11,7 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-    <title>Enter OTP</title>    
+    <title>Enter Rollno</title>    
     <style>
          body {
             background: #EEFBFF;
@@ -132,28 +136,15 @@ session_start();
            
 
       <section id="extra" style="padding: 0; background: url('img/bggg.png');">
-            <h1>Enter OTP</h1><br>
+            <h1>Enter Your Institute ID</h1><br>
       <div class="container-login100">
       <div class="wrap-login100">
-        <form class="login100-form validate-form" method="POST" action="otpvalidationp.php">
-          <?php if(isset($_SESSION['cid'])){?>
-            <input name="rollno" hidden value=<?php $_SESSION['cid']?> >
-          <?php }else{ ?>
-            <div class="wrap-input100 validate-input" data-validate="Enter rollno">
-              <input class="input100" type="text" size="50" name="rollno" required>
-                  <span class="focus-input100" data-placeholder="Enter Institute ID"></span>
-            </div>
-          <?php }?>
-          <?php if(isset($_SESSION['forget_pass']) && $_SESSION['forget_pass'] == true){ ?>
-            <input name="forget_pass" hidden value=<?php $_SESSION['forget_pass']?> >
-          <?php } ?>
-          <div class="wrap-input100 validate-input" data-validate="Enter password">
-            <input class="input100" type="text" size="50" name="otp" required>
-            <span class="focus-input100" data-placeholder="Enter OTP"></span>
+        <form class="login100-form validate-form" method="POST" action="resendotp.php">
+          <div class="wrap-input100 validate-input" data-validate="Enter rollno">
+            <input class="input100" type="text" size="50" name="rollno" required>
+                <span class="focus-input100" data-placeholder="Enter Institute ID"></span>
           </div>
-          <div id="resend">
-            <a href="resendotp.php">Resend OTP ?</a>
-          </div>
+              
           <?php
               if(isset($_SESSION['error'])){
                 echo $_SESSION['error'];

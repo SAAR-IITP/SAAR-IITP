@@ -64,8 +64,14 @@
             <div class="section-heading">
                 <h1 class="header1"><span style="font-size: 50px; background: #E4F9FF; text-align: center;">SAAR <em>Profile Update Form</em></span></h1>
             </div>
+            <?php
+                if(isset($_SESSION['error'])){
+                    echo"<div class='message-beauty'>".$_SESSION['error']."</div>";
+                }
+                unset($_SESSION['error']);
+            ?>
 
-        <div class="main-agileinfo">
+        <div class="main-agileinfo"> 
 			<div class="agileits-top">
 				<form action="profileUpdate.php" method="post">
                     <input class="text" type="text" name="fname" placeholder="First Name" value=<?php echo $_SESSION['fname'];?> disabled>
@@ -88,11 +94,11 @@
     
                     <select type="text" id="branch" name="dept" class="ui search selection   dropdown" disabled>
                     <option value=<?php echo $_SESSION['dept'];?> selected ><?php echo $_SESSION['dept']?></option>
-                    <option value="CSE">Computer Science and Engineering</option>
-                    <option value="EE">Electrical Engineering</option>
-                    <option value="ME">Mechanical Engineering</option>
-                    <option value="CE">Civil Engineering</option>
-                    <option value="CBE">Chemical and Biochemical Engineering</option>
+                    <option value="Computer Science and Engineering">Computer Science and Engineering</option>
+                    <option value="Electrical Engineering">Electrical Engineering</option>
+                    <option value="Mechanical Engineering">Mechanical Engineering</option>
+                    <option value="Civil Engineering">Civil Engineering</option>
+                    <option value="Chemical and Biochemical Engineering">Chemical and Biochemical Engineering</option>
                     </select>
                     
                     <select type="text" id="etype" name="etype" class="ui dropdown">
@@ -103,17 +109,17 @@
                     <option value="Civil Services">Civil Services</option>
                     </select>
 
-                    <input type="text" placeholder="Present Employer/Educational Inst." name="presentEmployer" value=<?php echo $_SESSION['present_employer'];?> required>
+                    <input type="text" placeholder="Present Employer/Educational Inst." name="presentEmployer" value="<?php echo $_SESSION['present_employer'];?>" required>
                     
-                    <input type="text" placeholder="Designation" name="designation" value=<?php echo $_SESSION['designation'];?> required>
+                    <input type="text" placeholder="Designation" name="designation" value="<?php echo $_SESSION['designation'];?>" required>
                     
                     <textarea type="text" name="address" required="" placeholder="Address"><?php echo $_SESSION['address']; ?></textarea>
                     
-                    <input type="text" placeholder="Country" name="country"  value=<?php echo $_SESSION['country']; ?> required>
+                    <input type="text" placeholder="Country" name="country"  value="<?php echo $_SESSION['country']; ?>" required>
                     
-                    <input type="text" placeholder="State" name="state" value=<?php echo $_SESSION['state'];?> required>
+                    <input type="text" placeholder="State" name="state" value="<?php echo $_SESSION['state'];?>" required>
     
-                    <input type="text" placeholder="City" name="city" value=<?php echo $_SESSION['city'];?> required>
+                    <input type="text" placeholder="City" name="city" value="<?php echo $_SESSION['city'];?>" required>
     
                     <textarea type="text" name="achievements" placeholder="Achievements After Graduation"><?php echo $_SESSION['achievements']; ?></textarea>
                     
