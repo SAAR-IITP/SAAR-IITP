@@ -83,7 +83,7 @@
             <?php 
                 if(isset($_SESSION['error'])){
                     foreach($_SESSION['error'] as $error){
-                        echo"<div class='alert alert-danger'><strong>".$error."</strong></div>";
+                        echo"<div class='message-beauty'><strong>".$error."</strong></div>";
                     }
                     unset($_SESSION['error']);
                 }
