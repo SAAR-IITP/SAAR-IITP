@@ -241,7 +241,7 @@
             <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="awards">
                 <div class="row my-auto">
                     <div class="col-12">
-                        <h2 class="  text-center">Achivements</h2>
+                        <h2 class="text-center" style="padding-left: 12%;">Achivements</h2>
                         <div class="mb-5 heading-border"></div>
                     </div> 
                     <div class="main-award" id="award-box" style="padding-left: 12%;">
