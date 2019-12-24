@@ -35,7 +35,7 @@
 
 @media (max-width: 800px) {
     .txt p {
-        margin: 5px; 10px;
+        margin: 5px, 10px;
     }
 }
 
@@ -149,4 +149,14 @@ fieldset {
     .container{
         padding-left: unset;
     }
+}
+.message-beauty {
+  color: #fff;
+  font-family: monospace;
+  background-color: rgba(38,193,257,0.5);
+  padding: 12px;
+  font-size: 18px;
+  text-align: right;
+  width: auto;
+  margin-bottom: 5px;
 }

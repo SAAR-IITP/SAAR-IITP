@@ -80,9 +80,17 @@
 	<div class="main-w3layouts wrapper">
             <h1><span style="font-size: 50px; align: center; "><em>SAAR Registration Form</em></span></h1>
         <div class="main-agileinfo">
+            <?php 
+                if(isset($_SESSION['error'])){
+                    foreach($_SESSION['error'] as $error){
+                        echo"<div class='message-beauty'><strong>".$error."</strong></div>";
+                    }
+                    unset($_SESSION['error']);
+                }
+            ?>
 			<div class="agileits-top">
 				<form action="register.php" method="post">
-					<input class="text" type="text" name="college_id" placeholder="College Roll number" required>
+					<input class="text" type="text" name="college_id" placeholder="College Roll number" value="<?php echo isset($_POST['college_id']) ? $_POST['college_id'] : '' ?>" required>
 					
                     <input id="fname" class="text" type="text" name="fname" placeholder="First Name" required>
 					
@@ -98,7 +106,7 @@
                     
                     <input class="text" type="password" name="password" placeholder="Password" required>
 					
-                    <input class="text w3lpass" type="password" name="password" placeholder="Confirm Password" required>
+                    <input class="text w3lpass" type="password" name="con_password" placeholder="Confirm Password" required>
 					
                     <input class="text" type="date" name="DOB" placeholder="Date of Birth" required onfocus="(this.type='date')">
                     <i class="ui calendar icon"></i>
@@ -145,9 +153,9 @@
                     <textarea type="text" name="achievements" placeholder="Achievements After Graduation"></textarea>
                     
                     <div class="wthree-text">
-						<label class="anim">
-							<input type="checkbox" class="checkbox" required="">
-							<span>I Agree To The Terms & Conditions</span>
+						<label class="anim" style="display: inline-flex;">
+							<input type="checkbox" class="checkbox" required="" style="margin-right: 5px;">
+							<span style="margin-top: 4px;">I Agree To The Terms & Conditions</span>
 						</label>
 						<div class="clear"> </div>
 					</div>
@@ -213,7 +221,7 @@
 		</ul>
 	</div>
 	<!-- //main -->
-<script>
+<!-- <script>
 function loged()
             {
                 console.log("Facebook connection established....");
@@ -252,36 +260,36 @@ function loged()
 window.onload = function(){
         <?php
         //echo 'console.log('.$_GET["type"].');';
-           if($_GET["type"] && strcmp($_GET["type"],'fblogin')==0)
-           {
-            echo 'setTimeout("loged()", 3000);console.log("pp");' ; 
-           }
-            if(isset($_SESSION['rolldup']) && $_SESSION['rolldup'] == true && isset($_SESSION['emaildup']) && $_SESSION['emaildup'] == true)
-            {
+        //    if($_GET["type"] && strcmp($_GET["type"],'fblogin')==0)
+        //    {
+        //     echo 'setTimeout("loged()", 3000);console.log("pp");' ; 
+        //    }
+        //     if(isset($_SESSION['rolldup']) && $_SESSION['rolldup'] == true && isset($_SESSION['emaildup']) && $_SESSION['emaildup'] == true)
+        //     {
 
-                echo 'setTimeout("alertboth()", 1000); console.log("working");';
-                $_SESSION['rolldup']=false;
-                $_SESSION['emaildup']=false;   
-                unset($_SESSION['emaildup']);
-                unset($_SESSION['rolldup']);
-            }
-            else if(isset($_SESSION['emaildup']) && $_SESSION['emaildup'] == true)
-            {
+        //         echo 'setTimeout("alertboth()", 1000); console.log("working");';
+        //         $_SESSION['rolldup']=false;
+        //         $_SESSION['emaildup']=false;   
+        //         unset($_SESSION['emaildup']);
+        //         unset($_SESSION['rolldup']);
+        //     }
+        //     else if(isset($_SESSION['emaildup']) && $_SESSION['emaildup'] == true)
+        //     {
 
-                echo 'setTimeout("alertemail()", 1000); console.log("working");';
-                $_SESSION['emaildup']=false;
-                unset($_SESSION['emaildup']);   
-            }
-            else if(isset($_SESSION['rolldup']) && $_SESSION['rolldup'] == true)
-            {
+        //         echo 'setTimeout("alertemail()", 1000); console.log("working");';
+        //         $_SESSION['emaildup']=false;
+        //         unset($_SESSION['emaildup']);   
+        //     }
+        //     else if(isset($_SESSION['rolldup']) && $_SESSION['rolldup'] == true)
+        //     {
 
-                echo 'setTimeout("alertroll()", 1000); console.log("working");  ';
-                $_SESSION['rolldup']=false;
-                unset($_SESSION['rolldup']);   
-            }
+        //         echo 'setTimeout("alertroll()", 1000); console.log("working");  ';
+        //         $_SESSION['rolldup']=false;
+        //         unset($_SESSION['rolldup']);   
+        //     }
         ?>
 }
-</script>
+</script> -->
 </body>
 
 </html>

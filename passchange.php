@@ -6,10 +6,15 @@ session_start();
         $ch = curl_init($url);
         $data = array(
          'rollno' => $_SESSION['cid'],
-         'old_password' => $_POST["password"],
          'new_password' => $_POST["newpassword"],
          'confirm_password' => $_POST["confirmnewpassword"]
         );
+        if(isset($_SESSION['password'])){
+          $data += array('old_password' => $_POST["password"]);
+        }
+        if(isset($_SESSION['forget_pass'])){
+          $data += array('forget_password' => $_SESSION['forget_pass']);
+        }
         $payload = http_build_query($data);
   
         curl_setopt($ch, CURLOPT_POST, true);
@@ -31,6 +36,7 @@ session_start();
           $_SESSION['error'] = $response['messages'][0];
           header("location: changePassword.php");
         }else if($response['status'] == 207){
+          $_SESSION['msg'] = $response['messages'][0];
             header("location: logout.php");
         }
    }?>

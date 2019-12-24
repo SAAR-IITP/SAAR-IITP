@@ -12,34 +12,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']==false)
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
     <title>Password Change</title>
-    <script type="text/javascript">
-      function alertPass(){
-        alert("Existing Incorrect Password.");
-      }
-      function alertNoMatch(){
-        alert("The New passwords don't match.");
-      }
-      function alertSuccess(){
-        alert("Password Changed Successfully.")
-      }
-      window.onload = function(){
-         <?php
-           
-        if($_GET['status']=="success")
-        {
-          echo 'document.getElementById("error").innerHTML="Password Changed Successfully" ';
-        }
-        else if($_GET['status']=="nomatch")
-        {
-          echo 'document.getElementById("error").innerHTML="New passwords don\'t match " ';
-        }
-        else if($_GET['status']=="wrongpass")
-        {
-          echo 'document.getElementById("error").innerHTML="Wrong Credentials !" ';
-        }
-        ?>
-      }
-     </script>
+
      <style>
          body {
             background: #EEFBFF;
@@ -143,10 +116,14 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']==false)
 		  <div class="container-login100">
 			<div class="wrap-login100">
 				<form class="login100-form validate-form" method="POST" action="passchange.php">
+                  <?php if(isset($_SESSION['forget_pass']) && $_SESSION['forget_pass'] == true){ ?>
+                    <input name="forget_pass" hidden value=<?php $_SESSION['forget_pass']?> >
+                  <?php }else{ ?>
 					<div class="wrap-input100 validate-input" data-validate="Enter password">
 						<input class="input100" type="password" size="50" name="password" required>
                         <span class="focus-input100" data-placeholder="Enter your existing password"></span>
 					</div>
+                  <?php } ?>
                     <div class="wrap-input100 validate-input" data-validate="Enter password">
 						<input class="input100" type="password"  size="50" name="newpassword" required>
                         <span class="focus-input100" data-placeholder="Enter your new password"></span>
