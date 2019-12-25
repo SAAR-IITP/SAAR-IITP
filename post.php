@@ -48,7 +48,35 @@
                         $('#result').append(data);
                     }
                 });
+                $("#refresh").on("click",function(){
+                    $.ajax({
+                    type: "GET",
+                    url: "postdata.php",
+                    data: {
+                        'post_id': $_GET['q']
+                    },
+                    success: function(data){
+                        $('#result').html(data);
+                    }
+                    });
                 });
+                $("#add_comment").on("click",function(){
+                    let bodyval = $('#comment_body').val();
+                    $('#comment_body').val('');
+                    $.ajax({
+                        type: "POST",
+                        url: "http://localhost/Saar-Server/functions/createReply.php",
+                        data: {
+                            "user_id": 3,
+                            "post_id":$_GET['q'],
+                            "body": bodyval
+                        },
+                        success: function(data){
+                            console.log(data);
+                        }
+                    });
+                });
+            });
         
             function autoRefresh_div()
             {
@@ -72,6 +100,7 @@
         <div class="container">
             <h1>Particular post</h1>
             <hr>
+            <button id="refresh" class="btn btn-lg btn-primary">Refresh</button>
             <div id="result">
             <?php
             //     $post_id = $_GET['q'];
@@ -79,7 +108,14 @@
             //    include($url);
             ?>
             </div>
-            <button id="refresh" class="btn btn-lg btn-primary">Refresh</button>
+            
+            <div class="input-group input-group-lg">
+                <input type="text" class="form-control" placeholder="Add a comment..." id="comment_body">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" id="add_comment">Go!</button>
+                </span>
+            </div>
+            <br><br>
         </div>
     </body>
 </html>
