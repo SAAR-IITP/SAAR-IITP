@@ -11,12 +11,12 @@
         foreach($datas as $data){
         echo '
             <div class="jumbotron">
-                    <h1 class="display-4">'.$data['title'].'</h1>
-                    <p class="lead">'.$data['body'].'</p>
+                    <h1 class="display-4">'.$data['id'].'. '.$data['title'].'</h1>
+                    <p class="lead">'.$data['post_time'].'</p>
                     <hr class="my-4">
-                    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+                    <p>'.$data['body'].'</p>
                     <p class="lead">
-                        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+                        <a class="btn btn-primary btn-md" href="./post.php?q='.$data['id'].'" role="button">Learn more</a>
                     </p>
             </div>
         ';

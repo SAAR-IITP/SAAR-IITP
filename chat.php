@@ -19,7 +19,7 @@
     </head>
     <script type="text/javascript">
     $(document).ready(function(){
-        var flag = 1;
+        var flag = 0;
         $.ajax({
                 type: "GET",
                 url: "load.php",
@@ -33,7 +33,7 @@
                 }
             });
         $("#load_more").on("click", function() {
-            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+            // if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
                 // when scroll to bottom of the page
                 $("#load_more").html("Loading..");
                 $.ajax({
@@ -54,22 +54,14 @@
                         
                     }
                 });
-            }
+            // }
         });
         
     });
     
     
     </script>
-    <!-- <script>
-        function autoRefresh_div()
-        {
-            $("#result").load("load.php").show();// a function which will load data from other file after x seconds
-            // $("#result").append("hil<br>");
-        }
-        
-        // setInterval('autoRefresh_div()', 2000);
-    </script> -->
+    
     <body>
         <div class="container">
             <h1>CHAT PORTAL</h1>
