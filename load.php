@@ -11,7 +11,7 @@
         foreach($datas as $data){
         echo '
             <div class="jumbotron">
-                    <h1 class="display-4">'.$data['id'].'. '.$data['title'].'</h1>
+                    <h3 class="display-4">'.$data['id'].'. '.$data['title'].'</h3>
                     <p class="lead">'.$data['post_time'].'</p>
                     <hr class="my-4">
                     <p>'.$data['body'].'</p>

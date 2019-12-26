@@ -18,7 +18,8 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
-        <script src="js/vendor/bootstrap.min.js"></script>         
+        <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="./js/upload.js"></script>    
     </head>
     <script type="text/javascript">
     $(document).ready(function(){
@@ -44,13 +45,13 @@
                     url: "load.php",
                     data: {
                         'offset': flag,
-                        'limit': 3
+                        'limit': 6
                     },
                     success: function(data){
                         if(data != ''){
                             $('#load_more').html('Load More');
                             $('#result').append(data);
-                            flag+=3;
+                            flag+=6;
                         }else{        
                             $('#load_more').html('Nothing more');
                         }
@@ -88,7 +89,7 @@
                         <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form method="POST" action="newPost.php">
+                    <form method="POST" action="newPost.php" enctype="multipart/form-data">
                     <div class="modal-body">
                         
                             <div class="form-group">
@@ -102,6 +103,14 @@
                             <div class="form-group">
                                 <label for="cat">Category ID</label>
                                 <input type="number" class="form-control" id="cat" name="cat_id" placeholder="Enter cat id" required>
+                            </div>
+                            <div class="form-group">
+                            <small>First Field is Compulsory. Only JPEG,PNG,JPG Type Image Uploaded. Image Size Should Be Less Than 1MB.</small>
+                            <div id="filediv"><input name="file[]" class="form-control" type="file" id="file"/></div>
+                            </div>
+                            <div class="form-group">
+                            <input type="button" id="add_more" class="btn btn-success" value="Add More Files"/>
+                            <!-- <input type="submit" value="Upload File" name="submit" id="upload" class="btn btn-success"/> -->
                             </div>
                             <input type="number" value="2" name="user_id" hidden>
                         
