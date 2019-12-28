@@ -43,6 +43,86 @@
                     display:block;
                 }
             }
+
+            * {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f3f6f7;
+  font-family: sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+}
+
+.nav {
+  background-color: #257391;
+  color: #fff;
+  float: left;
+  height: 100%;
+  position: fixed;
+  width: 225px;
+}
+
+.nav__brandbar {
+  background-color: #14465e;
+  padding: 1.5rem;
+}
+
+.nav__links {
+  text-transform: uppercase;
+}
+.nav__links:hover {
+  background-color: #1f6079;
+}
+.nav__links a {
+  padding: 1.5rem;
+}
+
+.search-bar {
+  background-color: #fff;
+  padding: 1.5rem;
+}
+
+.main-content {
+  
+  width: calc(100% - 225px);
+  clear: none;
+}
+
+.channel-list {
+  padding: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 6rem;
+  max-width: 800px;
+}
+
+.channel-list__table {
+  background: #fff;
+  box-shadow: 0px 1px 4px 0px rgba(12, 57, 78, 0.2);
+  width: 800px;
+}
+.channel-list__table thead {
+  border-bottom: 1px solid rgba(37, 115, 145, 0.1);
+}
+.channel-list__table th,
+.channel-list__table td {
+  padding: 1em;
+}
+.channel-list__table th {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.channel-list__table-row {
+  text-align: left;
+}
+
         </style>
     </head>
 
@@ -97,83 +177,88 @@
         
   <div class="page-content">
       
-      <section id="extra" style="background: #003C4D; padding: 20px;">  
-          <br><br><br><br>
-        <div class="section-heading" style="text-align: center;margin-bottom: 10px;">
-            <h1 style="color: #fff; text-decoration: underline; padding-left: 30px;">"Enter city name and Select Passing year"</h1>
-        </div>
-        <form method="post" action="">
-            <input class="full" type="text" name="city" required placeholder="City" style="padding: 4px; margin: 2px;">
-            <select class="full" id="passYear" name="year" style="padding: 4px; margin: 2px;">
-                <option value="" selected disabled hidden>Graduation Year</option>
-            </select><br>
-            <button class="button" style="vertical-align:middle; background: white; color: #003C4D; padding: 0px; font-size: 20px; margin: 10px;" formaction="profile.html"><span>Submit</span></button>
-        </form>
-      </section>
       
-      <br><br>
-      <section id="extra" style="background: #003C4D; padding: 14px 0 1px 0;">  
-            <div class="section-heading" style="text-align: center;margin-bottom: 10px;">
-                <h1 style="color: #fff; text-decoration: underline; padding-left: 30px;">"NO RECORDS FOUND"</h1>
-            </div>  
-      </section>
       
       <section id="extra">
           <br><br>
-  <div class="table-users">
-   <table cellspacing="0">
-      <div class="hide">
-       <tr>
-         <td>Pictures</td>
-         <td>Name</td>
-         <td>E-mail Id</td>
-         <td>Links to Fb Profile</td>
-       </tr>
-       </div>
-      <tr>
-         <td><img src="img/male.jpeg" alt="" /></td>
-         <td>Jane Doe</td>
-         <td>jane.doe@foo.com</td>
-         <td><a href="#" >Click Here</a></td>
-      </tr>
+  
+    
+      <div class="main-content">
 
-      <tr>
-         <td><img src="img/female.png" alt="" /></td>
-         <td>John Doe</td>
-         <td>john.doe@foo.com</td>
-          <td><a href="#" >Click Here</a></td>
-      </tr>
-
-      <tr>
-         <td><img src="img/male.jpeg" alt="" /></td>
-         <td>Jane Smith</td>
-         <td>jane.smith@foo.com</td>
-         <td><a href="#" >Click Here</a></td>
-       </tr>
-      
-      <tr>
-         <td><img src="img/male.jpeg" alt="" /></td>
-         <td>John Smith</td>
-         <td>john.smith@foo.com</td>
-          <td><a href="#" >Click Here</a></td>
-      </tr>
-       
-       
-      <tr>
-         <td><img src="img/female.png" alt="" /></td>
-         <td>Jane Smith</td>
-         <td>jane.smith@foo.com</td>
-          <td><a href="#" >Click Here</a></td>
-       </tr>
-      
-      <tr>
-         <td><img src="img/male.jpeg" alt="" /></td>
-         <td>John Smith</td>
-         <td>john.smith@foo.com</td>
-          <td><a href="#" >Click Here</a></td>
-      </tr>
-   </table>
+        <div class="bs-component" ng-controller="listdata">
+            
+            <form class="form-inline">
+              <div class="form-group">
+                <label >Name</label>
+                <input type="text" ng-model="search" class="form-control" placeholder="Search">
+              </div>
+              <div class="form-group">
+                <label >Batch</label>
+                <input type="text" ng-model="search" class="form-control" placeholder="Search">
+              </div>
+            </form>
+        </div>
+        
+        <div class="channel-list">
+          <table class="channel-list__table" width=3000px>
+            <thead>
+              <tr class="channel-list__table-row">
+                <th colspan="2" style="text-align:center">Channels</th>
+                <th style="text-align: center;">Resources</th>
+                <th class="channel-list__table-header--last" style="text-align: center;">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="channel-list__table-row">
+                <td colspan="2">Channel 1</td>
+                <td>Resource 1</td>
+                <td class="channel-list__table-data--last" style="text-align: center;">Edit/Delete</td>
+              </tr>
+            </tbody>
+            <tbody>
+                <tr class="channel-list__table-row">
+                  <td colspan="2">Channel 1</td>
+                  <td>Resource 1</td>
+                  <td class="channel-list__table-data--last" style="text-align: center;">Edit/Delete</td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr class="channel-list__table-row">
+                  <td colspan="2">Channel 1</td>
+                  <td>Resource 1</td>
+                  <td class="channel-list__table-data--last" style="text-align: center;">Edit/Delete</td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr class="channel-list__table-row">
+                  <td colspan="2">Channel 1</td>
+                  <td>Resource 1</td>
+                  <td class="channel-list__table-data--last" style="text-align: center;">Edit/Delete</td>
+                </tr>
+              </tbody>
+          </table>
+        </div>
+      </div>
+   
 </div>
+
+<script>
+var app = angular.module("angularTable", []);
+
+app.controller("listdata", function($scope, $http) {
+  $scope.users = []; //declare an empty array
+  $http
+    .get("http://jsonplaceholder.typicode.com/todos")
+    .success(function(response) {
+      $scope.users = response; //ajax request to fetch data into $scope.data
+    });
+
+  $scope.sort = function(keyname) {
+    $scope.sortKey = keyname; //set the sortKey to the param passed
+    $scope.reverse = !$scope.reverse; //if true make it false and vice versa
+  };
+});
+</script>
   
   
       </section>
