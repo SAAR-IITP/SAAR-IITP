@@ -101,6 +101,7 @@
             <h1>Particular post</h1>
             <hr>
             <button id="refresh" class="btn btn-lg btn-primary">Refresh</button>
+            <a href="./chat.php"><button id="back" class="btn btn-lg btn-primary">Back</button></a>
             <div id="result">
             <?php
             //     $post_id = $_GET['q'];
