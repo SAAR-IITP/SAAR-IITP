@@ -9,10 +9,13 @@
         $response = json_decode($response,true);
         $datas = $response['data'];
         foreach($datas as $data){
+            if(strlen($data['body']) >= 200){
+                $data['body'] .= '....';
+            }
         echo '
             <div class="jumbotron">
                     <h3 class="display-4">'.$data['id'].'. '.$data['title'].'</h3>
-                    <p class="lead">'.$data['post_time'].'</p>
+                    <p class="lead">'.$data['post_time'][0].' at '.$data['post_time'][1].'</p>
                     <hr class="my-4">
                     <p>'.$data['body'].'</p>
                     <p class="lead">

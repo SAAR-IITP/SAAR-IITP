@@ -97,7 +97,7 @@
                                 <input type="text" class="form-control" id="title" name="title" aria-describedby="emailHelp" placeholder="Enter Title" required>
                             </div>
                             <div class="form-group">
-                                <label for="body">Password</label>
+                                <label for="body">Description</label>
                                 <input type="text" class="form-control" id="body" name="body" placeholder="Description" required>
                             </div>
                             <div class="form-group">
