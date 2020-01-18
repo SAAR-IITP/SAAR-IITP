@@ -46,9 +46,9 @@ session_start();
       $_SESSION['achievements'] = $_POST["achievements"];
       $_SESSION['msg'] = $response['messages'][0];
       header("location: portal.php");
-   }else{
+   }else if($response['status']==400){
       // set error messages
-      $_SESSION['error'] = $response['messages'][0];
+      $_SESSION['error'] = $response['messages'];
       header("location:updateProfile.php");
    }
  }
