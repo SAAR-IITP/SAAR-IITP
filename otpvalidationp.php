@@ -1,8 +1,7 @@
 <?php
  session_start();
  if($_SERVER["REQUEST_METHOD"] == "POST") {
-	//  $url = "https://saar-server.000webhostapp.com/functions/verifyOTP.php";
-	 $url = "http://localhost/SAAR-Server/functions/verifyOTP.php";
+	 $url = "https://saar-server.000webhostapp.com/functions/verifyOTP.php";
 	 $ch = curl_init($url);
 	 $data = array(
 	 	'rollno' => $_POST['rollno'],

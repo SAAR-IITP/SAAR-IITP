@@ -2,8 +2,13 @@
     session_start();
     if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"]==false)
     {
-        header("location: index.php");
+        header("location: noaccess.php");
     }
+    // $email=$_SESSION['email'];
+    // include('connection.php');
+    // $sql = "SELECT * FROM user WHERE email='$email'";
+    // $result = mysqli_query($dbc,$sql);
+    // $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
 ?>
 <!DOCTYPE html>
 <html>
@@ -13,7 +18,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- Custom Theme files -->
-<!-- <link href="css/style.css" rel="stylesheet" type="text/css" media="all" /> -->
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 <!-- //Custom Theme files -->
 <!-- web font -->
 <link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
@@ -125,19 +130,8 @@
 						</label>
 						<div class="clear"> </div>
 					</div>
-                    <input type="submit" value="UPDATE">
-                </form>
-                <a href="./portal.php"><button style="font-size: .9em;
-                    color: #fff;
-                    background: #003C4D;
-                    outline: none;
-                    border: 1px solid #003C4D;
-                    cursor: pointer;
-                    padding: 0.9em;
-                    -webkit-appearance: none;
-                    width: 100%;
-                    margin: 2em 0;
-                    letter-spacing: 4px;">BACK</button></a>
+					<input type="submit" value="UPDATE">
+				</form>
 			</div>
 		</div>
 		
@@ -163,7 +157,34 @@
 		</ul>
 	</div>
 	<!-- //main -->
-
+<script>
+function alertSuc()
+{
+    console.log("done");
+    alert("Profile Updated.");
+}
+function alertErr()
+{
+    console.log("done");
+    alert("Error, Please try again later.");
+}
+window.onload = function(){
+       <?php
+        if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']==false)
+        {
+          echo 'window.location = "noaccess.php";';
+        }
+         if($_GET['status']=="success")
+        {
+            echo 'setTimeout("alertSuc()", 300);'; 
+        }
+        if($_GET['status']=="error")
+        {
+            echo 'setTimeout("alertErr()", 300);';
+        }
+    ?>
+}
+</script>
 </body>
 
 </html>

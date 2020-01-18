@@ -1,8 +1,7 @@
 <?php 
 session_start();
  if($_SERVER["REQUEST_METHOD"] == "POST") {
-   // $url = 'https://saar-server.000webhostapp.com/functions/updateProfile.php';
-   $url = 'http://localhost/SAAR-Server/functions/updateProfile.php';
+   $url = 'https://saar-server.000webhostapp.com/functions/updateProfile.php';
    $ch = curl_init($url);
    $data = array(
     'phone' => $_POST["contact"],
@@ -47,9 +46,9 @@ session_start();
       $_SESSION['achievements'] = $_POST["achievements"];
       $_SESSION['msg'] = $response['messages'][0];
       header("location: portal.php");
-   }else if($response['status'] == 400){
+   }else{
       // set error messages
-      $_SESSION['error'] = $response['messages'];
+      $_SESSION['error'] = $response['messages'][0];
       header("location:updateProfile.php");
    }
  }
