@@ -9,7 +9,7 @@ session_start();
          'new_password' => $_POST["newpassword"],
          'confirm_password' => $_POST["confirmnewpassword"]
         );
-        if(isset($_SESSION['password'])){
+        if(isset($_POST['password'])){
           $data += array('old_password' => $_POST["password"]);
         }
         if(isset($_SESSION['forget_pass'])){
