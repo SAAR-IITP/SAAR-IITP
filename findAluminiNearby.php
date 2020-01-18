@@ -5,7 +5,7 @@
     $count=-1;
      if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"]==false)
     {
-        header("location: noaccess.php");
+        header("location: ./index.php");
     } 
         if(isset($_POST['year']) && $_SERVER["REQUEST_METHOD"] == "POST") {
             $url = 'http://localhost/saar-server/functions/aluminiNearMe.php';
@@ -47,18 +47,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Find Alumni Near You</title>
         <script>
-            window.onload=function(){
-            var min = 2012;
-            var d = new Date();
-            max = d.getFullYear();
-            for (var i = min; i<=max; i++){
-               var opt = document.createElement('option');
-               opt.value = i;
-               opt.innerHTML = i;
-                console.log(document.getElementById('passYear'));
-               document.getElementById('passYear').appendChild(opt);
-                };
-        }
+        //     window.onload=function(){
+        //     var min = 2012;
+        //     var d = new Date();
+        //     max = d.getFullYear();
+        //     for (var i = min; i<=max; i++){
+        //        var opt = document.createElement('option');
+        //        opt.value = i;
+        //        opt.innerHTML = i;
+        //         console.log(document.getElementById('passYear'));
+        //        document.getElementById('passYear').appendChild(opt);
+        //         };
+        // }
         </script>
         
         <meta name="description" content="">
