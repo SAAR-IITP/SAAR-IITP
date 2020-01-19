@@ -49,6 +49,7 @@
                         <li><a href="#blog">Utilities</a></li>
                         <li><a href="#projects">Gallery</a></li>
                         <li><a href="#contact">Contact Us</a></li>
+			<li><a href="#top">HOME</a></li>
                         <li><form action="#" method="post" id="log">
                             <button class="btn" formaction="#">Logout</button>
                         </form></li>
