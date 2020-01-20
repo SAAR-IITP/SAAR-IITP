@@ -342,9 +342,9 @@
                     <input type="text" name="email" placeholder="Email Id" class="form-control contact-input">
                     </div> -->
                     <div class="col-md-12 col-sm-12 col-xs-12">
-                    <input type="text" name="subject" placeholder="Subject" class="form-control contact-input">
+                    <input type="text" name="subject" placeholder="Subject" class="form-control contact-input" required>
                     </div>
-                    <div class="col-md-12 col-sm-12 col-xs-12 contact-input"><textarea name="message"></textarea></div>
+                    <div class="col-md-12 col-sm-12 col-xs-12 contact-input"><textarea name="message" required></textarea></div>
                     <div class="col-md-12 col-sm-12 col-xs-12 sub-but"><button form="contactUs" value="submit" class="btn btn-primary" role="button">Send</button></div>
                 </div>
               </form>
@@ -487,12 +487,12 @@
     <script>
     window.onload = function(){
           <?php
-            if(isset($_SESSION['contact']) && $_SESSION['contact'] != 'true')
+            if(isset($_SESSION['msg']))
             {
-                $err = $_SESSION['contact'];
+                $err = $_SESSION['msg'];
                 echo 'alert($err)';
             }
-            $_SESSION['contact'] = true;
+            unset($_SESSION['msg']);
             ?>
         };
     </script>

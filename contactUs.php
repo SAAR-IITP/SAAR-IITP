@@ -1,10 +1,6 @@
 <?php
 	session_start();
-	echo implode(' ', $_SESSION);
-	$_SESSION['contact'] = 'T';
-	echo 'sub'.$_POST['subject'].'\n';
-	echo 'mes'.$_POST['message'];
-
+	
 	$url = 'localhost/saar-server/functions/help.php';
 		$ch = curl_init($url);
 		$data = array(
@@ -29,12 +25,12 @@
 		
 
 	if($response['status'] == 202){
-		$_SESSION['contact'] = 'true';
+		$_SESSION['msg'] = 'Message Sent Successfully';
 	}
 	else if($response['status']== 400){		
-		$_SESSION['contact'] = $response['message'];
+		$_SESSION['msg'] = $response['message'];
 	}
-	else $_SESSION['contact'] = 'Something Went Wrong';
+	else $_SESSION['msg'] = 'Something Went Wrong';
 
 	header("location: portal.php");
 ?>
