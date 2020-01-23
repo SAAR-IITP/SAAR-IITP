@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	
-	$url = 'localhost/saar-server/functions/help.php';
+	$url = 'localhost/SAAR-Server/functions/help.php';
 		$ch = curl_init($url);
 		$data = array(
 			'name'=> $_SESSION['fname'],
