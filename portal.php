@@ -116,8 +116,13 @@
                         <li><a href="#projects">Newsfeed</a></li>
                         <li><a href="#contact">Contact Us</a></li>
                         <li>
+                            <form action="index.php" method="post" id="log">  
+                             <button class="button" style="vertical-align:middle" onclick="location.href = 'index.php';"><span>Home </span></button>  
+                         </form>
+                         </li>
+                        <li>
                            <form action="logout.php" method="post" id="log">
-                            <button class="button" style="vertical-align:middle" onclick="location.href = 'logout.php';"><span>Logout </span></button> 
+                            <button class="button" style="vertical-align:middle" onclick="location.href = 'logout.php';"><span>Logout </span></button>  
                         </form>
                         </li>
                     </ul>
@@ -129,6 +134,7 @@
             <div class="logo">
                 <img src="img/logo1.png" class="static">
             </div>
+            <br>
             <nav>
                 <ul>
                     <li>
@@ -167,8 +173,13 @@
                         </a>
                     </li>
                     <li>
+                    <form action="index.php" method="post" id="log">
+                        <button class="button" style="vertical-align:middle" onclick="location.href = 'index.php';"><span>Home </span></button> 
+                   </form>
+                    </li>
+                    <li>
                         <form action="logout.php" method="post" id="log">
-                            <button class="button" style="vertical-align:middle" onclick="location.href = 'logout.php';"><span>Logout </span></button> 
+                             <button class="button" style="vertical-align:middle" onclick="location.href = 'logout.php';"><span>Logout </span></button> 
                         </form>
                     </li>
                 </ul>
