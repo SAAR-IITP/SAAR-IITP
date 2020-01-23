@@ -483,18 +483,5 @@
     </script>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
-
-    <script>
-    window.onload = function(){
-          <?php
-            if(isset($_SESSION['msg']))
-            {
-                $err = $_SESSION['msg'];
-                echo 'alert($err)';
-            }
-            unset($_SESSION['msg']);
-            ?>
-        };
-    </script>
 </body>
 </html>
