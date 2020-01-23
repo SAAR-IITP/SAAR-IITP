@@ -349,19 +349,21 @@
                 <h3>CONTACT US</h3>
                 <div class="heading-border-light"></div>
               </div>   
-              <div class="row con-form">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                  <input type="text" name="full-name" placeholder="Full Name" class="form-control">
+              <form action="contactUs.php" method="post" id="contactUs">
+                <div class="row con-form">
+                    <!-- <div class="col-md-12 col-sm-12 col-xs-12">
+                    <input type="text" name="full-name" placeholder="Full Name" class="form-control contact-input">
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                    <input type="text" name="email" placeholder="Email Id" class="form-control contact-input">
+                    </div> -->
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                    <input type="text" name="subject" placeholder="Subject" class="form-control contact-input" required>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12 contact-input"><textarea name="message" required></textarea></div>
+                    <div class="col-md-12 col-sm-12 col-xs-12 sub-but"><button form="contactUs" value="submit" class="btn btn-primary" role="button">Send</button></div>
                 </div>
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                  <input type="text" name="email" placeholder="Email Id" class="form-control">
-                </div>
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                  <input type="text" name="subject" placeholder="Subject" class="form-control">
-                </div>
-                <div class="col-md-12 col-sm-12 col-xs-12"><textarea name="" id=""></textarea></div>
-                <div class="col-md-12 col-sm-12 col-xs-12 sub-but"><button class="btn btn-primary" role="button">Send</button></div>
-              </div>
+              </form>
             </div>
             <div class="col-md-4 col-sm-12 mt-5">  
               <div class="contact-cont2"> 
@@ -496,17 +498,6 @@
         }
     </script>
 
-    <script>
-        function on() {
-            document.getElementById("myModal").style.display = "block";
-        }
-
-        function off() {
-            document.getElementById("myModal").style.display = "none";
-        }
-    </script>
-    
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
-
 </body>
 </html>
