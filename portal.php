@@ -115,16 +115,13 @@
                         <li><a href="#blog">Utilities</a></li>
                         <li><a href="#projects">Newsfeed</a></li>
                         <li><a href="#contact">Contact Us</a></li>
-                        <!-- <li><button class="button" style="vertical-align:middle" onclick="location.href = 'index.php';"><span>HOME </span></button>
-                        </li> -->
                         <li>
-                            <form action="index.php" method="post" id="log">
-                              
+                            <form action="index.php" method="post" id="log">  
                              <button class="button" style="vertical-align:middle" onclick="location.href = 'index.php';"><span>Home </span></button>  
                          </form>
+                         </li>
                         <li>
                            <form action="logout.php" method="post" id="log">
-                             
                             <button class="button" style="vertical-align:middle" onclick="location.href = 'logout.php';"><span>Logout </span></button>  
                         </form>
                         </li>
@@ -140,8 +137,7 @@
             <br>
             <nav>
                 <ul>
-                        
-                   
+                    <li>
                         <a href="#video">
                             <span class="rect"></span>
                             <span class="circle"></span>
@@ -182,7 +178,6 @@
                    </form>
                     </li>
                     <li>
-                       
                         <form action="logout.php" method="post" id="log">
                              <button class="button" style="vertical-align:middle" onclick="location.href = 'logout.php';"><span>Logout </span></button> 
                         </form>
