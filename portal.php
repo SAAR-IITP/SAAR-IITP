@@ -176,7 +176,11 @@
                             Contact Us
                         </a>
                     </li>
-                   
+                    <li>
+                    <form action="index.php" method="post" id="log">
+                        <button class="button" style="vertical-align:middle" onclick="location.href = 'index.php';"><span>Home </span></button> 
+                   </form>
+                    </li>
                     <li>
                        
                         <form action="logout.php" method="post" id="log">
