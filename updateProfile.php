@@ -4,11 +4,6 @@
     {
         header("location: ./index.php");
     }
-    // $email=$_SESSION['email'];
-    // include('connection.php');
-    // $sql = "SELECT * FROM user WHERE email='$email'";
-    // $result = mysqli_query($dbc,$sql);
-    // $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
 ?>
 <!DOCTYPE html>
 <html>

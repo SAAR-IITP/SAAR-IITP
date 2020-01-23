@@ -1,8 +1,8 @@
 <?php
 session_start();
-if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']==false)
+if((!isset($_SESSION['loggedin']) || $_SESSION['loggedin']==false) && (!isset($_SESSION['forget_pass']) || $_SESSION['forget_pass']==false))
 {
-    echo 'window.location = "noaccess.php";';
+    echo 'window.location = "index.php";';
 }
 ?>
 <html>
@@ -117,7 +117,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']==false)
 			<div class="wrap-login100">
 				<form class="login100-form validate-form" method="POST" action="passchange.php">
                   <?php if(isset($_SESSION['forget_pass']) && $_SESSION['forget_pass'] == true){ ?>
-                    <input name="forget_pass" hidden value=<?php $_SESSION['forget_pass']?> >
+                    <input name="forget_pass" hidden value="<?php echo $_SESSION['forget_pass']?>" >
                   <?php }else{ ?>
 					<div class="wrap-input100 validate-input" data-validate="Enter password">
 						<input class="input100" type="password" size="50" name="password" required>

@@ -2,7 +2,7 @@
 session_start();
     if($_SERVER["REQUEST_METHOD"] == "POST") 
     {
-        $url = 'https://saar-server.000webhostapp.com/functions/changePassword.php';
+        $url = 'http://localhost/SAAR-Server/functions/changePassword.php';
         $ch = curl_init($url);
         $data = array(
          'rollno' => $_SESSION['cid'],
@@ -12,8 +12,8 @@ session_start();
         if(isset($_POST['password'])){
           $data += array('old_password' => $_POST["password"]);
         }
-        if(isset($_SESSION['forget_pass'])){
-          $data += array('forget_password' => $_SESSION['forget_pass']);
+        if(isset($_POST['forget_pass'])){
+          $data += array('forgot_password' => $_POST['forget_pass']);
         }
         $payload = http_build_query($data);
   
