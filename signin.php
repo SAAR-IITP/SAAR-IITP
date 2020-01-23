@@ -11,8 +11,6 @@
     
     <title>Login V2</title>
 
-
-
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
@@ -187,20 +185,7 @@
         }
     });
 })(jQuery);
-window.onload = function(){
-          <?php
-            if(isset($_SESSION['loginfail']) && $_SESSION['loginfail'] == true)
-            {
-                echo 'setTimeout("alertpass()", 1000); ';
-                $_SESSION['loginfail']=false;   
-                unset($_SESSION['loginfail']);
-            }
-            ?>
-        };
-
-function alertpass(){
-    alert("Incorrect Credentials");
-}         
+        
     </script>
     
 </body>
