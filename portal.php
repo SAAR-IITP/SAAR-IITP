@@ -186,8 +186,8 @@
             </nav>
             <ul class="social-icons">
                 <li><a href="https://www.facebook.com/saar.iitp" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="#"  target="_blank"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="#" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                <li><a href="https://www.twitter.com/saar_iitp"  target="_blank"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="https://www.linkedin.com/company/saar-iitp" target="_blank"><i class="fa fa-linkedin"></i></a></li>
             </ul>
         </div>
         
@@ -208,34 +208,32 @@
                                    
 					           </ul> -->
                             </div>
-                            <p class="mb-5" style="font-size: 20px;" >I am experienced in leveraging agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.</p>
-                            <p>College Id : <?php echo $_SESSION["cid"];?> </p>
-                            <p>DOB : <?php echo $_SESSION["dob"]; ?></p>
-                            <p>Graduation year : <?php echo $_SESSION["graduation"];?> </p>
-                            <p>Degree : <?php echo $_SESSION["degree"];?> </p>
-                            <p>Department : <?php echo $_SESSION["dept"];?> </p>
-                            <p>Employment Type : <?php echo $_SESSION["employment_type"];?> </p>
-                            <p>Present Employer : <?php echo $_SESSION["present_employer"];?> </p>
-                            <p>Designation : <?php echo $_SESSION["designation"];?> </p>
+                            <!-- <p class="mb-5" style="font-size: 20px;" >I am experienced in leveraging agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.</p> -->
+                            <p style="font-size: 20px;">College Id : <?php echo $_SESSION["cid"];?> </p>
+                            <p style="font-size: 20px;">DOB : <?php echo $_SESSION["dob"]; ?></p>
+                            <p style="font-size: 20px;">Graduation year : <?php echo $_SESSION["graduation"];?> </p>
+                            <p style="font-size: 20px;">Degree : <?php echo $_SESSION["degree"];?> </p>
+                            <p style="font-size: 20px;">Department : <?php echo $_SESSION["dept"];?> </p>
+                            <p style="font-size: 20px;">Employment Type : <?php echo $_SESSION["employment_type"];?> </p>
+                            <p style="font-size: 20px;">Present Employer : <?php echo $_SESSION["present_employer"];?> </p>
+                            <p style="font-size: 20px;">Designation : <?php echo $_SESSION["designation"];?> </p>
                             <!-- <p>Achivements : <?php// echo $_SESSION["achievements"];?> </p>  -->
                             <ul class="list-inline social-icon-f top-data">
                                 <?php if(isset($_SESSION['fb']) && $_SESSION['fb'] != ''){ ?> 
                                 <li><a href="<?php echo $_SESSION['fb']; ?>" target="_empty"><i class="fa top-social fa-facebook" ></i></a></li>
                                 <?php } ?>
-                                <li><a href="<?php echo $_SESSION['fb']; ?>" target="_empty"><i class="fa top-social fa-twitter"></i></a></li>
-                                <?php if(isset($_SESSION['linkden']) && $_SESSION['linkden'] != ''){ ?> 
+                                <?php  if(isset($_SESSION['linkden']) && $_SESSION['linkden'] != ''){ ?> 
                                 <li class="list-inline-item">
                                     <a href="<?php echo $_SESSION['linkden']; ?>" target="_blank">
                                 <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                                    <i class="fa top-social fa-linkedin" ></i>
                                 </span>
                                 </a>
                                 </li>
                                 <?php } ?>
                             </ul>
 						</div>
-                        <div class="col-5 col-12-medium" style="background-image: url('<?php //echo $_SESSION['img_url']; ?>https://i.imgur.com/50mCoOZ.jpg');background-position: center;background-size: cover;">
+                        <div class="col-5 col-12-medium" style="background-image: url('<?php echo $_SESSION['img_url']; ?>');background-position: center;background-size: cover;">
                         </div>
 					</div>
 			</section>    
@@ -249,7 +247,7 @@
                     <button class="button" style="vertical-align:middle; background: #003C4D; padding: 10px; margin-left: 15px;" onclick="location.href = 'changeEmail.php';"><span>Change E-mail</span></button>
                     <button class="button" style="vertical-align:middle; background: #003C4D; padding: 10px; margin-left: 15px;" onclick="window.location.href='don.html'" ><span>Donate Now </span></button>
 			</section>
-            <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="awards">
+            <!-- <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="awards">
                 <div class="row my-auto">
                     <div class="col-12">
                         <h2 class="text-center" style="padding-left: 12%;">Achivements</h2>
@@ -278,7 +276,7 @@
                         </div>
                     </div>
                 </div>
-                </section> 
+                </section>  -->
 
     <section id="blog" class="content-section">
         <section class="details-card">
@@ -377,9 +375,15 @@
                   Email: <a href="mailto:<?php echo $_SESSION['email']; ?>" class=""><?php echo $_SESSION['email']; ?></a>
                 </address>
                 <ul class="list-inline social-icon-f top-data">
+                <?php if(isset($_SESSION['fb']) && $_SESSION['fb'] != ''){ ?>
                   <li><a href="<?php echo $_SESSION['fb']; ?>" target="_empty"><i class="fa top-social fa-facebook" style="color: #4267b2; border-color:#4267b2;"></i></a></li>
-                  <li><a href="<?php echo $_SESSION['fb']; ?>" target="_empty"><i class="fa top-social fa-twitter" style="color: #4AB3F4; border-color:#4AB3F4;"></i></a></li>
+                <?php } ?>
+                <?php if(isset($_SESSION['linkden']) && $_SESSION['linkden'] != ''){ ?>
+                  <li><a href="<?php echo $_SESSION['linkden']; ?>" target="_empty"><i class="fa top-social fa-twitter" style="color: #4AB3F4; border-color:#4AB3F4;"></i></a></li>
+                <?php } ?>
+                <?php if(isset($_SESSION['email']) && $_SESSION['email'] != ''){ ?>
                   <li><a href="mailto:<?php echo $_SESSION['email']; ?>"><i class="fa top-social fa-google-plus" style="color: #e24343; border-color:#e24343;"></i></a></li> 
+                <?php } ?>
                 </ul>
                 </div>
               </div>
@@ -416,8 +420,8 @@
                         <div class="teext">
                             <h1  style="font-size:24px;">Social <span> Media</span></h1><br>
                         <p> <a style="text-decoration:none; color:#fff" href="https://www.facebook.com/saar.iitp/"><i class="fab fa-facebook-f" aria-hidden="true" style="font-size: 18px; color: #26C1ED; margin-right: 14px;"></i>SAAR, IIT Patna</a><br><br>
-                        <a style="text-decoration:none; color:#fff" href="https://www.instagram.com/"><i class="fab fa-instagram" aria-hidden="true" style="font-size: 20px; color: #26C1ED; margin-right: 14px;"></i>Instagram</a><br><br>
-                        <a style="text-decoration:none; color:#fff" href="https://www.linkedin.com/"><i class="fab fa-linkedin-in" aria-hidden="true" style="font-size: 20px; color: #26C1ED; margin-right: 14px;"></i>LinkedIn</a></p>            
+                        <a style="text-decoration:none; color:#fff" href="https://www.instagram.com/saar.iitp"><i class="fab fa-instagram" aria-hidden="true" style="font-size: 20px; color: #26C1ED; margin-right: 14px;"></i>Instagram</a><br><br>
+                        <a style="text-decoration:none; color:#fff" href="https://www.linkedin.com/company/saar-iitp"><i class="fab fa-linkedin-in" aria-hidden="true" style="font-size: 20px; color: #26C1ED; margin-right: 14px;"></i>LinkedIn</a></p>            
                         </div>
                     </div>
                     <div class="col-md-4">  

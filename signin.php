@@ -90,16 +90,14 @@
         
         <table><tr>
             <td style="border-bottom: 1px solid #003C4D; width: 49%">&nbsp;</td>
-            <td style="vertical-align:middle;text-align:center" rowspan="2">Or</td>
+            <!-- <td style="vertical-align:middle;text-align:center" rowspan="2">Or</td> -->
             <td style="border-bottom: 1px solid #003C4D; width: 49%">&nbsp;</td>
             </tr><tr>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
         </tr></table>
 
-        <br>
-        <button class="buton" onclick="window.location.href='/signup.php?type=fblogin'">Register using Facebook</button>
-        <br>
+
     </div>
   </div>
 </div>

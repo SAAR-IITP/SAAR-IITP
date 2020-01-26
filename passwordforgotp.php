@@ -2,7 +2,7 @@
 session_start();
 if($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    $url = 'https://saar-server.000webhostapp.com/functions/forgotPassword.php';
+    $url = 'http://localhost/SAAR-Server/functions/forgotPassword.php';
       $ch = curl_init($url);
       $data = array(
        'email' => $_POST["email"],
