@@ -1,7 +1,7 @@
 <?php
 	session_start();
 
-	$url = 'https://saar-server.000webhostapp.com/functions/signup.php';
+	$url = 'http://localhost/SAAR-Server/functions/signup.php';
       $ch = curl_init($url);
       $data = array(
       'rollno'=> $_POST['college_id'],
@@ -37,6 +37,7 @@
       $result = curl_exec($ch);
       //close cURL resource
       curl_close($ch);
+      echo $result;
 	
 	$response = json_decode($result,true);
 	   

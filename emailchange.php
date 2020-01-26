@@ -3,7 +3,7 @@ session_start();
    
 if($_SERVER["REQUEST_METHOD"] == "POST") 
 {  
-  $url = 'https://saar-server.000webhostapp.com/functions/changeEmail.php';
+  $url = 'http://localhost/SAAR-Server/functions/changeEmail.php';
   $ch = curl_init($url);
   $data = array(
     'old_email' => $_SESSION['email'],

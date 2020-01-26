@@ -98,15 +98,15 @@
                     
                     <select type="text" id="etype" name="etype" class="ui dropdown">
                      <option value=<?php echo $_SESSION['employment_type'];?> selected ><?php echo $_SESSION['employment_type'];?></option>
-                    <option value="job">Salaried</option>
+                    <option value="Salaried">Salaried</option>
                     <option value="Entrepreneur">Entrepreneur</option>
-                    <option value="higher stuies">Higher Studies</option>
+                    <option value="Higher Studies">Higher Studies</option>
                     <option value="Civil Services">Civil Services</option>
                     </select>
 
-                    <input type="text" placeholder="Present Employer/Educational Inst." name="presentEmployer" value="<?php echo $_SESSION['present_employer'];?>" required>
+                    <input type="text" placeholder="Present Employer/Educational Inst." name="presentEmployer" value="<?php echo $_SESSION['present_employer'];?>" >
                     
-                    <input type="text" placeholder="Designation" name="designation" value="<?php echo $_SESSION['designation'];?>" required>
+                    <input type="text" placeholder="Designation" name="designation" value="<?php echo $_SESSION['designation'];?>" >
                     
                     <textarea type="text" name="address" required="" placeholder="Address"><?php echo $_SESSION['address']; ?></textarea>
                     
