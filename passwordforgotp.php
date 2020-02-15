@@ -2,11 +2,12 @@
 session_start();
 if($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    $url = 'http://localhost/SAAR-Server/functions/forgotPassword.php';
+    $url = 'https://saar.iitp.ac.in/api/functions/forgotPassword.php';
       $ch = curl_init($url);
       $data = array(
        'email' => $_POST["email"],
-       'rollno' => $_POST['rollno']
+       'rollno' => $_POST['rollno'],
+       'access_token' => $_SESSION['access_token']
       );
       $payload = http_build_query($data);
       curl_setopt($ch, CURLOPT_POST, true);

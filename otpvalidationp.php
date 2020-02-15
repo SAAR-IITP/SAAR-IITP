@@ -1,11 +1,12 @@
 <?php
  session_start();
  if($_SERVER["REQUEST_METHOD"] == "POST") {
-	 $url = "http://localhost/SAAR-Server/functions/verifyOTP.php";
+	 $url = "https://saar.iitp.ac.in/api/functions/verifyOTP.php";
 	 $ch = curl_init($url);
 	 $data = array(
 	 	'rollno' => $_POST['rollno'],
-	 	'verification_code' => $_POST['otp']
+       'verification_code' => $_POST['otp'],
+       'access_token' => $_SESSION['access_token']
     );
     if(isset($_POST['forget_pass'])){
        $data += array('forgot_password' => $_POST['forget_pass']);

@@ -1,7 +1,7 @@
 <?php 
 session_start();
  if($_SERVER["REQUEST_METHOD"] == "POST") {
-   $url = 'http://localhost/SAAR-Server/functions/updateProfile.php';
+   $url = 'https://saar.iitp.ac.in/api/functions/updateProfile.php';
    $ch = curl_init($url);
    $data = array(
     'phone' => $_POST["contact"],
@@ -15,7 +15,8 @@ session_start();
     'state' => $_POST["state"],
     'city' => $_POST["city"],
     'rollno' => $_SESSION["cid"],
-    'achievements' => $_POST["achievements"]
+    'achievements' => $_POST["achievements"],
+    'access_token' => $_SESSION['access_token']
    );
    $payload = http_build_query($data);
 

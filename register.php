@@ -1,7 +1,7 @@
 <?php
 	session_start();
 
-	$url = 'http://localhost/SAAR-Server/functions/signup.php';
+	$url = 'https://saar.iitp.ac.in/api/functions/signup.php';
       $ch = curl_init($url);
       $data = array(
       'rollno'=> $_POST['college_id'],
@@ -24,7 +24,8 @@
        'country'=>$_POST['country'],
        'state'=> $_POST['state'],
        'city'=>$_POST['city'],
-       'achievements' => $_POST['achievements']
+       'achievements' => $_POST['achievements'],
+       'access_token' => $_SESSION['access_token']
       );
       $payload = http_build_query($data);
 

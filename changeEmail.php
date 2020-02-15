@@ -2,7 +2,7 @@
 session_start();
 if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']==false)
 {
-    echo 'window.location = "noaccess.php";';
+    header("location: signin.php");
 }
 ?>
 <html>

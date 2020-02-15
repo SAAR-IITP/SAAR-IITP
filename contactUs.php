@@ -1,13 +1,14 @@
 <?php
 	session_start();
-	
-	$url = 'localhost/SAAR-Server/functions/help.php';
+	if($_SERVER["REQUEST_METHOD"] == "POST") {
+	$url = 'https://saar.iitp.ac.in/api/functions/help.php';
 		$ch = curl_init($url);
 		$data = array(
 			'name'=> $_SESSION['fname'],
 			'useremail'=> $_SESSION['email'],
 			'subject'=> $_POST['subject'],
-			'body'=> $_POST['message']
+			'body'=> $_POST['message'],
+			'access_token' => $_SESSION['access_token']
 		);
 		$payload = http_build_query($data);
 
@@ -31,6 +32,6 @@
 		$_SESSION['msg'] = $response['message'];
 	}
 	else $_SESSION['msg'] = 'Something Went Wrong';
-
 	header("location: portal.php");
+	}
 ?>

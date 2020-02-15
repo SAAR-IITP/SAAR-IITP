@@ -11,7 +11,7 @@
         
         if(isset($_POST['year']) && $_SERVER["REQUEST_METHOD"] == "POST") {
               // username and password sent from form 
-            $url = 'http://localhost/saar-server/functions/findFriend.php';
+            $url = 'https://saar.iitp.ac.in/api/functions/findFriend.php';
             $ch = curl_init($url);
             if(!isset($_POST["branch"])){
                 $branch = 'All';
@@ -21,7 +21,8 @@
             $data = array(
             'graduation_year' => $_POST["year"],
             'branch' => $branch,
-            'name' => $_POST["name"]
+            'name' => $_POST["name"],
+            'access_token' => $_SESSION['access_token']
             );
             $payload = http_build_query($data);
 
