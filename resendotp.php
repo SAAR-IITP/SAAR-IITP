@@ -4,10 +4,11 @@
         $_SESSION['cid'] = $_POST['rollno'];
     }
     if(isset($_SESSION['cid'])){
-        $url = 'http://localhost/SAAR-Server/functions/resendOTP.php';
+        $url = 'https://saar.iitp.ac.in/api/functions/resendOTP.php';
         $ch = curl_init($url);
         $data = array(
-        'rollno' => $_SESSION['cid']
+        'rollno' => $_SESSION['cid'],
+        'access_token' => $_SESSION['access_token']
         );
         $payload = http_build_query($data);
         curl_setopt($ch, CURLOPT_POST, true);

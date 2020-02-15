@@ -3,17 +3,18 @@
     $request=false;
     $result=array();
     $count=-1;
-     if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"]==false)
+    if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"]==false)
     {
         header("location: ./index.php");
     } 
         if(isset($_POST['year']) && $_SERVER["REQUEST_METHOD"] == "POST") {
-            $url = 'http://localhost/saar-server/functions/aluminiNearMe.php';
+            $url = 'https://saar.iitp.ac.in/api/functions/aluminiNearMe.php';
             $ch = curl_init($url);
             $data = array(
             'graduation_year' => $_POST["year"],
             'city' => $_POST["city"],
-            'country' => $_POST["country"]
+            'country' => $_POST["country"],
+            'access_token' => $_SESSION['access_token']
             );
             $payload = http_build_query($data);
 

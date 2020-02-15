@@ -2,7 +2,7 @@
 session_start();
 if((!isset($_SESSION['loggedin']) || $_SESSION['loggedin']==false) && (!isset($_SESSION['forget_pass']) || $_SESSION['forget_pass']==false))
 {
-    echo 'window.location = "index.php";';
+    header("location: signin.php");
 }
 ?>
 <html>

@@ -2,12 +2,13 @@
 session_start();
     if($_SERVER["REQUEST_METHOD"] == "POST") 
     {
-        $url = 'http://localhost/SAAR-Server/functions/changePassword.php';
+        $url = 'https://saar.iitp.ac.in/api/functions/changePassword.php';
         $ch = curl_init($url);
         $data = array(
          'rollno' => $_SESSION['cid'],
          'new_password' => $_POST["newpassword"],
-         'confirm_password' => $_POST["confirmnewpassword"]
+         'confirm_password' => $_POST["confirmnewpassword"],
+         'access_token' => $_SESSION['access_token']
         );
         if(isset($_POST['password'])){
           $data += array('old_password' => $_POST["password"]);

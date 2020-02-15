@@ -3,12 +3,13 @@ session_start();
    
 if($_SERVER["REQUEST_METHOD"] == "POST") 
 {  
-  $url = 'http://localhost/SAAR-Server/functions/changeEmail.php';
+  $url = 'https://saar.iitp.ac.in/api/functions/changeEmail.php';
   $ch = curl_init($url);
   $data = array(
     'old_email' => $_SESSION['email'],
   'new_email' => $_POST["newEmail"],
-  'password' => $_POST["password"]
+  'password' => $_POST["password"],
+  'access_token' => $_SESSION['access_token']
   );
   $payload = http_build_query($data);
 
