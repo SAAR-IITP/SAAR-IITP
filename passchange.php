@@ -2,7 +2,7 @@
 session_start();
     if($_SERVER["REQUEST_METHOD"] == "POST") 
     {
-        $url = 'https://saar.iitp.ac.in/api/functions/changePassword.php';
+        $url = 'http://api.saar.iitp.ac.in/changePassword.php';
         $ch = curl_init($url);
         $data = array(
          'rollno' => $_SESSION['cid'],

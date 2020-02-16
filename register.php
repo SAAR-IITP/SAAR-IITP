@@ -1,7 +1,7 @@
 <?php
 	session_start();
 
-	$url = 'https://saar.iitp.ac.in/api/functions/signup.php';
+	$url = 'http://api.saar.iitp.ac.in/signup.php';
       $ch = curl_init($url);
       $data = array(
       'rollno'=> $_POST['college_id'],

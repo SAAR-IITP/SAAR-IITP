@@ -4,7 +4,7 @@
         $_SESSION['cid'] = $_POST['rollno'];
     }
     if(isset($_SESSION['cid'])){
-        $url = 'https://saar.iitp.ac.in/api/functions/resendOTP.php';
+        $url = 'http://api.saar.iitp.ac.in/resendOTP.php';
         $ch = curl_init($url);
         $data = array(
         'rollno' => $_SESSION['cid'],

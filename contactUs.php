@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	if($_SERVER["REQUEST_METHOD"] == "POST") {
-	$url = 'https://saar.iitp.ac.in/api/functions/help.php';
+	$url = 'http://api.saar.iitp.ac.in/help.php';
 		$ch = curl_init($url);
 		$data = array(
 			'name'=> $_SESSION['fname'],

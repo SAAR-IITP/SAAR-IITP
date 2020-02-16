@@ -3,7 +3,7 @@ session_start();
    
 if($_SERVER["REQUEST_METHOD"] == "POST") 
 {  
-  $url = 'https://saar.iitp.ac.in/api/functions/changeEmail.php';
+  $url = 'http://api.saar.iitp.ac.in/changeEmail.php';
   $ch = curl_init($url);
   $data = array(
     'old_email' => $_SESSION['email'],

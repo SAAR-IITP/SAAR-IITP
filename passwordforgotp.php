@@ -2,7 +2,7 @@
 session_start();
 if($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    $url = 'https://saar.iitp.ac.in/api/functions/forgotPassword.php';
+    $url = 'http://api.saar.iitp.ac.in/forgotPassword.php';
       $ch = curl_init($url);
       $data = array(
        'email' => $_POST["email"],

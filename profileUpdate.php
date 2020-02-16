@@ -1,7 +1,7 @@
 <?php 
 session_start();
  if($_SERVER["REQUEST_METHOD"] == "POST") {
-   $url = 'https://saar.iitp.ac.in/api/functions/updateProfile.php';
+   $url = 'http://api.saar.iitp.ac.in/updateProfile.php';
    $ch = curl_init($url);
    $data = array(
     'phone' => $_POST["contact"],

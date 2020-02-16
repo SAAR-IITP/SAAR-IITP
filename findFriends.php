@@ -11,7 +11,7 @@
         
         if(isset($_POST['year']) && $_SERVER["REQUEST_METHOD"] == "POST") {
               // username and password sent from form 
-            $url = 'https://saar.iitp.ac.in/api/functions/findFriend.php';
+            $url = 'http://api.saar.iitp.ac.in/findFriend.php';
             $ch = curl_init($url);
             if(!isset($_POST["branch"])){
                 $branch = 'All';
