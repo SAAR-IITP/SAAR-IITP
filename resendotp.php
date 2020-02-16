@@ -16,7 +16,6 @@
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $result = curl_exec($ch);
         curl_close($ch);
-        echo $result;
         $response = json_decode($result,true);
         if($response['status'] == 401 || $response['status'] == 201){
             $_SESSION['msg'] = $response['messages'][0];

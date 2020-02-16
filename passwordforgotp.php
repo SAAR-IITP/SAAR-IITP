@@ -21,7 +21,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
       $result = curl_exec($ch);
       //close cURL resource
       curl_close($ch);
-      echo $result;
       $response = json_decode($result,true);
       if($response['status'] == 204){
       	$_SESSION['msg'] = $response['messages'][0];

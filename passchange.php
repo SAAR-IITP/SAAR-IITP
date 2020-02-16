@@ -31,8 +31,6 @@ session_start();
         curl_close($ch);
         
         $response = json_decode($result,true);
-  
-        echo $result;
         if($response['status']== 407){
           $_SESSION['error'] = $response['messages'][0];
           header("location: changePassword.php");

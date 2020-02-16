@@ -38,7 +38,6 @@
       $result = curl_exec($ch);
       //close cURL resource
       curl_close($ch);
-      echo $result;
 	
 	$response = json_decode($result,true);
 	   
