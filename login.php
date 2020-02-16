@@ -35,9 +35,7 @@
       // $count = mysqli_num_rows($result);
       /*$response = json_decode(file_get_contents('php://input'), true);*/
       $response = json_decode($result,true);
-    // echo '<pre>' . print_r($result, true) . '</pre>';
-      echo $response['messages'][0];
-    
+    // echo '<pre>' . print_r($result, true) . '</pre>';    
     $row = $response['messages'];
     // $row = $response["message"];
     // echo $response;
