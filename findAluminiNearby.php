@@ -8,7 +8,7 @@
         header("location: ./index.php");
     } 
         if(isset($_POST['year']) && $_SERVER["REQUEST_METHOD"] == "POST") {
-            $url = 'https://saar.iitp.ac.in/api/functions/aluminiNearMe.php';
+            $url = 'http://api.saar.iitp.ac.in/aluminiNearMe.php';
             $ch = curl_init($url);
             $data = array(
             'graduation_year' => $_POST["year"],

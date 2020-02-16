@@ -4,7 +4,7 @@
    if($_SERVER["REQUEST_METHOD"] == "POST") 
    {  
       // $url = 'https://saar-server.000webhostapp.com/functions/login.php';
-      $url = 'https://saar.iitp.ac.in/api/functions/login.php';
+      $url = 'http://api.saar.iitp.ac.in/login.php';
       $ch = curl_init($url);
       $data = array(
        'email' => $_POST["email"],
