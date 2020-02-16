@@ -25,7 +25,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
   //close cURL resource
   curl_close($ch);
   $response = json_decode($result,true);
-  echo '<pre>' . print_r($result, true) . '</pre>';
+  // echo '<pre>' . print_r($result, true) . '</pre>';
   // echo $response['messages'][0];
 
   $row = $response['messages'];
