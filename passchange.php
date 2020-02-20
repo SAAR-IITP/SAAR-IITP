@@ -35,6 +35,7 @@ session_start();
           $_SESSION['error'] = $response['messages'][0];
           header("location: changePassword.php");
         }else if($response['status'] == 207){
+          unset($_SESSION['forget_pass']);
           $_SESSION['msg'] = $response['messages'][0];
             header("location: logout.php");
         }
