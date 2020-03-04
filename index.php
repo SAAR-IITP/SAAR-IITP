@@ -340,12 +340,13 @@
                     <?php 
                         $str = file_get_contents('http://saar-server.000webhostapp.com/assets/timeline_sample.json');
                         $json = json_decode($str, true);
-                        foreach ($json as $key) {
+                        for ($key = count($json) - 1;$key >= 0 ; $key--) {
                     ?> 
                         <li>
                             <div >
-                                <time><?php echo $key["date"] ?></time>
-                                <?php echo $key["Description"]?>
+                                <time><?php echo $json[$key]["title"] ?></time>
+                                <p><?php echo $json[$key]["date"] ?>   <?php echo $json[$key]["time"] ?></p>
+                                <?php echo $json[$key]["Description"]?>
                             </div>
                         </li>
                     <?php  } ?>
@@ -406,8 +407,8 @@
                             Dr. Anirban Chowdhary<br>
                             Email - pic_alumni@iitp.ac.in<br><br>
                             General Secretary:<br>
-                        	<a href="https://theabhinavgyan.github.io/" style="color: #fff">Abhinav Gyan</a><br>
-                        	Email - agyan.ce16@iitp.ac.in</p>            
+                        	<a href="#" style="color: #fff">Vivek Garg</a><br>
+                        	Email - vivek.ch17@iitp.ac.in</p>            
                         </div>
                     </div>
                 </div>
