@@ -304,19 +304,14 @@
                 </div>
                 
                 <div class="row">
-                    <div class="col-md-7">  
+                    <div class="col-md-7" > 
+                    <div class="section-heading" style="text-align: center;margin-bottom: 10px;padding-top:40px;padding-bottom:10px;">
+                            <h1><span>Anusmriti <em></em></span></h1>
+                    </div> 
+                    <iframe src="anusmriti/av2.pdf" width="100%" height="500px">
+                    </iframe>
                         <br><br>
-                        <div class="section-heading" style="text-align: center;margin-bottom: 10px;">
-                            <h1><span>A featured <em>Video</em></span></h1>
                         </div>
-                        
-                        <div class="box-video">
-                            <div class="video-container">
-
-                                <iframe width="100%" height="490" src="https://www.youtube.com/embed/WdR0v0pJ4vY" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"allowfullscreen></iframe>      
-                            </div>
-                        </div>
-                    </div>
                     <div class="col-md-5">
                         <br><br>
                         <div class="section-heading" style="text-align: center;margin-bottom: 10px;">
