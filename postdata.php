@@ -2,7 +2,7 @@
     session_start();
     if(isset($_GET['post_id'])){
         $post_id = $_GET['post_id'];
-        $url = 'http://localhost/Saar-server/functions/getPostInfo.php?post_id='.$post_id;
+        $url = 'http://localhost/SAAR-Server/getPostInfo.php?post_id='.$post_id;
         $response = file_get_contents($url);
         // echo $response;
         $response = json_decode($response,true);
