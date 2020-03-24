@@ -96,13 +96,13 @@
             setInterval('autoRefresh_div()', 2000);
         </script> 
     </head>
-    <body>
+    <body style="height:100%;width:100%">
         <div class="container">
             <h1>Particular post</h1>
             <hr>
             <button id="refresh" class="btn btn-lg btn-primary">Refresh</button>
             <a href="./chat.php"><button id="back" class="btn btn-lg btn-primary">Back</button></a>
-            <div id="result">
+            <div id="result" style="padding-top:15px;">
             <?php
             //     $post_id = $_GET['q'];
             //     $url = './postdata.php?post_id='.$post_id;

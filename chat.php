@@ -66,8 +66,8 @@
     
     </script>
     
-    <body>
-        <div class="container">
+    <body style="height:100%;width:100%">
+        <div class="container" style="padding-bottom:15px;">
             <?php 
                 if(isset($_SESSION['msg'])){
                     echo $_SESSION['msg'];
@@ -123,7 +123,7 @@
                     </div>
                 </div>
             </div>
-            <div id="result">
+            <div id="result" style="padding-top:15px;">
             <?php
               // include('load.php')
             ?>
