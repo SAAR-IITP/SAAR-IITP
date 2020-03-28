@@ -2,7 +2,7 @@
     session_start();
     if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"]==true)
     {
-        header("location: noaccess.php");
+        header("location: portal.php");
     }
 ?>
 <!DOCTYPE html>
@@ -90,15 +90,15 @@
             ?>
 			<div class="agileits-top">
 				<form action="register.php" method="post">
-					<input class="text" type="text" name="college_id" placeholder="College Roll number" value="<?php echo isset($_POST['college_id']) ? $_POST['college_id'] : '' ?>" required>
+					<input class="text" type="text" name="college_id" placeholder="*College Roll number" value="<?php echo isset($_POST['college_id']) ? $_POST['college_id'] : '' ?>" required>
 					
-                    <input id="fname" class="text" type="text" name="fname" placeholder="First Name" required>
+                    <input id="fname" class="text" type="text" name="fname" placeholder="*First Name" required>
 					
-                    <input id="lname" class="text" type="text" name="lname" placeholder="Last Name" required>
+                    <input id="lname" class="text" type="text" name="lname" placeholder="*Last Name" required>
 					
-                    <input id="email" class="text email" type="email" name="email" placeholder="Email" required>
+                    <input id="email" class="text email" type="email" name="email" placeholder="*Email" required>
 					
-                    <input class="text" type="tel" name="contact" placeholder="Contact no." required>
+                    <input class="text" type="tel" name="contact" placeholder="*Contact no." required>
                     
                     <input class="text" type="text" name="fbId" placeholder="Fb Profile Link(optional)">
                     
@@ -108,49 +108,64 @@
 					
                     <input class="text w3lpass" type="password" name="con_password" placeholder="Confirm Password" required>
 					
-                    <input class="text" type="date" name="DOB" placeholder="Date of Birth" required onfocus="(this.type='date')">
+                    <input class="text" type="date" name="DOB" placeholder="*Date of Birth" required onfocus="(this.type='date')">
                     <i class="ui calendar icon"></i>
                     
-                    <input class="text" type="text" name="passingyear" placeholder="Graduation Year(20XX)" required>
-                    
+                    <select type="text" name="passingyear" class="ui search selection dropdown">
+                    <option value="" selected disabled>*Graduation Year</option>
+                    <option value="2010">2010</option>
+                    <option value="2011">2011</option>
+                    <option value="2012">2012</option>
+                    <option value="2013">2013</option>
+                    <option value="2014">2014</option>
+                    <option value="2015">2015</option>
+                    <option value="2016">2016</option>
+                    <option value="2017">2017</option>
+                    <option value="2018">2018</option>
+                    <option value="2019">2019</option>
+                    <option value="2020">2020</option>
+                    </select>
+
                     <select type="text" id="degree" name="degree" class="ui search selection  dropdown">
-                    <option value="">Degree</option>
+                    <option value="" selected disabled>*Degree</option>
                     <option value="B.Tech">B.Tech/B.E</option>
                     <option value="M.Tech">M.Tech/M.E</option>
                     <option value="M.Sc">M.Sc</option>
                     <option value="P.hd">P.hd</option>
                     </select>
     
-                    <select type="text" id="branch" name="dept" class="ui search selection   dropdown">
-                    <option value="" selected disabled >Department</option>
+                    <select type="text" id="branch" name="dept" required  class="ui search selection   dropdown">
+                    <option value="" selected disabled >*Department</option>
                     <option value="Computer Science and Engineering">Computer Science and Engineering</option>
                     <option value="Electrical Engineering">Electrical Engineering</option>
                     <option value="Mechanical Engineering">Mechanical Engineering</option>
                     <option value="Civil Engineering">Civil Engineering</option>
                     <option value="Chemical and Biochemical Engineering">Chemical and Biochemical Engineering</option>
+                    <option value="other">Other</option>
                     </select>
                     
                     <select type="text" id="etype" name="etype" class="ui dropdown">
                     <option value="" selected disabled>Employment Type</option>
-                    <option value="job">Salaried</option>
+                    <option value="Salaried">Salaried</option>
                     <option value="Entrepreneur">Entrepreneur</option>
-                    <option value="higher stuies">Higher Studies</option>
+                    <option value="Higher Studies">Higher Studies</option>
                     <option value="Civil Services">Civil Services</option>
+                    <option value="other">Other</option>
                     </select>
 
-                    <input type="text" placeholder="Present Employer/Educational Inst." name="presentEmployer" required="">
+                    <input type="text" placeholder="Present Employer/Educational Inst." name="presentEmployer">
                     
-                    <input type="text" placeholder="Designation" name="designation" required="">
+                    <input type="text" placeholder="Designation" name="designation">
                     
-                    <textarea type="text" name="address" required="" placeholder="Address"></textarea>
+                    <textarea type="text" name="address" required="" placeholder="*Address"></textarea>
                     
-                    <input type="text" placeholder="Country" name="country" required="">
+                    <input type="text" placeholder="*Country" name="country" required="">
                     
-                    <input type="text" placeholder="State" name="state" required="">
+                    <input type="text" placeholder="*State" name="state" required="">
     
-                    <input type="text" placeholder="City" name="city" required="">
+                    <input type="text" placeholder="*City" name="city" required="">
     
-                    <textarea type="text" name="achievements" placeholder="Achievements After Graduation"></textarea>
+                    
                     
                     <div class="wthree-text">
 						<label class="anim" style="display: inline-flex;">
@@ -197,8 +212,8 @@
                             Dr. Anirban Chowdhary<br>
                             Email - pic_alumni@iitp.ac.in<br><br>
                             General Secretary:<br>
-                            <a href="https://theabhinavgyan.github.io/" style="color: #fff">Abhinav Gyan</a><br>
-                            Email - agyan.ce16@iitp.ac.in</p>            
+                            <a href="#" style="color: #fff">Vivek Garg</a><br>
+                            Email - vivek.ch17@iitp.ac.in</p>            
                         </div>
                     </div>
                 </div>

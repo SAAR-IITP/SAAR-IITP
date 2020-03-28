@@ -2,18 +2,19 @@
 session_start();
     if($_SERVER["REQUEST_METHOD"] == "POST") 
     {
-        $url = 'https://saar-server.000webhostapp.com/functions/changePassword.php';
+        $url = 'http://api.saar.iitp.ac.in/changePassword.php';
         $ch = curl_init($url);
         $data = array(
          'rollno' => $_SESSION['cid'],
          'new_password' => $_POST["newpassword"],
-         'confirm_password' => $_POST["confirmnewpassword"]
+         'confirm_password' => $_POST["confirmnewpassword"],
+         'access_token' => $_SESSION['access_token']
         );
-        if(isset($_SESSION['password'])){
+        if(isset($_POST['password'])){
           $data += array('old_password' => $_POST["password"]);
         }
-        if(isset($_SESSION['forget_pass'])){
-          $data += array('forget_password' => $_SESSION['forget_pass']);
+        if(isset($_POST['forget_pass'])){
+          $data += array('forgot_password' => $_POST['forget_pass']);
         }
         $payload = http_build_query($data);
   
@@ -30,12 +31,11 @@ session_start();
         curl_close($ch);
         
         $response = json_decode($result,true);
-  
-        echo $result;
         if($response['status']== 407){
           $_SESSION['error'] = $response['messages'][0];
           header("location: changePassword.php");
         }else if($response['status'] == 207){
+          unset($_SESSION['forget_pass']);
           $_SESSION['msg'] = $response['messages'][0];
             header("location: logout.php");
         }

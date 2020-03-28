@@ -3,17 +3,18 @@
     $request=false;
     $result=array();
     $count=-1;
-     if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"]==false)
+    if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"]==false)
     {
-        header("location: noaccess.php");
+        header("location: ./index.php");
     } 
         if(isset($_POST['year']) && $_SERVER["REQUEST_METHOD"] == "POST") {
-            $url = 'http://localhost/saar-server/functions/aluminiNearMe.php';
+            $url = 'http://api.saar.iitp.ac.in/aluminiNearMe.php';
             $ch = curl_init($url);
             $data = array(
             'graduation_year' => $_POST["year"],
             'city' => $_POST["city"],
-            'country' => $_POST["country"]
+            'country' => $_POST["country"],
+            'access_token' => $_SESSION['access_token']
             );
             $payload = http_build_query($data);
 
@@ -46,20 +47,6 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Find Alumni Near You</title>
-        <script>
-            window.onload=function(){
-            var min = 2012;
-            var d = new Date();
-            max = d.getFullYear();
-            for (var i = min; i<=max; i++){
-               var opt = document.createElement('option');
-               opt.value = i;
-               opt.innerHTML = i;
-                console.log(document.getElementById('passYear'));
-               document.getElementById('passYear').appendChild(opt);
-                };
-        }
-        </script>
         
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">

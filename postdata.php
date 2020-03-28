@@ -12,9 +12,10 @@
             $data = $response['data'];
             $images = unserialize($data['images']);
             echo '
-            <div class="jumbotron">
-                    <h1 class="display-4">'.$data['post_id'].'. '.$data['title'].'</h1>
+            <div class="jumbotron" style="padding: 2% 2% 1% 3%;">
+                    <h1 class="display-4">'.$data['post_id'].'. '.$data['title'].'  <img src="img/abhi.jpg" align="right" style="width: 18%;max-width:159.02px;height: auto;border-radius: 50%;object-fit: cover;object-position: center;"></img></h1>
                     <p class="lead">'.$data['post_time'].'</p>
+                    <i class="fa fa-thumbs-up" style="color:green"></i><br><i class="fa fa-thumbs-down" style="color:red"></i><br>
                     <hr class="my-4">
                     <p>'.$data['body'].'</p>';
             foreach($images as $image){

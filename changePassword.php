@@ -1,8 +1,8 @@
 <?php
 session_start();
-if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']==false)
+if((!isset($_SESSION['loggedin']) || $_SESSION['loggedin']==false) && (!isset($_SESSION['forget_pass']) || $_SESSION['forget_pass']==false))
 {
-    echo 'window.location = "noaccess.php";';
+    header("location: signin.php");
 }
 ?>
 <html>
@@ -33,6 +33,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']==false)
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="css/fontAwesome.css">
+        <link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
         <link rel="stylesheet" href="css/light-box.css">
         <link rel="stylesheet" href="css/owl-carousel.css">
         <link rel="stylesheet" href="css/templatemo-style.css">
@@ -117,18 +118,28 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']==false)
 			<div class="wrap-login100">
 				<form class="login100-form validate-form" method="POST" action="passchange.php">
                   <?php if(isset($_SESSION['forget_pass']) && $_SESSION['forget_pass'] == true){ ?>
-                    <input name="forget_pass" hidden value=<?php $_SESSION['forget_pass']?> >
+                    <input name="forget_pass" hidden value="<?php echo $_SESSION['forget_pass']?>" >
+                    <input type="password" size="50" name="password" hidden value="1234">
                   <?php }else{ ?>
 					<div class="wrap-input100 validate-input" data-validate="Enter password">
+                        <span class="btn-show-pass">
+							<i class="zmdi zmdi-eye"></i>
+						</span>
 						<input class="input100" type="password" size="50" name="password" required>
                         <span class="focus-input100" data-placeholder="Enter your existing password"></span>
 					</div>
                   <?php } ?>
                     <div class="wrap-input100 validate-input" data-validate="Enter password">
+                        <span class="btn-show-pass">
+							<i class="zmdi zmdi-eye"></i>
+						</span>
 						<input class="input100" type="password"  size="50" name="newpassword" required>
                         <span class="focus-input100" data-placeholder="Enter your new password"></span>
 					</div>
                     <div class="wrap-input100 validate-input" data-validate="Enter password">
+                        <span class="btn-show-pass">
+							<i class="zmdi zmdi-eye"></i>
+						</span>
 						<input class="input100" type="password"  size="50" name="confirmnewpassword" required>
                         <span class="focus-input100" data-placeholder="Re-enter your new password"></span>
 					</div>
@@ -140,5 +151,89 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']==false)
            </form>
       </section>
         </div>
+    <script>
+      
+        (function ($) {
+            "use strict";
+
+            /*==================================================================
+            [ Focus input ]*/
+            $('.input100').each(function(){
+                $(this).on('blur', function(){
+                    if($(this).val().trim() != "") {
+                        $(this).addClass('has-val');
+                    }
+                    else {
+                        $(this).removeClass('has-val');
+                    }
+                })    
+            })
+        
+            /*==================================================================
+            [ Validate ]*/
+            var input = $('.validate-input .input100');
+
+            $('.validate-form').on('submit',function(){
+                var check = true;
+                for(var i=0; i<input.length; i++) {
+                    if(validate(input[i]) == false){
+                        showValidate(input[i]);
+                        check=false;
+                    }
+                }
+                return check;
+            });
+
+
+            $('.validate-form .input100').each(function(){
+                $(this).focus(function(){
+                hideValidate(this);
+                });
+            });
+
+            function validate (input) {
+                if($(input).attr('type') == 'email' || $(input).attr('name') == 'email') {
+                    if($(input).val().trim().match(/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/) == null) {
+                        return false;
+                    }
+                }
+                else {
+                    if($(input).val().trim() == ''){
+                        return false;
+                    }
+                }
+            }
+
+            
+            function showValidate(input) {
+                var thisAlert = $(input).parent();
+                $(thisAlert).addClass('alert-validate');
+            }
+
+            function hideValidate(input) {
+                var thisAlert = $(input).parent();
+                $(thisAlert).removeClass('alert-validate');
+            }
+            
+            /*==================================================================
+            [ Show pass ]*/
+            var showPass = 0;
+            $('.btn-show-pass').on('click', function(){
+                if(showPass == 0) {
+                    $(this).next('input').attr('type','text');
+                    $(this).find('i').removeClass('zmdi-eye');
+                    $(this).find('i').addClass('zmdi-eye-off');
+                    showPass = 1;
+                }
+                else {
+                    $(this).next('input').attr('type','password');
+                    $(this).find('i').addClass('zmdi-eye');
+                    $(this).find('i').removeClass('zmdi-eye-off');
+                    showPass = 0;
+                }
+            });
+        })(jQuery);
+        
+    </script>
    </body>
 </html> 

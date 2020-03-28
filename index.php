@@ -304,19 +304,14 @@
                 </div>
                 
                 <div class="row">
-                    <div class="col-md-7">  
+                    <div class="col-md-7" > 
+                    <div class="section-heading" style="text-align: center;margin-bottom: 10px;padding-top:40px;padding-bottom:10px;">
+                            <h1><span>Anusmriti <em></em></span></h1>
+                    </div> 
+                    <iframe src="anusmriti/av2.pdf" width="100%" height="500px">
+                    </iframe>
                         <br><br>
-                        <div class="section-heading" style="text-align: center;margin-bottom: 10px;">
-                            <h1><span>A featured <em>Video</em></span></h1>
                         </div>
-                        
-                        <div class="box-video">
-                            <div class="video-container">
-
-                                <iframe width="100%" height="490" src="https://www.youtube.com/embed/WdR0v0pJ4vY" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"allowfullscreen></iframe>      
-                            </div>
-                        </div>
-                    </div>
                     <div class="col-md-5">
                         <br><br>
                         <div class="section-heading" style="text-align: center;margin-bottom: 10px;">
@@ -340,12 +335,13 @@
                     <?php 
                         $str = file_get_contents('http://saar-server.000webhostapp.com/assets/timeline_sample.json');
                         $json = json_decode($str, true);
-                        foreach ($json as $key) {
+                        for ($key = count($json) - 1;$key >= 0 ; $key--) {
                     ?> 
                         <li>
                             <div >
-                                <time><?php echo $key["date"] ?></time>
-                                <?php echo $key["Description"]?>
+                                <time><?php echo $json[$key]["title"] ?></time>
+                                <p><?php echo $json[$key]["date"] ?>   <?php echo $json[$key]["time"] ?></p>
+                                <?php echo $json[$key]["Description"]?>
                             </div>
                         </li>
                     <?php  } ?>
@@ -406,8 +402,8 @@
                             Dr. Anirban Chowdhary<br>
                             Email - pic_alumni@iitp.ac.in<br><br>
                             General Secretary:<br>
-                        	<a href="https://theabhinavgyan.github.io/" style="color: #fff">Abhinav Gyan</a><br>
-                        	Email - agyan.ce16@iitp.ac.in</p>            
+                        	<a href="#" style="color: #fff">Vivek Garg</a><br>
+                        	Email - vivek.ch17@iitp.ac.in</p>            
                         </div>
                     </div>
                 </div>
