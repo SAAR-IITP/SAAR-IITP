@@ -238,6 +238,31 @@
 					</div>
 			</section>    
             </section>
+
+            <!-- update profle picture -->
+            <div class="modal fade" id="profilepic" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Update Profle Picture</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="updatepic.php" method="POST">
+                        <div class="form-group">
+                        <label for="dp">Select Profile Pic</label>
+                        <input type="file" class="form-control" name="dp" id="dp">
+                        </div>
+                          
+                          <button type="button" class="btn btn-default">Cancel</button>
+                          <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                    </div>
+                </div>
+            </div>
             
             <section id="extra" class="content-section">
                     <button class="button" style="vertical-align:middle; background: #003C4D; padding: 10px; margin-left: 15px;" onclick="location.href = 'changePassword.php';"><span>Change Password</span></button>
@@ -245,6 +270,9 @@
                     <button class="button" style="vertical-align:middle; background: #003C4D; padding: 10px; margin-left: 15px;" onclick="location.href = 'updateProfile.php';"><span>Update Profile</span></button>
                     </form>
                     <button class="button" style="vertical-align:middle; background: #003C4D; padding: 10px; margin-left: 15px;" onclick="location.href = 'changeEmail.php';"><span>Change E-mail</span></button>
+                    <button type="button" class="button" style="vertical-align:middle; background: #003C4D; padding: 10px; margin-left: 15px;" data-toggle="modal" data-target="#profilepic">
+                    <span>Update Profile Picture</span>    
+                    </button>
                     <button class="button" style="vertical-align:middle; background: #003C4D; padding: 10px; margin-left: 15px;" onclick="window.location.href='don.html'" ><span>Donate Now </span></button>
 			</section>
             <!-- <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="awards">
@@ -362,28 +390,21 @@
               <div class="contact-cont2"> 
                 <div class="contact-add contact-box-desc">
                   <h3><i class="fa fa-map-marker cl-atlantis fa-2x"></i> Address</h3>
-                  <p><?php echo $_SESSION["address"];?>  <br>
-                  <?php echo $_SESSION["city"];?>, <?php echo $_SESSION["state"];?>, <?php echo $_SESSION["country"];?> <br></p>
+                  <p>IIT Patna Campus, Patna, 801110</p>
                 </div>
                 <div class="contact-phone contact-side-desc contact-box-desc">
                   <h3><i class="fa fa-phone cl-atlantis fa-2x"></i> Phone</h3>
-                  <p><?php echo $_SESSION["contact"];?> </p>
+                  <p>8827275145</p>
                 </div>
                 <div class="contact-mail contact-side-desc contact-box-desc">
                   <h3><i class="fa fa-envelope-o cl-atlantis fa-2x"></i> Email</h3>
                 <address class="address-details-f"> 
-                  Email: <a href="mailto:<?php echo $_SESSION['email']; ?>" class=""><?php echo $_SESSION['email']; ?></a>
+                  Email: <a href="mailto:saar@iitp.ac.in" class="">saar@iitp.ac.in</a>
                 </address>
                 <ul class="list-inline social-icon-f top-data">
-                <?php if(isset($_SESSION['fb']) && $_SESSION['fb'] != ''){ ?>
-                  <li><a href="<?php echo $_SESSION['fb']; ?>" target="_empty"><i class="fa top-social fa-facebook" style="color: #4267b2; border-color:#4267b2;"></i></a></li>
-                <?php } ?>
-                <?php if(isset($_SESSION['linkden']) && $_SESSION['linkden'] != ''){ ?>
-                  <li><a href="<?php echo $_SESSION['linkden']; ?>" target="_empty"><i class="fa top-social fa-twitter" style="color: #4AB3F4; border-color:#4AB3F4;"></i></a></li>
-                <?php } ?>
-                <?php if(isset($_SESSION['email']) && $_SESSION['email'] != ''){ ?>
-                  <li><a href="mailto:<?php echo $_SESSION['email']; ?>"><i class="fa top-social fa-google-plus" style="color: #e24343; border-color:#e24343;"></i></a></li> 
-                <?php } ?>
+                  <li><a href="https://www.facebook.com/saar.iitp" target="_empty"><i class="fa top-social fa-facebook" style="color: #4267b2; border-color:#4267b2;"></i></a></li>
+                  <li><a href="https://www.linkedin.com/company/saar-iitp" target="_empty"><i class="fa top-social fa-linkedin" style="color: #4AB3F4; border-color:#4AB3F4;"></i></a></li>
+                  <li><a href="https://twitter.com/saar_iitp" target="_empty"><i class="fa top-social fa-twitter" style="color: #4AB3F4; border-color:#4AB3F4;"></i></a></li>
                 </ul>
                 </div>
               </div>
