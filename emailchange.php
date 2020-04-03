@@ -3,12 +3,13 @@ session_start();
    
 if($_SERVER["REQUEST_METHOD"] == "POST") 
 {  
-  $url = 'https://saar-server.000webhostapp.com/functions/changeEmail.php';
+  $url = 'http://api.saar.iitp.ac.in/changeEmail.php';
   $ch = curl_init($url);
   $data = array(
     'old_email' => $_SESSION['email'],
   'new_email' => $_POST["newEmail"],
-  'password' => $_POST["password"]
+  'password' => $_POST["password"],
+  'access_token' => $_SESSION['access_token']
   );
   $payload = http_build_query($data);
 
@@ -24,7 +25,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
   //close cURL resource
   curl_close($ch);
   $response = json_decode($result,true);
-  echo '<pre>' . print_r($result, true) . '</pre>';
+  // echo '<pre>' . print_r($result, true) . '</pre>';
   // echo $response['messages'][0];
 
   $row = $response['messages'];
