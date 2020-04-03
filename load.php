@@ -3,7 +3,7 @@
     if(isset($_GET['offset']) && isset($_GET['limit'])){
         $offset = $_GET['offset'];
         $lim = $_GET['limit'];
-        $url = 'http://localhost/Saar-server/functions/getPosts.php?offset='.$offset.'&limit='.$lim;
+        $url = 'http://localhost/SAAR-Server/getPosts.php?offset='.$offset.'&limit='.$lim;
         $response = file_get_contents($url);
         // echo $response;
         $response = json_decode($response,true);
@@ -13,18 +13,28 @@
                 $data['body'] .= '....';
             }
         echo '
-            <div class="jumbotron" style="padding: 2% 2% 1% 3%;">
-                    <div style="width:100%;height:25%;">
-                        <p class="display-4" style="margin-bottom:0px;font-size:290%;font-weight:normal;">'.$data['id'].'. '.$data['title'].'  <img src="img/abhi.jpg" align="right" style="width: 18%;height: auto;border-radius: 50%;object-fit: cover;object-position: center;"></img></p>
-                        <p class="lead">'.$data['post_time'][0].' at '.$data['post_time'][1].' <i class="fa fa-comments"></i><br><i class="fa fa-eye"></i></p>
-                        
-                    </div>
-                    <hr class="my-4" style="padding-top:2%">
-                    <p>'.$data['body'].'</p>
-                    <p class="lead">
-                        <a class="btn btn-primary btn-md" href="./post.php?q='.$data['id'].'" role="button">Learn more</a>
-                    </p>
+
+        <div class="jumbotron">
+        <div class="row">
+            <div class="col-lg-1 col-sm-2 res"> 
+            <img src="img/abhi.jpg" class="profile_image" style=""></img>
+            <div class="username"><strong>Abhinav Gyan</strong></div>
             </div>
+            <div class="col-lg-9 col-sm-8">
+            <a class="display-4 post_heading" href="./post.php?q='.$data['id'].'">'.$data['title'].'  </a>
+                <hr style="margin-top:10px">
+                <p class="post_body">'.$data['body'].'</p>
+                <p class="lead">
+                    <a class="btn btn-primary btn-md" href="./post.php?q='.$data['id'].'" role="button">Read more</a>
+                </p>
+            </div>
+            <div class="col-lg-2 col-sm-2">
+            <div class="post_comment"> X Comments</div>
+            <div class="post_time" style=""><i class="fa fa-clock-o"></i> '.$data['post_time'][0].' at '.$data['post_time'][1].'</div>
+            </div>
+        </div>
+        
+        </div>
         ';
         }
     }

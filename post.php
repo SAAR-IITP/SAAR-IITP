@@ -9,7 +9,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-        <title>chat</title>    
+        <title>SAAR | Disscussion Forum</title>    
          
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,6 +17,7 @@
         <link rel="stylesheet" href="css/fontAwesome.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+        <link rel="stylesheet" href="css/chat.css" />
         <script
         src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
@@ -93,7 +94,7 @@
                 // $("#result").append("hil<br>");
             }
             
-            setInterval('autoRefresh_div()', 2000);
+            // setInterval('autoRefresh_div()', 2000);
         </script> 
     </head>
     <body style="height:100%;width:100%">
@@ -110,11 +111,22 @@
             ?>
             </div>
             
-            <div class="input-group input-group-lg">
-                <input type="text" class="form-control" placeholder="Add a comment..." id="comment_body">
-                <span class="input-group-btn">
-                    <button class="btn btn-default" type="button" id="add_comment">Go!</button>
-                </span>
+            <div class="jumbotron">
+                <div class="row">
+                    <div class="col-lg-1 col-sm-2 res"> 
+                        <img src="img/abhi.jpg" class="profile_image" ></img>
+                        <div class="username"><strong>Abhinav Gyan</strong></div>
+                    </div>
+                    <div class="col-lg-11 col-sm-10">
+                    <input type="text" class="form-control mb-3" placeholder="Add a comment..." id="comment_body">
+                    <span class="input-group-btn">
+                        <button class="btn btn-success " type="button" id="add_comment">POST</button>
+                    </span>
+                        <hr style="margin-top:10px">
+                        
+                    </div>
+                </div>
+                
             </div>
             <br><br>
         </div>

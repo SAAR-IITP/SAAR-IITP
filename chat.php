@@ -7,7 +7,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-        <title>chat</title>    
+        <title>SAAR | Discussion Forum</title>    
          
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="css/fontAwesome.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+        <link rel="stylesheet" href="css/chat.css" />
         <script
         src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
@@ -66,7 +67,9 @@
     
     </script>
     
-    <body style="height:100%;width:100%">
+
+    <body>
+
         <div class="container" style="padding-bottom:15px;">
             <?php 
                 if(isset($_SESSION['msg'])){
@@ -124,9 +127,7 @@
                 </div>
             </div>
             <div id="result" style="padding-top:15px;">
-            <?php
-              // include('load.php')
-            ?>
+
             </div>
             <button id="load_more" class="btn btn-lg btn-primary">Load More</button>
         </div>
