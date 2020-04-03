@@ -12,23 +12,57 @@
             $data = $response['data'];
             $images = unserialize($data['images']);
             echo '
+            <div class="post_heading">'.$data['title'].'</div>
             <div class="jumbotron">
-                    <h1 class="display-4">'.$data['post_id'].'. '.$data['title'].'</h1>
-                    <p class="lead">'.$data['post_time'].'</p>
-                    <hr class="my-4">
-                    <p>'.$data['body'].'</p>';
-            foreach($images as $image){
-                echo'<img src=http://localhost/SAAR-IITP/uploads/'.$image.' >';
-            }
+            <div class="row">
+                <div class="col-lg-1 col-sm-2 res"> 
+                    <img src="img/abhi.jpg" class="profile_image" ></img>
+                    <div class="username"><strong>Abhinav Gyan</strong></div>
+                </div>
+                <div class="col-lg-9 col-sm-8">
+                    <p class="post_body">'.$data['body'].'</p>
+                    <div class="row">';
+                    foreach($images as $image){
+                        echo '<div class="col-sm-6">
+                                    <a target="_blank" href="http://localhost/SAAR-IITP/uploads/'.$image.'" ><img class="pp_img" src="http://localhost/SAAR-IITP/uploads/'.$image.'" alt="Image" ></a>
+                                </div>';
+                    }
+                    echo '</div>
+                    <hr style="margin-top:10px">
+                    <a href="#" class="up">
+                        <i class="fa fa-thumbs-up"></i> '.$data['upvotes'].' 
+                    </a>
+                    <a href="#" class="down">
+                        <i class="fa fa-thumbs-down"></i> '.$data['downvotes'].'
+                    </a>
+                </div>
+                <div class="col-lg-2 col-sm-2">
+                    <div class="post_comment"> X Comments</div>
+                    <div class="post_time" style=""><i class="fa fa-clock-o"></i> Posted on: '.$data['post_time'][0].' at '.$data['post_time'][1].'</div>
+                </div>
+            </div>';
             echo '</div>
             ';
             $replies = $response['replies'];
             foreach($replies as $reply){
                 echo '
-                    <div class="jumbotron jumbotron-fluid">
-                        <div class="container">
-                        <h3 class="display-4">'.$reply['time'].' by '.$reply['user_id'].'</h3>
-                        <p class="lead">'.$reply['body'].'</p>
+                    <div class="jumbotron">
+                        <div class="row">
+                            <div class="col-lg-1 col-sm-2 res"> 
+                                <img src="img/abhi.jpg" class="profile_image" ></img>
+                                <div class="username"><strong>Abhinav Gyan</strong></div>
+                            </div>
+                            <div class="col-lg-11 col-sm-10">
+                                <p class="post_body">'.$reply['body'].'</p>
+                                <hr style="margin-top:10px">
+                                <a href="#" class="up">
+                                    <i class="fa fa-thumbs-up"></i> '.$reply['upvotes'].' 
+                                </a>
+                                <a href="#" class="down">
+                                    <i class="fa fa-thumbs-down"></i> '.$reply['downvotes'].'
+                                </a>
+                                <span><i class="fa fa-clock-o"></i> Commented on: '.$reply['time'][0].' at '.$reply['time'][1].'</span>
+                            </div>
                         </div>
                     </div>
                 ';
