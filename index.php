@@ -22,6 +22,7 @@
         <link rel="stylesheet" href="css/timeline.css">
         <link rel="stylesheet" href="css/owl-carousel.css">
         <link rel="stylesheet" href="css/templatemo-style.css">
+        <link rel="stylesheet" href="css/dropdown.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
         
@@ -308,10 +309,20 @@
                     <div class="section-heading" style="text-align: center;margin-bottom: 10px;padding-top:40px;padding-bottom:10px;">
                             <h1><span>Anusmriti <em></em></span></h1>
                     </div> 
-                    <iframe src="anusmriti/av2.pdf" width="100%" height="500px">
-                    </iframe>
-                        <br><br>
+                    <div style="position:relative;">
+                        <img src="img/anu.jpeg" alt="Anusmriti">
+                        <div class="dropdown">
+                            <button class="dropbtn">Read Anusmriti</button>
+                            <div class="dropdown-content">
+                                <a href="anusmriti/vol2/issue2.pdf" target="_blank">Volume 2, Issue 2</a>
+                                <a href="anusmriti/vol2/issue1.pdf" target="_blank">Volume 2, Issue 1</a>
+                                <a href="anusmriti/vol1/issue2.pdf" target="_blank">Volume 1, Issue 2</a>
+                                <a href="anusmriti/vol1/issue1.pdf" target="_blank">Volume 1, Issue 1</a>
+                            </div>
                         </div>
+                    </div>
+                        <br><br>
+                    </div>
                     <div class="col-md-5">
                         <br><br>
                         <div class="section-heading" style="text-align: center;margin-bottom: 10px;">
