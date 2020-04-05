@@ -72,6 +72,11 @@
             background-size: cover;
             font-family: 'Montserrat' Semibold ;
         }
+    .label_style {
+        text-align: left;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+    }
 </style>
 </head>
 <body>
@@ -90,29 +95,30 @@
             ?>
 			<div class="agileits-top">
 				<form action="register.php" method="post">
-					<input class="text" type="text" name="college_id" placeholder="*College Roll number" value="<?php echo isset($_POST['college_id']) ? $_POST['college_id'] : '' ?>" required>
-					
-                    <input id="fname" class="text" type="text" name="fname" placeholder="*First Name" required>
-					
-                    <input id="lname" class="text" type="text" name="lname" placeholder="*Last Name" required>
-					
-                    <input id="email" class="text email" type="email" name="email" placeholder="*Email" required>
-					
-                    <input class="text" type="tel" name="contact" placeholder="*Contact no." required>
-                    
-                    <input class="text" type="text" name="fbId" placeholder="Fb Profile Link(optional)">
-                    
-                    <input class="text" type="text" name="linkden" placeholder="Linkedin Link(optional)">
-                    
-                    <input class="text" type="password" name="password" placeholder="Password" required>
-					
-                    <input class="text w3lpass" type="password" name="con_password" placeholder="Confirm Password" required>
-					
-                    <input class="text" type="date" name="DOB" placeholder="*Date of Birth" required onfocus="(this.type='date')">
+                    <div class="label_style">Institute Roll Number *</div>
+					<input id="college_id" class="text" type="text" name="college_id" required>
+					<div class="label_style">First Name *</div>
+                    <input id="fname" class="text" type="text" name="fname" required>
+					<div class="label_style">Last Name *</div>
+                    <input id="lname" class="text" type="text" name="lname" required>
+					<div class="label_style">Email Address *</div>
+                    <input id="email" class="text email" type="email" name="email" required>
+					<div class="label_style">Contact Number *</div>
+                    <input class="text" type="tel" name="contact" required>
+                    <div class="label_style">Facebook profile link</div>
+                    <input class="text" type="text" name="fbId" placeholder="Optional">
+                    <div class="label_style">linkedin profile link</div>
+                    <input class="text" type="text" name="linkden" placeholder="Optional">
+                    <div class="label_style">password *</div>
+                    <input class="text" type="password" name="password" required>
+					<div class="label_style">Confirm password *</div>
+                    <input class="text w3lpass" type="password" name="con_password" required>
+					<div class="label_style">Date of Birth *</div>
+                    <input class="text" type="date" name="DOB" required onfocus="(this.type='date')">
                     <i class="ui calendar icon"></i>
-                    
-                    <select type="text" name="passingyear" class="ui search selection dropdown">
-                    <option value="" selected disabled>*Graduation Year</option>
+                    <div class="label_style">graduation year *</div>
+                    <select type="text" name="passingyear" required class="ui search selection dropdown">
+                    <option value="" selected disabled>Graduation Year</option>
                     <option value="2010">2010</option>
                     <option value="2011">2011</option>
                     <option value="2012">2012</option>
@@ -125,17 +131,17 @@
                     <option value="2019">2019</option>
                     <option value="2020">2020</option>
                     </select>
-
-                    <select type="text" id="degree" name="degree" class="ui search selection  dropdown">
-                    <option value="" selected disabled>*Degree</option>
+                    <div class="label_style">Degree *</div>
+                    <select type="text" id="degree" name="degree" required class="ui search selection  dropdown">
+                    <option value="" selected disabled>Degree</option>
                     <option value="B.Tech">B.Tech/B.E</option>
                     <option value="M.Tech">M.Tech/M.E</option>
                     <option value="M.Sc">M.Sc</option>
                     <option value="P.hd">P.hd</option>
                     </select>
-    
+                    <div class="label_style">Department *</div>
                     <select type="text" id="branch" name="dept" required  class="ui search selection   dropdown">
-                    <option value="" selected disabled >*Department</option>
+                    <option value="" selected disabled >Department</option>
                     <option value="Computer Science and Engineering">Computer Science and Engineering</option>
                     <option value="Electrical Engineering">Electrical Engineering</option>
                     <option value="Mechanical Engineering">Mechanical Engineering</option>
@@ -143,7 +149,7 @@
                     <option value="Chemical and Biochemical Engineering">Chemical and Biochemical Engineering</option>
                     <option value="other">Other</option>
                     </select>
-                    
+                    <div class="label_style">Employment Type</div>
                     <select type="text" id="etype" name="etype" class="ui dropdown">
                     <option value="" selected disabled>Employment Type</option>
                     <option value="Salaried">Salaried</option>
@@ -152,18 +158,18 @@
                     <option value="Civil Services">Civil Services</option>
                     <option value="other">Other</option>
                     </select>
-
-                    <input type="text" placeholder="Present Employer/Educational Inst." name="presentEmployer">
-                    
-                    <input type="text" placeholder="Designation" name="designation">
-                    
-                    <textarea type="text" name="address" required="" placeholder="*Address"></textarea>
-                    
-                    <input type="text" placeholder="*Country" name="country" required="">
-                    
-                    <input type="text" placeholder="*State" name="state" required="">
-    
-                    <input type="text" placeholder="*City" name="city" required="">
+                    <div class="label_style">Present Employer/ Educational Inst.</div>
+                    <input type="text" name="presentEmployer">
+                    <div class="label_style">Designation</div>
+                    <input type="text" name="designation">
+                    <div class="label_style">Address *</div>
+                    <textarea type="text" name="address" required=""></textarea>
+                    <div class="label_style">Country *</div>
+                    <input type="text" name="country" required="">
+                    <div class="label_style">State *</div>
+                    <input type="text" name="state" required="">
+                    <div class="label_style">City *</div>
+                    <input type="text" name="city" required="">
     
                     
                     
