@@ -13,6 +13,24 @@
             $images = unserialize($data['images']);
             echo '
             <div class="post_heading">'.$data['title'].'</div>
+            <div class="subhead" style="">
+                <div>
+                <i class="fa fa-clock-o"></i> Posted on: '.$data['post_time'][0].' at '.$data['post_time'][1].' | X comments
+                </div>
+                <div class="btns">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Edit
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Edit</a>
+                        <a class="dropdown-item" href="#">Delete Post</a>
+                    </div>
+                </div>
+                <button id="refresh" class="btn btn-md btn-secondary">Refresh</button>
+                </div>
+            </div>
+            <hr style="margin-top: 50px;">
             <div class="jumbotron">
             <div class="row">
                 <div class="col-lg-1 col-sm-2 res"> 
