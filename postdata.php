@@ -34,8 +34,8 @@
             <div class="jumbotron">
             <div class="row">
                 <div class="col-lg-1 col-sm-2 res"> 
-                    <img src="img/abhi.jpg" class="profile_image" ></img>
-                    <div class="username"><strong>Abhinav Gyan</strong></div>
+                    <img src="'.$data['user_img'].'" class="profile_image" ></img>
+                    <div class="username"><strong>'.$data['user_name'].'</strong></div>
                 </div>
                 <div class="col-lg-9 col-sm-8">
                     <p class="post_body">'.$data['body'].'</p>
@@ -68,8 +68,8 @@
                     <div class="jumbotron">
                         <div class="row">
                             <div class="col-lg-1 col-sm-2 res"> 
-                                <img src="img/abhi.jpg" class="profile_image" ></img>
-                                <div class="username"><strong>Abhinav Gyan</strong></div>
+                                <img src="'.$reply['user_img'].'" class="profile_image" ></img>
+                                <div class="username"><strong>'.$reply['user_name'].'</strong></div>
                             </div>
                             <div class="col-lg-11 col-sm-10">
                                 <p class="post_body">'.$reply['body'].'</p>

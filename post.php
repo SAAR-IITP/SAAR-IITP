@@ -147,10 +147,11 @@
             </div>
             
             <div class="jumbotron">
+            <?php if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']== true){ ?>
                 <div class="row">
                     <div class="col-lg-1 col-sm-2 res"> 
-                        <img src="img/abhi.jpg" class="profile_image" ></img>
-                        <div class="username"><strong>Abhinav Gyan</strong></div>
+                        <img src="<?php echo $_SESSION['img_url'];?>" class="profile_image" ></img>
+                        <div class="username"><strong><?php echo $_SESSION['fname'].' '.$_SESSION['lname'];?></strong></div>
                     </div>
                     <div class="col-lg-11 col-sm-10">
                     <input type="text" class="form-control mb-3" placeholder="Add a comment..." id="comment_body">
@@ -161,7 +162,9 @@
                         
                     </div>
                 </div>
-                
+            <?php }else{ ?>
+                <a href="signup.php"><button class="btn btn-success">Sign Up</button></a> to join this conversation. Already have an account? <a href="signin.php" style="color: #007bff;">Sign In to comment</a>
+            <?php } ?>  
             </div>
             <br><br>
         </div>
