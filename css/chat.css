@@ -93,3 +93,13 @@ a:hover {
     color: #989C9E;
     text-decoration: none;
 }
+
+.btns {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+}
+
+.subhead {
+    position: relative;
+}

@@ -22,6 +22,11 @@
         crossorigin="anonymous"></script>
         <script src="./js/upload.js"></script>    
     </head>
+    <style>
+    .nav-item {
+        margin: 5px 10px;
+    }
+    </style>
     <script type="text/javascript">
     $(document).ready(function(){
         var flag = 0;
@@ -70,6 +75,41 @@
 
     <body>
 
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+        
+        <a class="navbar-brand" href="#"><img src="img/logo1.png" alt="SAAR" style="height: 90px;"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto" style="margin: 10px auto;">
+            <li class="nav-item active">
+                <a class="nav-link" href="./index.php">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            Add new post
+            </button>
+            </li>
+            <li class="nav-item">
+                <?php if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true ){ ?>
+                <a href="./portal.php"><button type="button" class="btn btn-primary">
+                Profile
+                </button></a>
+            <?php }else{ ?>
+                <a href="./signin.php"><button type="button" class="btn btn-primary">
+                Login
+                </button></a>
+            <?php } ?>
+            </li>
+            </ul>
+        </div>
+        </div>
+    </nav>
+    
+
         <div class="container" style="padding-bottom:15px;">
             <?php 
                 if(isset($_SESSION['msg'])){
@@ -78,16 +118,11 @@
                 }
                 
             ?>
-            <h1>Discussion Forum</h1>
-            <hr>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-            Add new post
-            </button>
             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">ADD A POST</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                         </button>

@@ -1,4 +1,5 @@
 <?php 
+    session_start();
     if(!isset($_GET['q'])){
         header("location: chat.php");
     }
@@ -22,6 +23,11 @@
         src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
         crossorigin="anonymous"></script>
+        <style>
+        .nav-item {
+            margin: 5px 10px;
+        }
+        </style>
         <script type="text/javascript">
             var $_GET = {};
                 if(document.location.toString().indexOf('?') !== -1) {
@@ -98,11 +104,40 @@
         </script> 
     </head>
     <body style="height:100%;width:100%">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <h1>Particular post</h1>
-            <hr>
-            <button id="refresh" class="btn btn-lg btn-primary">Refresh</button>
-            <a href="./chat.php"><button id="back" class="btn btn-lg btn-primary">Back</button></a>
+        
+        <a class="navbar-brand" href="#"><img src="img/logo1.png" alt="SAAR" style="height: 90px;"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto" style="margin: 10px auto;">
+            <li class="nav-item active">
+                <a class="nav-link" href="./index.php">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+            <a href="./chat.php"><button type="button" class="btn btn-primary" >
+            All Posts
+            </button></a>
+            </li>
+            <li class="nav-item">
+                <?php if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true ){ ?>
+                <a href="./portal.php"><button type="button" class="btn btn-primary">
+                Profile
+                </button></a>
+            <?php }else{ ?>
+                <a href="./signin.php"><button type="button" class="btn btn-primary">
+                Login
+                </button></a>
+            <?php } ?>
+            </li>
+            </ul>
+        </div>
+        </div>
+    </nav>
+        <div class="container">
             <div id="result" style="padding-top:15px;">
             <?php
             //     $post_id = $_GET['q'];
@@ -120,7 +155,7 @@
                     <div class="col-lg-11 col-sm-10">
                     <input type="text" class="form-control mb-3" placeholder="Add a comment..." id="comment_body">
                     <span class="input-group-btn">
-                        <button class="btn btn-success " type="button" id="add_comment">POST</button>
+                        <button class="btn btn-info " type="button" id="add_comment">POST</button>
                     </span>
                         <hr style="margin-top:10px">
                         
