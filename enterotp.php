@@ -137,7 +137,7 @@ session_start();
       <div class="wrap-login100">
         <form class="login100-form validate-form" method="POST" action="otpvalidationp.php">
           <?php if(isset($_SESSION['cid'])){?>
-            <input name="rollno" hidden value=<?php $_SESSION['cid']?> >
+            <input name="rollno" hidden value="<?php echo $_SESSION['cid']?>" >
           <?php }else{ ?>
             <div class="wrap-input100 validate-input" data-validate="Enter rollno">
               <input class="input100" type="text" size="50" name="rollno" required>
@@ -145,7 +145,7 @@ session_start();
             </div>
           <?php }?>
           <?php if(isset($_SESSION['forget_pass']) && $_SESSION['forget_pass'] == true){ ?>
-            <input name="forget_pass" hidden value=<?php $_SESSION['forget_pass']?> >
+            <input name="forget_pass" hidden value="<?php echo $_SESSION['forget_pass']?>" >
           <?php } ?>
           <div class="wrap-input100 validate-input" data-validate="Enter password">
             <input class="input100" type="text" size="50" name="otp" required>

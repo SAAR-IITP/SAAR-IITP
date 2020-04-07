@@ -5,13 +5,13 @@
     $count=-1;
     if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"]==false)
     {
-        header("location: noaccess.php");
+        header("location: signin.php");
     } 
       
         
         if(isset($_POST['year']) && $_SERVER["REQUEST_METHOD"] == "POST") {
               // username and password sent from form 
-            $url = 'http://localhost/saar-server/functions/findFriend.php';
+            $url = 'http://api.saar.iitp.ac.in/findFriend.php';
             $ch = curl_init($url);
             if(!isset($_POST["branch"])){
                 $branch = 'All';
@@ -21,7 +21,8 @@
             $data = array(
             'graduation_year' => $_POST["year"],
             'branch' => $branch,
-            'name' => $_POST["name"]
+            'name' => $_POST["name"],
+            'access_token' => $_SESSION['access_token']
             );
             $payload = http_build_query($data);
 
@@ -54,22 +55,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Find Your Friends</title>
-        <script>
-            window.onload=function(){
-            var min = 2012;
-            var d = new Date();
-            max = d.getFullYear();
-            for (var i = min; i<=max; i++){
-               var opt = document.createElement('option');
-               opt.value = i;
-               opt.innerHTML = i;
-                console.log(document.getElementById('passYear'));
-               document.getElementById('passYear').appendChild(opt);
-                };
-            }
-        </script>
-        
+        <title>Find Your Friends</title>        
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -186,7 +172,7 @@
          <td><img src="<?php echo $row["img_url"]; ?>" alt="Profile Pic" /></td>
          <td><?php  echo $row["first_name"]." ".$row["last_name"]; ?></td>
          <td><?php  echo $row["email"]; ?></td>
-        <td><a href='<?php echo $row['fb-link']; ?>' target="_blank">
+        <td><a href='<?php echo $row['fb_link']; ?>' target="_blank">
       <?php if($row['fb_link'] != ''){ ?>Click Here <?php }else{ ?> Not found <?php } ?>
         </a></td>
       </tr>

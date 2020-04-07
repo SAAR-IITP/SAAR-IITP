@@ -59,6 +59,7 @@
                     <div class="post_time" style=""><i class="fa fa-clock-o"></i> Posted on: '.$data['post_time'][0].' at '.$data['post_time'][1].'</div>
                 </div>
             </div>';
+
             echo '</div>
             ';
             $replies = $response['replies'];

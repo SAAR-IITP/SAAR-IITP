@@ -13,6 +13,7 @@
                 $data['body'] .= '....';
             }
         echo '
+
         <div class="jumbotron">
         <div class="row">
             <div class="col-lg-1 col-sm-2 res"> 

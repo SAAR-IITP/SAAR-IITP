@@ -3,7 +3,8 @@
    
    if($_SERVER["REQUEST_METHOD"] == "POST") 
    {  
-      $url = 'https://saar-server.000webhostapp.com/functions/login.php';
+      // $url = 'https://saar-server.000webhostapp.com/functions/login.php';
+      $url = 'http://api.saar.iitp.ac.in/login.php';
       $ch = curl_init($url);
       $data = array(
        'email' => $_POST["email"],
@@ -34,9 +35,7 @@
       // $count = mysqli_num_rows($result);
       /*$response = json_decode(file_get_contents('php://input'), true);*/
       $response = json_decode($result,true);
-    // echo '<pre>' . print_r($result, true) . '</pre>';
-      echo $response['messages'][0];
-    
+    // echo '<pre>' . print_r($result, true) . '</pre>';    
     $row = $response['messages'];
     // $row = $response["message"];
     // echo $response;
@@ -63,6 +62,7 @@
          $_SESSION['city']=$row['city'];
          $_SESSION['achievements']=$row['achievements'];
          $_SESSION['loggedin'] = true;
+         $_SESSION['access_token'] = $row['access_token'];
          header("location: portal.php");
       }
       else 

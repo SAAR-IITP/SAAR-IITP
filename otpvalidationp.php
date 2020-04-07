@@ -1,11 +1,12 @@
 <?php
  session_start();
  if($_SERVER["REQUEST_METHOD"] == "POST") {
-	 $url = "https://saar-server.000webhostapp.com/functions/verifyOTP.php";
+	 $url = "http://api.saar.iitp.ac.in/verifyOTP.php";
 	 $ch = curl_init($url);
 	 $data = array(
 	 	'rollno' => $_POST['rollno'],
-	 	'verification_code' => $_POST['otp']
+       'verification_code' => $_POST['otp'],
+       'access_token' => $_SESSION['access_token']
     );
     if(isset($_POST['forget_pass'])){
        $data += array('forgot_password' => $_POST['forget_pass']);
@@ -16,8 +17,6 @@
 	 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 	 $result = curl_exec($ch);
 	 curl_close($ch);
-      echo $result;
-
       $response = json_decode($result,true);
       if($response['status'] == 201){
       	$_SESSION['error'] = $response['messages'][0];

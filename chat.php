@@ -72,7 +72,9 @@
     
     </script>
     
+
     <body>
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
         
@@ -107,6 +109,7 @@
         </div>
     </nav>
     
+
         <div class="container" style="padding-bottom:15px;">
             <?php 
                 if(isset($_SESSION['msg'])){
@@ -159,6 +162,7 @@
                 </div>
             </div>
             <div id="result" style="padding-top:15px;">
+
             </div>
             <button id="load_more" class="btn btn-lg btn-primary">Load More</button>
         </div>
