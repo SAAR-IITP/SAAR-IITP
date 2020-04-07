@@ -16,7 +16,8 @@ session_start();
     'city' => $_POST["city"],
     'rollno' => $_SESSION["cid"],
     'achievements' => $_POST["achievements"],
-    'access_token' => $_SESSION['access_token']
+    'access_token' => $_SESSION['access_token'],
+    'about' => $_POST['about']
    );
    $payload = http_build_query($data);
 

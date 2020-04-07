@@ -25,7 +25,8 @@
        'state'=> $_POST['state'],
        'city'=>$_POST['city'],
        'achievements' => $_POST['achievements'],
-       'access_token' => $_SESSION['access_token']
+       'access_token' => $_SESSION['access_token'],
+       'about' => $_POST['about']
       );
       $payload = http_build_query($data);
 

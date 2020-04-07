@@ -105,6 +105,8 @@
                     <input id="email" class="text email" type="email" name="email" required>
 					<div class="label_style">Contact Number *</div>
                     <input class="text" type="tel" name="contact" required>
+                    <div class="label_style">About</div>
+                    <textarea type="text" name="about"></textarea>
                     <div class="label_style">Facebook profile link</div>
                     <input class="text" type="text" name="fbId" placeholder="Optional">
                     <div class="label_style">linkedin profile link</div>
