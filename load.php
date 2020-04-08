@@ -29,7 +29,7 @@
                 </p>
             </div>
             <div class="col-lg-2 col-sm-2">
-            <div class="post_comment"> X Comments</div>
+            <div class="post_comment"> '.$data['no_of_comment'].' Comments</div>
             <div class="post_time" style=""><i class="fa fa-clock-o"></i> '.$data['post_time'][0].' at '.$data['post_time'][1].'</div>
             </div>
         </div>

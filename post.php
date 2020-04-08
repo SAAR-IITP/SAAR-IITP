@@ -69,17 +69,28 @@
                 });
                 $("#add_comment").on("click",function(){
                     let bodyval = $('#comment_body').val();
+                    let user_name = $('#user_name').val();
+                    let user_img = $('#user_img').val();
+                    let user_id = $('#user_id').val();
                     $('#comment_body').val('');
                     $.ajax({
                         type: "POST",
-                        url: "http://localhost/Saar-Server/functions/createReply.php",
+                        url: "http://localhost/SAAR-Server/createReply.php",
                         data: {
-                            "user_id": 3,
+                            "user_id": user_id,
+                            "user_name": user_name,
+                            "user_img": user_img,
                             "post_id":$_GET['q'],
                             "body": bodyval
                         },
                         success: function(data){
-                            console.log(data);
+                            data = JSON.parse(data);
+                            $('#msg').html(`<div class="alert alert-warning alert-dismissible fade show" style="position: fixed;top: 30px;left: 45%;z-index:10;" role="alert">
+                                                ${data['messages'][0]}
+                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>`);
                         }
                     });
                 });
@@ -100,7 +111,7 @@
                 // $("#result").append("hil<br>");
             }
             
-            // setInterval('autoRefresh_div()', 2000);
+            setInterval('autoRefresh_div()', 2000);
         </script> 
     </head>
     <body style="height:100%;width:100%">
@@ -138,6 +149,8 @@
         </div>
     </nav>
         <div class="container">
+        <div id="msg">
+        </div>
             <div id="result" style="padding-top:15px;">
             <?php
             //     $post_id = $_GET['q'];
@@ -155,6 +168,9 @@
                     </div>
                     <div class="col-lg-11 col-sm-10">
                     <input type="text" class="form-control mb-3" placeholder="Add a comment..." id="comment_body">
+                    <input type="text" value="<?php echo $_SESSION['fname'].' '.$_SESSION['lname'];?>" id="user_name" hidden>
+                    <input type="text" value="<?php echo $_SESSION['img_url'];?>" id="user_img" hidden>
+                    <input type="text" value="4" id="user_id" hidden>
                     <span class="input-group-btn">
                         <button class="btn btn-info " type="button" id="add_comment">POST</button>
                     </span>

@@ -3,8 +3,8 @@
    
    if($_SERVER["REQUEST_METHOD"] == "POST") 
    {  
-      // $url = 'https://saar-server.000webhostapp.com/functions/login.php';
-      $url = 'http://api.saar.iitp.ac.in/login.php';
+      $url = 'http://localhost/SAAR-Server/login.php';
+      // $url = 'http://api.saar.iitp.ac.in/login.php';
       $ch = curl_init($url);
       $data = array(
        'email' => $_POST["email"],
@@ -40,7 +40,7 @@
     // $row = $response["message"];
     // echo $response;
       if($response["status"]==202) 
-      {  
+      {  $_SESSION['user_id'] = $row['user_id'];
          $_SESSION['fname']=$row['first_name'];
          $_SESSION['lname']=$row['last_name'];
          $_SESSION['cid']=$row['rollno'];

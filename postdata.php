@@ -15,7 +15,7 @@
             <div class="post_heading">'.$data['title'].'</div>
             <div class="subhead" style="">
                 <div>
-                <i class="fa fa-clock-o"></i> Posted on: '.$data['post_time'][0].' at '.$data['post_time'][1].' | X comments
+                <i class="fa fa-clock-o"></i> Posted on: '.$data['post_time'][0].' at '.$data['post_time'][1].' | '.$data['no_of_comment'].' comments
                 </div>
                 <div class="btns">
                 <div class="btn-group">
@@ -55,7 +55,7 @@
                     </a>
                 </div>
                 <div class="col-lg-2 col-sm-2">
-                    <div class="post_comment"> X Comments</div>
+                    <div class="post_comment"> '.$data['no_of_comment'].' Comments</div>
                     <div class="post_time" style=""><i class="fa fa-clock-o"></i> Posted on: '.$data['post_time'][0].' at '.$data['post_time'][1].'</div>
                 </div>
             </div>';

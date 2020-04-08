@@ -89,7 +89,7 @@
                 <a class="nav-link" href="./index.php">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newpost">
             Add new post
             </button>
             </li>
@@ -111,18 +111,21 @@
     
 
         <div class="container" style="padding-bottom:15px;">
-            <?php 
-                if(isset($_SESSION['msg'])){
-                    echo $_SESSION['msg'];
-                    unset($_SESSION['msg']);
-                }
-                
-            ?>
-            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <?php if(isset($_SESSION['msg'])){ ?>
+                    <div class="alert alert-warning alert-dismissible fade show" style="position: fixed;top: 30px;left: 45%;z-index:10;" role="alert">
+                    <?php echo $_SESSION['msg']; ?>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+            <?php         ;
+                unset($_SESSION['msg']);
+            } ?>
+            <div class="modal fade" id="newpost" tabindex="-1" role="dialog" aria-labelledby="newpostLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">ADD A POST</h5>
+                        <h5 class="modal-title" id="newpostLabel">ADD A POST</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                         </button>
@@ -136,26 +139,28 @@
                             </div>
                             <div class="form-group">
                                 <label for="body">Description</label>
-                                <input type="text" class="form-control" id="body" name="body" placeholder="Description" required>
+                                <textarea name="body" class="form-control" id="body" cols="30" rows="10" required></textarea>
                             </div>
                             <div class="form-group">
-                                <label for="cat">Category ID</label>
-                                <input type="number" class="form-control" id="cat" name="cat_id" placeholder="Enter cat id" required>
+                                <!-- <label for="cat">Category ID</label> -->
+                                <input type="number" class="form-control" id="cat" name="cat_id" placeholder="Enter cat id" value="1" hidden required>
                             </div>
                             <div class="form-group">
                             <small>First Field is Compulsory. Only JPEG,PNG,JPG Type Image Uploaded. Image Size Should Be Less Than 1MB.</small>
                             <div id="filediv"><input name="file[]" class="form-control" type="file" id="file"/></div>
                             </div>
                             <div class="form-group">
-                            <input type="button" id="add_more" class="btn btn-success" value="Add More Files"/>
+                            <input type="button" id="add_more" class="btn btn-info btn-sm" value="Add More Files"/>
                             <!-- <input type="submit" value="Upload File" name="submit" id="upload" class="btn btn-success"/> -->
                             </div>
-                            <input type="number" value="2" name="user_id" hidden>
+                            <input type="number" value="<?php echo $_SESSION['user_id']; ?>" name="user_id" hidden>
+                            <input type="text" id="user_name" name="user_name" value="<?php echo $_SESSION['fname'].' '.$_SESSION['lname']; ?>" hidden >
+                            <input type="text" id="user_img" name="user_img" value="<?php echo $_SESSION['img_url']; ?>" hidden >
                         
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" name="submit" class="btn btn-primary">Save changes</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <button type="submit" name="submit" class="btn btn-primary">Post</button>
                     </div>
                     </form>
                     </div>
