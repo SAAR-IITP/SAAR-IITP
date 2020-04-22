@@ -11,7 +11,7 @@
                 // Loop to get individual element from the array
                 $validextensions = array("jpeg", "jpg", "png");      // Extensions which are allowed.
                 $ext = explode('.', basename($_FILES['file']['name'][$i]));   // Explode file name from dot(.)
-                $target_path = "uploads/";     // Declaring Path for uploaded images.
+                $target_path = "./uploads/";     // Declaring Path for uploaded images.
                 $file_extension = strtolower(end($ext)); // Store extensions in the variable.
                 $unique = md5(uniqid()) . "." . $ext[count($ext) - 1];
                 $target_path = $target_path . $unique;     // Set the target path with a new name of image.
@@ -35,10 +35,12 @@
         }else{
         // making api call
         $images = serialize($photo);
-        $url = 'http://localhost/Saar-Server/functions/createPost.php';
+        $url = 'http://localhost/SAAR-Server/createPost.php';
         $ch = curl_init($url);
         $data = array(
             'user_id' => $_POST['user_id'],
+            'user_name' => $_POST['user_name'],
+            'user_img' => $_POST['user_img'],
             'cat_id' => $_POST['cat_id'],
             'title' => $_POST['title'],
             'body' => $_POST['body'],

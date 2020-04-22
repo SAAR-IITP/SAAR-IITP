@@ -55,7 +55,31 @@
                         $('#result').append(data);
                     }
                 });
-                $("#refresh").on("click",function(){
+                $(document).on('click','#upvote_post',function(e) {
+                    let user_id = $('#user_id').val();
+                    let post_id = $_GET['q'];
+                    vote(post_id,user_id,1);
+                });
+
+                $(document).on('click','#downvote_post',function(e) {
+                    let user_id = $('#user_id').val();
+                    let post_id = $_GET['q'];
+                    vote(post_id,user_id,-1);
+                });
+
+                $(document).on('click','#upvote_comment',function(){
+                    let comment_id = this.dataset.id;
+                    let user_id = $('#user_id').val();
+                    vote_comment(comment_id,user_id,1);
+                });
+
+                $(document).on('click','#downvote_comment',function(){
+                    let comment_id = this.dataset.id;
+                    let user_id = $('#user_id').val();
+                    vote_comment(comment_id,user_id,-1);
+                });
+                
+                $(document).on("click","#refresh", function(){
                     $.ajax({
                     type: "GET",
                     url: "postdata.php",
@@ -64,26 +88,87 @@
                     },
                     success: function(data){
                         $('#result').html(data);
+                        $('#msg').html(`<div class="alert alert-warning alert-dismissible fade show" style="position: fixed;top: 30px;left: 45%;z-index:10;" role="alert">                                               
+                                                Refreshed
+                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>`);
                     }
-                    });
+                })
                 });
                 $("#add_comment").on("click",function(){
                     let bodyval = $('#comment_body').val();
+                    let user_name = $('#user_name').val();
+                    let user_img = $('#user_img').val();
+                    let user_id = $('#user_id').val();
                     $('#comment_body').val('');
                     $.ajax({
                         type: "POST",
-                        url: "http://localhost/Saar-Server/functions/createReply.php",
+                        url: "http://localhost/SAAR-Server/createReply.php",
                         data: {
-                            "user_id": 3,
+                            "user_id": user_id,
+                            "user_name": user_name,
+                            "user_img": user_img,
                             "post_id":$_GET['q'],
                             "body": bodyval
                         },
                         success: function(data){
-                            console.log(data);
+                            data = JSON.parse(data);
+                            $('#msg').html(`<div class="alert alert-warning alert-dismissible fade show" style="position: fixed;top: 30px;left: 45%;z-index:10;" role="alert">
+                                                ${data['messages'][0]}
+                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>`);
                         }
                     });
                 });
             });
+
+            function vote(post_id,user_id,upordown){
+                $.ajax({
+                    type: "POST",
+                    url: "http://localhost/SAAR-Server/postvote.php",
+                    data: {
+                        'post_id': post_id,
+                        'user_id': user_id,
+                        'upordown': upordown,
+                        'what': "post"
+                    },
+                    success: function(data){
+                        data = JSON.parse(data);
+                            $('#msg').html(`<div class="alert alert-warning alert-dismissible fade show" style="position: fixed;top: 30px;left: 45%;z-index:10;" role="alert">
+                                ${data['messages'][0]}
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>`);
+                    }
+                    });
+            }
+
+            function vote_comment(comment_id,user_id,upordown){
+                $.ajax({
+                    type: "POST",
+                    url: "http://localhost/SAAR-Server/postvote.php",
+                    data: {
+                        'comment_id': comment_id,
+                        'user_id': user_id,
+                        'upordown': upordown,
+                        'what': "comment"
+                    },
+                    success: function(data){
+                        data = JSON.parse(data);
+                            $('#msg').html(`<div class="alert alert-warning alert-dismissible fade show" style="position: fixed;top: 30px;left: 45%;z-index:10;" role="alert">
+                                ${data['messages'][0]}
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>`);
+                    }
+                    });
+            }
         
             function autoRefresh_div()
             {
@@ -100,7 +185,7 @@
                 // $("#result").append("hil<br>");
             }
             
-            // setInterval('autoRefresh_div()', 2000);
+            setInterval('autoRefresh_div()', 2000);
         </script> 
     </head>
     <body style="height:100%;width:100%">
@@ -138,6 +223,8 @@
         </div>
     </nav>
         <div class="container">
+        <div id="msg">
+        </div>
             <div id="result" style="padding-top:15px;">
             <?php
             //     $post_id = $_GET['q'];
@@ -147,13 +234,17 @@
             </div>
             
             <div class="jumbotron">
+            <?php if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']== true){ ?>
                 <div class="row">
                     <div class="col-lg-1 col-sm-2 res"> 
-                        <img src="img/abhi.jpg" class="profile_image" ></img>
-                        <div class="username"><strong>Abhinav Gyan</strong></div>
+                        <img src="<?php echo $_SESSION['img_url'];?>" class="profile_image" ></img>
+                        <div class="username"><strong><?php echo $_SESSION['fname'].' '.$_SESSION['lname'];?></strong></div>
                     </div>
                     <div class="col-lg-11 col-sm-10">
                     <input type="text" class="form-control mb-3" placeholder="Add a comment..." id="comment_body">
+                    <input type="text" value="<?php echo $_SESSION['fname'].' '.$_SESSION['lname'];?>" id="user_name" hidden>
+                    <input type="text" value="<?php echo $_SESSION['img_url'];?>" id="user_img" hidden>
+                    <input type="text" value="<?php echo $_SESSION['user_id'];?>" id="user_id" hidden>
                     <span class="input-group-btn">
                         <button class="btn btn-info " type="button" id="add_comment">POST</button>
                     </span>
@@ -161,7 +252,9 @@
                         
                     </div>
                 </div>
-                
+            <?php }else{ ?>
+                <a href="signup.php"><button class="btn btn-success">Sign Up</button></a> to join this conversation. Already have an account? <a href="signin.php" style="color: #007bff;">Sign In to comment</a>
+            <?php } ?>  
             </div>
             <br><br>
         </div>
