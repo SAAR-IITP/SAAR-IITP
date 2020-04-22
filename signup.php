@@ -111,8 +111,21 @@
                     <input class="text" type="date" name="DOB" placeholder="*Date of Birth" required onfocus="(this.type='date')">
                     <i class="ui calendar icon"></i>
                     
-                    <input class="text" type="text" name="passingyear" placeholder="*Graduation Year(20XX)" required>
-                    
+                    <select type="text" name="passingyear" class="ui search selection dropdown">
+                    <option value="" selected disabled>*Graduation Year</option>
+                    <option value="2010">2010</option>
+                    <option value="2011">2011</option>
+                    <option value="2012">2012</option>
+                    <option value="2013">2013</option>
+                    <option value="2014">2014</option>
+                    <option value="2015">2015</option>
+                    <option value="2016">2016</option>
+                    <option value="2017">2017</option>
+                    <option value="2018">2018</option>
+                    <option value="2019">2019</option>
+                    <option value="2020">2020</option>
+                    </select>
+
                     <select type="text" id="degree" name="degree" class="ui search selection  dropdown">
                     <option value="" selected disabled>*Degree</option>
                     <option value="B.Tech">B.Tech/B.E</option>
@@ -128,6 +141,7 @@
                     <option value="Mechanical Engineering">Mechanical Engineering</option>
                     <option value="Civil Engineering">Civil Engineering</option>
                     <option value="Chemical and Biochemical Engineering">Chemical and Biochemical Engineering</option>
+                    <option value="other">Other</option>
                     </select>
                     
                     <select type="text" id="etype" name="etype" class="ui dropdown">
@@ -136,6 +150,7 @@
                     <option value="Entrepreneur">Entrepreneur</option>
                     <option value="Higher Studies">Higher Studies</option>
                     <option value="Civil Services">Civil Services</option>
+                    <option value="other">Other</option>
                     </select>
 
                     <input type="text" placeholder="Present Employer/Educational Inst." name="presentEmployer">
@@ -150,7 +165,7 @@
     
                     <input type="text" placeholder="*City" name="city" required="">
     
-                    <textarea type="text" name="achievements" placeholder="Achievements After Graduation"></textarea>
+                    
                     
                     <div class="wthree-text">
 						<label class="anim" style="display: inline-flex;">

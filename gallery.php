@@ -84,11 +84,19 @@
 
 <div class="page-content">
             <section id="projects" class="content-section">
-                <div class="section-heading" style="text-align: center;">
+            <div class="section-heading" style="text-align: center;margin-bottom: 10px;">
+                            <h1><span>GALLERY </span></h1>
+                        </div>
+            <div class="toggles" style="padding:40px";>
+            <button id="toggle-1"  class="btn btn-outline-primary" >IMAGES</button>
+            <button id="toggle-2" class="btn" class="btn btn-outline-primary">VIDEOS</button>
+            </div>
+                <!-- <div class="section-heading" style="text-align: center;">
                     <br><br>
                     <h1>Image <em>Gallery</em></h1>
-                </div>
-                <div class="section-content">
+                </div> -->
+                
+                <div class="container" id="one">
                     <div class="masonry">
                         <div class="row">
                             <?php
@@ -169,6 +177,19 @@
                         </div>
                     </div>
                 </div>
+                <div class="container hide" id="two">
+                <div class="row">
+                    <div class="col-md-5"> 
+                    <div class="box-video">
+                             <div class="video-container" style="">
+
+                                <iframe width="100%" height="490" src="https://www.youtube.com/embed/WdR0v0pJ4vY" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"allowfullscreen></iframe>      
+                            </div>
+                </div>
+                </div>
+                </div>
+
+                </div>
             </section>
 		  
             <section  id="contact" class="content-section">
@@ -226,6 +247,7 @@
     <script src="js/main.js"></script>
 
     <script>
+     
         // Hide Header on on scroll down
         var didScroll;
         var lastScrollTop = 0;
@@ -264,7 +286,24 @@
             
             lastScrollTop = st;
         }
+
     </script>
+    <script class="content">
+    document.getElementById("toggle-1").onclick = function() {
+            this.classList = "btn btn-md btn-success";
+            document.getElementById("toggle-2").classList = "btn btn-md btn-default";
+            document.getElementById("one").classList.remove("hide");
+            document.getElementById("two").classList.add("hide");
+        }
+
+        document.getElementById("toggle-2").onclick = function() {
+            this.classList = "btn btn-md btn-success";
+            document.getElementById("toggle-1").classList = "btn btn-md btn-default";
+            document.getElementById("one").classList.add("hide");
+            document.getElementById("two").classList.remove("hide");
+        }
+    </script>
+
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
 </body>
