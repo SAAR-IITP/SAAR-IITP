@@ -3,8 +3,8 @@
    
    if($_SERVER["REQUEST_METHOD"] == "POST") 
    {  
-      $url = 'http://localhost/SAAR-Server/login.php';
-      // $url = 'http://api.saar.iitp.ac.in/login.php';
+      // $url = 'http://localhost/SAAR-Server/login.php';
+      $url = 'http://api.saar.iitp.ac.in/login.php';
       $ch = curl_init($url);
       $data = array(
        'email' => $_POST["email"],

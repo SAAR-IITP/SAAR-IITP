@@ -55,7 +55,31 @@
                         $('#result').append(data);
                     }
                 });
-                $("#refresh").on("click",function(){
+                $(document).on('click','#upvote_post',function(e) {
+                    let user_id = $('#user_id').val();
+                    let post_id = $_GET['q'];
+                    vote(post_id,user_id,1);
+                });
+
+                $(document).on('click','#downvote_post',function(e) {
+                    let user_id = $('#user_id').val();
+                    let post_id = $_GET['q'];
+                    vote(post_id,user_id,-1);
+                });
+
+                $(document).on('click','#upvote_comment',function(){
+                    let comment_id = this.dataset.id;
+                    let user_id = $('#user_id').val();
+                    vote_comment(comment_id,user_id,1);
+                });
+
+                $(document).on('click','#downvote_comment',function(){
+                    let comment_id = this.dataset.id;
+                    let user_id = $('#user_id').val();
+                    vote_comment(comment_id,user_id,-1);
+                });
+                
+                $(document).on("click","#refresh", function(){
                     $.ajax({
                     type: "GET",
                     url: "postdata.php",
@@ -64,8 +88,14 @@
                     },
                     success: function(data){
                         $('#result').html(data);
+                        $('#msg').html(`<div class="alert alert-warning alert-dismissible fade show" style="position: fixed;top: 30px;left: 45%;z-index:10;" role="alert">                                               
+                                                Refreshed
+                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>`);
                     }
-                    });
+                })
                 });
                 $("#add_comment").on("click",function(){
                     let bodyval = $('#comment_body').val();
@@ -95,6 +125,50 @@
                     });
                 });
             });
+
+            function vote(post_id,user_id,upordown){
+                $.ajax({
+                    type: "POST",
+                    url: "http://localhost/SAAR-Server/postvote.php",
+                    data: {
+                        'post_id': post_id,
+                        'user_id': user_id,
+                        'upordown': upordown,
+                        'what': "post"
+                    },
+                    success: function(data){
+                        data = JSON.parse(data);
+                            $('#msg').html(`<div class="alert alert-warning alert-dismissible fade show" style="position: fixed;top: 30px;left: 45%;z-index:10;" role="alert">
+                                ${data['messages'][0]}
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>`);
+                    }
+                    });
+            }
+
+            function vote_comment(comment_id,user_id,upordown){
+                $.ajax({
+                    type: "POST",
+                    url: "http://localhost/SAAR-Server/postvote.php",
+                    data: {
+                        'comment_id': comment_id,
+                        'user_id': user_id,
+                        'upordown': upordown,
+                        'what': "comment"
+                    },
+                    success: function(data){
+                        data = JSON.parse(data);
+                            $('#msg').html(`<div class="alert alert-warning alert-dismissible fade show" style="position: fixed;top: 30px;left: 45%;z-index:10;" role="alert">
+                                ${data['messages'][0]}
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>`);
+                    }
+                    });
+            }
         
             function autoRefresh_div()
             {
@@ -170,7 +244,7 @@
                     <input type="text" class="form-control mb-3" placeholder="Add a comment..." id="comment_body">
                     <input type="text" value="<?php echo $_SESSION['fname'].' '.$_SESSION['lname'];?>" id="user_name" hidden>
                     <input type="text" value="<?php echo $_SESSION['img_url'];?>" id="user_img" hidden>
-                    <input type="text" value="4" id="user_id" hidden>
+                    <input type="text" value="<?php echo $_SESSION['user_id'];?>" id="user_id" hidden>
                     <span class="input-group-btn">
                         <button class="btn btn-info " type="button" id="add_comment">POST</button>
                     </span>

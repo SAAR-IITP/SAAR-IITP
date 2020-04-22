@@ -145,15 +145,14 @@
                                 <!-- <label for="cat">Category ID</label> -->
                                 <input type="number" class="form-control" id="cat" name="cat_id" placeholder="Enter cat id" value="1" hidden required>
                             </div>
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                             <small>First Field is Compulsory. Only JPEG,PNG,JPG Type Image Uploaded. Image Size Should Be Less Than 1MB.</small>
                             <div id="filediv"><input name="file[]" class="form-control" type="file" id="file"/></div>
                             </div>
                             <div class="form-group">
                             <input type="button" id="add_more" class="btn btn-info btn-sm" value="Add More Files"/>
-                            <!-- <input type="submit" value="Upload File" name="submit" id="upload" class="btn btn-success"/> -->
-                            </div>
-                            <input type="number" value="<?php echo $_SESSION['user_id']; ?>" name="user_id" hidden>
+                            </div> -->
+                            <input type="number" id="user_id" value="<?php echo $_SESSION['user_id']; ?>" name="user_id" hidden>
                             <input type="text" id="user_name" name="user_name" value="<?php echo $_SESSION['fname'].' '.$_SESSION['lname']; ?>" hidden >
                             <input type="text" id="user_img" name="user_img" value="<?php echo $_SESSION['img_url']; ?>" hidden >
                         
