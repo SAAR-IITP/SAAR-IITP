@@ -32,6 +32,7 @@ session_start();
     <div class="toggles">
         <button id="toggle-1" class="btn btn-md btn-success">2020-2021</button>
         <button id="toggle-2" class="btn btn-md btn-default">2019-2020</button>
+        <button id="toggle-3" class="btn btn-md btn-default">2018-2019</button>
     </div>
     <section class="our-team-section">
 
@@ -328,7 +329,7 @@ session_start();
                 <div class="col-lg-3 col-md-4 col-sm-6">
                     <div class="our-team">
                         <div class="pic">
-                            <img src="img/yuvi.jpg">
+                            <img src="img/yuvid.jpg">
                         </div>
                         <div class="team-content">
                             <h3 class="title">Yuvi Dhelawat</h3>
@@ -815,6 +816,112 @@ session_start();
             </div>
         </div>
     </section>
+          <!--========================================2018-2019============================= -->
+
+        <div class="container hide" id="three">
+            <!-- <div class="row">
+                <div class="col-lg-8 col-md-8 col-sm-12"> -->
+            <!-- <br><br><br><br><br><br><br><br> -->
+            <!-- <div class="section-heading" style="text-align: center; margin-bottom: 10px;">
+                <h1 class="timeline-header"><span><em style="font-size: 1.2em;color: #000;">CORE Committee</em></span></h1>
+            </div> -->
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12" style="padding: 30px;">
+                    <!-- <div class="section-heading" style="text-align: center; margin: 20px;">
+                        <h1 class="timeline-header"><span><em style="font-size: 0.9em;color: #000; margin: 10px;">Events & Management</em></span></h1>
+                    </div> -->
+                    <div class="our-team">
+                        <div class="pic">
+                            <img src="img/abhi.jpg">
+                        </div>
+                        <div class="team-content">
+                            <h3 class="title">Abhinav Gyan</h3>
+                            <span>Events And Management</span>
+                        </div>
+                        <ul class="social">
+                            <li>
+                                <a href="https://www.facebook.com/theabhinavgyan" target="_blank" class="fa fa-facebook"></a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/theabhinavgyan" class="fa fa-github"></a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/in/theabhinavgyan/" class="fa fa-linkedin"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12" style="padding: 30px;">
+                    <!-- <div class="section-heading" style="text-align: center; margin: 20px;">
+                        <h1 class="timeline-header"><span><em style="font-size: 0.9em;color: #000; margin: 10px;">Public & Alumni Relations</em></span></h1>
+                    </div> -->
+                    <div class="our-team">
+                        <div class="pic">
+                            <img src="img/sampurn.jpg">
+                        </div>
+                        <div class="team-content">
+                            <h3 class="title">Sampurn Kashyap</h3>
+                            <span>Public And Alumni Relations</span>
+                        </div>
+                        <ul class="social">
+                            <li>
+                                <a href="https://www.facebook.com/sampurn.kashyap.3" class="fa fa-facebook"></a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/in/sampurn-kashyap-24b94614a/" class="fa fa-linkedin"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12" style="padding: 30px;">
+                    <!-- <div class="section-heading" style="text-align: center; margin: 20px;">
+                        <h1 class="timeline-header"><span><em style="font-size: 0.9em;color: #000; margin: 10px;">Finance & Spons</em></span></h1>
+                    </div> -->
+                    <div class="our-team">
+                        <div class="pic">
+                            <img src="img/jskrn.jpg">
+                        </div>
+                        <div class="team-content">
+                            <h3 class="title">Jaskaran Singh</h3>
+                            <span>Finance And Spons</span>
+                        </div>
+                        <ul class="social">
+                            <li>
+                                <a href="https://www.facebook.com/jaskaransingh.chhabra.54" class="fa fa-facebook"></a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/in/jaskaran-singh-chhabra-127981146/" class="fa fa-linkedin"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12" style="padding: 30px;">
+                    <!-- <div class="section-heading" style="text-align: center; margin: 20px;">
+                        <h1 class="timeline-header"><span><em style="font-size: 0.9em;color: #000; margin: 10px;">Design </em></span></h1>
+                    </div> -->
+                    <div class="our-team">
+                        <div class="pic">
+                            <img src="https://i.ibb.co/L8Pj1mg/o6EuTCT6.jpg">
+                        </div>
+                        <div class="team-content">
+                            <h3 class="title">Jan Jarla</h3>
+                            <span>Design</span>
+                        </div>
+                        <ul class="social">
+                            <li>
+                                <a href="https://www.facebook.com/sagar.janjarla" class="fa fa-facebook"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- </div>
+            </div> -->
+        </div>
+    </section>
 
     <section id="contact" class="content-section">
         <div id="con">
@@ -863,15 +970,27 @@ session_start();
         document.getElementById("toggle-1").onclick = function() {
             this.classList = "btn btn-md btn-success";
             document.getElementById("toggle-2").classList = "btn btn-md btn-default";
+            document.getElementById("toggle-3").classList = "btn btn-md btn-default";
             document.getElementById("one").classList.remove("hide");
             document.getElementById("two").classList.add("hide");
+             document.getElementById("three").classList.add("hide");
         }
 
         document.getElementById("toggle-2").onclick = function() {
             this.classList = "btn btn-md btn-success";
             document.getElementById("toggle-1").classList = "btn btn-md btn-default";
+            document.getElementById("toggle-3").classList = "btn btn-md btn-default";
+             document.getElementById("two").classList.remove("hide");
             document.getElementById("one").classList.add("hide");
-            document.getElementById("two").classList.remove("hide");
+            document.getElementById("three").classList.add("hide");
+        }
+           document.getElementById("toggle-3").onclick = function() {
+            this.classList = "btn btn-md btn-success";
+            document.getElementById("toggle-1").classList = "btn btn-md btn-default";
+            document.getElementById("toggle-2").classList = "btn btn-md btn-default";
+             document.getElementById("three").classList.remove("hide");
+            document.getElementById("one").classList.add("hide");
+            document.getElementById("two").classList.add("hide");
         }
     </script>
 </body>
