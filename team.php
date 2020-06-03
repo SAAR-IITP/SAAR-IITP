@@ -30,13 +30,390 @@ session_start();
         <div class="fa fa-home" style="font-size: 50px;"></div>
     </a>
     <div class="toggles">
-        <button id="toggle-1" class="btn btn-md btn-success">2019-2020</button>
-        <button id="toggle-2" class="btn btn-md btn-default">2018-2019</button>
+        <button id="toggle-1" class="btn btn-md btn-success">2020-2021</button>
+        <button id="toggle-2" class="btn btn-md btn-default">2019-2020</button>
+        <button id="toggle-3" class="btn btn-md btn-default">2018-2019</button>
     </div>
     <section class="our-team-section">
 
-        <!-- =============================================2019-2020=========================== -->
+        <!-- =============================================2020-2021=========================== -->
         <div class="container" id="one">
+            <div class="row">
+
+                <div class="col-lg-4 col-md-6 col-sm-6 mb-4">
+                    <!-- <div class="section-heading" style="text-align: center; margin-bottom: 10px;">
+                        <h1 class="timeline-header"><span><em style="font-size: 1.2em;color: #000;">Prof. in-charge</em></span></h1>
+                    </div>
+ -->
+                    <div class="our-team">
+
+                        <div class="pic">
+                            <img src="img/anirbn.jpg" style="height: 100%;">
+                        </div>
+                        <div class="team-content">
+                            <h3 class="title">Dr. Anirban Chowdhary</h3>
+                            <span class="post">Professor In-Charge</span>
+                        </div>
+                        <ul class="social">
+                            <li>
+                                <a href="mailto:pic_alumni@iitp.ac.in" class="fa fa-envelope"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 mb-4">
+                    <!-- <div class="section-heading" style="text-align: center; margin-bottom: 10px;"><br><br>
+                        <h1 class="timeline-header"><span><em style="font-size: 1.2em;color: #000;">General Secretary</em></span></h1>
+                    </div> -->
+                    <div class="our-team">
+                        <div class="pic">
+                            <img src="img/gaurav.jpeg">
+                        </div>
+                        <div class="team-content">
+                            <h3 class="title">Gaurav Pratap Singh</h3>
+                            <span class="post">General Secretary</span>
+                        </div>
+                        <ul class="social">
+                            <li>
+                                <a href="https://www.facebook.com/profile.php?id=100004723033463" class="fa fa-facebook"></a>
+                            </li>
+                            <li>
+                                <a href="https://in.linkedin.com/in/gaurav-singh-965579170" class="fa fa-linkedin"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 mb-4">
+                    <!-- <div class="section-heading" style="text-align: center; margin-bottom: 10px;"><br><br>
+                        <h1 class="timeline-header"><span><em style="font-size: 1.2em;color: #000;">Advisory</em></span></h1>
+                    </div> -->
+
+                    <div class="our-team">
+                        <div class="pic">
+                            <img src="img/vvek.jpg">
+                        </div>
+                        <div class="team-content">
+                            <h3 class="title">Vivek Garg</h3>
+                            <span class="post">Advisory</span>
+                        </div>
+                        <ul class="social">
+                            <li>
+                                <a href="https://www.facebook.com/vivek.garg.102977" class="fa fa-facebook"></a>
+                            </li>
+                           
+                            <li>
+                                <a href="https://www.linkedin.com/in/v-garg/" class="fa fa-linkedin"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+            <!-- <div class="row">
+        <div class="col-lg-8 col-md-8 col-sm-12">
+            <br><br><br><br><br><br><br><br>
+            <div class="section-heading" style="text-align: center; margin-bottom: 10px;">
+                <h1 class="timeline-header"><span><em style="font-size: 1.2em;color: #000;">CORE Committee</em></span></h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12" style="padding: 30px;">
+                    <div class="section-heading" style="text-align: center; margin: 20px;">
+                        <h1 class="timeline-header"><span><em style="font-size: 0.9em;color: #000; margin: 10px;">Events & Management</em></span></h1>
+                    </div>
+                    <div class="our-team">
+                        <div class="pic">
+                            <img src="img/abhi.jpg">
+                        </div>
+                        <div class="team-content">
+                            <h3 class="title">Abhinav Gyan</h3>
+                        </div>
+                        <ul class="social">
+                            <li>
+                                <a href="https://www.facebook.com/theabhinavgyan"  target="_blank"class="fa fa-facebook"></a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/theabhinavgyan" class="fa fa-github"></a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/in/theabhinavgyan/" class="fa fa-linkedin"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12" style="padding: 30px;">
+                    <div class="section-heading" style="text-align: center; margin: 20px;">
+                        <h1 class="timeline-header"><span><em style="font-size: 0.9em;color: #000; margin: 10px;">Public & Alumni Relations</em></span></h1>
+                    </div>
+                    <div class="our-team">
+                        <div class="pic">
+                            <img src="img/sampurn.jpg">
+                        </div>
+                        <div class="team-content">
+                            <h3 class="title">Sampurn Kashyap</h3>
+                        </div>
+                        <ul class="social">
+                            <li>
+                                <a href="https://www.facebook.com/sampurn.kashyap.3" class="fa fa-facebook"></a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/in/sampurn-kashyap-24b94614a/" class="fa fa-linkedin"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12" style="padding: 30px;">
+                    <div class="section-heading" style="text-align: center; margin: 20px;">
+                        <h1 class="timeline-header"><span><em style="font-size: 0.9em;color: #000; margin: 10px;">Finance & Spons</em></span></h1>
+                    </div>
+                    <div class="our-team">
+                        <div class="pic">
+                            <img src="img/jskrn.jpg">
+                        </div>
+                        <div class="team-content">
+                            <h3 class="title">Jaskaran Singh</h3>
+                        </div>
+                        <ul class="social">
+                            <li>
+                                <a href="https://www.facebook.com/jaskaransingh.chhabra.54" class="fa fa-facebook"></a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/in/jaskaran-singh-chhabra-127981146/" class="fa fa-linkedin"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12" style="padding: 30px;">
+                    <div class="section-heading" style="text-align: center; margin: 20px;">
+                        <h1 class="timeline-header"><span><em style="font-size: 0.9em;color: #000; margin: 10px;">Design </em></span></h1>
+                    </div>
+                    <div class="our-team">
+                        <div class="pic">
+                            <img src="https://i.ibb.co/L8Pj1mg/o6EuTCT6.jpg">
+                        </div>
+                        <div class="team-content">
+                            <h3 class="title">Jan Jarla</h3>
+                        </div>
+                        <ul class="social">
+                            <li>
+                                <a href="https://www.facebook.com/sagar.janjarla" class="fa fa-facebook"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+            <div class="row">
+                <div class="section-heading" style="text-align: center; margin: 20px;">
+                    <h1 class="timeline-header"><span><em style="font-size: 1em;color: #000; margin: 10px;">WEB & APP</em></span></h1>
+                </div>
+                <div class="col-lg-3 col-md-2"></div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="our-team">
+                        <div class="pic">
+                            <img src="img/pranay.jpg">
+                        </div>
+                        <div class="team-content">
+                            <h3 class="title">Pranay Gupta</h3>
+                        </div>
+                        <ul class="social">
+                            <li>
+                                <a href="https://www.facebook.com/pranay.gupta.7311" target="_blank" class="fa fa-facebook"></a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/pranaykgupta" class="fa fa-github"></a>
+                            </li>
+                            <li>
+                                <a href="https://in.linkedin.com/in/pranay-kumar-gupta-57b57116a" class="fa fa-linkedin"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="our-team">
+                        <div class="pic">
+                            <img src="img/somenath.jpg" style="height: 100%;">
+                        </div>
+                        <div class="team-content">
+                            <h3 class="title">Somenath Sarkar</h3>
+                        </div>
+                        <ul class="social">
+                            <li>
+                                <a href="https://www.facebook.com/somenath.sarkar.39" class="fa fa-facebook"></a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/somenath1435" class="fa fa-github"></a>
+                            </li>
+                            <li>
+                                <a href="https://in.linkedin.com/in/somenath-sarkar-b2741116a" class="fa fa-linkedin"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-2"></div>
+            </div>
+
+            <div class="row">
+                <div class="section-heading" style="text-align: center; margin: 20px;"><br><br>
+                    <h1 class="timeline-header"><span><em style="font-size: 1em;color: #000; margin: 10px;">Public & Alumni Relations</em></span></h1>
+                </div>
+                <div class="col-lg-3 col-md-2"></div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="our-team">
+                        <div class="pic">
+                            <img src="img/akash.jpg">
+                        </div>
+                        <div class="team-content">
+                            <h3 class="title">Akash Balaji</h3>
+                        </div>
+                        <ul class="social">
+                            <li>
+                                <a href="https://www.facebook.com/akash.balaji.900" target="_blank" class="fa fa-facebook"></a>
+                            </li>
+                            <li>
+                                <a href="https://in.linkedin.com/in/akash-balaji-539193179" class="fa fa-linkedin"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="our-team">
+                        <div class="pic">
+                            <img src="img/anuj.jpeg.jpeg">
+                        </div>
+                        <div class="team-content">
+                            <h3 class="title">Anuj Kumar Yadav</h3>
+                        </div>
+                        <ul class="social">
+                            <li>
+                                <a href="https://www.facebook.com/anujyadav07" class="fa fa-facebook"></a>
+                            </li>
+                            <li>
+                                <a href="#######" class="fa fa-linkedin"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-2"></div>
+            </div>
+
+            <div class="row">
+                <div class="section-heading" style="text-align: center; margin: 20px;"><br><br>
+                    <h1 class="timeline-header"><span><em style="font-size: 1em;color: #000; margin: 10px;">Content Writing & Management</em></span></h1>
+                </div>
+                <div class="col-lg-3 col-md-2"></div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="our-team">
+                        <div class="pic">
+                            <img src="img/mahathi.jpg">
+                        </div>
+                        <div class="team-content">
+                            <h3 class="title">M Mahathi</h3>
+                        </div>
+                        <ul class="social">
+                            <li>
+                                <a href="https://www.facebook.com/m.mahathi.79" target="_blank" class="fa fa-facebook"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="our-team">
+                        <div class="pic">
+                            <img src="img/yuvid.jpg">
+                        </div>
+                        <div class="team-content">
+                            <h3 class="title">Yuvi Dhelawat</h3>
+                        </div>
+                        <ul class="social">
+                            <li>
+                                <a href="https://www.facebook.com/yuvi.dhelawat" class="fa fa-facebook"></a>
+                            </li>
+                            <li>
+                                <a href="#" class="fa fa-linkedin"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-2"></div>
+            </div>
+
+            <div class="row">
+                <div class="section-heading" style="text-align: center; margin: 20px;"><br><br>
+                    <h1 class="timeline-header"><span><em style="font-size: 1em;color: #000; margin: 10px;">Finance & Sponsorship</em></span></h1>
+                </div>
+                <div class="col-lg-3 col-md-2"></div>
+                <div class="col-lg-2 col-md-3 col-sm-6">
+                    
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="our-team">
+                        <div class="pic">
+                            <img src="img/lavanya.jpeg">
+                        </div>
+                        <div class="team-content">
+                            <h3 class="title">Lavanya Naresh</h3>
+                        </div>
+                        <ul class="social">
+                            <li>
+                                <a href="https://www.facebook.com/LakshLavanya112" target="_blank" class="fa fa-facebook"></a>
+                            </li>
+                            <li>
+                                <a href="####" class="fa fa-linkedin"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                
+                <div class="col-lg-3 col-md-2"></div>
+            </div>
+
+            <div class="row">
+                <div class="section-heading" style="text-align: center; margin: 20px;"><br><br>
+                    <h1 class="timeline-header"><span><em style="font-size: 1em;color: #000; margin: 10px;">Creatives and Design</em></span></h1>
+                </div>
+                <div class="col-lg-3 col-md-2"></div>
+                 <div class="col-lg-2 col-md-3 col-sm-6">
+              
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="our-team">
+                        <div class="pic">
+                            <img src="img/amank.jpeg">
+                        </div>
+                        <div class="team-content">
+                            <h3 class="title">Aman Kumar</h3>
+                        </div>
+                        <ul class="social">
+                            <li>
+                                <a href="https://www.facebook.com/aman.kumar.thakur.1124" target="_blank" class="fa fa-facebook"></a>
+                            </li>
+                            <li>
+                                <a href="#" class="fa fa-linkedin"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+              
+                </div>
+                <div class="col-lg-3 col-md-2"></div>
+            </div>
+        </div>
+     
+       <!-- =============================================2019-2020=========================== -->
+        <div class="container hide" id="two">
             <div class="row">
 
                 <div class="col-lg-4 col-md-6 col-sm-6 mb-4">
@@ -438,9 +815,10 @@ session_start();
                 <div class="col-lg-3 col-md-2"></div>
             </div>
         </div>
-        <!--========================================2018-2019============================= -->
+    </section>
+          <!--========================================2018-2019============================= -->
 
-        <div class="container hide" id="two">
+        <div class="container hide" id="three">
             <!-- <div class="row">
                 <div class="col-lg-8 col-md-8 col-sm-12"> -->
             <!-- <br><br><br><br><br><br><br><br> -->
@@ -592,15 +970,27 @@ session_start();
         document.getElementById("toggle-1").onclick = function() {
             this.classList = "btn btn-md btn-success";
             document.getElementById("toggle-2").classList = "btn btn-md btn-default";
+            document.getElementById("toggle-3").classList = "btn btn-md btn-default";
             document.getElementById("one").classList.remove("hide");
             document.getElementById("two").classList.add("hide");
+             document.getElementById("three").classList.add("hide");
         }
 
         document.getElementById("toggle-2").onclick = function() {
             this.classList = "btn btn-md btn-success";
             document.getElementById("toggle-1").classList = "btn btn-md btn-default";
+            document.getElementById("toggle-3").classList = "btn btn-md btn-default";
+             document.getElementById("two").classList.remove("hide");
             document.getElementById("one").classList.add("hide");
-            document.getElementById("two").classList.remove("hide");
+            document.getElementById("three").classList.add("hide");
+        }
+           document.getElementById("toggle-3").onclick = function() {
+            this.classList = "btn btn-md btn-success";
+            document.getElementById("toggle-1").classList = "btn btn-md btn-default";
+            document.getElementById("toggle-2").classList = "btn btn-md btn-default";
+             document.getElementById("three").classList.remove("hide");
+            document.getElementById("one").classList.add("hide");
+            document.getElementById("two").classList.add("hide");
         }
     </script>
 </body>
