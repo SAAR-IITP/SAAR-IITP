@@ -35,7 +35,7 @@
         }else{
         // making api call
         $images = serialize($photo);
-        $url = 'http://localhost/SAAR-Server/createPost.php';
+        $url = 'http://api.saar.iitp.ac.in/createPost.php';
         $ch = curl_init($url);
         $data = array(
             'user_id' => $_POST['user_id'],
