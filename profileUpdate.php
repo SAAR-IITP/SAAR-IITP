@@ -15,7 +15,7 @@ session_start();
     'state' => $_POST["state"],
     'city' => $_POST["city"],
     'rollno' => $_SESSION["cid"],
-    'achievements' => $_POST["achievements"],
+    'about' => $_POST["about"],
     'access_token' => $_SESSION['access_token'],
     'about' => $_POST['about']
    );

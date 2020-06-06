@@ -3,7 +3,7 @@
     if(isset($_GET['offset']) && isset($_GET['limit'])){
         $offset = $_GET['offset'];
         $lim = $_GET['limit'];
-        $url = 'http://localhost/SAAR-Server/getPosts.php?offset='.$offset.'&limit='.$lim;
+        $url = 'http://api.saar.iitp.ac.in/getPosts.php?offset='.$offset.'&limit='.$lim;
         $response = file_get_contents($url);
         // echo $response;
         $response = json_decode($response,true);

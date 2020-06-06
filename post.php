@@ -52,7 +52,7 @@
                         'post_id': $_GET['q']
                     },
                     success: function(data){
-                        $('#result').append(data);
+                        $('#result').html(data);
                     }
                 });
                 $(document).on('click','#upvote_post',function(e) {
@@ -105,7 +105,8 @@
                     $('#comment_body').val('');
                     $.ajax({
                         type: "POST",
-                        url: "http://localhost/SAAR-Server/createReply.php",
+                        // url: "http://localhost/SAAR-Server/createReply.php",
+                        url: "./api/createReply.php",
                         data: {
                             "user_id": user_id,
                             "user_name": user_name,
@@ -129,7 +130,8 @@
             function vote(post_id,user_id,upordown){
                 $.ajax({
                     type: "POST",
-                    url: "http://localhost/SAAR-Server/postvote.php",
+                    // url: "http://localhost/SAAR-Server/postvote.php",
+                    url: "./api/postvote.php",
                     data: {
                         'post_id': post_id,
                         'user_id': user_id,
@@ -151,7 +153,8 @@
             function vote_comment(comment_id,user_id,upordown){
                 $.ajax({
                     type: "POST",
-                    url: "http://localhost/SAAR-Server/postvote.php",
+                    // url: "http://localhost/SAAR-Server/postvote.php",
+                    url: "./api/postvote.php",
                     data: {
                         'comment_id': comment_id,
                         'user_id': user_id,
@@ -226,11 +229,7 @@
         <div id="msg">
         </div>
             <div id="result" style="padding-top:15px;">
-            <?php
-            //     $post_id = $_GET['q'];
-            //     $url = './postdata.php?post_id='.$post_id;
-            //    include($url);
-            ?>
+                <div style="padding: 20px; width:100%;" class="text-center">Loading..</div>
             </div>
             
             <div class="jumbotron">

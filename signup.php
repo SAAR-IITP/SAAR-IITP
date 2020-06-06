@@ -108,7 +108,7 @@
                     <div class="label_style">About</div>
                     <textarea type="text" name="about"></textarea>
                     <div class="label_style">Facebook profile link</div>
-                    <input class="text" type="text" name="fbId" placeholder="Optional">
+                    <input class="text" type="text" name="facebook" placeholder="Optional">
                     <div class="label_style">linkedin profile link</div>
                     <input class="text" type="text" name="linkden" placeholder="Optional">
                     <div class="label_style">password *</div>
