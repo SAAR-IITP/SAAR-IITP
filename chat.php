@@ -38,7 +38,7 @@
                     'limit': 6
                 },
                 success: function(data){
-                    $('#result').append(data);
+                    $('#result').html(data);
                     flag+= 6;
                 }
             });
@@ -166,7 +166,7 @@
                 </div>
             </div>
             <div id="result" style="padding-top:15px;">
-
+                <div style="padding: 20px; width:100%;" class="text-center">Loading..</div>
             </div>
             <button id="load_more" class="btn btn-lg btn-primary">Load More</button>
         </div>
