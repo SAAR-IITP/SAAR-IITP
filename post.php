@@ -67,6 +67,30 @@
                     vote(post_id,user_id,-1);
                 });
 
+            
+
+                $(document).on('click','#delete_post',function(e){
+                      let user_id = $('#user_id').val();
+                      let post_id = $_GET['q'];
+                      $.ajax({
+                        type: "POST",
+                        url: "http://localhost/SAAR-Server/deletepost.php",
+                         data: {
+                            'post_id': $_GET['q']
+                        },
+                   success: function(data){
+                        data = JSON.parse(data);
+                            $('#msg').html(`<div class="alert alert-warning alert-dismissible fade show" style="position: fixed;top: 30px;left: 45%;z-index:10;" role="alert">
+                                                  ${data['messages'][0]}
+                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                 </button>
+                                            </div>`);
+                        }
+
+                     });
+                });
+
                 $(document).on('click','#upvote_comment',function(){
                     let comment_id = this.dataset.id;
                     let user_id = $('#user_id').val();
@@ -95,7 +119,7 @@
                                                 </button>
                                             </div>`);
                     }
-                })
+                });
                 });
                 $("#add_comment").on("click",function(){
                     let bodyval = $('#comment_body').val();
