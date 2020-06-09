@@ -37,6 +37,29 @@
                                     <a target="_blank" href="http://localhost/SAAR-IITP/uploads/'.$image.'" ><img class="pp_img" src="http://localhost/SAAR-IITP/uploads/'.$image.'" alt="Image" ></a>
                                 </div>';
                     }
+
+                   
+                    if($response['data']['user_id']==$_SESSION['user_id']){
+                        echo '</div>
+                    <hr style="margin-top:10px">
+                    <div class="up" id="upvote_post" style="display: inline-block; cursor: pointer;">
+                        <i class="fa fa-thumbs-up"></i> '.$data['upvotes'].' 
+                    </div>
+                    <div class="down" id="downvote_post" style="display: inline-block; cursor: pointer;">
+                        <i class="fa fa-thumbs-down"></i> '.$data['downvotes'].'
+                    </div>
+                    <div class="down" id="delete_post" style="display: inline-block; cursor: pointer;">
+                        <button class="btn btn-primary">delete</button>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-sm-2">
+                    <div class="post_comment"> '.$data['no_of_comment'].' Comments</div>
+                    <div class="post_time" style=""><i class="fa fa-clock-o"></i> Posted on: '.$data['post_time'][0].' at '.$data['post_time'][1].'</div>
+                </div>
+            </div>';
+
+                    }
+                    else{
                     echo '</div>
                     <hr style="margin-top:10px">
                     <div class="up" id="upvote_post" style="display: inline-block; cursor: pointer;">
@@ -51,6 +74,7 @@
                     <div class="post_time" style=""><i class="fa fa-clock-o"></i> Posted on: '.$data['post_time'][0].' at '.$data['post_time'][1].'</div>
                 </div>
             </div>';
+        }
 
             echo '</div>
             ';
