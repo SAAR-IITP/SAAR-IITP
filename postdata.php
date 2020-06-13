@@ -2,7 +2,7 @@
     session_start();
     if(isset($_GET['post_id'])){
         $post_id = $_GET['post_id'];
-        $url = 'http://localhost/SAAR-Server/getPostInfo.php?post_id='.$post_id;
+        $url = 'http://localhost:8080/SAAR-Server/getPostInfo.php?post_id='.$post_id;
         $response = file_get_contents($url);
         // echo $response;
         $response = json_decode($response,true);
@@ -80,7 +80,36 @@
             ';
             $replies = $response['replies'];
             foreach($replies as $reply){
+
+                if($reply['user_id']==$_SESSION['user_id'])
+                {
                 echo '
+                    <div class="jumbotron">
+                        <div class="row">
+                            <div class="col-lg-1 col-sm-2 res"> 
+                                <img src="'.$reply['user_img'].'" class="profile_image" ></img>
+                                <div class="username"><strong>'.$reply['user_name'].'</strong></div>
+                            </div>
+                            <div class="col-lg-11 col-sm-10">
+                                <p class="post_body">'.$reply['body'].'</p>
+                                <hr style="margin-top:10px">
+                                <div class="up" id="upvote_comment" data-id="'.$reply['comment_id'].'" style="display: inline-block; cursor: pointer;">
+                                    <i class="fa fa-thumbs-up"></i> '.$reply['upvotes'].' 
+                                </div>
+                                <div class="down" id="downvote_comment" data-id="'.$reply['comment_id'].'" style="display: inline-block; cursor: pointer;">
+                                    <i class="fa fa-thumbs-down"></i> '.$reply['downvotes'].'
+                                </div>
+                                <div id="delete_comment" data-id="'.$reply['comment_id'].'" style="display: inline-block; cursor: pointer;">
+                                    <button class="btn btn-primary">delete</button>
+                                </div>
+                                <span><i class="fa fa-clock-o"></i> Commented on: '.$reply['time'][0].' at '.$reply['time'][1].'</span>
+                            </div>
+                        </div>
+                    </div>
+                ';
+               }else{
+
+                      echo '
                     <div class="jumbotron">
                         <div class="row">
                             <div class="col-lg-1 col-sm-2 res"> 
@@ -101,9 +130,12 @@
                         </div>
                     </div>
                 ';
+
+               }
             }
         }
     }else{
         echo "Post not found";
     }
+
 ?>
