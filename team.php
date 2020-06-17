@@ -577,8 +577,8 @@ session_start();
                         Dr. Anirban Chowdhary<br>
                         Email - pic_alumni@iitp.ac.in<br><br>
                         General Secretary:<br>
-                        <a href="https://theabhinavgyan.github.io/" style="color: #fff">Abhinav Gyan</a><br>
-                        Email - agyan.ce16@iitp.ac.in</p>
+                        Gaurav Pratap Singh<br>
+                        Email - 1801ee63@iitp.ac.in</p>
                 </div>
             </div>
         </div>
