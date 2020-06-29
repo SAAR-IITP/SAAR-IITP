@@ -76,7 +76,8 @@
                         type: "POST",
                         url: "http://localhost/SAAR-Server/deletepost.php",
                          data: {
-                            'post_id': $_GET['q']
+                            'post_id': $_GET['q'],
+                            'user_id': user_id
                         },
                    success: function(data){
                         data = JSON.parse(data);
