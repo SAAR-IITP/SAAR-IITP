@@ -141,6 +141,11 @@
                     <option value="Mechanical Engineering">Mechanical Engineering</option>
                     <option value="Civil Engineering">Civil Engineering</option>
                     <option value="Chemical and Biochemical Engineering">Chemical and Biochemical Engineering</option>
+                    <option value="Physics">Physics</option>
+                    <option value="Mathematics">Mathematics</option>
+                    <option value="Chemistry">Chemistry</option>
+                    <option value="Humanities and Social Sciences">Humanities and Social Sciences</option>
+
                     <option value="other">Other</option>
                     </select>
                     
