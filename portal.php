@@ -330,7 +330,9 @@
                 </div>
             </div>
             <div class="col-md-4 col-sm-12">
-                <div class="card-content" onclick="window.open('https://drive.google.com/file/d/1zdGXm6zXB0dBWXP-Og2alxEtnF_Ubczn/view?fbclid=IwAR0RbYPn9XH0HXcfH_EkXe4WQl_abJRQsAKYS2F_E0w4lIo2ez7I3WtXdw8', '_blank');" style="background:#0ad80f;">
+
+                <div class="card-content" onclick="window.open('https://saar.iitp.ac.in/anusmriti/vol3/issue1.pdf', '_blank');" style="background:#0ad80f;">
+
                     <div class="card-img" align="center">
                         <i class="fas fa-book-reader" style="font-size:50px; padding: 20px; color:#fff;"></i></div>
                     <div class="card-desc" align="center">
