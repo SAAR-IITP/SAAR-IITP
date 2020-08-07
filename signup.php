@@ -170,15 +170,7 @@
     
                     <input type="text" placeholder="*City" name="city" required="">
     
-                    
-                    
-                    <div class="wthree-text">
-						<label class="anim" style="display: inline-flex;">
-							<input type="checkbox" class="checkbox" required="" style="margin-right: 5px;">
-							<span style="margin-top: 4px;">I Agree To The Terms & Conditions</span>
-						</label>
-						<div class="clear"> </div>
-					</div>
+
 					<input type="submit" value="SIGNUP">
 				</form>
 				<p>Already have an Account? <a href="signin.php"> Login Now!</a></p>
@@ -217,8 +209,8 @@
                             Dr. Anirban Chowdhary<br>
                             Email - pic_alumni@iitp.ac.in<br><br>
                             General Secretary:<br>
-                            <a href="#" style="color: #fff">Vivek Garg</a><br>
-                            Email - vivek.ch17@iitp.ac.in</p>            
+                            <a href="#" style="color: #fff">Gaurav Pratap Singh</a><br>
+                            Email - 1801ee63@iitp.ac.in</p>            
                         </div>
                     </div>
                 </div>
