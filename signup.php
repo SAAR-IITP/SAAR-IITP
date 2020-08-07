@@ -149,6 +149,11 @@
                     <option value="Mechanical Engineering">Mechanical Engineering</option>
                     <option value="Civil Engineering">Civil Engineering</option>
                     <option value="Chemical and Biochemical Engineering">Chemical and Biochemical Engineering</option>
+                    <option value="Physics">Physics</option>
+                    <option value="Mathematics">Mathematics</option>
+                    <option value="Chemistry">Chemistry</option>
+                    <option value="Humanities and Social Sciences">Humanities and Social Sciences</option>
+
                     <option value="other">Other</option>
                     </select>
                     <div class="label_style">Employment Type</div>
@@ -173,15 +178,7 @@
                     <div class="label_style">City *</div>
                     <input type="text" name="city" required="">
     
-                    
-                    
-                    <div class="wthree-text">
-						<label class="anim" style="display: inline-flex;">
-							<input type="checkbox" class="checkbox" required="" style="margin-right: 5px;">
-							<span style="margin-top: 4px;">I Agree To The Terms & Conditions</span>
-						</label>
-						<div class="clear"> </div>
-					</div>
+
 					<input type="submit" value="SIGNUP">
 				</form>
 				<p>Already have an Account? <a href="signin.php"> Login Now!</a></p>
@@ -220,8 +217,8 @@
                             Dr. Anirban Chowdhary<br>
                             Email - pic_alumni@iitp.ac.in<br><br>
                             General Secretary:<br>
-                            <a href="#" style="color: #fff">Vivek Garg</a><br>
-                            Email - vivek.ch17@iitp.ac.in</p>            
+                            <a href="#" style="color: #fff">Gaurav Pratap Singh</a><br>
+                            Email - 1801ee63@iitp.ac.in</p>            
                         </div>
                     </div>
                 </div>

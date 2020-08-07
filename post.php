@@ -67,6 +67,61 @@
                     vote(post_id,user_id,-1);
                 });
 
+            
+
+                $(document).on('click','#delete_post',function(e){
+                      let user_id = $('#user_id').val();
+                      let post_id = $_GET['q'];
+                      $.ajax({
+                        type: "POST",
+                        url: "http://localhost/SAAR-Server/deletepost.php",
+                         data: {
+                            'post_id': $_GET['q'],
+                            'user_id': user_id
+                        },
+                   success: function(data){
+                        data = JSON.parse(data);
+                            $('#msg').html(`<div class="alert alert-warning alert-dismissible fade show" style="position: fixed;top: 30px;left: 45%;z-index:10;" role="alert">
+                                                  ${data['messages'][0]}
+                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                 </button>
+                                            </div>`);
+                        }
+
+                     });
+                });
+
+                  $(document).on('click','#delete_comment',function(e){
+                      let user_id = $('#user_id').val();
+                      let post_id = $_GET['q'];
+                      let comment_id = this.dataset.id;
+                      $.ajax({
+                        type: "POST",
+                        url: "http://localhost/SAAR-Server/deletereply.php",
+                         data: {
+                            'post_id': $_GET['q'],
+                            'comment_id': comment_id
+                        },
+                   success: function(data){
+                        data = JSON.parse(data);
+                            $('#msg').html(`<div class="alert alert-warning alert-dismissible fade show" style="position: fixed;top: 30px;left: 45%;z-index:10;" role="alert">
+                                                  ${data['messages'][0]}
+                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                 </button>
+                                            </div>`);
+                        }
+
+                     });
+                });
+
+                
+
+                  $(document).on('click','#delete_comment',function(){
+                        $('#delete_com_confirm').dialog('open');
+                  });
+
                 $(document).on('click','#upvote_comment',function(){
                     let comment_id = this.dataset.id;
                     let user_id = $('#user_id').val();
@@ -95,7 +150,7 @@
                                                 </button>
                                             </div>`);
                     }
-                })
+                });
                 });
                 $("#add_comment").on("click",function(){
                     let bodyval = $('#comment_body').val();
@@ -259,5 +314,7 @@
         </div>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="jquery.min.js"></script>  
+		<script src="jquery-ui.js"></script>
     </body>
 </html>
