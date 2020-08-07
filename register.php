@@ -8,7 +8,7 @@
       'first_name'=> $_POST['fname'],
       'last_name'=> $_POST['lname'],
       'phone'=> $_POST['contact'],
-      'fb_link'=> $_POST['fbId'],
+      'fb_link'=> $_POST['facebook'],
       'linkedin_link'=>$_POST['linkden'],
        'email' => $_POST["email"],
        'password' => $_POST["password"],
@@ -24,8 +24,7 @@
        'country'=>$_POST['country'],
        'state'=> $_POST['state'],
        'city'=>$_POST['city'],
-       'achievements' => $_POST['achievements'],
-       'access_token' => $_SESSION['access_token']
+       'about' => $_POST['about']
       );
       $payload = http_build_query($data);
 

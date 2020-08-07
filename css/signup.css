@@ -199,9 +199,6 @@ textarea[type="text"]{
   font-family: 'Roboto', sans-serif;
 }
         
-input.email, input.tel, input.text.w3lpass {
-  margin: 2em 0;
-}
 
 .text:focus, .text:required:valid {
   box-shadow: none;
