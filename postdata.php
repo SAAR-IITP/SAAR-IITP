@@ -2,7 +2,9 @@
     session_start();
     if(isset($_GET['post_id'])){
         $post_id = $_GET['post_id'];
-        $url = 'http://localhost:8080/SAAR-Server/getPostInfo.php?post_id='.$post_id;
+
+        $url = 'http://api.saar.iitp.ac.in/getPostInfo.php?post_id='.$post_id;
+
         $response = file_get_contents($url);
         // echo $response;
         $response = json_decode($response,true);
