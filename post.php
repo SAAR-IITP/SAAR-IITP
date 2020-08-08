@@ -71,18 +71,20 @@
 
                 $(document).on('click','#delete_post',function(e){
                       let user_id = $('#user_id').val();
+                      let access_token = $('#access_token').val();
                       let post_id = $_GET['q'];
                       $.ajax({
                         type: "POST",
-                        url: "http://localhost/SAAR-Server/deletepost.php",
+                        url: "./api/deletepost.php",
                          data: {
                             'post_id': $_GET['q'],
-                            'user_id': user_id
+                            'user_id': user_id,
+                            'access_token': access_token
                         },
                    success: function(data){
                         data = JSON.parse(data);
                             $('#msg').html(`<div class="alert alert-warning alert-dismissible fade show" style="position: fixed;top: 30px;left: 45%;z-index:10;" role="alert">
-                                                  ${data['messages'][0]}
+                                                ${data['messages'][0]}
                                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                  </button>
@@ -96,12 +98,16 @@
                       let user_id = $('#user_id').val();
                       let post_id = $_GET['q'];
                       let comment_id = this.dataset.id;
+                      let access_token = $('#access_token').val();
+
                       $.ajax({
                         type: "POST",
-                        url: "http://localhost/SAAR-Server/deletereply.php",
+                        url: "./api/deletereply.php",
                          data: {
                             'post_id': $_GET['q'],
-                            'comment_id': comment_id
+                            'comment_id': comment_id,
+                            'user_id': user_id,
+                            'access_token':access_token
                         },
                    success: function(data){
                         data = JSON.parse(data);
@@ -118,10 +124,7 @@
 
                 
 
-                  $(document).on('click','#delete_comment',function(){
-                        $('#delete_com_confirm').dialog('open');
-                  });
-
+             
                 $(document).on('click','#upvote_comment',function(){
                     let comment_id = this.dataset.id;
                     let user_id = $('#user_id').val();
@@ -160,7 +163,8 @@
                     $('#comment_body').val('');
                     $.ajax({
                         type: "POST",
-                        // url: "http://localhost/SAAR-Server/createReply.php",
+            // url: "http://localhost/SAAR-Server/createReply.php",
+
                         url: "./api/createReply.php",
                         data: {
                             "user_id": user_id,
@@ -185,7 +189,9 @@
             function vote(post_id,user_id,upordown){
                 $.ajax({
                     type: "POST",
+
                     // url: "http://localhost/SAAR-Server/postvote.php",
+
                     url: "./api/postvote.php",
                     data: {
                         'post_id': post_id,
@@ -208,7 +214,9 @@
             function vote_comment(comment_id,user_id,upordown){
                 $.ajax({
                     type: "POST",
+
                     // url: "http://localhost/SAAR-Server/postvote.php",
+
                     url: "./api/postvote.php",
                     data: {
                         'comment_id': comment_id,
@@ -299,6 +307,7 @@
                     <input type="text" value="<?php echo $_SESSION['fname'].' '.$_SESSION['lname'];?>" id="user_name" hidden>
                     <input type="text" value="<?php echo $_SESSION['img_url'];?>" id="user_img" hidden>
                     <input type="text" value="<?php echo $_SESSION['user_id'];?>" id="user_id" hidden>
+                    <input type="text" value="<?php echo $_SESSION['access_token'];?>" id="access_token" hidden>
                     <span class="input-group-btn">
                         <button class="btn btn-info " type="button" id="add_comment">POST</button>
                     </span>
@@ -315,6 +324,6 @@
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="jquery.min.js"></script>  
-		<script src="jquery-ui.js"></script>
+        <script src="jquery-ui.js"></script>
     </body>
 </html>
