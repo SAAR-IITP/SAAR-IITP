@@ -1,9 +1,13 @@
 <?php
-	session_start();
+    session_start();
     if(isset($_GET['offset']) && isset($_GET['limit'])){
         $offset = $_GET['offset'];
         $lim = $_GET['limit'];
-        $url = 'http://localhost:8080/SAAR-Server/getPosts.php?offset='.$offset.'&limit='.$lim;
+
+        // $url = 'http://localhost:8080/SAAR-Server/getPosts.php?offset='.$offset.'&limit='.$lim;
+
+        $url = 'http://api.saar.iitp.ac.in/getPosts.php?offset='.$offset.'&limit='.$lim;
+
         $response = file_get_contents($url);
         // echo $response;
         $response = json_decode($response,true);
@@ -13,9 +17,7 @@
                 $data['body'] .= '....';
             }
         echo '
-
        
-
         <div class="jumbotron">
    <div class="media">
    <div class="col-lg-1 col-sm-2">
@@ -50,7 +52,7 @@
         ';
         }
     }
-	
+    
 
 // old Interface
      // <div class="jumbotron">

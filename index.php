@@ -413,8 +413,8 @@
                             Dr. Anirban Chowdhary<br>
                             Email - pic_alumni@iitp.ac.in<br><br>
                             General Secretary:<br>
-                        	<a href="#" style="color: #fff">Vivek Garg</a><br>
-                        	Email - vivek.ch17@iitp.ac.in</p>            
+                        	<a href="#" style="color: #fff">Gaurav Pratap Singh</a><br>
+                        	Email - 1801ee63@iitp.ac.in</p>            
                         </div>
                     </div>
                 </div>
