@@ -99,20 +99,59 @@
                 <div class="container" id="one">
                     <div class="masonry">
                         <div class="row">
-                            <?php
-                                $str = file_get_contents('http://saar-server.000webhostapp.com/assets/gallery_sample.json');
-                                $json = json_decode($str, true);
-                                foreach ($json as $key) {
-                                    if($key["status"] == "active")
-                            ?>
+
                             <div class="item">
                                 <div class="col-md-4">
-                                    <a href='<?php echo $key["image_url"]; ?>' data-lightbox="image"><img src='<?php echo $key["image_url"]; ?>' alt="image " ></a>
+                                    <a href='img/shikhar.jpg' data-lightbox="image"><img src='img/shikhar.jpg' alt="image " ></a>
                                 </div>
                             </div>
-                            <?php
-                                }
-                            ?>
+                            <div class="item">
+                                <div class="col-md-4">
+                                    <a href='img/coursera.jpg' data-lightbox="image"><img src='img/coursera.jpg' alt="image " ></a>
+                                </div>
+                            </div>
+                          
+                            <div class="item">
+                                <div class="col-md-4">
+                                    <a href='img/abhijeet.jpg' data-lightbox="image"><img src='img/abhijeet.jpg' alt="image " ></a>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="col-md-4">
+                                    <a href='img/FB_IMG_1547760148443.jpg' data-lightbox="image"><img src='img/FB_IMG_1547760148443.jpg' alt="image " ></a>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="col-md-4">
+                                    <a href='img/cs.jpg' data-lightbox="image"><img src='img/cs.jpg' alt="image " ></a>
+                                </div>
+                            </div>
+
+                             <div class="item">
+                                <div class="col-md-4">
+                                    <a href="img/ee.jpg" data-lightbox="image"><img src="img/ee.jpg" alt="image 3"></a>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="col-md-4">
+                                    <a href="img/mech.jpg" data-lightbox="image"><img src="img/mech.jpg" alt="image 4"></a>
+                                </div>
+                            </div>
+                             <div class="item">
+                                <div class="col-md-4">
+                                    <a href="img/chem.jpg" data-lightbox="image"><img src="img/chem.jpg" alt="image 5"></a>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="col-md-4">
+                                    <a href="img/civ.jpg" data-lightbox="image"><img src="img/civ.jpg" alt="image 6"></a>
+                                </div>
+                            </div>
+
+
+
+
+
                            <!--  <div class="item">
                                 <div class="col-md-4">
                                     <a href="img/pus.jpg" data-lightbox="image"><img src="img/pus.jpg" alt="image 1"></a>
