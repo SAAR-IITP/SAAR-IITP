@@ -132,6 +132,9 @@
                     <option value="2018">2018</option>
                     <option value="2019">2019</option>
                     <option value="2020">2020</option>
+                    <option value="2018">2021</option>
+                    <option value="2019">2022</option>
+                    <option value="2020">2023</option>
                     </select>
                     <div class="label_style">Degree *</div>
                     <select type="text" id="degree" name="degree" required class="ui search selection  dropdown">
