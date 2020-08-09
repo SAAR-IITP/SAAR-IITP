@@ -343,19 +343,59 @@
                 <br>
                 <div class="scrollable">
                 <ol>
-                    <?php 
-                        $str = file_get_contents('http://saar-server.000webhostapp.com/assets/timeline_sample.json');
-                        $json = json_decode($str, true);
-                        for ($key = count($json) - 1;$key >= 0 ; $key--) {
-                    ?> 
+
                         <li>
                             <div >
-                                <time><?php echo $json[$key]["title"] ?></time>
-                                <p><?php echo $json[$key]["date"] ?>   <?php echo $json[$key]["time"] ?></p>
-                                <?php echo $json[$key]["Description"]?>
+                                <time>Shikhar Choudhary secured AIR-97 in UPSC</time>
+                                <p>7th august 2020   3:06</p>
+                                Our alumni are reaching greater heights with each passing year. Their resilience and determination have proven that no obstacle is insurmountable , and no dream is too big. 
                             </div>
                         </li>
-                    <?php  } ?>
+
+                        <li>
+                            <div >
+                                <time>Inter IIT Music Theme Competition</time>
+                                <p>14 june 2020 </p>
+                                We're are extremely happy and honored to congratulate Dr. Sujoy Kumar Samanta ( Assistant Professor, CBE) and his team for winning the Inter IIT Theme Music Video competition under the faculty category, which was conducted by the IIT Alumni Council. 
+                            </div>
+                        </li>
+
+                          <li>
+                            <div >
+                                <time>Free Coursera courses for students</time>
+                                <p>25 may 2020 </p>
+                                SAAR feels elated to inform you that Students' Gymkhana, on behalf of the institute, has partnered with Coursera where the students as well as Alumni are getting benefits to avail free certified Coursera courses from top-ranked institutions across the globe as a part of its COVID initiative. 
+                            </div>
+                        </li>
+
+                          <li>
+                            <div >
+                                <time>FIGHT against Covid-19</time>
+                                <p>2 april 2020 </p>
+                                An attempt by IIT Patna student community to try and help our heroes who are putting their life at risks to help people is been made. Bitthal Saraf(BT/ME/13), our alumnus has taken up the initiative to provide protective visors, free of cost to doctors and the nursing staff who are continuously exposed to COVID19 live cases. 
+                            </div>
+                        </li>
+                            <li>
+                            <div >
+                                <time>4 years of quarentine</time>
+                                <p>24 march 2020 </p>
+
+                                This was an online event where our alumni uploaded there first 
+                                and last year photographs. This helped us all to refresh our 
+                                pleasent memories inside the campus.
+                                 
+                            </div>
+                        </li>
+                           </li>
+                            <li>
+                            <div >
+                                <time> Abhijeet Agnihotri interacted with IIT Patna Family</time>
+                                <p>5 Nov 2019 </p>
+                                Watching our alumni conquer the world as they continue to strive to move forward with the skills and personalities they’ve honed at IIT Patna fills us with pride and fuels us with aspiration! We would like to express our humble gratitude to Abhijeet Agnihotri for allowing us to felicitate him and also for interacting with the student junta of IITP. 
+
+                                 
+                            </div>
+                        </li>
                 </ol>
                 </div>
             </section>
