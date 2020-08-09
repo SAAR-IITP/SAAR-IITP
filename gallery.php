@@ -102,32 +102,41 @@
 
                             <div class="item">
                                 <div class="col-md-4">
-                                    <a href='img/shikhar.jpg' data-lightbox="image"><img src='img/shikhar.jpg' alt="image " ></a>
+                                    <a href='img/bconvo.jpg' data-lightbox="image"><img src='img/bconvo.jpg' alt="image " ></a>
                                 </div>
                             </div>
                             <div class="item">
                                 <div class="col-md-4">
-                                    <a href='img/coursera.jpg' data-lightbox="image"><img src='img/coursera.jpg' alt="image " ></a>
+                                    <a href='img/gconvo.jpg' data-lightbox="image"><img src='img/gconvo.jpg' alt="image " ></a>
                                 </div>
                             </div>
-                          
+                             <div class="item">
+                                <div class="col-md-4">
+                                    <a href='img/sconvo.jpg' data-lightbox="image"><img src='img/sconvo.jpg' alt="image " ></a>
+                                </div>
+                            </div>
+                              <div class="item">
+                                <div class="col-md-4">
+                                    <a href='img/dc.jpg' data-lightbox="image"><img src='img/dc.jpg' alt="image " ></a>
+                                </div>
+                            </div>
+
                             <div class="item">
                                 <div class="col-md-4">
                                     <a href='img/abhijeet.jpg' data-lightbox="image"><img src='img/abhijeet.jpg' alt="image " ></a>
                                 </div>
                             </div>
-                            <div class="item">
+                       <!--      <div class="item">
                                 <div class="col-md-4">
                                     <a href='img/FB_IMG_1547760148443.jpg' data-lightbox="image"><img src='img/FB_IMG_1547760148443.jpg' alt="image " ></a>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="item">
                                 <div class="col-md-4">
                                     <a href='img/cs.jpg' data-lightbox="image"><img src='img/cs.jpg' alt="image " ></a>
                                 </div>
                             </div>
-
-                             <div class="item">
+                              <div class="item">
                                 <div class="col-md-4">
                                     <a href="img/ee.jpg" data-lightbox="image"><img src="img/ee.jpg" alt="image 3"></a>
                                 </div>
@@ -136,15 +145,15 @@
                                 <div class="col-md-4">
                                     <a href="img/mech.jpg" data-lightbox="image"><img src="img/mech.jpg" alt="image 4"></a>
                                 </div>
-                            </div>
-                             <div class="item">
+                            </div> 
+                          <div class="item">
                                 <div class="col-md-4">
-                                    <a href="img/chem.jpg" data-lightbox="image"><img src="img/chem.jpg" alt="image 5"></a>
+                                    <a href="img/btech14-18ch.jpg" data-lightbox="image"><img src="img/btech14-18ch.jpg" alt="image 5"></a>
                                 </div>
                             </div>
                             <div class="item">
                                 <div class="col-md-4">
-                                    <a href="img/civ.jpg" data-lightbox="image"><img src="img/civ.jpg" alt="image 6"></a>
+                                    <a href="img/btech14-18ce.jpg" data-lightbox="image"><img src="img/btech14-18ce.jpg" alt="image 6"></a>
                                 </div>
                             </div>
 
@@ -263,8 +272,8 @@
                             Dr. Anirban Chowdhary<br>
                             Email - pic_alumni@iitp.ac.in<br><br>
                             General Secretary:<br>
-                            Vivek Garg<br>
-                            Email - vivek.ch17@iitp.ac.in</p>            
+                            Gaurav Pratap Singh<br>
+                            Email - 1801ee63@iitp.ac.in</p>            
                         </div>
                     </div>
                 </div>
