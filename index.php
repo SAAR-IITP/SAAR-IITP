@@ -314,6 +314,7 @@
                         <div class="dropdown">
                             <button class="dropbtn">Read Anusmriti</button>
                             <div class="dropdown-content">
+				<a href="anusmriti/vol3/issue1.pdf" target="_blank">Volume 3, Issue 1</a>
                                 <a href="anusmriti/vol2/issue2.pdf" target="_blank">Volume 2, Issue 2</a>
                                 <a href="anusmriti/vol2/issue1.pdf" target="_blank">Volume 2, Issue 1</a>
                                 <a href="anusmriti/vol1/issue2.pdf" target="_blank">Volume 1, Issue 2</a>

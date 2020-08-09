@@ -4,9 +4,9 @@
         $offset = $_GET['offset'];
         $lim = $_GET['limit'];
 
-        $url = 'http://localhost:8080/SAAR-Server/getPosts.php?offset='.$offset.'&limit='.$lim;
 
-        // $url = 'http://api.saar.iitp.ac.in/getPosts.php?offset='.$offset.'&limit='.$lim;
+
+        $url = 'http://api.saar.iitp.ac.in/getPosts.php?offset='.$offset.'&limit='.$lim;
 
         $response = file_get_contents($url);
         // echo $response;
