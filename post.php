@@ -73,6 +73,7 @@
                       let user_id = $('#user_id').val();
                       let access_token = $('#access_token').val();
                       let post_id = $_GET['q'];
+                      document.location.href = "http://localhost:8080/SAAR-IITP/chat.php";
                       $.ajax({
                         type: "POST",
                         url: "./api/deletepost.php",
@@ -89,6 +90,7 @@
                                                     <span aria-hidden="true">&times;</span>
                                                  </button>
                                             </div>`);
+                            
                         }
 
                      });
@@ -163,7 +165,7 @@
                     $('#comment_body').val('');
                     $.ajax({
                         type: "POST",
-            // url: "http://localhost/SAAR-Server/createReply.php",
+            // url: "./api/createReply.php",
 
                         url: "./api/createReply.php",
                         data: {
@@ -190,7 +192,7 @@
                 $.ajax({
                     type: "POST",
 
-                    // url: "http://localhost/SAAR-Server/postvote.php",
+                    // url: "./api/postvote.php",
 
                     url: "./api/postvote.php",
                     data: {
@@ -215,7 +217,7 @@
                 $.ajax({
                     type: "POST",
 
-                    // url: "http://localhost/SAAR-Server/postvote.php",
+                    // url: "./api/postvote.php",
 
                     url: "./api/postvote.php",
                     data: {
