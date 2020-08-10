@@ -3,6 +3,8 @@
     if(isset($_GET['post_id'])){
         $post_id = $_GET['post_id'];
 
+        // $url = 'http://localhost:8080/SAAR-Server/getPostInfo.php?post_id='.$post_id;
+
         $url = 'http://api.saar.iitp.ac.in/getPostInfo.php?post_id='.$post_id;
 
         $response = file_get_contents($url);
@@ -50,11 +52,11 @@
                     <div class="down" id="downvote_post" style="display: inline-block; cursor: pointer;">
                         <i class="fa fa-thumbs-down"></i> '.$data['downvotes'].'
                     </div>
-                    <div class="down" id="delete_post" style="display: inline-block; cursor: pointer;">
-                        <button class="btn btn-primary">delete</button>
-                    </div>
                 </div>
                 <div class="col-lg-2 col-sm-2">
+                    <div  id="delete_post">
+                        <button class="btn btn-primary">DELETE POST</button>
+                    </div>
                     <div class="post_comment"> '.$data['no_of_comment'].' Comments</div>
                     <div class="post_time" style=""><i class="fa fa-clock-o"></i> Posted on: '.$data['post_time'][0].' at '.$data['post_time'][1].'</div>
                 </div>
