@@ -73,7 +73,7 @@
                       let user_id = $('#user_id').val();
                       let access_token = $('#access_token').val();
                       let post_id = $_GET['q'];
-                      document.location.href = "http://localhost:8080/SAAR-IITP/chat.php";
+                      document.location.href = "https://saar.iitp.ac.in/chat.php";
                       $.ajax({
                         type: "POST",
                         url: "./api/deletepost.php",
