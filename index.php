@@ -347,9 +347,17 @@
 
                         <li>
                             <div >
-                                <time>Shikhar Choudhary secured AIR-97 in UPSC</time>
-                                <p>7th august 2020   3:06</p>
-                                Our alumni are reaching greater heights with each passing year. Their resilience and determination have proven that no obstacle is insurmountable , and no dream is too big. 
+                                <time>Guidance session by Shikhar Choudhary</time>
+                                <p> 9th August at 4:00 pm</p>
+                                Shikhar Choudhary, an alumnus of IIT Patna achieved his dream by securing AIR 97, UPSC-CSE'19, only through resolute determination and consistency . To help more students in following this scruplous path to acheive the target, SAAR IIT Patna conducted a guidance session by Shikhar Choudhary. 
+                            </div>
+                        </li>
+
+                        <li>
+                            <div >
+                                <time>Anusmriti Volume III</time>
+                                <p>16 June 2020 </p>
+                                SAAR proudly presents to you, the brand new, 3rd Volume of Anusmriti-The official Alumni newsletter of IIT Patna featuring an Alma Speak from Gagandeep Singh and inspiring and informational words from Mr. Pranav Suresh and Ms.Ravneet Kaur. 
                             </div>
                         </li>
 
@@ -369,14 +377,14 @@
                             </div>
                         </li>
 
-                          <li>
+                        <li>
                             <div >
                                 <time>FIGHT against Covid-19</time>
                                 <p>2 april 2020 </p>
                                 An attempt by IIT Patna student community to try and help our heroes who are putting their life at risks to help people is been made. Bitthal Saraf(BT/ME/13), our alumnus has taken up the initiative to provide protective visors, free of cost to doctors and the nursing staff who are continuously exposed to COVID19 live cases. 
                             </div>
                         </li>
-                            <li>
+                        <li>
                             <div >
                                 <time>4 years of quarentine</time>
                                 <p>24 march 2020 </p>
@@ -387,14 +395,20 @@
                                  
                             </div>
                         </li>
-                           </li>
-                            <li>
-                            <div >
-                                <time> Abhijeet Agnihotri interacted with IIT Patna Family</time>
-                                <p>5 Nov 2019 </p>
-                                Watching our alumni conquer the world as they continue to strive to move forward with the skills and personalities they’ve honed at IIT Patna fills us with pride and fuels us with aspiration! We would like to express our humble gratitude to Abhijeet Agnihotri for allowing us to felicitate him and also for interacting with the student junta of IITP. 
 
-                                 
+                        <li>
+                            <div >
+                                <time style="font-size: 15px;"> Anusmriti Volume II Issue II</time>
+                                <p>4 January 2020 </p>
+                                SAAR feels extremely proud to present to you, the next issue of the much-awaited Anusmriti - the official Alumni newsletter of IIT Patna featuring an Alma Speak from Spandana Rachamadugu.    
+                            </div>
+                        </li>
+                    
+                        <li>
+                            <div >
+                                <time style="font-size: 15px;"> Abhijeet Agnihotri interacted with IIT Patna Family</time>
+                                <p>5 Nov 2019 </p>
+                                Watching our alumni conquer the world as they continue to strive to move forward with the skills and personalities they’ve honed at IIT Patna fills us with pride and fuels us with aspiration! We would like to express our humble gratitude to Abhijeet Agnihotri for allowing us to felicitate him and also for interacting with the student junta of IITP.    
                             </div>
                         </li>
                 </ol>

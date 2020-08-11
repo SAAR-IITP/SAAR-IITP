@@ -151,13 +151,13 @@
                             Settings
                         </a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a href="#awards">
                             <span class="rect"></span>
                             <span class="circle"></span>
                             Achivements
                         </a>
-                    </li>
+                    </li> -->
                     <li>
                         <a href="#blog">
                             <span class="rect"></span>
@@ -270,9 +270,9 @@
                     <button class="button" style="vertical-align:middle; background: #003C4D; padding: 10px; margin-left: 15px;" onclick="location.href = 'updateProfile.php';"><span>Update Profile</span></button>
                     </form>
                     <button class="button" style="vertical-align:middle; background: #003C4D; padding: 10px; margin-left: 15px;" onclick="location.href = 'changeEmail.php';"><span>Change E-mail</span></button>
-                    <button type="button" class="button" style="vertical-align:middle; background: #003C4D; padding: 10px; margin-left: 15px;" data-toggle="modal" data-target="#profilepic">
+                    <!-- <button type="button" class="button" style="vertical-align:middle; background: #003C4D; padding: 10px; margin-left: 15px;" data-toggle="modal" data-target="#profilepic">
                     <span>Update Profile Picture</span>    
-                    </button>
+                    </button> -->
                     <button class="button" style="vertical-align:middle; background: #003C4D; padding: 10px; margin-left: 15px;" onclick="window.location.href='don.html'" ><span>Donate Now </span></button>
 			</section>
             <!-- <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="awards">
