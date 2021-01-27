@@ -1,6 +1,5 @@
 <?php
 session_start();
-$var = 0;
 ?>
 <html>
      <head>
