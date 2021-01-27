@@ -68,6 +68,9 @@
                     <div id="forgot">
                         <a href="./forgetpass.php">Forgot Password ?</a>
                     </div>
+                    <div id="verifyit" style="float:left">
+                        <a style="color: #003C4D" href="./enterotp.php">Complete verification</a>
+                    </div>
                     <?php
                 if(isset($_SESSION['error'])){
                     echo "<h5>".$_SESSION['error']."</h5>";

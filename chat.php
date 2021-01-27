@@ -89,12 +89,12 @@
                 <a class="nav-link" href="./index.php">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
+            <?php if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true ){ ?>
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newpost">
             Add new post
             </button>
             </li>
             <li class="nav-item">
-                <?php if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true ){ ?>
                 <a href="./portal.php"><button type="button" class="btn btn-primary">
                 Profile
                 </button></a>
