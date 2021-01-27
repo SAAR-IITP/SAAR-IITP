@@ -49,6 +49,7 @@ session_start();
          
      </head>
     <body>
+
         <header class="nav-down responsive-nav hidden-lg hidden-md">
             <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
                 <span class="sr-only">Toggle navigation</span>
@@ -152,7 +153,10 @@ session_start();
             <span class="focus-input100" data-placeholder="Enter OTP"></span>
           </div>
           <div id="resend">
-            <a href="resendotp.php">Resend OTP ?</a>
+            <a id="resotp" href="resendotp.php" onclick="myfun()">Resend OTP ?</a>
+          </div>
+          <div id="resend">
+            <p id="tres" style="display: none;">Wait for 5 minutes before Trying OTP resend</p>
           </div>
           <?php
               if(isset($_SESSION['error'])){
@@ -166,5 +170,34 @@ session_start();
                </form>
       </section>
         </div>
+
+      <script>
+       if(localStorage.getItem("once")=='undefined'){
+            localStorage.setItem("once","1");
+        }
+      if(localStorage.getItem("once")=="0"){
+      document.getElementById('resotp').style.display = "none";
+      document.getElementById('tres').style.display = "block";
+      localStorage.setItem("once","1");
+            setTimeout(function(){      document.getElementById('resotp').style.display = "block",
+      document.getElementById('tres').style.display = "none";},300000);
+            
+          }
+        </script>
+
+
+
    </body>
+
+   <script >
+    function myfun(){
+      document.getElementById('resotp').style.display = "none";
+      document.getElementById('tres').style.display = "block";
+      localStorage.setItem("once","0");
+
+}
+   </script>
+  }
+
+
 </html>
