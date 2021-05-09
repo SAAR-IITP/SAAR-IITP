@@ -152,7 +152,7 @@
                     <div class="label_style">Attach Receipt *</div>
                     
 
-                    <input type="file" id="actual-btn"/>
+                    <input type="file" id="actual-btn" accept="image/*, .pdf"/>
                     <label for="actual-btn" id="choose-file-button" style="width: 40%; font-size:10px;">Choose File</label>
                     <span id="file-chosen" style="font-family:inherit;">No file chosen</span>
 
