@@ -83,7 +83,7 @@
 	<!-- main -->
     
 	<div class="main-w3layouts wrapper">
-            <h1><span style="font-size: 50px; align: center; "><em>SAAR Registration Form</em></span></h1>
+            <h1><span style="font-size: 50px;"><em>SAAR Registration Form</em></span></h1>
         <div class="main-agileinfo">
             <?php 
                 if(isset($_SESSION['error'])){
