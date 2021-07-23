@@ -350,7 +350,7 @@ input[type="file"] {
     display: none;
 }
 
-#file-chosen {
+.file-chosen {
     margin-left: 0.3rem;
     font-family: sans-serif;
 }
@@ -375,7 +375,7 @@ input[type="file"] {
 }
 
 input[type="submit"],
-#choose-file-button {
+.choose-file-button {
     font-size: .9em;
     color: #fff;
     background: #003C4D;
@@ -390,7 +390,7 @@ input[type="submit"],
 }
 
 input[type="submit"]:hover,
-#choose-file-button:hover {
+.choose-file-button:hover {
     -webkit-transition: .5s all;
     -moz-transition: .5s all;
     -o-transition: .5s all;

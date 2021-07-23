@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Alumni Card Registration</title>
+    <title>Yearbook Registration</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
@@ -83,7 +83,7 @@
 <body>
     <!-- main -->
     <div class="main-w3layouts wrapper">
-        <h1><span style="font-size: 50px;"><em>Alumni Card</em></span></h1>
+        <h1><span style="font-size: 50px;"><em>Yearbook</em></span></h1>
         <h2><span style="font-size: 30px;"><em>Registration Form</em></span></h2>
         <div class="main-agileinfo">
             <div class="agileits-top">
@@ -92,15 +92,12 @@
                     <input id="fname" class="text" type="text" name="fname" required>
                     <div class="label_style">Last Name *</div>
                     <input id="lname" class="text" type="text" name="lname" required>
-                    <div class="label_style">Institute Roll Number (Optional)</div>
-                    <input id="college_id" class="text" type="text" name="college_id">
+                    
                     <div class="label_style">Email Address *</div>
                     <input id="email" class="text email" type="email" name="email" required>
                     <div class="label_style">Contact Number *</div>
                     <input class="text" type="tel" name="contact" required>
-                    <div class="label_style">Date of Birth *</div>
-                    <input class="text" type="date" name="DOB" required onfocus="(this.type='date')">
-                    <i class="ui calendar icon"></i>
+
                     <div class="label_style">Graduation year *</div>
                     <select type="text" name="passingyear" required class="ui search selection dropdown">
                         <option value="" selected disabled>Graduation Year</option>
@@ -118,6 +115,7 @@
                         <option value="2021">2021</option>
                         <option value="2022">2022</option>
                         <option value="2023">2023</option>
+                        <option value="2023">2024</option>
                     </select>
                     <!-- <div class="label_style">Degree *</div>
                     <select type="text" id="degree" name="degree" required class="ui search selection  dropdown">
@@ -141,19 +139,22 @@
                         <option value="Humanities and Social Sciences">Humanities and Social Sciences</option>
                         <option value="other">Other</option>
                     </select>
-                    <div class="label_style">Address *</div>
-                    <textarea type="text" name="address" required=""></textarea>
-                    <div class="label_style">Country *</div>
-                    <input type="text" name="country" required="">
-                    <div class="label_style">State *</div>
-                    <input type="text" name="state" required="">
-                    <div class="label_style">City *</div>
-                    <input type="text" name="city" required="">
 
-                    <div class="label_style">Attach Receipt *</div>
-                    <input type="file" id="receipt-actual-btn" class="actual-btn" accept="image/*, .pdf"/>
-                    <label for="receipt-actual-btn" class="choose-file-button" style="width: 40%; font-size:10px;">Choose File</label>
+                    <div class="label_style">Portrait Picture *</div>
+                    <input type="file" id="portrait-pic-actual-btn" class="actual-btn" accept="image/*" required/>
+                    <label for="portrait-pic-actual-btn" class="choose-file-button" style="width: 40%; font-size:10px;">Choose File</label>
                     <span class="file-chosen" style="font-family:inherit;">No file chosen</span>
+
+                    <div class="label_style">Quote *</div>
+                    <textarea type="text" name="quote" style="height: 75px;" required></textarea>
+
+                    <div class="label_style">Group Pictures</div>
+                    <input type="file" id="group-pic-actual-btn" class="actual-btn" accept="image/*" multiple/>
+                    <label for="group-pic-actual-btn" class="choose-file-button" style="width: 40%; font-size:10px;">Choose File</label>
+                    <span class="file-chosen" style="font-family:inherit;">No file chosen</span>
+
+                    <div class="label_style">Any Comments</div>
+                    <textarea type="text" name="comments" style="height: 75px;"></textarea>
 
                     <input type="submit" value="SUBMIT">
                 </form>
