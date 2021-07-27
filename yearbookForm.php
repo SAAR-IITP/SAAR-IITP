@@ -1,3 +1,14 @@
+<?php
+    session_start();
+    if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"]==false)
+    {
+        header("location: signin.php");
+    }
+    if($_SESSION['ybk__submitted']){
+        header("location: ybkSubmitted.php");
+    }
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -87,45 +98,34 @@
         <h2><span style="font-size: 30px;"><em>Registration Form</em></span></h2>
         <div class="main-agileinfo">
             <div class="agileits-top">
-                <form action="register.php" method="post">
+                <form method="post" enctype="multipart/form-data" action="yearbookFormAction.php" id="custom-form">
                     <div class="label_style">First Name *</div>
-                    <input id="fname" class="text" type="text" name="fname" required>
+                    <input id="fname" class="text" type="text" name="fname" value="<?php echo $_SESSION["fname"]; ?>" disabled required>
                     <div class="label_style">Last Name *</div>
-                    <input id="lname" class="text" type="text" name="lname" required>
+                    <input id="lname" class="text" type="text" name="lname" value="<?php echo $_SESSION["lname"]; ?>" disabled required>
+                    
+                    <div class="label_style">Institute Roll Number *</div>
+					<input id="college_id" class="text" type="text" name="roll_no" value="<?php echo $_SESSION["cid"]; ?>" disabled required>
                     
                     <div class="label_style">Email Address *</div>
                     <input id="email" class="text email" type="email" name="email" required>
-                    <div class="label_style">Contact Number *</div>
-                    <input class="text" type="tel" name="contact" required>
+                    <div class="label_style">Contact Number (with caller prefix, eg. +91) *</div>
+                    <input class="text" type="tel" name="contact" maxlength="13" required>
 
                     <div class="label_style">Graduation year *</div>
                     <select type="text" name="passingyear" required class="ui search selection dropdown">
                         <option value="" selected disabled>Graduation Year</option>
-                        <option value="2010">2010</option>
-                        <option value="2011">2011</option>
-                        <option value="2012">2012</option>
-                        <option value="2013">2013</option>
-                        <option value="2014">2014</option>
-                        <option value="2015">2015</option>
-                        <option value="2016">2016</option>
-                        <option value="2017">2017</option>
-                        <option value="2018">2018</option>
-                        <option value="2019">2019</option>
-                        <option value="2020">2020</option>
-                        <option value="2021">2021</option>
-                        <option value="2022">2022</option>
-                        <option value="2023">2023</option>
-                        <option value="2023">2024</option>
+                        <?php for ($i = 2010; $i <= 2024; $i++) : ?>
+                            <option
+                                value="<?php echo $i; ?>"
+                                <?php if($i == $_SESSION["graduation"]){ echo "selected"; } ?>
+                            >
+                                <?php echo $i; ?>
+                            </option>
+                        <?php endfor; ?>
                     </select>
-                    <!-- <div class="label_style">Degree *</div>
-                    <select type="text" id="degree" name="degree" required class="ui search selection  dropdown">
-                        <option value="" selected disabled>Degree</option>
-                        <option value="B.Tech">B.Tech/B.E</option>
-                        <option value="M.Tech">M.Tech/M.E</option>
-                        <option value="M.Sc">M.Sc</option>
-                        <option value="P.hd">P.hd</option>
-                    </select> -->
-                    <div class="label_style">Department *</div>
+
+                    <div class="label_style">Department *</div> 
                     <select type="text" id="branch" name="dept" required class="ui search selection   dropdown">
                         <option value="" selected disabled>Department</option>
                         <option value="Computer Science and Engineering">Computer Science and Engineering</option>
@@ -140,24 +140,42 @@
                         <option value="other">Other</option>
                     </select>
 
+                    <div class="label_style">Department (if selected Other) *</div>
+                    <input id="branch_other" class="text" type="text" name="dept_other" value="-" required>
+                    
                     <div class="label_style">Portrait Picture *</div>
-                    <input type="file" id="portrait-pic-actual-btn" class="actual-btn" accept="image/*" required/>
-                    <label for="portrait-pic-actual-btn" class="choose-file-button" style="width: 40%; font-size:10px;">Choose File</label>
-                    <span class="file-chosen" style="font-family:inherit;">No file chosen</span>
+                    <input type="file" name="portrait_pic" id="portrait-pic-actual-btn" class="actual-btn" accept="image/*" required/>
+                    <div class="choose-file-wrapper">
+                        <label for="portrait-pic-actual-btn" class="choose-file-button" style="width: 40%; font-size:10px;">Choose File</label>
+                        <span class="file-chosen" style="font-family:inherit;">No file chosen</span>
+                    </div>
 
                     <div class="label_style">Quote *</div>
                     <textarea type="text" name="quote" style="height: 75px;" required></textarea>
 
                     <div class="label_style">Group Pictures</div>
-                    <input type="file" id="group-pic-actual-btn" class="actual-btn" accept="image/*" multiple/>
-                    <label for="group-pic-actual-btn" class="choose-file-button" style="width: 40%; font-size:10px;">Choose File</label>
-                    <span class="file-chosen" style="font-family:inherit;">No file chosen</span>
+                    <input type="file" name="group_pic[]" id="group-pic-actual-btn" class="actual-btn" accept="image/*" multiple/>
+                    <div class="choose-file-wrapper">
+                        <label for="group-pic-actual-btn" class="choose-file-button" style="width: 40%; font-size:10px;">Choose File</label>
+                        <span class="file-chosen" style="font-family:inherit;">No file chosen</span>
+                    </div>
 
                     <div class="label_style">Any Comments</div>
-                    <textarea type="text" name="comments" style="height: 75px;"></textarea>
+                    <textarea type="text" name="comments" style="height: 75px;">-</textarea>
 
                     <input type="submit" value="SUBMIT">
                 </form>
+                <a href="./portal.php"><button style="font-size: .9em;
+                    color: #fff;
+                    background: #003C4D;
+                    outline: none;
+                    border: 1px solid #003C4D;
+                    cursor: pointer;
+                    padding: 0.9em;
+                    -webkit-appearance: none;
+                    width: 100%;
+                    margin: 2em 0;
+                    letter-spacing: 4px;">BACK</button></a>
             </div>
         </div>
         <section id="contact" class="content-section">

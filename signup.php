@@ -111,14 +111,14 @@
                     <input class="text" type="text" name="facebook" placeholder="Optional">
                     <div class="label_style">linkedin profile link</div>
                     <input class="text" type="text" name="linkden" placeholder="Optional">
-                    <div class="label_style">password *</div>
+                    <div class="label_style">Password *</div>
                     <input class="text" type="password" name="password" required>
 					<div class="label_style">Confirm password *</div>
                     <input class="text w3lpass" type="password" name="con_password" required>
 					<div class="label_style">Date of Birth *</div>
                     <input class="text" type="date" name="DOB" required onfocus="(this.type='date')">
                     <i class="ui calendar icon"></i>
-                    <div class="label_style">graduation year *</div>
+                    <div class="label_style">Graduation year *</div>
                     <select type="text" name="passingyear" required class="ui search selection dropdown">
                     <option value="" selected disabled>Graduation Year</option>
                     <option value="2010">2010</option>

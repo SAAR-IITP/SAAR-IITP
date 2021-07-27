@@ -46,6 +46,7 @@ session_start();
       $_SESSION['state'] = $_POST["state"];
       $_SESSION['city'] = $_POST["city"];
       $_SESSION['achievements'] = $_POST["achievements"];
+      $_SESSION['about'] = $_POST["about"];
       $_SESSION['msg'] = $response['messages'][0];
       header("location: portal.php");
    }else if($response['status']==400){
