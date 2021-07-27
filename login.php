@@ -62,7 +62,10 @@
          $_SESSION['city']=$row['city'];
          $_SESSION['achievements']=$row['achievements'];
          $_SESSION['loggedin'] = true;
+         $_SESSION['about'] = $row['about'];
          $_SESSION['access_token'] = $row['access_token'];
+
+         $_SESSION['ybk__submitted']=$row['ybk__submitted'];
          header("location: portal.php");
       }
       else 

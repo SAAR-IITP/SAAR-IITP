@@ -1,3 +1,11 @@
+<?php
+    session_start();
+    if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"]==false)
+    {
+        header("location: signin.php");
+    }
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -76,6 +84,7 @@
         }
 
         .container .btn {
+            display: inline-block;
             background-color: #75d3ed;
             border-radius: 0%;
             color: white;
@@ -104,10 +113,11 @@
     <div class="container">
         <img src="img/checkmark.png" alt="success">
         <h2>The form has been submitted sucessfully!</h2>
-        <button class="btn">Back</button>
+        <a href="./portal.php" class="btn">Back</a>
     </div>
 
 
 </body>
 
 </html>
+
