@@ -74,7 +74,7 @@ jQuery(document).ready(function($) {
         var navigation = $('nav');
         
         //when a nav link is clicked, smooth scroll to the section
-        navigation.on('click', 'a', function(event){
+        navigation.on('click', 'a:not(.smoothscroll-off)', function(event){
             event.preventDefault(); //prevents previous event
             smoothScroll($(this.hash));
         });

@@ -1,9 +1,15 @@
 jQuery(document).ready(function($) {
-    const actualBtn = document.getElementById('actual-btn');
+    const actualBtn = document.getElementsByClassName('actual-btn');
+    const fileChosen = document.getElementsByClassName('file-chosen');
 
-    const fileChosen = document.getElementById('file-chosen');
+    for (let i = 0; i < actualBtn.length; i++) {
+        actualBtn[i].addEventListener('change', function() {
 
-    actualBtn.addEventListener('change', function() {
-        fileChosen.textContent = this.files[0].name
-    })
+            fileChosen[i].textContent = this.files[0].name
+
+            if (this.files.length > 1)
+                fileChosen[i].textContent += " and " + (this.files.length - 1) + " more"
+        })
+    }
+
 })

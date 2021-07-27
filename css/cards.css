@@ -421,7 +421,7 @@ header {
   background-color: #ddd;
 }
 .sidebar-navigation nav .active-section .rect{
-  width: 30px;
+  /* width: 30px; */
 }
 .sidebar-navigation nav .active-section .circle{
   background-color: #fff;
