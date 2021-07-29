@@ -4,9 +4,6 @@
     {
         header("location: signin.php");
     }
-    if($_SESSION['ybk__submitted']){
-        header("location: ybkSubmitted.php");
-    }
 ?>
 
 <!DOCTYPE html>
@@ -98,73 +95,7 @@
         <h2><span style="font-size: 30px;"><em>Registration Form</em></span></h2>
         <div class="main-agileinfo">
             <div class="agileits-top">
-                <form method="post" enctype="multipart/form-data" action="yearbookFormAction.php" id="custom-form">
-                    <div class="label_style">First Name *</div>
-                    <input id="fname" class="text" type="text" name="fname" value="<?php echo $_SESSION["fname"]; ?>" disabled required>
-                    <div class="label_style">Last Name *</div>
-                    <input id="lname" class="text" type="text" name="lname" value="<?php echo $_SESSION["lname"]; ?>" disabled required>
-                    
-                    <div class="label_style">Institute Roll Number *</div>
-					<input id="college_id" class="text" type="text" name="roll_no" value="<?php echo $_SESSION["cid"]; ?>" disabled required>
-                    
-                    <div class="label_style">Email Address *</div>
-                    <input id="email" class="text email" type="email" name="email" required>
-                    <div class="label_style">Contact Number (with caller prefix, eg. +91) *</div>
-                    <input class="text" type="tel" name="contact" maxlength="13" required>
-
-                    <div class="label_style">Graduation year *</div>
-                    <select type="text" name="passingyear" required class="ui search selection dropdown">
-                        <option value="" selected disabled>Graduation Year</option>
-                        <?php for ($i = 2010; $i <= 2024; $i++) : ?>
-                            <option
-                                value="<?php echo $i; ?>"
-                                <?php if($i == $_SESSION["graduation"]){ echo "selected"; } ?>
-                            >
-                                <?php echo $i; ?>
-                            </option>
-                        <?php endfor; ?>
-                    </select>
-
-                    <div class="label_style">Department *</div> 
-                    <select type="text" id="branch" name="dept" required class="ui search selection   dropdown">
-                        <option value="" selected disabled>Department</option>
-                        <option value="Computer Science and Engineering">Computer Science and Engineering</option>
-                        <option value="Electrical Engineering">Electrical Engineering</option>
-                        <option value="Mechanical Engineering">Mechanical Engineering</option>
-                        <option value="Civil Engineering">Civil Engineering</option>
-                        <option value="Chemical and Biochemical Engineering">Chemical and Biochemical Engineering</option>
-                        <option value="Physics">Physics</option>
-                        <option value="Mathematics">Mathematics</option>
-                        <option value="Chemistry">Chemistry</option>
-                        <option value="Humanities and Social Sciences">Humanities and Social Sciences</option>
-                        <option value="other">Other</option>
-                    </select>
-
-                    <div class="label_style">Department (if selected Other) *</div>
-                    <input id="branch_other" class="text" type="text" name="dept_other" value="-" required>
-                    
-                    <div class="label_style">Portrait Picture *</div>
-                    <input type="file" name="portrait_pic" id="portrait-pic-actual-btn" class="actual-btn" accept="image/*" required/>
-                    <div class="choose-file-wrapper">
-                        <label for="portrait-pic-actual-btn" class="choose-file-button" style="width: 40%; font-size:10px;">Choose File</label>
-                        <span class="file-chosen" style="font-family:inherit;">No file chosen</span>
-                    </div>
-
-                    <div class="label_style">Quote *</div>
-                    <textarea type="text" name="quote" style="height: 75px;" required></textarea>
-
-                    <div class="label_style">Group Pictures</div>
-                    <input type="file" name="group_pic[]" id="group-pic-actual-btn" class="actual-btn" accept="image/*" multiple/>
-                    <div class="choose-file-wrapper">
-                        <label for="group-pic-actual-btn" class="choose-file-button" style="width: 40%; font-size:10px;">Choose File</label>
-                        <span class="file-chosen" style="font-family:inherit;">No file chosen</span>
-                    </div>
-
-                    <div class="label_style">Any Comments</div>
-                    <textarea type="text" name="comments" style="height: 75px;">-</textarea>
-
-                    <input type="submit" value="SUBMIT">
-                </form>
+                <iframe src="https://script.google.com/macros/s/AKfycbxbPIpIDWRhRl7xw5lz_8gnNx9QTjlQYtwGBiRt8B9QejbMuJz1FcFxudoJpbtvLLppyw/exec" frameborder="0" height="1414.58px" width="100%"></iframe>
                 <a href="./portal.php"><button style="font-size: .9em;
                     color: #fff;
                     background: #003C4D;
