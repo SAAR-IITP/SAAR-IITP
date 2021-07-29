@@ -149,12 +149,11 @@
                     <input type="text" name="state" required="">
                     <div class="label_style">City *</div>
                     <input type="text" name="city" required="">
-                    <div class="label_style">Attach Receipt *</div>
-                    
 
-                    <input type="file" id="actual-btn" accept="image/*, .pdf"/>
-                    <label for="actual-btn" id="choose-file-button" style="width: 40%; font-size:10px;">Choose File</label>
-                    <span id="file-chosen" style="font-family:inherit;">No file chosen</span>
+                    <div class="label_style">Attach Receipt *</div>
+                    <input type="file" id="receipt-actual-btn" class="actual-btn" accept="image/*, .pdf"/>
+                    <label for="receipt-actual-btn" class="choose-file-button" style="width: 40%; font-size:10px;">Choose File</label>
+                    <span class="file-chosen" style="font-family:inherit;">No file chosen</span>
 
                     <input type="submit" value="SUBMIT">
                 </form>

@@ -97,7 +97,7 @@
         </style>
         
     </head>
-    <body style="background: #fff;font-family: 'Open Sans',serif">
+    <body style="background: #fff;font-family: 'Open Sans',serif; overflow-x: hidden;">
 
         <header class="nav-down responsive-nav hidden-lg hidden-md">
             <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
@@ -113,7 +113,7 @@
                         <li><a href="#video">Profile</a></li>
                         <li><a href="#extra">Settings</a></li>
                         <li><a href="#blog">Utilities</a></li>
-                        <li><a href="#projects">Newsfeed</a></li>
+                        <li><a href="yearbookForm.php" class="smoothscroll-off">Yearbook Form</a></li>
                         <li><a href="#contact">Contact Us</a></li>
                         <li>
                             <form action="index.php" method="post" id="log">  
@@ -163,6 +163,13 @@
                             <span class="rect"></span>
                             <span class="circle"></span>
                             Utilities
+                        </a>
+                    </li>
+                    <li>
+                        <a href="yearbookForm.php" class="smoothscroll-off">
+                            <span class="rect"></span>
+                            <span class="circle"></span>
+                            Yearbook Form
                         </a>
                     </li>
                     <li>
@@ -331,7 +338,7 @@
             </div>
             <div class="col-md-4 col-sm-12">
 
-                <div class="card-content" onclick="window.open('https://saar.iitp.ac.in/anusmriti/vol3/issue1.pdf', '_blank');" style="background:#0ad80f;">
+                <div class="card-content" onclick="window.open('https://saar.iitp.ac.in/anusmriti/vol4/issue1.pdf', '_blank');" style="background:#0ad80f;">
 
                     <div class="card-img" align="center">
                         <i class="fas fa-book-reader" style="font-size:50px; padding: 20px; color:#fff;"></i></div>
@@ -341,7 +348,7 @@
                 </div>
             </div>
         </div>
-</section>
+        </section>
     </section>
             
             
