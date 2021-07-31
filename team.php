@@ -1196,9 +1196,9 @@ session_start();
                         Email - pic_alumni@iitp.ac.in<br><br>
                         General Secretary:<br>
 
-                        Gaurav Pratap Singh<br>
+                        Aravind Ajay<br>
 
-                        Email - 1801ee63@iitp.ac.in</p>
+                        aravind_1901CS08@iitp.ac.in</p>
                 </div>
             </div>
         </div>
