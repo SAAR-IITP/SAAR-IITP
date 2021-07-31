@@ -1,257 +1,283 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Donate</title>
-        <script>
-            window.onload=function(){
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Donate</title>
+    <script>
+        window.onload = function() {
             var min = 2012;
             var d = new Date();
             max = d.getFullYear();
-            for (var i = min; i<=max; i++){
-               var opt = document.createElement('option');
-               opt.value = i;
-               opt.innerHTML = i;
+            for (var i = min; i <= max; i++) {
+                var opt = document.createElement('option');
+                opt.value = i;
+                opt.innerHTML = i;
                 console.log(document.getElementById('passYear'));
-               document.getElementById('passYear').appendChild(opt);
-                };
-            }
-        </script>
-        
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="css/fontAwesome.css">
-        <link rel="stylesheet" href="css/light-box.css">
-        <link rel="stylesheet" href="css/owl-carousel.css">
-        <link rel="stylesheet" href="css/templatemo-style.css">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
-        <link rel="stylesheet" href="css/findal.css">
-        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
-        <script src="js/vendor/bootstrap.min.js"></script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+                document.getElementById('passYear').appendChild(opt);
+            };
+        }
+    </script>
 
-  <style>
-    .hello {
-           background: url(img/bggg.png);
-           background-size: cover;
-           background-repeat: no-repeat;
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/fontAwesome.css">
+    <link rel="stylesheet" href="css/light-box.css">
+    <link rel="stylesheet" href="css/owl-carousel.css">
+    <link rel="stylesheet" href="css/templatemo-style.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <link rel="stylesheet" href="css/findal.css">
+    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>
+        window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')
+    </script>
+    <!-- <script src="js/vendor/bootstrap.min.js"></script> -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+
+    <style>
+        .hello {
+            background: url(img/bggg.png);
+            background-size: cover;
+            background-repeat: no-repeat;
         }
         /* new added */
-        .wrapper {
-  margin: 30px auto;
-  width: 80%;
-  font-family: sans-serif;
-  color: #555;
-  font-size: 14px;
-  line-height: 24px;
-}
-h1 {
-  font-size: 20px;
-  font-weight: bold;
-  text-align: center;
-  text-transform: uppercase;
-}
-h1 + p {
-  text-align: center;
-  margin: 20px 0;
-  font-size: 16px;
-}
-.tabs li {
-  float: left;
-  width: 33.333333%;
-}
-.tabs a {
-  display: block;
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
-  color: #888;
-  padding: 20px 0;
-  /* border-bottom: 2px solid #888; */
-  background: #fff;
-}
-.tabs a:hover,
-.tabs a.active {
-  background: #f7f7f7;
-  text-decoration: none;
-  border-bottom: 5px solid #26C1ED;
-}
-.tabgroup div {
-  padding: 30px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
-}
-.clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-.tabgroup{
-    padding: unset;
-    background-color:#fff;
-}
-ul{
-    margin-bottom: 0px;
-    padding-inline-start: 0px;
-}
-ul li{
-    display: block;
-}
-.wrapper .tabgroup h1{
-    text-transform: none;
-}
-.tabs.clearfix img{
-border-radius: unset;
-width: auto;
-height: 150px;
-}
-@media screen and (max-width:500px){
-    .wrapper{
-        width: 100%;
-        margin: unset;
-        margin-top: 80px ;
-    }
-    #extra{
-        padding: 0px !important;
-    }
-}
-  </style>
         
-    </head>
+        .wrapper {
+            margin: 30px auto;
+            width: 80%;
+            font-family: sans-serif;
+            color: #555;
+            font-size: 14px;
+            line-height: 24px;
+        }
+        
+        h1 {
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        
+        h1+p {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 16px;
+        }
+        
+        .tabs li {
+            float: left;
+            width: 33.333333%;
+        }
+        
+        .tabs a {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: #888;
+            padding: 20px 0;
+            /* border-bottom: 2px solid #888; */
+            background: #fff;
+        }
+        
+        .tabs a:hover,
+        .tabs a.active {
+            background: #f7f7f7;
+            text-decoration: none;
+            border-bottom: 5px solid #26C1ED;
+        }
+        
+        .tabgroup div {
+            padding: 30px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .clearfix:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        
+        .tabgroup {
+            padding: unset;
+            background-color: #fff;
+        }
+        
+        ul {
+            margin-bottom: 0px;
+            padding-inline-start: 0px;
+        }
+        
+        ul li {
+            display: block;
+        }
+        
+        .wrapper .tabgroup h1 {
+            text-transform: none;
+        }
+        
+        .tabs.clearfix img {
+            border-radius: unset;
+            width: auto;
+            height: 150px;
+        }
+        
+        @media screen and (max-width:500px) {
+            .wrapper {
+                width: 100%;
+                margin: unset;
+                margin-top: 80px;
+            }
+            #extra {
+                padding: 0px !important;
+            }
+        }
+    </style>
 
-    <body class="hello">
+</head>
 
-        <header class="nav-down responsive-nav hidden-lg hidden-md">
-            <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
+<body class="hello">
+
+    <header class="nav-down responsive-nav hidden-lg hidden-md">
+        <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <!--/.navbar-header--> 
-            <div id="main-nav" class="collapse navbar-collapse">
-                <nav>
-                    <ul class="nav navbar-nav">
-                        <li><form action="#" method="post" id="log">
-                            <button class="btn" formaction="index.php">Home</button>
-                        </form></li>
-                        <li><form action="#" method="post" id="log">
-                            <button class="btn" formaction="portal.php">Profile</button>
-                        </form></li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
-
-        <div class="sidebar-navigation hidde-sm hidden-xs">
-            <div class="logo">
-                <img src="img/logo1.png" class="static">
-            </div>
+        <!--/.navbar-header-->
+        <div id="main-nav" class="collapse navbar-collapse">
             <nav>
-                <ul>
+                <ul class="nav navbar-nav">
                     <li>
                         <form action="#" method="post" id="log">
-                            <button class="button" style="vertical-align:middle" formaction="index.php"><span>Home</span></button>
+                            <button class="btn" formaction="index.php">Home</button>
                         </form>
                     </li>
                     <li>
                         <form action="#" method="post" id="log">
-                            <button class="button" style="vertical-align:middle" formaction="portal.php"><span>Profile</span></button>
+                            <button class="btn" formaction="portal.php">Profile</button>
                         </form>
                     </li>
                 </ul>
             </nav>
         </div>
-  
-  <div class="page-content">
-      
-      <section id="extra" style="padding: 20px;">
-        <div class="wrapper">
-            <!-- <h1>Steps to Donate</h1> -->
-            <!-- <p>Let me help you by providing more options to you.</p> -->
-          <ul class="tabs clearfix" data-tabgroup="first-tab-group">
-            <li><a href="#tab1" class="active"><img src="img/TRY2.png" alt=""></a></li>
-            <li><a href="#tab2"><img src="img/TRY3.png" alt=""></a></li>
-            <li><a href="#tab3"><img src="img/TRY1.png" alt=""></a></li>
-          </ul>
-          <section id="first-tab-group" class="tabgroup">
-            <div id="tab1">
-              <!-- <h2>Why to Donate?</h2> -->
-              <h1 style="color: #000; font-weight:180;padding-left: 30px; font-size: 18px; text-align: justify;line-height: 150%;" ><ol>
-                <li>Click on the following button.</li>
-                <li>Accept the Terms and Conditions and proceed.</li>
-                <li>In the "State of Institution", select Bihar.</li>
-                <li>In the "Type of Institution", select Educational Institutions and Click on "GO".</li>
-                <li>Now, in the Name of Institution, find "INDIAN INSTITUTE OF TECHNOLOGY PATNA" and click on SUBMIT.</li>
-                <li>Finally in the Payment Category, Select "Alumni Cell, IIT Patna to make the contribution.</li>
-              </ol></h1>
-            </div>
-            <div id="tab2">
-              <h1 style="color: #000; font-weight:180;padding-left: 30px; font-size: 18px; text-align: justify;line-height: 150%;">Relations are all that matters in this world of cut-throat competition. And to see your Alma-Mater thrive, even after their departure, is the dream of every alumni. But bonds are never forgotten and nostalgia seems to make the Institute the world's equivalent of heaven. In order to help the Institution achieve a grandeur better than ever and help the upcoming generation of our college, any generous alumnus or philanthropist is welcome to join hands with IIT Patna to promote the students as well as the Institution by creating a corpus to support various departments by aiding them in financial matters.</h1>
-            </div>
-            <div id="tab3">
-              <h1 style="color: #000; font-weight:180;padding-left: 30px; font-size: 18px; text-align: justify;line-height: 150%;">The donation you make to the Alumni Cell's  Endowment Fund of IIT Patna will be solely utilized by the Institute for its betterment and development. You can make your generous contributions to the various causes, issues, agendas, fests, and clubs. The donation you make will be given to the place where you want it to go. To ease this process of selecting one or multiple, we will soon be adding these causes and required funding so that you can be aware of the live status of the progress.</h1>
-            </div>
+    </header>
 
-            <button class="button" style="vertical-align:middle; background: #003C4D; color: #fff; padding: 8px 12px; font-size: 20px; margin: 10px;" onclick="window.location.href='https://www.onlinesbi.com/sbicollect/icollecthome.htm'"><span>Donate</span></button>
-          
-            
-          </section>
-          </div>
-      </section>
-      <br><br>
-     <section  id="contact" class="content-section">
-                <div id="con">
-                    <div class="col-md-4">  
-                        <div class="teext" style=" display: inline-block;">
+    <div class="sidebar-navigation hidde-sm hidden-xs">
+        <div class="logo">
+            <img src="img/logo1.png" class="static">
+        </div>
+        <nav>
+            <ul>
+                <li>
+                    <form action="#" method="post" id="log">
+                        <button class="button" style="vertical-align:middle" formaction="index.php"><span>Home</span></button>
+                    </form>
+                </li>
+                <li>
+                    <form action="#" method="post" id="log">
+                        <button class="button" style="vertical-align:middle" formaction="portal.php"><span>Profile</span></button>
+                    </form>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="page-content">
+
+        <section id="extra" style="padding: 20px;">
+            <div class="wrapper">
+                <!-- <h1>Steps to Donate</h1> -->
+                <!-- <p>Let me help you by providing more options to you.</p> -->
+                <ul class="tabs clearfix" data-tabgroup="first-tab-group">
+                    <li>
+                        <a href="#tab1" class="active"><img src="img/TRY2.png" alt=""></a>
+                    </li>
+                    <li>
+                        <a href="#tab2"><img src="img/TRY3.png" alt=""></a>
+                    </li>
+                    <li>
+                        <a href="#tab3"><img src="img/TRY1.png" alt=""></a>
+                    </li>
+                </ul>
+                <section id="first-tab-group" class="tabgroup">
+                    <div id="tab1">
+                        <!-- <h2>Why to Donate?</h2> -->
+                        <h1 style="color: #000; font-weight:180;padding-left: 30px; font-size: 18px; text-align: justify;line-height: 150%;">
+                            <ol>
+                                <li>Click on the following button.</li>
+                                <li>Accept the Terms and Conditions and proceed.</li>
+                                <li>In the "State of Institution", select Bihar.</li>
+                                <li>In the "Type of Institution", select Educational Institutions and Click on "GO".</li>
+                                <li>Now, in the Name of Institution, find "INDIAN INSTITUTE OF TECHNOLOGY PATNA" and click on SUBMIT.</li>
+                                <li>Finally in the Payment Category, Select "Alumni Cell, IIT Patna to make the contribution.</li>
+                            </ol>
+                        </h1>
+                    </div>
+                    <div id="tab2">
+                        <h1 style="color: #000; font-weight:180;padding-left: 30px; font-size: 18px; text-align: justify;line-height: 150%;">Relations are all that matters in this world of cut-throat competition. And to see your Alma-Mater thrive, even after their departure, is the dream of every alumni. But bonds are never forgotten and nostalgia seems to make the
+                            Institute the world's equivalent of heaven. In order to help the Institution achieve a grandeur better than ever and help the upcoming generation of our college, any generous alumnus or philanthropist is welcome to join hands
+                            with IIT Patna to promote the students as well as the Institution by creating a corpus to support various departments by aiding them in financial matters.</h1>
+                    </div>
+                    <div id="tab3">
+                        <h1 style="color: #000; font-weight:180;padding-left: 30px; font-size: 18px; text-align: justify;line-height: 150%;">The donation you make to the Alumni Cell's Endowment Fund of IIT Patna will be solely utilized by the Institute for its betterment and development. You can make your generous contributions to the various causes, issues, agendas,
+                            fests, and clubs. The donation you make will be given to the place where you want it to go. To ease this process of selecting one or multiple, we will soon be adding these causes and required funding so that you can be aware
+                            of the live status of the progress.</h1>
+                    </div>
+
+                    <button class="button" style="vertical-align:middle; background: #003C4D; color: #fff; padding: 8px 12px; font-size: 20px; margin: 10px;" onclick="window.location.href='https://www.onlinesbi.com/sbicollect/icollecthome.htm'"><span>Donate</span></button>
+
+
+                </section>
+            </div>
+        </section>
+        <br><br>
+        <section id="contact" class="content-section">
+            <div id="con">
+                <div class="col-md-4">
+                    <div class="teext" style=" display: inline-block;">
                         <h1 style="font-size:24px;">Quick <span>Links</span></h1><br>
                         <p> <a style="text-decoration:none; color:#fff" href="https://www.iitp.ac.in/">IIT Patna</a><br>
-                        <a style="text-decoration:none; color:#fff" href="https://www.iitp.ac.in/alumni/">ITPAA</a><br>
-                        <a style="text-decoration:none; color:#fff" href="#">Reach Us</a><br>
-                        <a style="text-decoration:none; color:#fff" href="#">Terms of Use</a><br>
-                        <a style="text-decoration:none; color:#fff" href="#">Privacy Policy</a>
+                            <a style="text-decoration:none; color:#fff" href="https://www.iitp.ac.in/alumni/">ITPAA</a><br>
+                            <a style="text-decoration:none; color:#fff" href="#">Reach Us</a><br>
+                            <a style="text-decoration:none; color:#fff" href="#">Terms of Use</a><br>
+                            <a style="text-decoration:none; color:#fff" href="#">Privacy Policy</a>
                         </p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">  
-                        <div class="teext" style=" display: inline-block;">
-                            <h1  style="font-size:24px;">Social <span> Media</span></h1><br>
-                        <p> <a style="text-decoration:none; color:#fff" href="https://www.facebook.com/saar.iitp/"><i class="fa fa-facebook-square" aria-hidden="true" style="font-size: 18px; color: #26C1ED; margin-right: 14px;"></i>Facebook</a><br>
-                        <a style="text-decoration:none; color:#fff" href="https://www.instagram.com/saar.iitp"><i class="fa fa-instagram" aria-hidden="true" style="font-size: 20px; color: #26C1ED; margin-right: 14px;"></i>Instagram</a><br>
-                        <a style="text-decoration:none; color:#fff" href="https://www.linkedin.com/company/saar-iitp"><i class="fa fa-linkedin" aria-hidden="true" style="font-size: 20px; color: #26C1ED; margin-right: 14px;"></i>LinkedIn</a><br>
-                        <a style="text-decoration:none; color:#fff" href="https://www.twitter.com/saar_iitp"><i class="fa fa-twitter" aria-hidden="true" style="font-size: 20px; color: #26C1ED; margin-right: 14px;"></i>Twitter</a><br>
-                        <a style="text-decoration:none; color:#fff" href="https://www.youtube.com/channel/UCoAb1YggffbfgVxQyXaZB-g"><i class="fa fa-youtube" aria-hidden="true" style="font-size: 20px; color: #26C1ED; margin-right: 14px;"></i>Youtube</a></p>            
-                        </div>
-                    </div>
-                    <div class="col-md-4">  
-                        <div class="teext" style=" display: inline-block;">
-                            <h1 style="font-size:24px;">Contact <span> Us</span></h1><br>
-                            <p> Office of A Dean Resource<br>
-                            Administrative Building, IIT Patna<br><br>
-                            Prof. In-charge:<br>
-                            Dr. Anirban Chowdhary<br>
-                            Email - pic_alumni@iitp.ac.in<br><br>
-                            General Secretary:<br>
-
-                            Gaurav Pratap Singh<br>
-
-                            Email - 1801ee63@iitp.ac.in</p>            
-                        </div>
                     </div>
                 </div>
-            </section>
+                <div class="col-md-4">
+                    <div class="teext" style=" display: inline-block;">
+                        <h1 style="font-size:24px;">Social <span> Media</span></h1><br>
+                        <p> <a style="text-decoration:none; color:#fff" href="https://www.facebook.com/saar.iitp/"><i class="fa fa-facebook-square" aria-hidden="true" style="font-size: 18px; color: #26C1ED; margin-right: 14px;"></i>Facebook</a><br>
+                            <a style="text-decoration:none; color:#fff" href="https://www.instagram.com/saar.iitp"><i class="fa fa-instagram" aria-hidden="true" style="font-size: 20px; color: #26C1ED; margin-right: 14px;"></i>Instagram</a><br>
+                            <a style="text-decoration:none; color:#fff" href="https://www.linkedin.com/company/saar-iitp"><i class="fa fa-linkedin" aria-hidden="true" style="font-size: 20px; color: #26C1ED; margin-right: 14px;"></i>LinkedIn</a><br>
+                            <a style="text-decoration:none; color:#fff" href="https://www.twitter.com/saar_iitp"><i class="fa fa-twitter" aria-hidden="true" style="font-size: 20px; color: #26C1ED; margin-right: 14px;"></i>Twitter</a><br>
+                            <a style="text-decoration:none; color:#fff" href="https://www.youtube.com/channel/UCoAb1YggffbfgVxQyXaZB-g"><i class="fa fa-youtube" aria-hidden="true" style="font-size: 20px; color: #26C1ED; margin-right: 14px;"></i>Youtube</a></p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="teext" style=" display: inline-block;">
+                        <h1 style="font-size:24px;">Contact <span> Us</span></h1><br>
+                        <p> Office of A Dean Resource<br> Administrative Building, IIT Patna<br><br> Prof. In-charge:<br> Dr. Anirban Chowdhary<br> Email - pic_alumni@iitp.ac.in<br><br> General Secretary:<br> Gaurav Pratap Singh<br> Email - 1801ee63@iitp.ac.in</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <section class="footer" style="background: #232323;">
-        <p>|| Copyright || &copy; IIT Patna SAAR Team ||</p>
-    </section>
-        </div>  
-        
-    </body>
+        <section class="footer" style="background: #232323;">
+            <p>|| Copyright || &copy; IIT Patna SAAR Team ||</p>
+        </section>
+    </div>
+
+</body>
+
 </html>
