@@ -146,18 +146,22 @@
                     </select>
                     <div class="label_style">Department *</div>
                     <select type="text" id="branch" name="dept" required  class="ui search selection   dropdown">
-                    <option value="" selected disabled >Department</option>
-                    <option value="Computer Science and Engineering">Computer Science and Engineering</option>
-                    <option value="Electrical Engineering">Electrical Engineering</option>
-                    <option value="Mechanical Engineering">Mechanical Engineering</option>
-                    <option value="Civil Engineering">Civil Engineering</option>
-                    <option value="Chemical and Biochemical Engineering">Chemical and Biochemical Engineering</option>
-                    <option value="Physics">Physics</option>
-                    <option value="Mathematics">Mathematics</option>
-                    <option value="Chemistry">Chemistry</option>
-                    <option value="Humanities and Social Sciences">Humanities and Social Sciences</option>
-
-                    <option value="other">Other</option>
+                    <option value="" selected disabled>Select</option>
+			<option value="Chemical and Biochemical Engineering">Chemical and Biochemical Engineering</option>
+			<option value="Chemistry">Chemistry</option>
+			<option value="Civil Engineering">Civil Engineering</option>
+			<option value="Communication System and Engineering">Communication System and Engineering</option>
+			<option value="Computer Science and Engineering">Computer Science and Engineering</option>
+			<option value="Electrical Engineering">Electrical Engineering</option>
+			<option value="Humanities and Social Sciences">Humanities and Social Sciences</option>
+			<option value="Materials Science and Engineering">Materials Science and Engineering</option>
+			<option value="Mechanical Engineering">Mechanical Engineering</option>
+			<option value="Mechatronics">Mechatronics</option>
+			<option value="Mathematics">Mathematics</option>
+			<option value="Mathematics and Computing">Mathematics and Computing</option>
+			<option value="Physics">Physics</option>
+			<option value="VLSI and Embedded System">VLSI and Embedded System</option>
+			<option value="other">Other</option>
                     </select>
                     <div class="label_style">Employment Type</div>
                     <select type="text" id="etype" name="etype" class="ui dropdown">
