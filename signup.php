@@ -101,7 +101,7 @@
                     <input id="fname" class="text" type="text" name="fname" required>
 					<div class="label_style">Last Name *</div>
                     <input id="lname" class="text" type="text" name="lname" required>
-					<div class="label_style">Email Address *</div>
+					<div class="label_style">Email Address (Gmail) *</div>
                     <input id="email" class="text email" type="email" name="email" required>
 					<div class="label_style">Contact Number *</div>
                     <input class="text" type="tel" name="contact" required>
