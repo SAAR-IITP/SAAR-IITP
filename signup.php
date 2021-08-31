@@ -217,8 +217,8 @@
                             <p> Office of A Dean Resource<br>
                             Administrative Building, IIT Patna<br><br>
                             Prof. In-charge:<br>
-                            Dr. Anirban Chowdhary<br>
-                            Email - pic_alumni@iitp.ac.in<br><br>
+                            Dr. Sudhir Kumar<br>
+                            Email - pic_er@iitp.ac.in<br><br>
                             General Secretary:<br>
                             <a href="#" style="color: #fff">Gaurav Pratap Singh</a><br>
                             Email - 1801ee63@iitp.ac.in</p>            
