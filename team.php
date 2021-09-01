@@ -55,7 +55,7 @@ session_start();
                         </div>
                         <ul class="social">
                             <li>
-                                <a href="mailto:pic_alumni@iitp.ac.in" class="fa fa-envelope"></a>
+                                <a href="mailto:pic_er@iitp.ac.in" class="fa fa-envelope"></a>
                             </li>
                         </ul>
                     </div>
@@ -298,7 +298,7 @@ session_start();
                         </div>
                         <ul class="social">
                             <li>
-                                <a href="mailto:pic_alumni@iitp.ac.in" class="fa fa-envelope"></a>
+                                <a href="mailto:pic_er@iitp.ac.in" class="fa fa-envelope"></a>
                             </li>
                         </ul>
                     </div>
@@ -673,7 +673,7 @@ session_start();
                         </div>
                         <ul class="social">
                             <li>
-                                <a href="mailto:pic_alumni@iitp.ac.in" class="fa fa-envelope"></a>
+                                <a href="mailto:pic_er@iitp.ac.in" class="fa fa-envelope"></a>
                             </li>
                         </ul>
                     </div>
