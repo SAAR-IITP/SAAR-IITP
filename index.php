@@ -420,11 +420,11 @@
 
             <section id="extra" class="content-section">
                     <div class="imgbox">
-                        <img class="center-fit" src='img/Group 38.png'>
+                        <img class="center-fit" src='img/bggg.png'>
                     </div>
                     <div class="centered">
-                        <span id="remove"><h4 style="color: #003C4D;">"We make a living by what we get, we make a life by what we give"</h4>
-                        <h4 style="color: #26C1ED;">~Winston Churchill</h4></span>
+                        <span id="remove"><h4 style="color: #003C4D;">Give back to the community that gave you!</h4>
+                        <!-- <h4 style="color: #26C1ED;">~Winston Churchill</h4></span> -->
                         <div id="shift" class="new">
                         <a href="don.html">Donate Now</a>
                     </div>
