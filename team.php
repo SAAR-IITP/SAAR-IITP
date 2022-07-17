@@ -176,10 +176,7 @@ session_start();
                         </div>
                         <ul class="social">
                             <li>
-                                <a href="https://www.facebook.com/rishika.mandhyan/" target="_blank" class="fa fa-facebook"></a>
-                            </li>
-                            <li>
-                                <a href="https://www.linkedin.com/in/rishika-mandhyan-08b8b5195/" target="_blank" class="fa fa-linkedin"></a>
+                                <a href="https://www.linkedin.com/in/sai-vardhan-vemulapalli-8740701bb/" target="_blank" class="fa fa-linkedin"></a>
                             </li>
                         </ul>
                     </div>
@@ -195,10 +192,7 @@ session_start();
                         </div>
                         <ul class="social">
                             <li>
-                                <a href="https://www.linkedin.com/in/ananthajit/" target="_blank" class="fa fa-linkedin"></a>
-                            </li>
-                            <li>
-                                <a href="https://github.com/acciptris" target="_blank" class="fa fa-github"></a>
+                                <a href="hhttps://www.linkedin.com/in/tarun-vikas-v-22ba68202" target="_blank" class="fa fa-linkedin"></a>
                             </li>
                         </ul>
                     </div>
