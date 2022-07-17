@@ -75,13 +75,10 @@ session_start();
                         </div>
                         <ul class="social">
                             <li>
-                                <a href="https://www.facebook.com/aravind.ajay.5030/" target="_blank" class="fa fa-facebook"></a>
+                                <a href="https://www.linkedin.com/in/piyush-gautam-10a7a0218/" target="_blank" class="fa fa-linkedin"></a>
                             </li>
                             <li>
-                                <a href="https://www.linkedin.com/in/aravind-ajay-7324451a0/" target="_blank" class="fa fa-linkedin"></a>
-                            </li>
-                            <li>
-                                <a href="https://github.com/arav1ndajay" target="_blank" class="fa fa-github"></a>
+                                <a href="https://www.instagram.com/piyushgautam433/" target="_blank" class="fa fa-instagram"></a>
                             </li>
                         </ul>
                     </div>
@@ -131,10 +128,13 @@ session_start();
                         </div>
                         <ul class="social">
                             <li>
-                                <a href="https://www.linkedin.com/in/madhur-malpani-818646196/" target="_blank" class="fa fa-linkedin"></a>
+                                <a href="https://www.linkedin.com/in/pratyushkumar1032/" target="_blank" class="fa fa-linkedin"></a>
                             </li>
                             <li>
-                                <a href="https://github.com/madris112" target="_blank" class="fa fa-github"></a>
+                                <a href="https://www.instagram.com/strix_rox/" target="_blank" class="fa fa-instagram"></a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/StrixROX" target="_blank" class="fa fa-github"></a>
                             </li>
                         </ul>
                     </div>
@@ -149,10 +149,10 @@ session_start();
                         </div>
                         <ul class="social">
                             <li>
-                                <a href="https://www.linkedin.com/in/madhur-malpani-818646196/" target="_blank" class="fa fa-linkedin"></a>
+                                <a href="https://www.linkedin.com/in/rupak-biswas-774a3b204/" target="_blank" class="fa fa-linkedin"></a>
                             </li>
                             <li>
-                                <a href="https://github.com/madris112" target="_blank" class="fa fa-github"></a>
+                                <a href="https://github.com/RupakBiswas-2304" target="_blank" class="fa fa-github"></a>
                             </li>
                         </ul>
                     </div>
@@ -163,7 +163,8 @@ session_start();
             <div class="row">
                 <div class="section-heading" style="text-align: center; margin: 20px;"><br><br>
                     <h1 class="timeline-header"><span><em style="font-size: 1em;color: #000; margin: 10px;">Public & Alumni Relations</em></span></h1>
-                </div>
+                </div> 
+                <!-- Social links TBD -->
                 <div class="col-lg-3 col-md-2"></div>
                 <div class="col-lg-3 col-md-4 col-sm-6">
                     <div class="our-team">
@@ -175,10 +176,7 @@ session_start();
                         </div>
                         <ul class="social">
                             <li>
-                                <a href="https://www.facebook.com/rishika.mandhyan/" target="_blank" class="fa fa-facebook"></a>
-                            </li>
-                            <li>
-                                <a href="https://www.linkedin.com/in/rishika-mandhyan-08b8b5195/" target="_blank" class="fa fa-linkedin"></a>
+                                <a href="https://www.linkedin.com/in/sai-vardhan-vemulapalli-8740701bb/" target="_blank" class="fa fa-linkedin"></a>
                             </li>
                         </ul>
                     </div>
@@ -194,10 +192,7 @@ session_start();
                         </div>
                         <ul class="social">
                             <li>
-                                <a href="https://www.linkedin.com/in/ananthajit/" target="_blank" class="fa fa-linkedin"></a>
-                            </li>
-                            <li>
-                                <a href="https://github.com/acciptris" target="_blank" class="fa fa-github"></a>
+                                <a href="hhttps://www.linkedin.com/in/tarun-vikas-v-22ba68202" target="_blank" class="fa fa-linkedin"></a>
                             </li>
                         </ul>
                     </div>
@@ -220,10 +215,10 @@ session_start();
                         </div>
                         <ul class="social">
                             <li>
-                                <a href="https://www.facebook.com/anshu.anand.35728" target="_blank" class="fa fa-facebook"></a>
+                                <a href="https://in.linkedin.com/in/animesh-sinha-60490a219" target="_blank" class="fa fa-linkedin"></a>
                             </li>
                             <li>
-                                <a href="https://www.linkedin.com/in/anshu-anand-38a324192" target="_blank" class="fa fa-linkedin"></a>
+                                <a href="https://www.instagram.com/animesh_27_" target="_blank" class="fa fa-instagram"></a>
                             </li>
                         </ul>
                     </div>
@@ -239,10 +234,13 @@ session_start();
                         </div>
                         <ul class="social">
                             <li>
-                                <a href="https://www.linkedin.com/in/venkatadri-arava/" target="_blank" class="fa fa-linkedin"></a>
+                                <a href="https://www.linkedin.com/in/rohit9710/" target="_blank" class="fa fa-linkedin"></a>
                             </li>
                             <li>
-                                <a href="https://github.com/NCTzen2471" target="_blank" class="fa fa-github"></a>
+                                <a href="https://www.instagram.com/rohit_mishra9710/" target="_blank" class="fa fa-instagram"></a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/rohitkumar9710" target="_blank" class="fa fa-github"></a>
                             </li>
                         </ul>
                     </div>
@@ -264,47 +262,44 @@ session_start();
                         </div>
                         <ul class="social">
                             <li>
-                                <a href="https://www.facebook.com/akshay.nagle.90/" target="_blank" class="fa fa-facebook"></a>
+                                <a href="https://www.linkedin.com/in/harshita-meena-132926200/" target="_blank" class="fa fa-linkedin"></a>
                             </li>
                             <li>
-                                <a href="https://www.linkedin.com/in/akshay-nagle/" target="_blank" class="fa fa-linkedin"></a>
-                            </li>
-                            <li>
-                                <a href="https://github.com/Akshay-Nagle" target="_blank" class="fa fa-github"></a>
+                                <a href="https://www.instagram.com/_atihsrah/" target="_blank" class="fa fa-instagram"></a>
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
 
-            <!-- <div class="row">
+            <div class="row">
                 <div class="section-heading" style="text-align: center; margin: 20px;"><br><br>
                     <h1 class="timeline-header"><span><em style="font-size: 1em;color: #000; margin: 10px;">Creatives and Design</em></span></h1>
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6 center">
                     <div class="our-team">
                         <div class="pic">
-                            <img src="img/Sajal.png">
+                            <img src="img/PrajyotRamteke.jpg">
                         </div>
                         <div class="team-content">
-                            <h3 class="title">Sajal Kumar</h3>
+                            <h3 class="title">Prajyot Ramteke</h3>
                         </div>
                         <ul class="social">
                             <li>
-                                <a href="https://www.facebook.com/profile.php?id=100039583697847" target="_blank" class="fa fa-facebook"></a>
+                                <a href="https://www.linkedin.com/in/rawon/" target="_blank" class="fa fa-linkedin"></a>
                             </li>
                             <li>
-                                <a href="https://www.linkedin.com/in/sajal-kumar-863a85194" target="_blank" class="fa fa-linkedin"></a>
+                                <a href="https://www.instagram.com/_ra.won_/" target="_blank" class="fa fa-instagram"></a>
                             </li>
                         </ul>
                     </div>
                 </div>
-            </div> -->
+            </div>
         </div>
 
 
         <!-- =============================================2021-2022=========================== -->
-        <div class="container" id="two">
+        <div class="container hide" id="two">
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-sm-6 mb-4">
                     <!-- <div class="section-heading" style="text-align: center; margin-bottom: 10px;">
