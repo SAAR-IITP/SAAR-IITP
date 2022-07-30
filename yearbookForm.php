@@ -142,8 +142,8 @@
                             Dr. Dr. Sudhir Kumar<br>
                             Email - pic_er@iitp.ac.in<br><br>
                             General Secretary:<br>
-                            <a href="#" style="color: #fff">Gaurav Pratap Singh</a><br>
-                            Email - 1801ee63@iitp.ac.in
+                            <a href="#" style="color: #fff">Piyush Gautam</a><br>
+                            Email - piyush_2001me45@iitp.ac.in
                         </p>
                     </div>
                 </div>

@@ -56,7 +56,7 @@ session_start();
                         </div>
                         <ul class="social">
                             <li>
-                                <a href="mailto:pic_alumni@iitp.ac.in" class="fa fa-envelope"></a>
+                                <a href="mailto:pic_er@iitp.ac.in" class="fa fa-envelope"></a>
                             </li>
                         </ul>
                     </div>
@@ -1458,9 +1458,9 @@ session_start();
                         Email - pic_er@iitp.ac.in<br><br>
                         General Secretary:<br>
 
-                        Aravind Ajay<br>
+                        Piyush Gautam<br>
 
-                        aravind_1901CS08@iitp.ac.in</p>
+                        piyush_2001me45@iitp.ac.in</p>
                 </div>
             </div>
         </div>
