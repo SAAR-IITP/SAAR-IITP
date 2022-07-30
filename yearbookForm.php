@@ -95,7 +95,7 @@
         <h2><span style="font-size: 30px;"><em>Registration Form</em></span></h2>
         <div class="main-agileinfo">
             <div class="agileits-top">
-                <iframe src="https://script.google.com/macros/s/AKfycbzxorOjBJkKZ_b6uFzLYE0xSdnQGGuOEsW5mmZXdkG6q-0oNdjngko1k82k4yi-FLXL2Q/exec" frameborder="0" height="1414.58px" width="100%"></iframe>
+                <iframe src="https://script.google.com/macros/s/AKfycbzxorOjBJkKZ_b6uFzLYE0xSdnQGGuOEsW5mmZXdkG6q-0oNdjngko1k82k4yi-FLXL2Q/exec" frameborder="0" height="1494.58px" width="100%"></iframe>
                 <a href="./portal.php"><button style="font-size: .9em;
                     color: #fff;
                     background: #003C4D;
@@ -139,8 +139,8 @@
                         <p> Office of A Dean Resource<br>
                             Administrative Building, IIT Patna<br><br>
                             Prof. In-charge:<br>
-                            Dr. Anirban Chowdhary<br>
-                            Email - pic_alumni@iitp.ac.in<br><br>
+                            Dr. Dr. Sudhir Kumar<br>
+                            Email - pic_er@iitp.ac.in<br><br>
                             General Secretary:<br>
                             <a href="#" style="color: #fff">Gaurav Pratap Singh</a><br>
                             Email - 1801ee63@iitp.ac.in

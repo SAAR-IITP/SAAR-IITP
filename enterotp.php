@@ -43,12 +43,14 @@ session_start();
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
-        <script src="js/vendor/bootstrap.min.js"></script>
+        <!-- <script src="js/vendor/bootstrap.min.js"></script> -->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
          
      </head>
     <body>
+
         <header class="nav-down responsive-nav hidden-lg hidden-md">
             <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
                 <span class="sr-only">Toggle navigation</span>
@@ -152,7 +154,10 @@ session_start();
             <span class="focus-input100" data-placeholder="Enter OTP"></span>
           </div>
           <div id="resend">
-            <a href="resendotp.php">Resend OTP ?</a>
+            <a id="resotp" href="resendotp.php" onclick="myfun()">Resend OTP ?</a>
+          </div>
+          <div id="resend">
+            <p id="tres" style="display: none;">Wait for 5 minutes before Trying OTP resend</p>
           </div>
           <?php
               if(isset($_SESSION['error'])){
@@ -166,5 +171,34 @@ session_start();
                </form>
       </section>
         </div>
+
+      <script>
+       if(localStorage.getItem("once")=='undefined'){
+            localStorage.setItem("once","1");
+        }
+      if(localStorage.getItem("once")=="0"){
+      document.getElementById('resotp').style.display = "none";
+      document.getElementById('tres').style.display = "block";
+      localStorage.setItem("once","1");
+            setTimeout(function(){      document.getElementById('resotp').style.display = "block",
+      document.getElementById('tres').style.display = "none";},300000);
+            
+          }
+        </script>
+
+
+
    </body>
+
+   <script >
+    function myfun(){
+      document.getElementById('resotp').style.display = "none";
+      document.getElementById('tres').style.display = "block";
+      localStorage.setItem("once","0");
+
+}
+   </script>
+  }
+
+
 </html>

@@ -244,7 +244,16 @@ textarea {
             font-family: 'Montserrat' regular;
             float: right;
         }
+        #verifyit {
+            font-family: 'Montserrat' regular;
+            float: left;
+
+        }
         #forgot a {
+            text-decoration: none;
+            color: #003C4D;
+        }
+        #verifyit a {
             text-decoration: none;
             color: #003C4D;
         }

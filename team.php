@@ -316,7 +316,7 @@ session_start();
                         </div>
                         <ul class="social">
                             <li>
-                                <a href="mailto:pic_alumni@iitp.ac.in" class="fa fa-envelope"></a>
+                                <a href="mailto:pic_er@iitp.ac.in" class="fa fa-envelope"></a>
                             </li>
                         </ul>
                     </div>
@@ -559,7 +559,7 @@ session_start();
                         </div>
                         <ul class="social">
                             <li>
-                                <a href="mailto:pic_alumni@iitp.ac.in" class="fa fa-envelope"></a>
+                                <a href="mailto:pic_er@iitp.ac.in" class="fa fa-envelope"></a>
                             </li>
                         </ul>
                     </div>
@@ -934,7 +934,7 @@ session_start();
                         </div>
                         <ul class="social">
                             <li>
-                                <a href="mailto:pic_alumni@iitp.ac.in" class="fa fa-envelope"></a>
+                                <a href="mailto:pic_er@iitp.ac.in" class="fa fa-envelope"></a>
                             </li>
                         </ul>
                     </div>
@@ -1454,13 +1454,13 @@ session_start();
                     <p> Office of A Dean Resource<br>
                         Administrative Building, IIT Patna<br><br>
                         Prof. In-charge:<br>
-                        Dr. Anirban Chowdhary<br>
-                        Email - pic_alumni@iitp.ac.in<br><br>
+                        Dr. Sudhir Kumar<br>
+                        Email - pic_er@iitp.ac.in<br><br>
                         General Secretary:<br>
 
-                        Gaurav Pratap Singh<br>
+                        Aravind Ajay<br>
 
-                        Email - 1801ee63@iitp.ac.in</p>
+                        aravind_1901CS08@iitp.ac.in</p>
                 </div>
             </div>
         </div>

@@ -101,7 +101,7 @@
                     <input id="fname" class="text" type="text" name="fname" required>
 					<div class="label_style">Last Name *</div>
                     <input id="lname" class="text" type="text" name="lname" required>
-					<div class="label_style">Email Address *</div>
+					<div class="label_style">Email Address (Gmail) *</div>
                     <input id="email" class="text email" type="email" name="email" required>
 					<div class="label_style">Contact Number *</div>
                     <input class="text" type="tel" name="contact" required>
@@ -146,18 +146,22 @@
                     </select>
                     <div class="label_style">Department *</div>
                     <select type="text" id="branch" name="dept" required  class="ui search selection   dropdown">
-                    <option value="" selected disabled >Department</option>
-                    <option value="Computer Science and Engineering">Computer Science and Engineering</option>
-                    <option value="Electrical Engineering">Electrical Engineering</option>
-                    <option value="Mechanical Engineering">Mechanical Engineering</option>
-                    <option value="Civil Engineering">Civil Engineering</option>
-                    <option value="Chemical and Biochemical Engineering">Chemical and Biochemical Engineering</option>
-                    <option value="Physics">Physics</option>
-                    <option value="Mathematics">Mathematics</option>
-                    <option value="Chemistry">Chemistry</option>
-                    <option value="Humanities and Social Sciences">Humanities and Social Sciences</option>
-
-                    <option value="other">Other</option>
+                    <option value="" selected disabled>Select</option>
+			<option value="Chemical and Biochemical Engineering">Chemical and Biochemical Engineering</option>
+			<option value="Chemistry">Chemistry</option>
+			<option value="Civil Engineering">Civil Engineering</option>
+			<option value="Communication System and Engineering">Communication System and Engineering</option>
+			<option value="Computer Science and Engineering">Computer Science and Engineering</option>
+			<option value="Electrical Engineering">Electrical Engineering</option>
+			<option value="Humanities and Social Sciences">Humanities and Social Sciences</option>
+			<option value="Materials Science and Engineering">Materials Science and Engineering</option>
+			<option value="Mechanical Engineering">Mechanical Engineering</option>
+			<option value="Mechatronics">Mechatronics</option>
+			<option value="Mathematics">Mathematics</option>
+			<option value="Mathematics and Computing">Mathematics and Computing</option>
+			<option value="Physics">Physics</option>
+			<option value="VLSI and Embedded System">VLSI and Embedded System</option>
+			<option value="other">Other</option>
                     </select>
                     <div class="label_style">Employment Type</div>
                     <select type="text" id="etype" name="etype" class="ui dropdown">
@@ -217,8 +221,8 @@
                             <p> Office of A Dean Resource<br>
                             Administrative Building, IIT Patna<br><br>
                             Prof. In-charge:<br>
-                            Dr. Anirban Chowdhary<br>
-                            Email - pic_alumni@iitp.ac.in<br><br>
+                            Dr. Sudhir Kumar<br>
+                            Email - pic_er@iitp.ac.in<br><br>
                             General Secretary:<br>
                             <a href="#" style="color: #fff">Gaurav Pratap Singh</a><br>
                             Email - 1801ee63@iitp.ac.in</p>            
