@@ -48,10 +48,10 @@ session_start();
                     <div class="our-team">
 
                         <div class="pic">
-                            <img src="img/anirbn.jpg" style="height: 100%;">
+                            <img src="img/sudhir.jpeg" style="height: 100%;">
                         </div>
                         <div class="team-content">
-                            <h3 class="title">Dr. Anirban Chowdhary</h3>
+                            <h3 class="title">Dr. Sudhir Kumar</h3>
                             <span class="post">Professor In-Charge</span>
                         </div>
                         <ul class="social">
@@ -308,10 +308,10 @@ session_start();
                     <div class="our-team">
 
                         <div class="pic">
-                            <img src="img/anirbn.jpg" style="height: 100%;">
+                            <img src="img/sudhir.jpeg" style="height: 100%;">
                         </div>
                         <div class="team-content">
-                            <h3 class="title">Dr. Anirban Chowdhary</h3>
+                            <h3 class="title">Dr. Sudhir Kumar</h3>
                             <span class="post">Professor In-Charge</span>
                         </div>
                         <ul class="social">
